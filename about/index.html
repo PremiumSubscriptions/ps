@@ -678,38 +678,72 @@
     </head>
     <body>
         <!-- Header -->
-        <header class="header">
-            <div class="container">
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
                 <!-- Logo -->
-                <div class="logo">
-                    <h2 class="logo-text"><span class="logo-h">H</span><span class="logo-s">S</span><span class="logo-c">C</span><span class="logo-space"></span><span class="logo-courses">COURSES</span></h2>
+                <div class="flex items-center space-x-3">
+                    <img 
+                        src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
+                        alt="Premium Subscription Logo"
+                        class="h-10 w-auto filter drop-shadow-lg hover:scale-105 transition-transform duration-300"
+                    />
+                    <h1 class="text-2xl font-bold tracking-wide text-gradient animate-logo-glow hover:scale-105 transition-transform duration-300">
+                        ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+                    </h1>
                 </div>
-                <!-- Main Navigation -->
-                <nav class="main-nav">
-                    <ul class="nav-links">
-                        <li><a href="https://bakervhai.wuaze.com/new.html" class="nav-link">Home</a></li>
-                        <li><a href="https://bakervhai.wuaze.com/course.html" class="nav-link">Courses</a></li>
-                        <li><a href="https://bakervhai.wuaze.com/teacher.html" class="nav-link">Teachers</a></li>
-                        <li><a href="#about" class="nav-link">About</a></li>
-                        <li><a href="https://bakervhai.wuaze.com/contact.html" class="nav-link">Contact</a></li>
-                    </ul>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-2" id="desktopNav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#courses" class="nav-link">Courses</a>
+                    <a href="#teachers" class="nav-link">Teachers</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
                 </nav>
-                <!-- Extra Navigation -->
-                <div class="extra-nav">
-                    <a href="#login" class="nav-btn login-btn" onclick="window.location.href='https://bakervhai.wuaze.com/account.html'"><span>Login</span></a>
-                    <a href="#signup" class="nav-btn signup-btn" onclick="window.location.href='https://bakervhai.wuaze.com/account.html'"><span>Sign Up</span></a>
+
+                <!-- Theme Toggle & Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="theme-toggle transform hover:rotate-12">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <div class="hidden md:flex space-x-3">
+                        <button class="auth-btn login-btn px-6 py-2 rounded-full font-semibold">
+                            Login
+                        </button>
+                        <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
                 </div>
-                <!-- Mobile Menu Toggle -->
-                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()"><span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span></div>
             </div>
+
             <!-- Mobile Menu -->
-            <div class="mobile-menu" id="mobileMenu">
-                <div class="mobile-menu-links">
-                    <a href="#home" class="mobile-link">Home</a><a href="#courses" class="mobile-link">Courses</a><a href="#teachers" class="mobile-link">Teachers</a><a href="#about" class="mobile-link">About</a>
-                    <a href="#contact" class="mobile-link">Contact</a>
-                </div>
+            <div id="mobileMenu" class="md:hidden mt-4 p-4 rounded-xl card-glass shadow-xl animate-fade-in hidden">
+                <nav class="flex flex-col space-y-2">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#courses" class="mobile-nav-link">Courses</a>
+                    <a href="#teachers" class="mobile-nav-link">Teachers</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <div class="flex space-x-3 pt-3 border-t border-gray-300/20">
+                        <button class="flex-1 auth-btn login-btn px-4 py-2 rounded-lg font-semibold">
+                            Login
+                        </button>
+                        <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+                </nav>
             </div>
-        </header>
+        </div>
+    </header>
         <!-- Main Content -->
         <main class="main-content">
             <div class="container">
