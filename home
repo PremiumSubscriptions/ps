@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Subscription - Static Version</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <style>
+        /* Custom CSS Variables for Theme */
+        :root {
+            --bg-primary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
+            --bg-secondary: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --accent-primary: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            --accent-secondary: linear-gradient(135deg, #10b981, #34d399);
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-border: rgba(59, 130, 246, 0.2);
+            --shadow-color: rgba(59, 130, 246, 0.1);
+        }
+        
+        [data-theme="dark"] {
+            --bg-primary: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+            --bg-secondary: rgba(15, 23, 42, 0.8);
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --accent-primary: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4);
+            --accent-secondary: linear-gradient(135deg, #34d399, #10b981);
+            --card-bg: rgba(30, 41, 59, 0.8);
+            --card-border: rgba(168, 85, 247, 0.2);
+            --shadow-color: rgba(168, 85, 247, 0.1);
+        }
+        
+        /* Custom Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-40px) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(-5deg); }
+        }
+        
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-100px) scale(1.5); opacity: 1; }
+        }
+        
+        @keyframes wave {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(25px); }
+        }
+        
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes logoGlow {
+            0% { text-shadow: 0 0 10px currentColor; }
+            100% { text-shadow: 0 0 30px currentColor, 0 0 40px currentColor; }
+        }
+        
+        @keyframes navLinkSlide {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        @keyframes navLinkGlow {
+            0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.6), 0 0 30px rgba(59, 130, 246, 0.4); }
+        }
+        
+        @keyframes navLinkGlowDark {
+            0% { box-shadow: 0 0 5px rgba(168, 85, 247, 0.3); }
+            100% { box-shadow: 0 0 20px rgba(168, 85, 247, 0.6), 0 0 30px rgba(168, 85, 247, 0.4); }
+        }
+        
+        /* Animation Classes */
+        .animate-float { animation: float 15s infinite ease-in-out; }
+        .animate-float-particle { animation: floatParticle 8s infinite ease-in-out; }
+        .animate-wave { animation: wave 8s ease-in-out infinite; }
+        .animate-progress { animation: progress 2s ease-out forwards; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-sparkle { animation: sparkle 1.5s infinite ease-in-out; }
+        .animate-gradient { animation: gradientShift 3s ease infinite; }
+        .animate-logo-glow { animation: logoGlow 2s ease-in-out infinite alternate; }
+        .animate-nav-link-slide { animation: navLinkSlide 0.3s ease-out forwards; }
+        .animate-nav-link-glow { animation: navLinkGlow 0.5s ease-in-out infinite alternate; }
+        .animate-nav-link-glow-dark { animation: navLinkGlowDark 0.5s ease-in-out infinite alternate; }
+        
+        /* Custom Styles */
+        .bg-animated {
+            background: var(--bg-primary);
+            transition: all 0.7s ease;
+        }
+        
+        .text-gradient {
+            background: var(--accent-primary);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-glass {
+            background: var(--card-bg);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 25px 60px var(--shadow-color);
+        }
+        
+        .btn-gradient {
+            background: var(--accent-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-gradient:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px var(--shadow-color);
+        }
+        
+        /* Enhanced Navigation Link Styles */
+        .nav-link {
+            position: relative;
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #dbeafe, #ede9fe);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+        }
+        
+        .nav-link:hover::before {
+            width: 100%;
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        /* Dark theme navigation */
+        [data-theme="dark"] .nav-link {
+            color: var(--text-secondary);
+        }
+        
+        [data-theme="dark"] .nav-link::before {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
+        }
+        
+        [data-theme="dark"] .nav-link::after {
+            background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4);
+        }
+        
+        [data-theme="dark"] .nav-link:hover {
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
+        }
+        
+        /* Mobile Navigation Link Styles */
+        .mobile-nav-link {
+            position: relative;
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 12px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+        }
+        
+        .mobile-nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #dbeafe, #ede9fe);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .mobile-nav-link:hover {
+            color: #2563eb;
+            transform: translateX(8px);
+        }
+        
+        .mobile-nav-link:hover::before {
+            left: 0;
+        }
+        
+        [data-theme="dark"] .mobile-nav-link {
+            color: var(--text-secondary);
+        }
+        
+        [data-theme="dark"] .mobile-nav-link::before {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
+        }
+        
+        [data-theme="dark"] .mobile-nav-link:hover {
+            color: #ffffff;
+        }
+        
+        /* Theme Toggle Button Styles */
+        .theme-toggle {
+            position: relative;
+            padding: 12px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .theme-toggle:hover::before {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+        
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(12deg);
+        }
+        
+        [data-theme="dark"] .theme-toggle {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            color: #0f172a;
+        }
+        
+        [data-theme="dark"] .theme-toggle::before {
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.3), transparent);
+        }
+        
+        [data-theme="dark"] .theme-toggle:hover {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+        
+        /* Light theme toggle button */
+        .theme-toggle {
+            background: linear-gradient(135deg, #374151, #111827);
+            color: #ffffff;
+        }
+        
+        .theme-toggle:hover {
+            box-shadow: 0 0 20px rgba(55, 65, 81, 0.5);
+        }
+        
+        /* Auth Button Styles */
+        .auth-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .auth-btn:hover::before {
+            left: 0;
+        }
+        
+        .login-btn {
+            border: 2px solid #3b82f6;
+            color: #3b82f6;
+        }
+        
+        .login-btn:hover {
+            background: #3b82f6;
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
+        }
+        
+        [data-theme="dark"] .login-btn {
+            border: 2px solid #a855f7;
+            color: #a855f7;
+        }
+        
+        [data-theme="dark"] .login-btn:hover {
+            background: #a855f7;
+            color: #ffffff;
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
+        }
+        
+        [data-theme="dark"] .auth-btn::before {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+        }
+        
+        /* Smooth Transitions */
+        * {
+            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1f2937; }
+        ::-webkit-scrollbar-thumb { 
+            background: linear-gradient(135deg, #8b5cf6, #ec4899);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover { 
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+        }
+        
+        /* Focus States */
+        *:focus {
+            outline: 2px solid #8b5cf6;
+            outline-offset: 2px;
+        }
+        
+        /* Loading Animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f172a 0%, #581c87 50%, #0f172a 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        
+        .loading-spinner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid rgba(168, 85, 247, 0.2);
+            border-top: 4px solid #a855f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 2rem;
+        }
+        
+        .loading-spinner-inner {
+            width: 80px;
+            height: 80px;
+            border: 4px solid transparent;
+            border-top: 4px solid #ec4899;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite reverse;
+            position: absolute;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-center { text-align: center; }
+            .mobile-padding { padding: 1rem; }
+        }
+        
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Hide elements initially for animations */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="font-sans overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="relative">
+            <div class="loading-spinner"></div>
+            <div class="loading-spinner-inner"></div>
+        </div>
+        <h2 class="text-3xl font-bold text-gradient animate-pulse mb-4">
+            ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+        </h2>
+        <p class="text-gray-400 text-lg animate-fade-in">Loading amazing experience...</p>
+        <div class="w-64 h-2 bg-slate-700 rounded-full mx-auto mt-6 overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 rounded-full animate-progress"></div>
+        </div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none bg-animated" id="animatedBg">
+        <!-- Floating Shapes -->
+        <div class="absolute inset-0" id="floatingShapes">
+            <!-- Shapes will be generated by JavaScript -->
+        </div>
+
+        <!-- Grid Pattern -->
+        <div class="absolute inset-0 opacity-5" id="gridPattern" style="background-image: radial-gradient(circle, #3b82f6 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/30 to-purple-50/50" id="gradientOverlay"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img 
+                        src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
+                        alt="Premium Subscription Logo"
+                        class="h-10 w-auto filter drop-shadow-lg hover:scale-105 transition-transform duration-300"
+                    />
+                    <h1 class="text-2xl font-bold tracking-wide text-gradient animate-logo-glow hover:scale-105 transition-transform duration-300">
+                        ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+                    </h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-2" id="desktopNav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#courses" class="nav-link">Courses</a>
+                    <a href="#teachers" class="nav-link">Teachers</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Theme Toggle & Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="theme-toggle transform hover:rotate-12">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <div class="hidden md:flex space-x-3">
+                        <button class="auth-btn login-btn px-6 py-2 rounded-full font-semibold">
+                            Login
+                        </button>
+                        <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden mt-4 p-4 rounded-xl card-glass shadow-xl animate-fade-in hidden">
+                <nav class="flex flex-col space-y-2">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#courses" class="mobile-nav-link">Courses</a>
+                    <a href="#teachers" class="mobile-nav-link">Teachers</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <div class="flex space-x-3 pt-3 border-t border-gray-300/20">
+                        <button class="flex-1 auth-btn login-btn px-4 py-2 rounded-lg font-semibold">
+                            Login
+                        </button>
+                        <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 overflow-hidden" id="heroParticles">
+            <!-- Particles will be generated by JavaScript -->
+        </div>
+
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="fade-in-element" id="heroContent">
+                <!-- Main Title -->
+                <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight" id="heroTitle">
+                    <span class="inline-block mx-2" style="color: var(--text-primary);">Welcome</span>
+                    <span class="inline-block mx-2" style="color: var(--text-primary);">to</span>
+                    <span class="inline-block mx-2 text-gradient hover:scale-105 cursor-default">Premium</span>
+                    <span class="inline-block mx-2 text-gradient hover:scale-105 cursor-default">Subscription</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed" style="color: var(--text-secondary);">
+                    The most <span class="font-bold text-green-500 animate-pulse">TRUSTED</span> platform for premium subscriptions at unbeatable prices!
+                </p>
+
+                <!-- Decorative Line -->
+                <div class="w-32 h-1 mx-auto mb-12 rounded-full btn-gradient animate-pulse"></div>
+
+                <!-- CTA Button -->
+                <button class="group relative px-12 py-6 text-xl font-bold rounded-full transition-all duration-500 transform hover:scale-110 btn-gradient hover:shadow-3xl" id="ctaButton">
+                    <span class="relative z-10 flex items-center space-x-3">
+                        <i data-lucide="sparkles" class="w-6 h-6 animate-spin"></i>
+                        <span>Get Started</span>
+                        <i data-lucide="arrow-right" class="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300"></i>
+                    </span>
+                    
+                    <!-- Sparkle Effects -->
+                    <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" id="ctaSparkles">
+                        <!-- Sparkles will be generated by JavaScript -->
+                    </div>
+                </button>
+
+                <!-- Stats -->
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto" id="heroStats">
+                    <div class="stat-card p-6 rounded-2xl transition-all duration-500 hover:scale-105 card-glass group cursor-default">
+                        <i data-lucide="star" class="mx-auto mb-4 w-8 h-8 text-gradient"></i>
+                        <div class="text-3xl font-black mb-2 text-gradient">10K+</div>
+                        <div class="text-sm font-medium" style="color: var(--text-secondary);">Happy Customers</div>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl transition-all duration-500 hover:scale-105 card-glass group cursor-default">
+                        <i data-lucide="sparkles" class="mx-auto mb-4 w-8 h-8 text-gradient"></i>
+                        <div class="text-3xl font-black mb-2 text-gradient">500+</div>
+                        <div class="text-sm font-medium" style="color: var(--text-secondary);">Premium Services</div>
+                    </div>
+                    <div class="stat-card p-6 rounded-2xl transition-all duration-500 hover:scale-105 card-glass group cursor-default">
+                        <i data-lucide="arrow-right" class="mx-auto mb-4 w-8 h-8 text-gradient"></i>
+                        <div class="text-3xl font-black mb-2 text-gradient">99.9%</div>
+                        <div class="text-sm font-medium" style="color: var(--text-secondary);">Uptime Guarantee</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20" style="background: var(--bg-secondary);">
+        <div class="container mx-auto px-6">
+            <!-- Section Title -->
+            <div class="text-center mb-16 fade-in-element">
+                <h2 class="text-5xl md:text-6xl font-black mb-6 text-gradient">
+                    Featured Subscriptions
+                </h2>
+                <div class="w-32 h-1 mx-auto rounded-full btn-gradient"></div>
+            </div>
+
+            <!-- Course Slider -->
+            <div class="relative max-w-6xl mx-auto fade-in-element" id="courseSlider">
+                <div class="overflow-hidden rounded-3xl">
+                    <div class="flex transition-transform duration-700 ease-in-out" id="sliderTrack">
+                        <!-- Course 1 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="relative p-8 rounded-3xl transition-all duration-500 card-glass hover:shadow-3xl group overflow-hidden">
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-cyan-500/10 blur-xl"></div>
+                                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                                    <div class="relative">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" 
+                                            alt="Netflix Premium"
+                                            class="w-full h-80 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+                                    <div class="space-y-6">
+                                        <div class="inline-block px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-red-100 to-pink-100 text-red-700 border border-red-300/50">
+                                            Entertainment
+                                        </div>
+                                        <h3 class="text-3xl md:text-4xl font-black" style="color: var(--text-primary);">Netflix Premium Subscription</h3>
+                                        <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">Enjoy unlimited streaming with 4K quality, multiple screens, and exclusive content. Perfect for families and movie enthusiasts.</p>
+                                        <div class="flex flex-wrap gap-6 text-sm">
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="star" class="w-4 h-4 text-yellow-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">4.9</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="users" class="w-4 h-4 text-blue-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">15,420 customers</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="clock" class="w-4 h-4 text-green-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">1 Year</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between flex-wrap gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <span class="text-4xl font-black text-green-500">$29</span>
+                                                <span class="text-lg line-through text-gray-400">$199</span>
+                                            </div>
+                                            <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 btn-gradient hover:shadow-2xl group relative overflow-hidden">
+                                                <span class="relative z-10 flex items-center space-x-2">
+                                                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                                                    <span>Subscribe Now</span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="relative p-8 rounded-3xl transition-all duration-500 card-glass hover:shadow-3xl group overflow-hidden">
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-cyan-500/10 blur-xl"></div>
+                                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                                    <div class="relative">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80" 
+                                            alt="Spotify Premium"
+                                            class="w-full h-80 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+                                    <div class="space-y-6">
+                                        <div class="inline-block px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-green-100 to-emerald-100 text-green-700 border border-green-300/50">
+                                            Music
+                                        </div>
+                                        <h3 class="text-3xl md:text-4xl font-black" style="color: var(--text-primary);">Spotify Premium Family</h3>
+                                        <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">Premium music streaming for up to 6 accounts. Ad-free listening, offline downloads, and unlimited skips.</p>
+                                        <div class="flex flex-wrap gap-6 text-sm">
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="star" class="w-4 h-4 text-yellow-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">4.8</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="users" class="w-4 h-4 text-blue-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">12,350 customers</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="clock" class="w-4 h-4 text-green-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">1 Year</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between flex-wrap gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <span class="text-4xl font-black text-green-500">$39</span>
+                                                <span class="text-lg line-through text-gray-400">$179</span>
+                                            </div>
+                                            <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 btn-gradient hover:shadow-2xl group relative overflow-hidden">
+                                                <span class="relative z-10 flex items-center space-x-2">
+                                                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                                                    <span>Subscribe Now</span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="w-full flex-shrink-0">
+                            <div class="relative p-8 rounded-3xl transition-all duration-500 card-glass hover:shadow-3xl group overflow-hidden">
+                                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-purple-500/10 via-pink-500/10 to-cyan-500/10 blur-xl"></div>
+                                <div class="relative z-10 grid md:grid-cols-2 gap-8 items-center">
+                                    <div class="relative">
+                                        <img 
+                                            src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" 
+                                            alt="Adobe Creative"
+                                            class="w-full h-80 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                                        />
+                                    </div>
+                                    <div class="space-y-6">
+                                        <div class="inline-block px-4 py-2 rounded-full text-sm font-bold bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700 border border-purple-300/50">
+                                            Creative
+                                        </div>
+                                        <h3 class="text-3xl md:text-4xl font-black" style="color: var(--text-primary);">Adobe Creative Suite</h3>
+                                        <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">Complete access to Photoshop, Illustrator, Premiere Pro, and more. Perfect for creators and professionals.</p>
+                                        <div class="flex flex-wrap gap-6 text-sm">
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="star" class="w-4 h-4 text-yellow-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">4.9</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="users" class="w-4 h-4 text-blue-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">8,750 customers</span>
+                                            </div>
+                                            <div class="flex items-center space-x-2">
+                                                <i data-lucide="clock" class="w-4 h-4 text-green-500"></i>
+                                                <span class="font-semibold" style="color: var(--text-secondary);">1 Year</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center justify-between flex-wrap gap-4">
+                                            <div class="flex items-center space-x-3">
+                                                <span class="text-4xl font-black text-green-500">$89</span>
+                                                <span class="text-lg line-through text-gray-400">$599</span>
+                                            </div>
+                                            <button class="px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 transform hover:scale-105 btn-gradient hover:shadow-2xl group relative overflow-hidden">
+                                                <span class="relative z-10 flex items-center space-x-2">
+                                                    <i data-lucide="book-open" class="w-5 h-5"></i>
+                                                    <span>Subscribe Now</span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button id="prevSlide" class="absolute left-4 top-1/2 transform -translate-y-1/2 p-4 rounded-full transition-all duration-300 hover:scale-110 z-20 card-glass backdrop-blur-xl">
+                    <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                </button>
+
+                <button id="nextSlide" class="absolute right-4 top-1/2 transform -translate-y-1/2 p-4 rounded-full transition-all duration-300 hover:scale-110 z-20 card-glass backdrop-blur-xl">
+                    <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                </button>
+
+                <!-- Dots Indicator -->
+                <div class="flex justify-center space-x-3 mt-8" id="dotsContainer">
+                    <button class="dot w-3 h-3 rounded-full transition-all duration-300 bg-blue-500 scale-125" data-slide="0"></button>
+                    <button class="dot w-3 h-3 rounded-full transition-all duration-300 bg-gray-300" data-slide="1"></button>
+                    <button class="dot w-3 h-3 rounded-full transition-all duration-300 bg-gray-300" data-slide="2"></button>
+                </div>
+            </div>
+
+            <!-- More Courses Button -->
+            <div class="text-center mt-16 fade-in-element">
+                <button class="px-12 py-4 rounded-full font-bold text-xl transition-all duration-300 transform hover:scale-105 relative overflow-hidden group btn-gradient shadow-2xl hover:shadow-3xl">
+                    <span class="relative z-10">Explore All Subscriptions</span>
+                    
+                    <!-- Sparkle Animation -->
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" id="exploreSparkles">
+                        <!-- Sparkles will be generated by JavaScript -->
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teachers Section -->
+    <section id="teachers" class="py-20" style="background: var(--bg-secondary);">
+        <div class="container mx-auto px-6">
+            <!-- Expert Quote Section -->
+            <div class="max-w-5xl mx-auto fade-in-element">
+                <div class="relative p-12 md:p-16 rounded-3xl transition-all duration-500 hover:scale-105 card-glass group overflow-hidden">
+                    
+                    <!-- Background Glow -->
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-purple-500/5 via-pink-500/5 to-cyan-500/5 blur-2xl"></div>
+
+                    <!-- Top Quote Icon -->
+                    <div class="absolute top-6 left-6 opacity-20 text-gradient">
+                        <i data-lucide="quote" class="w-12 h-12"></i>
+                    </div>
+
+                    <div class="relative z-10 text-center">
+                        <h2 class="text-4xl md:text-5xl font-black mb-8 text-gradient">
+                            Meet Our Expert Team
+                        </h2>
+
+                        <blockquote class="text-2xl md:text-3xl leading-relaxed italic mb-8" style="color: var(--text-secondary);">
+                            "Our passionate experts bring years of experience and dedication to every service.
+                            We don't just provide subscriptions – we create premium experiences, build lasting relationships, 
+                            and ensure exceptional value for every customer."
+                        </blockquote>
+
+                        <div class="flex items-center justify-center space-x-6 mb-8">
+                            <div class="w-16 h-1 rounded-full btn-gradient"></div>
+                            <span class="text-2xl font-bold tracking-widest text-gradient">
+                                ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+                            </span>
+                            <div class="w-16 h-1 rounded-full btn-gradient"></div>
+                        </div>
+
+                        <!-- Team Stats -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                            <div class="p-6 rounded-2xl transition-all duration-500 hover:scale-105 card-glass group cursor-default shadow-lg hover:shadow-xl">
+                                <i data-lucide="award" class="mx-auto mb-4 w-10 h-10 text-yellow-500"></i>
+                                <div class="text-3xl font-black mb-2 text-gradient">50+</div>
+                                <div class="text-sm font-semibold" style="color: var(--text-secondary);">Expert Partners</div>
+                            </div>
+                            <div class="p-6 rounded-2xl transition-all duration-500 hover:scale-105 card-glass group cursor-default shadow-lg hover:shadow-xl">
+                                <i data-lucide="users" class="mx-auto mb-4 w-10 h-10 text-green-500"></i>
+                                <div class="text-3xl font-black mb-2 text-gradient">24/7</div>
+                                <div class="text-sm font-semibold" style="color: var(--text-secondary);">Customer Support</div>
+                            </div>
+                            <div class="p-6 rounded-2xl transition-all duration-500 hover:scale-105 card-glass group cursor-default shadow-lg hover:shadow-xl">
+                                <i data-lucide="star" class="mx-auto mb-4 w-10 h-10 text-purple-500"></i>
+                                <div class="text-3xl font-black mb-2 text-gradient">5.0</div>
+                                <div class="text-sm font-semibold" style="color: var(--text-secondary);">Average Rating</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Quote Icon (Rotated) -->
+                    <div class="absolute bottom-6 right-6 opacity-20 rotate-180 text-gradient">
+                        <i data-lucide="quote" class="w-12 h-12"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Meet Our Team Button -->
+            <div class="text-center mt-16 fade-in-element">
+                <button class="px-12 py-4 rounded-full font-bold text-xl transition-all duration-500 transform hover:scale-110 relative overflow-hidden group btn-gradient shadow-2xl hover:shadow-3xl">
+                    <span class="relative z-10 flex items-center space-x-3">
+                        <i data-lucide="users" class="w-6 h-6"></i>
+                        <span>Meet Our Expert Team</span>
+                        <i data-lucide="award" class="w-6 h-6"></i>
+                    </span>
+                    
+                    <!-- Sparkle Animation -->
+                    <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" id="teamSparkles">
+                        <!-- Sparkles will be generated by JavaScript -->
+                    </div>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+        <!-- Animated Wave Background -->
+        <div class="absolute top-0 left-0 w-full h-20 overflow-hidden">
+            <svg 
+                class="absolute top-0 left-0 w-full h-full opacity-20 animate-wave" 
+                viewBox="0 0 1200 120" 
+                preserveAspectRatio="none"
+            >
+                <path 
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+                    fill="rgba(59, 130, 246, 0.1)"
+                />
+            </svg>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none" id="footerParticles">
+            <!-- Particles will be generated by JavaScript -->
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 py-16">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 fade-in-element">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img 
+                            src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
+                            alt="Premium Subscription Logo"
+                            class="h-12 w-auto filter drop-shadow-lg"
+                        />
+                        <h3 class="text-3xl font-black tracking-wide text-gradient animate-pulse">
+                            ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+                        </h3>
+                    </div>
+                    
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
+                        Your trusted partner in premium digital experiences. We provide quality subscriptions 
+                        at unbeatable prices with innovative service methods and personalized customer support.
+                    </p>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4" id="socialLinks">
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="facebook" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="twitter" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="instagram" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="youtube" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="fade-in-element">
+                    <h4 class="text-xl font-bold text-white mb-6 relative">
+                        Quick Links
+                        <div class="absolute bottom-0 left-0 w-12 h-0.5 btn-gradient"></div>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Home
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Subscriptions
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            About Us
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Support
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Terms
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Privacy
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Services -->
+                <div class="fade-in-element">
+                    <h4 class="text-xl font-bold text-white mb-6 relative">
+                        Popular Services
+                        <div class="absolute bottom-0 left-0 w-12 h-0.5 btn-gradient"></div>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Netflix Premium
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Spotify Family
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Adobe Creative
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Microsoft 365
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Disney+
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Prime Video
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="p-8 rounded-2xl mb-12 bg-gradient-to-r from-blue-700 via-indigo-800 to-purple-800 fade-in-element">
+                <h4 class="text-2xl font-bold text-white mb-6 text-center">
+                    Get in Touch
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-center space-x-4 group">
+                        <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
+                            +1 (555) 123-4567
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
+                            support@premiumsub.com
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
+                            123 Premium Street, Digital City
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-700/50 pt-8 fade-in-element">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                    <div class="flex items-center space-x-4 text-gray-400 text-sm">
+                        <span>&copy; 2024 Premium Subscription. All rights reserved.</span>
+                        <span class="hidden md:inline">|</span>
+                        <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <span class="hidden md:inline">|</span>
+                        <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                        <span>Made with</span>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 animate-pulse"></i>
+                        <span>by Premium Team</span>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-400 animate-spin"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Global Variables
+        let currentSlide = 0;
+        const totalSlides = 3;
+        let isDark = false;
+        let isScrolled = false;
+
+        // DOM Elements
+        const loadingScreen = document.getElementById('loadingScreen');
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const header = document.getElementById('header');
+        const sliderTrack = document.getElementById('sliderTrack');
+        const prevSlideBtn = document.getElementById('prevSlide');
+        const nextSlideBtn = document.getElementById('nextSlide');
+        const dotsContainer = document.getElementById('dotsContainer');
+
+        // Initialize App
+        function initApp() {
+            // Remove loading screen
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                }, 500);
+            }, 2000);
+
+            // Initialize theme from localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                toggleTheme();
+            }
+
+            // Generate floating shapes
+            generateFloatingShapes();
+            generateHeroParticles();
+            generateFooterParticles();
+
+            // Initialize animations
+            initScrollAnimations();
+            initSlider();
+            initSparkleEffects();
+
+            // Initialize event listeners
+            initEventListeners();
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            isDark = !isDark;
+            document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Update theme toggle icon
+            const icon = themeToggle.querySelector('i');
+            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+            lucide.createIcons();
+
+            // Update background patterns for dark mode
+            updateThemeStyles();
+        }
+
+        function updateThemeStyles() {
+            // Update grid pattern
+            const gridPattern = document.getElementById('gridPattern');
+            gridPattern.style.backgroundImage = `radial-gradient(circle, ${isDark ? '#a855f7' : '#3b82f6'} 1px, transparent 1px)`;
+            
+            // Update gradient overlay
+            const gradientOverlay = document.getElementById('gradientOverlay');
+            if (isDark) {
+                gradientOverlay.className = 'absolute inset-0 bg-gradient-to-br from-slate-900/50 via-purple-900/30 to-slate-900/50';
+            } else {
+                gradientOverlay.className = 'absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white/30 to-purple-50/50';
+            }
+
+            // Update mobile menu toggle color
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            if (isDark) {
+                mobileMenuToggle.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
+                mobileMenuToggle.classList.remove('hover:bg-gray-100');
+            } else {
+                mobileMenuToggle.classList.add('hover:bg-gray-100');
+                mobileMenuToggle.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
+            }
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'x');
+            }
+            
+            lucide.createIcons();
+        }
+
+        // Slider Functions
+        function initSlider() {
+            updateSlider();
+            
+            // Auto-slide
+            setInterval(() => {
+                nextSlide();
+            }, 5000);
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            const dots = dotsContainer.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.className = 'dot w-3 h-3 rounded-full transition-all duration-300 bg-blue-500 scale-125';
+                } else {
+                    dot.className = 'dot w-3 h-3 rounded-full transition-all duration-300 bg-gray-300';
+                }
+            });
+        }
+
+        // Generate Floating Shapes
+        function generateFloatingShapes() {
+            const container = document.getElementById('floatingShapes');
+            const shapes = 8;
+            
+            for (let i = 0; i < shapes; i++) {
+                const shape = document.createElement('div');
+                const size = Math.random() * 200 + 100;
+                const colors = [
+                    'bg-gradient-to-br from-blue-400 to-purple-400',
+                    'bg-gradient-to-br from-green-400 to-blue-400', 
+                    'bg-gradient-to-br from-purple-400 to-pink-400',
+                    'bg-gradient-to-br from-pink-500 to-orange-500',
+                    'bg-gradient-to-br from-cyan-400 to-purple-500'
+                ];
+                
+                shape.className = `absolute animate-float opacity-10 ${colors[i % colors.length]}`;
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.top = `${Math.random() * 100}%`;
+                shape.style.borderRadius = i % 2 === 0 ? '50%' : '20px';
+                shape.style.animationDelay = `${i * 2}s`;
+                shape.style.animationDuration = `${Math.random() * 10 + 15}s`;
+                shape.style.filter = 'blur(1px)';
+                
+                container.appendChild(shape);
+            }
+        }
+
+        // Generate Hero Particles
+        function generateHeroParticles() {
+            const container = document.getElementById('heroParticles');
+            const particles = 50;
+            
+            for (let i = 0; i < particles; i++) {
+                const particle = document.createElement('div');
+                particle.className = `absolute animate-float-particle ${
+                    isDark ? 'bg-purple-400/30' : 'bg-blue-400/30'
+                } rounded-full`;
+                
+                const size = Math.random() * 4 + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 3 + 2}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Generate Footer Particles
+        function generateFooterParticles() {
+            const container = document.getElementById('footerParticles');
+            const particles = 20;
+            
+            for (let i = 0; i < particles; i++) {
+                const particle = document.createElement('div');
+                const colors = ['bg-purple-400', 'bg-pink-400', 'bg-cyan-400', 'bg-blue-400'];
+                
+                particle.className = `absolute w-1 h-1 rounded-full animate-float opacity-30 ${colors[i % colors.length]}`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 3 + 4}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialize Sparkle Effects
+        function initSparkleEffects() {
+            const sparkleContainers = ['ctaSparkles', 'exploreSparkles', 'teamSparkles'];
+            
+            sparkleContainers.forEach(containerId => {
+                const container = document.getElementById(containerId);
+                if (container) {
+                    for (let i = 0; i < 8; i++) {
+                        const sparkle = document.createElement('div');
+                        sparkle.className = 'absolute w-1 h-1 bg-white rounded-full animate-ping';
+                        sparkle.style.top = `${20 + Math.random() * 60}%`;
+                        sparkle.style.left = `${10 + Math.random() * 80}%`;
+                        sparkle.style.animationDelay = `${i * 0.1}s`;
+                        container.appendChild(sparkle);
+                    }
+                }
+            });
+        }
+
+        // Scroll Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe fade-in elements
+            document.querySelectorAll('.fade-in-element').forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // Header Scroll Effect
+        function handleScroll() {
+            const scrollY = window.scrollY;
+            const newIsScrolled = scrollY > 50;
+            
+            if (newIsScrolled !== isScrolled) {
+                isScrolled = newIsScrolled;
+                
+                if (isScrolled) {
+                    header.className = `fixed w-full top-0 z-50 transition-all duration-300 ${
+                        isDark 
+                            ? 'bg-slate-900/95 backdrop-blur-xl border-b border-purple-500/20 shadow-2xl shadow-purple-500/10'
+                            : 'bg-white/95 backdrop-blur-xl border-b border-blue-200/50 shadow-xl'
+                    }`;
+                } else {
+                    header.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-transparent';
+                }
+            }
+        }
+
+        // Smooth Scrolling
+        function smoothScroll(targetId) {
+            const target = document.querySelector(targetId);
+            if (target) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Event Listeners
+        function initEventListeners() {
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+            
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            
+            // Slider controls
+            prevSlideBtn.addEventListener('click', prevSlide);
+            nextSlideBtn.addEventListener('click', nextSlide);
+            
+            // Dots navigation
+            dotsContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('dot')) {
+                    const slideIndex = parseInt(e.target.getAttribute('data-slide'));
+                    goToSlide(slideIndex);
+                }
+            });
+            
+            // Scroll handling
+            window.addEventListener('scroll', handleScroll);
+            
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    smoothScroll(targetId);
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // Button click effects
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Scale animation
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        }
+
+        // Start the app
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>
