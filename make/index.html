@@ -129,13 +129,9 @@
                                 class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300">
                                 <option value="" class="text-gray-800">Select Type</option>
                                 <option value="ACS" class="text-gray-800">ACS</option>
-                                <option value="RTDS" class="text-gray-800">RTDS Live</option>
-                                <option value="Battle of Biology" class="text-gray-800">Battle of Biology</option>
-                                <option value="CPS" class="text-gray-800">CPS</option>
-                                <option value="Physics Hunters" class="text-gray-800">Physics Hunters</option>
-                                <option value="Bondi Pathshala" class="text-gray-800">Bondi Pathshala</option>
-                                <option value="Biology Haters" class="text-gray-800">Biology Haters</option>
-                                <option value="OpenLearn" class="text-gray-800">OpenLearn by Shaown R.</option>
+                                <option value="Batch" class="text-gray-800">Batch</option>
+                                <option value="Live" class="text-gray-800">Live</option>
+                                <option value="Recorded" class="text-gray-800">Recorded</option>
                             </select>
                         </div>
                     </div>
@@ -207,7 +203,7 @@
                     </div>
 
                     <!-- Generate Button -->
-                    <button type="submit" 
+                    <button type="button" id="generateBtn"
                         class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg flex items-center justify-center space-x-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
@@ -256,43 +252,139 @@
     <script>
         let generatedJSON = '';
 
-        document.getElementById('courseForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up event listeners...');
             
-            // Get form data
-            const formData = new FormData(this);
+            const form = document.getElementById('courseForm');
+            const generateBtn = document.getElementById('generateBtn');
             
-            // Process subject and grade arrays
-            const subjectArray = formData.get('subject').split(',').map(s => s.trim()).filter(s => s);
-            const gradeArray = formData.get('grade').split(',').map(g => g.trim()).filter(g => g);
+            if (!form) {
+                console.error('Form not found!');
+                return;
+            }
             
-            // Create course object
-            const courseObject = {
-                id: parseInt(formData.get('id')),
-                title: formData.get('title'),
-                description: formData.get('description'),
-                category: formData.get('category'),
-                subject: subjectArray,
-                grade: gradeArray,
-                courseType: formData.get('courseType'),
-                price: parseFloat(formData.get('price')),
-                originalPrice: parseFloat(formData.get('originalPrice')),
-                duration: formData.get('duration'),
-                students: parseInt(formData.get('students')),
-                rating: parseFloat(formData.get('rating')),
-                image: formData.get('image')
-            };
+            if (!generateBtn) {
+                console.error('Generate button not found!');
+                return;
+            }
             
-            // Generate formatted JSON
-            generatedJSON = JSON.stringify(courseObject, null, 2);
+            // Handle button click instead of form submit
+            generateBtn.addEventListener('click', function(e) {
+                console.log('Generate button clicked...');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                try {
+                    // Get form data
+                    const formData = new FormData(form);
+                    console.log('FormData created successfully');
+                    
+                    // Validate required fields
+                    const requiredFields = ['id', 'title', 'description', 'category', 'subject', 'grade', 'courseType', 'price', 'originalPrice', 'duration', 'students', 'rating', 'image'];
+                    
+                    for (let field of requiredFields) {
+                        if (!formData.get(field) || formData.get(field).trim() === '') {
+                            alert(`Please fill in the ${field} field`);
+                            return;
+                        }
+                    }
+                    
+                    // Process subject and grade arrays
+                    const subjectArray = formData.get('subject').split(',').map(s => s.trim()).filter(s => s);
+                    const gradeArray = formData.get('grade').split(',').map(g => g.trim()).filter(g => g);
+                    
+                    // Create course object
+                    const courseObject = {
+                        id: parseInt(formData.get('id')),
+                        title: formData.get('title'),
+                        description: formData.get('description'),
+                        category: formData.get('category'),
+                        subject: subjectArray,
+                        grade: gradeArray,
+                        courseType: formData.get('courseType'),
+                        price: parseFloat(formData.get('price')),
+                        originalPrice: parseFloat(formData.get('originalPrice')),
+                        duration: formData.get('duration'),
+                        students: parseInt(formData.get('students')),
+                        rating: parseFloat(formData.get('rating')),
+                        image: formData.get('image')
+                    };
+                    
+                    console.log('Course object created:', courseObject);
+                    
+                    // Generate formatted JSON
+                    generatedJSON = JSON.stringify(courseObject, null, 2);
+                    console.log('JSON generated successfully');
+                    
+                    // Display with syntax highlighting
+                    displayJSON(generatedJSON);
+                    
+                    // Show copy button
+                    const copyButton = document.getElementById('copyButton');
+                    copyButton.classList.remove('opacity-0', 'invisible');
+                    copyButton.classList.add('opacity-100', 'visible');
+                    
+                } catch (error) {
+                    console.error('Error generating JSON:', error);
+                    alert('Error generating JSON: ' + error.message);
+                }
+                
+                return false;
+            });
             
-            // Display with syntax highlighting
-            displayJSON(generatedJSON);
-            
-            // Show copy button
-            const copyButton = document.getElementById('copyButton');
-            copyButton.classList.remove('opacity-0', 'invisible');
-            copyButton.classList.add('opacity-100', 'visible');
+            form.addEventListener('submit', function(e) {
+                console.log('Form submitted, preventing default...');
+                e.preventDefault();
+                e.stopPropagation();
+                
+                try {
+                    // Get form data
+                    const formData = new FormData(this);
+                    console.log('FormData created successfully');
+                    
+                    // Process subject and grade arrays
+                    const subjectArray = formData.get('subject').split(',').map(s => s.trim()).filter(s => s);
+                    const gradeArray = formData.get('grade').split(',').map(g => g.trim()).filter(g => g);
+                    
+                    // Create course object
+                    const courseObject = {
+                        id: parseInt(formData.get('id')),
+                        title: formData.get('title'),
+                        description: formData.get('description'),
+                        category: formData.get('category'),
+                        subject: subjectArray,
+                        grade: gradeArray,
+                        courseType: formData.get('courseType'),
+                        price: parseFloat(formData.get('price')),
+                        originalPrice: parseFloat(formData.get('originalPrice')),
+                        duration: formData.get('duration'),
+                        students: parseInt(formData.get('students')),
+                        rating: parseFloat(formData.get('rating')),
+                        image: formData.get('image')
+                    };
+                    
+                    console.log('Course object created:', courseObject);
+                    
+                    // Generate formatted JSON
+                    generatedJSON = JSON.stringify(courseObject, null, 2);
+                    console.log('JSON generated successfully');
+                    
+                    // Display with syntax highlighting
+                    displayJSON(generatedJSON);
+                    
+                    // Show copy button
+                    const copyButton = document.getElementById('copyButton');
+                    copyButton.classList.remove('opacity-0', 'invisible');
+                    copyButton.classList.add('opacity-100', 'visible');
+                    
+                } catch (error) {
+                    console.error('Error generating JSON:', error);
+                    alert('Error generating JSON: ' + error.message);
+                }
+                
+                return false;
+            });
         });
         
         function displayJSON(json) {
@@ -302,16 +394,16 @@
             const highlighted = json
                 .replace(/"([^"]+)":/g, '<span class="json-key">"$1"</span>:')
                 .replace(/: "([^"]+)"/g, ': <span class="json-string">"$1"</span>')
-                .replace(/: (\\d+\\.?\\d*)/g, ': <span class="json-number">$1</span>')
-                .replace(/\
-/g, '<br>')
+                .replace(/: (\d+\.?\d*)/g, ': <span class="json-number">$1</span>')
+                .replace(/\n/g, '<br>')
                 .replace(/  /g, '&nbsp;&nbsp;');
             
             output.innerHTML = `<pre class="text-sm leading-relaxed">${highlighted}</pre>`;
         }
         
-        // Copy to clipboard functionality
-        document.getElementById('copyButton').addEventListener('click', async function() {
+        // Copy to clipboard functionality (also wait for DOM)
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('copyButton').addEventListener('click', async function() {
             try {
                 await navigator.clipboard.writeText(generatedJSON);
                 
@@ -337,7 +429,7 @@
             }
         });
         
-        // Add smooth animations to form inputs
+        // Add smooth animations to form inputs (also wait for DOM)
         document.querySelectorAll('input, select, textarea').forEach(input => {
             input.addEventListener('focus', function() {
                 this.parentElement.classList.add('transform', 'scale-105');
@@ -346,6 +438,8 @@
             input.addEventListener('blur', function() {
                 this.parentElement.classList.remove('transform', 'scale-105');
             });
+        });
+        
         });
         
         // Auto-fill example data (for demo purposes)
@@ -370,3 +464,4 @@
     </script>
 </body>
 </html>
+
