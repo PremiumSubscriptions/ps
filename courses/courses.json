@@ -1,20 +1,20 @@
 [    
-{
-  "id": 1,
-  "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-1)",
-  "description": "HSC 27 (SSC 25) ব্যাচের ACS Physics Academic Cycle 1 এ ১ম পত্রের নিম্নোক্ত ৩ টি অধ্যায় কভার করা হবে:অধ্যায় ১: ভৌত জগৎ ও পরিমাপ , অধ্যায় ২: ভেক্টর, অধ্যায় ৩: গতিবিদ্যা, কোর্স এর সাথে পাবেন--টপিক ভিক্তিক ক্লাস ( 1080p ),প্রতি ক্লাস এর লেকচার শীট,বাড়ির কাজের পিডিএফ , অধ্যায় শেষে প্র্যাকটিস শীট. মাঝে মাঝে অধ্যায় ভিক্তিক ডাউট সলভ ক্লাস, আগের ব্যাচ এর ক্লাস ( আর্কাইভ ), লাইফটাইম এক্সেস পাবে--শিক্ষক প্যানেল অপুর্ব অপু, মাশরুর রাহমান",
-  "category": "Physics",
-  "subject": ["Physics"],
-  "grade": ["HSC 27"],
-  "courseType": "ACS",
-  "price": 100,
-  "originalPrice": 1500,
-  "duration": "2.5 months",
-  "students": 6000,
-  "rating": 5.0,
-  "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-},
-{
+    {
+    "id": 1,
+    "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-1)",
+    "description": "HSC 27 (SSC 25) ব্যাচের ACS Physics Academic Cycle 1 এ ১ম পত্রের নিম্নোক্ত ৩ টি অধ্যায় কভার করা হবে:অধ্যায় ১: ভৌত জগৎ ও পরিমাপ , অধ্যায় ২: ভেক্টর, অধ্যায় ৩: গতিবিদ্যা, কোর্স এর সাথে পাবেন--টপিক ভিক্তিক ক্লাস ( 1080p ),প্রতি ক্লাস এর লেকচার শীট,বাড়ির কাজের পিডিএফ , অধ্যায় শেষে প্র্যাকটিস শীট. মাঝে মাঝে অধ্যায় ভিক্তিক ডাউট সলভ ক্লাস, আগের ব্যাচ এর ক্লাস ( আর্কাইভ ), লাইফটাইম এক্সেস পাবে--শিক্ষক প্যানেল অপুর্ব অপু, মাশরুর রাহমান",
+    "category": "Physics",
+    "subject": ["Physics"],
+    "grade": ["HSC 27"],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1500,
+    "duration": "2.5 months",
+    "students": 6000,
+    "rating": 5.0,
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    },
+    {
         "id": 2,
         "title": "Physics Cycle-2 by Apurbo Mashrur Apar",
         "description": "প্রথম পত্র- অধ্যায় (৪,৫,৬,৭)",
