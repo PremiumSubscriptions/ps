@@ -477,7 +477,7 @@
             try {
                 if (!currentUser) {
                     showAlert('Please sign in first', 'error');
-                    window.location.href = 'login.html';
+                    window.location.href = 'https://wakilbd.github.io/ps/login';
                     return;
                 }
 
@@ -515,7 +515,7 @@
                 userInfo.classList.remove('hidden');
             } else {
                 // User is signed out, redirect to login
-                window.location.href = 'login.html';
+                window.location.href = 'https://wakilbd.github.io/ps/login';
             }
         });
 
@@ -523,7 +523,7 @@
         logoutBtn.addEventListener('click', async () => {
             try {
                 await signOut(auth);
-                window.location.href = 'login.html';
+                window.location.href = 'https://wakilbd.github.io/ps/login';
             } catch (error) {
                 console.error('Error signing out:', error);
                 showAlert('Error signing out. Please try again.', 'error');
