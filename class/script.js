@@ -508,7 +508,7 @@ function renderClasses() {
 function enrollInClass(classId) {
     const classItem = mockClasses.find(c => c.id === classId);
     if (classItem) {
-        window.location.href = classId.link; 
+        window.location.href = classItem.link; 
   } else {
     alert("No link provided for this class.");
     }
