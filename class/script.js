@@ -14,6 +14,7 @@ let selectedGrades = ['All Grade/Level'];
 let selectedCourse = 'All Course';
 let selectedSubjects = ['All Subject'];
 let observer;
+let currentUser = null;
 
 // DOM Elements
 const themeToggle = document.getElementById('themeToggle');
@@ -24,6 +25,9 @@ const coursesGrid = document.getElementById('coursesGrid');
 
 // Initialize App
 function initApp() {
+    // Initialize Firebase first
+    initializeFirebase();
+    
     // Initialize theme from localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
@@ -46,11 +50,237 @@ function initApp() {
     initEventListeners();
 }
 
+// Firebase Configuration and Authentication
+async function initializeFirebase() {
+    try {
+        // Import Firebase SDKs
+        const { initializeApp } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js');
+        const { getAuth, onAuthStateChanged, signOut } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js');
+        const { getFirestore, doc, getDoc } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js');
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+            authDomain: "courseaccess-921b8.firebaseapp.com",
+            projectId: "courseaccess-921b8",
+            storageBucket: "courseaccess-921b8.firebasestorage.app",
+            messagingSenderId: "35662960447",
+            appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+            measurementId: "G-SKDTD3FK91"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // Make auth and db available globally
+        window.firebaseAuth = auth;
+        window.firebaseDb = db;
+
+        // Auth state observer
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log('User is signed in:', user.email);
+                currentUser = user;
+                updateUserInterface(user);
+                // Check user access to classes
+                checkUserAccess(user.email);
+            } else {
+                console.log('User is signed out');
+                currentUser = null;
+                redirectToLogin();
+            }
+        });
+
+    } catch (error) {
+        console.error('Error initializing Firebase:', error);
+        showAuthAlert('Failed to initialize authentication. Please refresh the page.', 'error');
+    }
+}
+
+// Check if user has access to classes
+async function checkUserAccess(userEmail) {
+    try {
+        if (!window.firebaseDb) {
+            throw new Error('Database not initialized');
+        }
+
+        const { doc, getDoc } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js');
+        const docRef = doc(window.firebaseDb, 'whitelist', userEmail);
+        const docSnap = await getDoc(docRef);
+
+        if (docSnap.exists()) {
+            const userData = docSnap.data();
+            let accessArray = [];
+
+            if (userData && userData.access) {
+                if (Array.isArray(userData.access)) {
+                    accessArray = userData.access;
+                } else if (typeof userData.access === 'string') {
+                    accessArray = userData.access.split(',').map(s => s.trim());
+                }
+            }
+
+            if (accessArray.length > 0) {
+                console.log('User has access to:', accessArray);
+                showAuthAlert(`Welcome! You have access to: ${accessArray.join(', ')}`, 'success');
+                // Filter classes based on user access if needed
+                return accessArray;
+            } else {
+                showAuthAlert('You do not have access to any classes. Please contact administrator.', 'error');
+                setTimeout(() => redirectToLogin(), 3000);
+                return [];
+            }
+        } else {
+            showAuthAlert('Your email is not authorized. Please contact administrator.', 'error');
+            setTimeout(() => redirectToLogin(), 3000);
+            return [];
+        }
+    } catch (error) {
+        console.error('Error checking user access:', error);
+        showAuthAlert('Error verifying access. Please try again.', 'error');
+        return [];
+    }
+}
+
+// Update user interface when logged in
+function updateUserInterface(user) {
+    // Update login buttons to show user info
+    const loginButtons = document.querySelectorAll('.login-btn');
+    loginButtons.forEach(btn => {
+        btn.innerHTML = `
+            <img src="${user.photoURL || 'https://via.placeholder.com/32'}" alt="User" class="w-6 h-6 rounded-full mr-2">
+            <span>${user.displayName || user.email}</span>
+        `;
+        btn.onclick = showUserMenu;
+        btn.classList.add('user-logged-in');
+    });
+
+    // Add logout functionality
+    addLogoutMenu();
+}
+
+// Show user menu
+function showUserMenu() {
+    if (currentUser) {
+        const userMenu = `
+            <div id="userMenu" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-xl max-w-sm w-full mx-4">
+                    <div class="text-center mb-4">
+                        <img src="${currentUser.photoURL || 'https://via.placeholder.com/64'}" alt="User" class="w-16 h-16 rounded-full mx-auto mb-2">
+                        <h3 class="font-semibold text-lg">${currentUser.displayName || 'User'}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">${currentUser.email}</p>
+                    </div>
+                    <div class="space-y-3">
+                        <button onclick="handleLogout()" class="w-full bg-red-500 text-white py-2 px-4 rounded-lg hover:bg-red-600 transition-colors">
+                            Logout
+                        </button>
+                        <button onclick="closeUserMenu()" class="w-full bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `;
+        document.body.insertAdjacentHTML('beforeend', userMenu);
+    }
+}
+
+// Close user menu
+function closeUserMenu() {
+    const userMenu = document.getElementById('userMenu');
+    if (userMenu) {
+        userMenu.remove();
+    }
+}
+
+// Handle logout
+async function handleLogout() {
+    try {
+        const { signOut } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js');
+        await signOut(window.firebaseAuth);
+        showAuthAlert('Logged out successfully', 'success');
+        closeUserMenu();
+    } catch (error) {
+        console.error('Error signing out:', error);
+        showAuthAlert('Error logging out', 'error');
+    }
+}
+
+// Add logout menu
+function addLogoutMenu() {
+    // This function can be expanded to add more user-specific UI elements
+    console.log('User interface updated for authenticated user');
+}
+
+// Redirect to login page
+function redirectToLogin() {
+    showAuthAlert('Please login to access the class portal', 'info');
+    setTimeout(() => {
+        window.location.href = 'https://wakilbd.github.io/ps/login/';
+    }, 2000);
+}
+
+// Show authentication alerts
+function showAuthAlert(message, type = 'info') {
+    // Remove existing alert
+    const existingAlert = document.getElementById('authAlert');
+    if (existingAlert) {
+        existingAlert.remove();
+    }
+
+    const alertColors = {
+        success: 'bg-green-500',
+        error: 'bg-red-500',
+        info: 'bg-blue-500',
+        warning: 'bg-yellow-500'
+    };
+
+    const alertIcons = {
+        success: '✅',
+        error: '❌',
+        info: 'ℹ️',
+        warning: '⚠️'
+    };
+
+    const alert = document.createElement('div');
+    alert.id = 'authAlert';
+    alert.className = `fixed top-20 right-4 ${alertColors[type]} text-white p-4 rounded-lg shadow-lg z-50 max-w-sm transform transition-all duration-300 translate-x-full`;
+    alert.innerHTML = `
+        <div class="flex items-center space-x-2">
+            <span class="text-xl">${alertIcons[type]}</span>
+            <span>${message}</span>
+            <button onclick="this.parentElement.parentElement.remove()" class="ml-auto text-white hover:text-gray-200">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    `;
+
+    document.body.appendChild(alert);
+
+    // Animate in
+    setTimeout(() => {
+        alert.classList.remove('translate-x-full');
+    }, 100);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (alert.parentElement) {
+            alert.classList.add('translate-x-full');
+            setTimeout(() => alert.remove(), 300);
+        }
+    }, 5000);
+}
+
 // Typing Animation
 function startTypingAnimation() {
     const text = "Welcome to Premium's Class Portal";
     const typingElement = document.getElementById('typingText');
     const cursor = document.getElementById('cursor');
+    
+    if (!typingElement) return;
+    
     let index = 0;
 
     function typeCharacter() {
@@ -60,7 +290,9 @@ function startTypingAnimation() {
             setTimeout(typeCharacter, 100);
         } else {
             // Start cursor blinking after typing is complete
-            cursor.style.animation = 'cursorBlink 1s ease-in-out infinite';
+            if (cursor) {
+                cursor.style.animation = 'cursorBlink 1s ease-in-out infinite';
+            }
         }
     }
 
@@ -147,16 +379,18 @@ async function loadClasses() {
                 image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
             }
         ];
-        
+
         filteredClasses = [...mockClasses];
-        
+
         // Simulate loading delay
         setTimeout(() => {
             renderClasses();
         }, 1000);
     } catch (error) {
         console.error('Error loading classes:', error);
-        coursesGrid.innerHTML = '<div class="loading">Error loading classes. Please try again later.</div>';
+        if (coursesGrid) {
+            coursesGrid.innerHTML = '<div class="loading">Error loading classes. Please try again later.</div>';
+        }
     }
 }
 
@@ -165,9 +399,9 @@ function toggleTheme() {
     isDark = !isDark;
     document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    
+
     // Update theme toggle icon
-    const icon = themeToggle.querySelector('i');
+    const icon = themeToggle?.querySelector('i');
     if (icon) {
         icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
         if (typeof lucide !== 'undefined') {
@@ -177,27 +411,31 @@ function toggleTheme() {
 
     // Update mobile menu toggle color
     const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    if (isDark) {
-        mobileMenuToggle.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
-        mobileMenuToggle.classList.remove('hover:bg-gray-100');
-    } else {
-        mobileMenuToggle.classList.add('hover:bg-gray-100');
-        mobileMenuToggle.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
+    if (mobileMenuToggle) {
+        if (isDark) {
+            mobileMenuToggle.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
+            mobileMenuToggle.classList.remove('hover:bg-gray-100');
+        } else {
+            mobileMenuToggle.classList.add('hover:bg-gray-100');
+            mobileMenuToggle.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
+        }
     }
 }
 
 // Mobile Menu Toggle
 function toggleMobileMenu() {
-    const isOpen = !mobileMenu.classList.contains('hidden');
+    if (!mobileMenu || !mobileMenuToggle) return;
     
+    const isOpen = !mobileMenu.classList.contains('hidden');
+
     if (isOpen) {
         mobileMenu.classList.add('hidden');
-        mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+        mobileMenuToggle.querySelector('i')?.setAttribute('data-lucide', 'menu');
     } else {
         mobileMenu.classList.remove('hidden');
-        mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'x');
+        mobileMenuToggle.querySelector('i')?.setAttribute('data-lucide', 'x');
     }
-    
+
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
@@ -205,15 +443,17 @@ function toggleMobileMenu() {
 
 // Header Scroll Effect
 function handleScroll() {
+    if (!header) return;
+    
     const scrollY = window.scrollY;
     const newIsScrolled = scrollY > 50;
-    
+
     if (newIsScrolled !== isScrolled) {
         isScrolled = newIsScrolled;
-        
+
         if (isScrolled) {
             header.className = `fixed w-full top-0 z-50 transition-all duration-300 ${
-                isDark 
+                isDark
                     ? 'bg-slate-900/95 backdrop-blur-xl border-b border-purple-500/20 shadow-2xl shadow-purple-500/10'
                     : 'bg-white/95 backdrop-blur-xl border-b border-blue-200/50 shadow-xl'
             }`;
@@ -232,12 +472,16 @@ function isMobile() {
 function toggleDropdown(type) {
     if (isMobile()) {
         const popup = document.getElementById(type + 'Popup');
-        popup.classList.add('active');
-        updatePopupSelections(type);
+        if (popup) {
+            popup.classList.add('active');
+            updatePopupSelections(type);
+        }
     } else {
         const dropdown = document.getElementById(type + 'Dropdown');
+        if (!dropdown) return;
+        
         const button = dropdown.previousElementSibling;
-        const arrow = button.querySelector('.dropdown-arrow');
+        const arrow = button?.querySelector('.dropdown-arrow');
 
         // Close other dropdowns
         const dropdownTypes = ['grade', 'course', 'subject'];
@@ -246,40 +490,43 @@ function toggleDropdown(type) {
                 const otherDropdown = document.getElementById(otherType + 'Dropdown');
                 if (otherDropdown) {
                     const otherButton = otherDropdown.previousElementSibling;
-                    const otherArrow = otherButton.querySelector('.dropdown-arrow');
+                    const otherArrow = otherButton?.querySelector('.dropdown-arrow');
                     otherDropdown.classList.remove('active');
-                    otherButton.classList.remove('active');
-                    otherArrow.classList.remove('rotated');
+                    otherButton?.classList.remove('active');
+                    otherArrow?.classList.remove('rotated');
                 }
             }
         });
 
         // Toggle current
         dropdown.classList.toggle('active');
-        button.classList.toggle('active');
-        arrow.classList.toggle('rotated');
+        button?.classList.toggle('active');
+        arrow?.classList.toggle('rotated');
     }
 }
 
 // Function to close popup
 function closePopup(type) {
     const popup = document.getElementById(type + 'Popup');
-    popup.classList.remove('active');
+    if (popup) {
+        popup.classList.remove('active');
+    }
 }
 
 // Function to update popup selections
 function updatePopupSelections(type) {
     const popup = document.getElementById(type + 'Popup');
+    if (!popup) return;
+    
     const items = popup.querySelectorAll('.popup-item');
     let currentSelections;
-
     if (type === 'grade') currentSelections = selectedGrades;
     else if (type === 'course') currentSelections = [selectedCourse];
     else if (type === 'subject') currentSelections = selectedSubjects;
 
     items.forEach(item => {
         item.classList.remove('selected');
-        if (currentSelections.includes(item.textContent)) {
+        if (currentSelections && currentSelections.includes(item.textContent)) {
             item.classList.add('selected');
         }
     });
@@ -309,7 +556,10 @@ function selectGradeFromPopup(grade) {
 
 function selectCourseFromPopup(course) {
     selectedCourse = course;
-    document.getElementById('courseSelected').textContent = course;
+    const courseSelected = document.getElementById('courseSelected');
+    if (courseSelected) {
+        courseSelected.textContent = course;
+    }
     closePopup('course');
     filterClasses();
 }
@@ -360,7 +610,10 @@ function selectGrade(grade) {
 
 function selectCourse(course) {
     selectedCourse = course;
-    document.getElementById('courseSelected').textContent = course;
+    const courseSelected = document.getElementById('courseSelected');
+    if (courseSelected) {
+        courseSelected.textContent = course;
+    }
     closeDropdown('courseDropdown');
     updateSelectedDropdownItem('#courseDropdown', course);
     filterClasses();
@@ -391,12 +644,18 @@ function selectSubject(subject) {
 // Helper functions to update display
 function updateGradeDisplay() {
     const displayText = selectedGrades.includes('All Grade/Level') ? 'All Grade/Level' : selectedGrades.join(', ');
-    document.getElementById('gradeSelected').textContent = displayText;
+    const gradeSelected = document.getElementById('gradeSelected');
+    if (gradeSelected) {
+        gradeSelected.textContent = displayText;
+    }
 }
 
 function updateSubjectDisplay() {
     const displayText = selectedSubjects.includes('All Subject') ? 'All Subject' : selectedSubjects.join(', ');
-    document.getElementById('subjectSelected').textContent = displayText;
+    const subjectSelected = document.getElementById('subjectSelected');
+    if (subjectSelected) {
+        subjectSelected.textContent = displayText;
+    }
 }
 
 // Utility functions
@@ -460,9 +719,9 @@ function filterClasses() {
 function createClassCard(classItem) {
     return `
         <div class="course-card">
-            <img 
-                class="course-image" 
-                src="${classItem.image}" 
+            <img
+                class="course-image"
+                src="${classItem.image}"
                 alt="${classItem.title}"
                 loading="lazy"
             />
@@ -495,6 +754,8 @@ function createClassCard(classItem) {
 
 // Function to render classes
 function renderClasses() {
+    if (!coursesGrid) return;
+    
     if (filteredClasses.length === 0) {
         coursesGrid.innerHTML = '<div class="loading">No classes found for the selected filters.</div>';
         return;
@@ -506,32 +767,41 @@ function renderClasses() {
 
 // Function to handle class enrollment
 function enrollInClass(classId) {
+    // Check if user is authenticated
+    if (!currentUser) {
+        showAuthAlert('Please login to join classes', 'error');
+        redirectToLogin();
+        return;
+    }
+
     const classItem = mockClasses.find(c => c.id === classId);
     if (classItem && classItem.link) {
-        window.location.href = classItem.link; 
+        showAuthAlert(`Joining ${classItem.title}...`, 'success');
+        setTimeout(() => {
+            window.location.href = classItem.link;
+        }, 1500);
     } else {
-        alert("No link provided for this course-class.");
+        showAuthAlert("No link provided for this class.", 'error');
     }
 }
-
 
 // Generate Footer Particles
 function generateFooterParticles() {
     const container = document.getElementById('footerParticles');
     if (!container) return;
-    
+
     const particles = 20;
-    
+
     for (let i = 0; i < particles; i++) {
         const particle = document.createElement('div');
         const colors = ['bg-purple-400', 'bg-pink-400', 'bg-cyan-400', 'bg-blue-400'];
-        
+
         particle.className = `absolute w-1 h-1 rounded-full animate-float opacity-30 ${colors[i % colors.length]}`;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
         particle.style.animationDelay = `${Math.random() * 5}s`;
         particle.style.animationDuration = `${Math.random() * 3 + 4}s`;
-        
+
         container.appendChild(particle);
     }
 }
@@ -563,21 +833,21 @@ function initEventListeners() {
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
     }
-    
+
     // Mobile menu toggle
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', toggleMobileMenu);
     }
-    
+
     // Scroll handling
     window.addEventListener('scroll', handleScroll);
-    
+
     // Smooth scrolling for nav links
     document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const target = link.getAttribute('href');
-            
+
             // Close mobile menu if open
             if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                 toggleMobileMenu();
@@ -598,17 +868,22 @@ function initEventListeners() {
         });
     });
 
-    // Auth button actions
+    // Updated auth button actions - now handled by Firebase
     document.querySelectorAll('.login-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert('Login functionality would go here!');
-        });
+        if (!btn.classList.contains('user-logged-in')) {
+            btn.addEventListener('click', () => {
+                if (!currentUser) {
+                    redirectToLogin();
+                }
+            });
+        }
     });
 
+    // Sign up buttons
     document.querySelectorAll('button:not(.login-btn):not(#themeToggle):not(#mobileMenuToggle)').forEach(btn => {
         if (btn.textContent.includes('Sign Up')) {
             btn.addEventListener('click', () => {
-                alert('Sign Up functionality would go here!');
+                redirectToLogin();
             });
         }
     });
@@ -664,8 +939,8 @@ function initEventListeners() {
     document.querySelectorAll('.social-link').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
-            const platform = link.querySelector('i').getAttribute('data-lucide');
-            alert(`Navigate to ${platform} - Social media integration would go here!`);
+            const platform = link.querySelector('i')?.getAttribute('data-lucide') || 'social media';
+            showAuthAlert(`Navigate to ${platform} - Social media integration would go here!`, 'info');
         });
     });
 
@@ -674,7 +949,7 @@ function initEventListeners() {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const linkText = link.textContent.trim();
-            alert(`Navigate to ${linkText} - Page navigation would go here!`);
+            showAuthAlert(`Navigate to ${linkText} - Page navigation would go here!`, 'info');
         });
     });
 
@@ -683,24 +958,24 @@ function initEventListeners() {
         const phoneIcon = group.querySelector('[data-lucide="phone"]');
         const mailIcon = group.querySelector('[data-lucide="mail"]');
         const mapIcon = group.querySelector('[data-lucide="map-pin"]');
-        
+
         if (phoneIcon) {
             group.addEventListener('click', () => {
-                alert('Phone: +880 1234-567890 - Would open dialer in real app');
+                showAuthAlert('Phone: +880 1234-567890 - Would open dialer in real app', 'info');
             });
             group.style.cursor = 'pointer';
         }
-        
+
         if (mailIcon) {
             group.addEventListener('click', () => {
-                alert('Email: info@hsccourses.com - Would open email client in real app');
+                showAuthAlert('Email: info@hsccourses.com - Would open email client in real app', 'info');
             });
             group.style.cursor = 'pointer';
         }
-        
+
         if (mapIcon) {
             group.addEventListener('click', () => {
-                alert('Location: 123 Education Street, Dhaka, Bangladesh - Would open maps in real app');
+                showAuthAlert('Location: 123 Education Street, Dhaka, Bangladesh - Would open maps in real app', 'info');
             });
             group.style.cursor = 'pointer';
         }
@@ -710,7 +985,7 @@ function initEventListeners() {
     setTimeout(() => {
         updateSelectedDropdownItems('#gradeDropdown');
         updateSelectedDropdownItems('#subjectDropdown');
-        
+
         // Initialize course dropdown
         document.querySelectorAll('#courseDropdown .dropdown-item').forEach(item => {
             if (item.textContent === 'All Course') {
@@ -741,3 +1016,6 @@ window.selectGradeFromPopup = selectGradeFromPopup;
 window.selectCourseFromPopup = selectCourseFromPopup;
 window.selectSubjectFromPopup = selectSubjectFromPopup;
 window.enrollInClass = enrollInClass;
+window.handleLogout = handleLogout;
+window.closeUserMenu = closeUserMenu;
+window.showUserMenu = showUserMenu;
