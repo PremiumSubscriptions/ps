@@ -507,12 +507,13 @@ function renderClasses() {
 // Function to handle class enrollment
 function enrollInClass(classId) {
     const classItem = mockClasses.find(c => c.id === classId);
-    if (classItem) {
+    if (classItem && classItem.link) {
         window.location.href = classItem.link; 
-  } else {
-    alert("No link provided for this class.");
+    } else {
+        alert("No link provided for this course-class.");
     }
 }
+
 
 // Generate Footer Particles
 function generateFooterParticles() {
