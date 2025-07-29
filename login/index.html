@@ -1378,19 +1378,18 @@
                     return;
                 }
                 
-                // User has access, redirect to previous page or fallback
-console.log('✅ User has access to:', accessList);
-showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting...`, 'success');
+        // User has access, redirect to previous page or fallback
+        console.log('✅ User has access to:', accessList);
+            showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting...`, 'success');
+    // Get the "returnTo" URL from query string
+    const params = new URLSearchParams(window.location.search);
+    const returnTo = params.get('returnTo') || 'https://wakilbd.github.io/ps/class';
 
-// Get the "returnTo" URL from query string
-const params = new URLSearchParams(window.location.search);
-const returnTo = params.get('returnTo') || 'https://wakilbd.github.io/ps/class';
-
-setTimeout(() => {
-    console.log('🔄 Redirecting to:', returnTo);
-    window.location.href = returnTo;
-}, 2000);
-  } catch (error) {
+        setTimeout(() => {
+            console.log('🔄 Redirecting to:', returnTo);
+            window.location.href = returnTo;
+            }, 2000);
+      } catch (error) {
                 console.error('💥 Error in handleAuthSuccess:', error);
                 showAlert(Authentication error: ${error.message}, 'error');
             }
