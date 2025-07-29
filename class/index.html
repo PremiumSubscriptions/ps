@@ -400,5 +400,135 @@
     </footer>
 
     <script src="script.js"></script>
+        <!-- Firebase SDKs -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js';
+        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+            authDomain: "courseaccess-921b8.firebaseapp.com",
+            projectId: "courseaccess-921b8",
+            storageBucket: "courseaccess-921b8.firebasestorage.app",
+            messagingSenderId: "35662960447",
+            appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+            measurementId: "G-SKDTD3FK91"
+      };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const provider = new GoogleAuthProvider();
+
+        // DOM elements
+        const userInfo = document.getElementById('user-info');
+        const userAvatar = document.getElementById('user-avatar');
+        const userName = document.getElementById('user-name');
+        const userEmail = document.getElementById('user-email');
+        const logoutBtn = document.getElementById('logout-btn');
+        const alertContainer = document.getElementById('alert-container');
+
+        let currentUser = null;
+
+        // Show alert message
+        function showAlert(message, type = 'error') {
+            const alertClass = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500';
+            const icon = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            
+            alertContainer.innerHTML = `
+                <div class="alert ${alertClass} text-white p-4 rounded-lg text-center">
+                    <div class="flex items-center justify-center space-x-2">
+                        <span class="text-xl">${icon}</span>
+                        <span>${message}</span>
+                    </div>
+                </div>
+            `;
+            alertContainer.classList.remove('hidden');
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                alertContainer.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Check user access in Firestore
+        async function checkUserAccess(userEmail) {
+            try {
+                const docRef = doc(db, 'whitelist', userEmail);
+                const docSnap = await getDoc(docRef);
+                
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    return userData.access || [];
+                } else {
+                    return null; // User not in whitelist
+                }
+            } catch (error) {
+                console.error('Error checking user access:', error);
+                throw error;
+            }
+        }
+
+        // Auth and check access for specific course
+        window.authAndCheckAccess = async function(courseKey) {
+            try {
+                if (!currentUser) {
+                    showAlert('Please sign in first', 'error');
+                    window.location.href = 'login.html';
+                    return;
+                }
+
+                showAlert('Checking your access permissions...', 'info');
+                const accessList = await checkUserAccess(currentUser.email);
+                
+                if (accessList === null) {
+                    showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
+                    return;
+                }
+                
+                if (accessList.includes(courseKey)) {
+                    showAlert(`Access granted! Redirecting to ${courseKey} course...`, 'success');
+                    setTimeout(() => {
+                        window.location.href = `${courseKey}.html`;
+                    }, 2000);
+                } else {
+                    showAlert(`Access denied: You have access to [${accessList.join(', ')}] but not to ${courseKey} course.`, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showAlert('Error checking access permissions. Please try again.', 'error');
+            }
+        };
+
+        // Check authentication state
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                currentUser = user;
+                // User is signed in, display user info
+                userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
+                userName.textContent = user.displayName || 'User';
+                userEmail.textContent = user.email;
+                userInfo.classList.remove('hidden');
+            } else {
+                // User is signed out, redirect to login
+                window.location.href = 'login.html';
+            }
+        });
+
+        // Logout functionality
+        logoutBtn.addEventListener('click', async () => {
+            try {
+                await signOut(auth);
+                window.location.href = 'login.html';
+            } catch (error) {
+                console.error('Error signing out:', error);
+                showAlert('Error signing out. Please try again.', 'error');
+            }
+        });
+    </script>
 </body>
 </html>
