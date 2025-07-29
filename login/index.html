@@ -972,12 +972,6 @@
         function closePopup(popupId) {
             document.getElementById(popupId).classList.remove('active');
         }
-
-        // Google Sign In Handler
-        function handleGoogleSignIn() {
-            showPopup('googlePopup');
-        }
-
         // Scroll to Login Form
         function scrollToLoginForm() {
             document.getElementById('authContainer').scrollIntoView({
@@ -1157,6 +1151,278 @@
 
         // Start the app
         document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+        <!-- Firebase SDKs -->
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js';
+        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js';
+
+        // Firebase configuration
+          const firebaseConfig = {
+    apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+    authDomain: "courseaccess-921b8.firebaseapp.com",
+    projectId: "courseaccess-921b8",
+    storageBucket: "courseaccess-921b8.firebasestorage.app",
+    messagingSenderId: "35662960447",
+    appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+    measurementId: "G-SKDTD3FK91"
+  };
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const provider = new GoogleAuthProvider();
+
+        // DOM elements
+        const loginBtn = document.getElementById('login-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('spinner');
+        const alertContainer = document.getElementById('alert-container');
+        const userInfo = document.getElementById('user-info');
+        const userAvatar = document.getElementById('user-avatar');
+        const userName = document.getElementById('user-name');
+        const userEmail = document.getElementById('user-email');
+
+        // Show/hide loading state
+        function setLoading(loading) {
+            if (loading) {
+                btnText.textContent = 'Signing in...';
+                spinner.classList.remove('hidden');
+                loginBtn.disabled = true;
+                loginBtn.classList.add('opacity-70');
+            } else {
+                btnText.textContent = '🎓 Login with Google';
+                spinner.classList.add('hidden');
+                loginBtn.disabled = false;
+                loginBtn.classList.remove('opacity-70');
+            }
+        }
+
+        // Show alert message
+        function showAlert(message, type = 'error') {
+            const alertClass = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500';
+            const icon = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            
+            alertContainer.innerHTML = `
+                <div class="alert ${alertClass} text-white p-4 rounded-lg text-center">
+                    <div class="flex items-center justify-center space-x-2">
+                        <span class="text-xl">${icon}</span>
+                        <span>${message}</span>
+                    </div>
+                </div>
+            `;
+            alertContainer.classList.remove('hidden');
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                alertContainer.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Check user access in Firestore
+        // Robust Check user access in Firestore
+async function checkUserAccess(userEmail) {
+    try {
+        console.log('🔍 Starting access check for:', userEmail);
+        
+        // Check if db is initialized
+        if (!db) {
+            console.error('❌ Firestore not initialized');
+            throw new Error('Database not initialized');
+        }
+        
+        console.log('✅ Database initialized');
+        
+        const docRef = doc(db, 'whitelist', userEmail);
+        console.log('✅ Document reference created');
+        
+        const docSnap = await getDoc(docRef);
+        console.log('✅ Document fetch completed');
+        console.log('📄 Document exists:', docSnap.exists());
+        
+        if (docSnap.exists()) {
+            const userData = docSnap.data();
+            console.log('✅ Document data:', userData);
+            
+            // Handle different possible field structures
+            let accessArray = [];
+            
+            if (userData && userData.access) {
+                if (Array.isArray(userData.access)) {
+                    accessArray = userData.access;
+                    console.log('✅ Found access array:', accessArray);
+                } else {
+                    console.log('⚠️ Access field is not an array:', userData.access);
+                    // Try to convert to array if it's a string
+                    if (typeof userData.access === 'string') {
+                        accessArray = userData.access.split(',').map(s => s.trim());
+                        console.log('✅ Converted string to array:', accessArray);
+                    }
+                }
+            } else {
+                console.log('⚠️ No access field found in document');
+            }
+            
+            return accessArray;
+        } else {
+            console.log('❌ Document not found for email:', userEmail);
+            return null; // User not in whitelist
+        }
+    } catch (error) {
+        console.error('💥 Detailed error in checkUserAccess:');
+        console.error('💥 Error name:', error.name);
+        console.error('💥 Error message:', error.message);
+        console.error('💥 Error code:', error.code);
+        console.error('💥 Full error:', error);
+        
+        // Re-throw with more context
+        throw new Error(`Access check failed: ${error.message}`);
+    }
+}
+
+        // Handle successful authentication
+        // Handle successful authentication - DEBUG VERSION
+async function handleAuthSuccess(user) {
+    try {
+        console.log('🎯 handleAuthSuccess started for:', user.email);
+        
+        // Show user info
+        userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
+        userName.textContent = user.displayName || 'User';
+        userEmail.textContent = user.email;
+        userInfo.classList.remove('hidden');
+        
+        // Check access with detailed logging
+        showAlert('Checking your access permissions...', 'info');
+        
+        console.log('🔄 About to call checkUserAccess...');
+        
+        let accessList;
+        try {
+            accessList = await checkUserAccess(user.email);
+            console.log('✅ checkUserAccess completed, result:', accessList);
+        } catch (accessError) {
+            console.error('💥 checkUserAccess failed:', accessError);
+            showAlert(`Access check error: ${accessError.message}`, 'error');
+            return;
+        }
+        
+        if (accessList === null) {
+            console.log('❌ User not in whitelist');
+            showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
+            return;
+        }
+        
+        if (!Array.isArray(accessList)) {
+            console.log('⚠️ Access list is not an array:', accessList);
+            showAlert('Error: Invalid access data format.', 'error');
+            return;
+        }
+        
+        if (accessList.length === 0) {
+            console.log('❌ Empty access list');
+            showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
+            return;
+        }
+        
+        // User has access, redirect to course selection
+        console.log('✅ User has access to:', accessList);
+        showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection...`, 'success');
+        setTimeout(() => {
+            console.log('🔄 Redirecting to courses.html');
+            window.location.href = 'courses.html';
+        }, 2000);
+        
+    } catch (error) {
+        console.error('💥 Error in handleAuthSuccess:', error);
+        showAlert(`Authentication error: ${error.message}`, 'error');
+    }
+}
+
+        // Google Sign In
+        async function signInWithGoogle() {
+            try {
+                setLoading(true);
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                console.log('User signed in:', user.email);
+                await handleAuthSuccess(user);
+                
+            } catch (error) {
+                console.error('Error during sign in:', error);
+                let errorMessage = 'Sign in failed. Please try again.';
+                
+                if (error.code === 'auth/popup-closed-by-user') {
+                    errorMessage = 'Sign in cancelled by user.';
+                } else if (error.code === 'auth/network-request-failed') {
+                    errorMessage = 'Network error. Please check your connection.';
+                }
+                
+                showAlert(errorMessage, 'error');
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        // Auth state observer
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log('User is signed in:', user.email);
+                // User is already signed in, you can handle this case
+            } else {
+                console.log('User is signed out');
+                userInfo.classList.add('hidden');
+                alertContainer.classList.add('hidden');
+            }
+        });
+
+        // Event listeners
+        loginBtn.addEventListener('click', signInWithGoogle);
+
+        // Optional: Add logout functionality
+        window.logout = async function() {
+            try {
+                await signOut(auth);
+                showAlert('Signed out successfully', 'success');
+            } catch (error) {
+                console.error('Error signing out:', error);
+                showAlert('Error signing out', 'error');
+            }
+        };
+
+        // Optional: Function for different courses
+        window.authAndCheckAccess = async function(courseKey) {
+            try {
+                setLoading(true);
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                const accessList = await checkUserAccess(user.email);
+                
+                if (accessList === null) {
+                    showAlert('Access denied: Your email is not in the whitelist.', 'error');
+                    return;
+                }
+                
+                if (accessList.includes(courseKey)) {
+                    showAlert(`Access granted! Redirecting to ${courseKey} course...`, 'success');
+                    setTimeout(() => {
+                        window.location.href = `${courseKey}.html`;
+                    }, 2000);
+                } else {
+                    showAlert(`Access denied: You do not have access to ${courseKey} course.`, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showAlert('Authentication failed. Please try again.', 'error');
+            } finally {
+                setLoading(false);
+            }
+        };
     </script>
 </body>
 </html> --status
