@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium's Class Portal</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Font Awesome for Stars -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans overflow-x-hidden">
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img 
+                        src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
+                        alt="Premium Subscription Logo"
+                        class="h-10 w-auto filter drop-shadow-lg hover:scale-105 transition-transform duration-300"
+                    />
+                    <h1 class="text-2xl font-bold tracking-wide text-gradient animate-logo-glow hover:scale-105 transition-transform duration-300">
+                        ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+                    </h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-2" id="desktopNav">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#courses" class="nav-link">Courses</a>
+                    <a href="#teachers" class="nav-link">Teachers</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+
+                <!-- Theme Toggle & Auth Buttons -->
+                <div class="flex items-center space-x-4">
+                    <button id="themeToggle" class="theme-toggle transform hover:rotate-12">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
+                    </button>
+
+                    <div class="hidden md:flex space-x-3">
+                        <button class="auth-btn login-btn px-6 py-2 rounded-full font-semibold">
+                            Login
+                        </button>
+                        <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="md:hidden mt-4 p-4 rounded-xl card-glass shadow-xl animate-fade-in hidden">
+                <nav class="flex flex-col space-y-2">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#courses" class="mobile-nav-link">Courses</a>
+                    <a href="#teachers" class="mobile-nav-link">Teachers</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                    <div class="flex space-x-3 pt-3 border-t border-gray-300/20">
+                        <button class="flex-1 auth-btn login-btn px-4 py-2 rounded-lg font-semibold">
+                            Login
+                        </button>
+                        <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient shadow-lg">
+                            Sign Up
+                        </button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container mx-auto px-6">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <h1 class="hero-title">
+                    <span id="typingText" class="typing-text"></span>
+                    <span class="cursor" id="cursor">|</span>
+                </h1>
+                <p class="hero-subtitle">Explore premium courses with advanced learning experiences</p>
+            </div>
+
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="filter-container">
+                    <!-- Grade Level Dropdown -->
+                    <div class="filter-dropdown" id="gradeDropdownBox">
+                        <button class="dropdown-button" onclick="toggleDropdown('grade')">
+                            <span id="gradeSelected">All Grade/Level</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" id="gradeDropdown">
+                            <div class="dropdown-item" onclick="selectGrade('All Grade/Level')">All Grade/Level</div>
+                            <div class="dropdown-item" onclick="selectGrade('HSC 27')">HSC 27</div>
+                            <div class="dropdown-item" onclick="selectGrade('HSC 26')">HSC 26</div>
+                            <div class="dropdown-item" onclick="selectGrade('Admission 25')">Admission 25</div>
+                            <div class="dropdown-item" onclick="selectGrade('Admission 24')">Admission 24</div>
+                        </div>
+                    </div>
+
+                    <!-- Course Type Dropdown -->
+                    <div class="filter-dropdown" id="courseDropdownBox">
+                        <button class="dropdown-button" onclick="toggleDropdown('course')">
+                            <span id="courseSelected">All Course</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" id="courseDropdown">
+                            <div class="dropdown-item" onclick="selectCourse('All Course')">All Course</div>
+                            <div class="dropdown-item" onclick="selectCourse('ACS')">ACS</div>
+                            <div class="dropdown-item" onclick="selectCourse('RTDS')">RTDS Live</div>
+                            <div class="dropdown-item" onclick="selectCourse('Battle of Biology')">Battle of Biology</div>
+                            <div class="dropdown-item" onclick="selectCourse('Bondi Pathshala')">Bondi Pathshala</div>
+                            <div class="dropdown-item" onclick="selectCourse('CPS')">CPS</div>
+                            <div class="dropdown-item" onclick="selectCourse('Physics Hunters')">Physics Hunters</div>
+                            <div class="dropdown-item" onclick="selectCourse('Biology Haters')">Biology Haters</div>
+                            <div class="dropdown-item" onclick="selectCourse('OpenLearn')">OpenLearn by Shaown R.</div>
+                        </div>
+                    </div>
+
+                    <!-- Subject Type Dropdown -->
+                    <div class="filter-dropdown" id="subjectDropdownBox">
+                        <button class="dropdown-button" onclick="toggleDropdown('subject')">
+                            <span id="subjectSelected">All Subject</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" id="subjectDropdown">
+                            <div class="dropdown-item" onclick="selectSubject('All Subject')">All Subject</div>
+                            <div class="dropdown-item" onclick="selectSubject('Physics')">Physics</div>
+                            <div class="dropdown-item" onclick="selectSubject('Chemistry')">Chemistry</div>
+                            <div class="dropdown-item" onclick="selectSubject('Mathematics')">Mathematics</div>
+                            <div class="dropdown-item" onclick="selectSubject('ICT')">ICT</div>
+                            <div class="dropdown-item" onclick="selectSubject('Biology')">Biology</div>
+                            <div class="dropdown-item" onclick="selectSubject('English')">English</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Classes Grid -->
+            <div class="courses-grid" id="coursesGrid">
+                <div class="loading">Please wait, Loading classes...</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Popup Overlays -->
+    <div class="popup-overlay" id="gradePopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title">Select Grade/Level</h3>
+                <button class="popup-close" onclick="closePopup('grade')">×</button>
+            </div>
+            <div class="popup-items">
+                <div class="popup-item" onclick="selectGradeFromPopup('All Grade/Level')">All Grade/Level</div>
+                <div class="popup-item" onclick="selectGradeFromPopup('HSC 27')">HSC 27</div>
+                <div class="popup-item" onclick="selectGradeFromPopup('HSC 26')">HSC 26</div>
+                <div class="popup-item" onclick="selectGradeFromPopup('Admission 25')">Admission 25</div>
+                <div class="popup-item" onclick="selectGradeFromPopup('Admission 24')">Admission 24</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="coursePopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title">Select Course</h3>
+                <button class="popup-close" onclick="closePopup('course')">×</button>
+            </div>
+            <div class="popup-items">
+                <div class="popup-item" onclick="selectCourseFromPopup('All Course')">All Course</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('ACS')">ACS</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('RTDS')">RTDS Live</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('Bondi Pathshala')">Bondi Pathshala</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('CPS')">CPS</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('Battle of Biology')">Battle of Biology</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('Physics Hunters')">Physics Hunters</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('Biology Haters')">Biology Haters</div>
+                <div class="popup-item" onclick="selectCourseFromPopup('OpenLearn')">OpenLearn by Shaown R.</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-overlay" id="subjectPopup">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3 class="popup-title">Select Subject</h3>
+                <button class="popup-close" onclick="closePopup('subject')">×</button>
+            </div>
+            <div class="popup-items">
+                <div class="popup-item" onclick="selectSubjectFromPopup('All Subject')">All Subject</div>
+                <div class="popup-item" onclick="selectSubjectFromPopup('Physics')">Physics</div>
+                <div class="popup-item" onclick="selectSubjectFromPopup('Chemistry')">Chemistry</div>
+                <div class="popup-item" onclick="selectSubjectFromPopup('Mathematics')">Mathematics</div>
+                <div class="popup-item" onclick="selectSubjectFromPopup('ICT')">ICT</div>
+                <div class="popup-item" onclick="selectSubjectFromPopup('Biology')">Biology</div>
+                <div class="popup-item" onclick="selectSubjectFromPopup('English')">English</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact" class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+        <!-- Animated Wave Background -->
+        <div class="absolute top-0 left-0 w-full h-20 overflow-hidden">
+            <svg 
+                class="absolute top-0 left-0 w-full h-full opacity-20 animate-wave" 
+                viewBox="0 0 1200 120" 
+                preserveAspectRatio="none"
+            >
+                <path 
+                    d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" 
+                    fill="rgba(59, 130, 246, 0.1)"
+                />
+            </svg>
+        </div>
+
+        <!-- Floating Particles -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none" id="footerParticles">
+            <!-- Particles will be generated by JavaScript -->
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 py-16">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 fade-in-element">
+                <!-- Company Info -->
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <img 
+                            src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
+                            alt="Premium Subscription Logo"
+                            class="h-12 w-auto filter drop-shadow-lg"
+                        />
+                        <h3 class="text-3xl font-black tracking-wide text-gradient animate-pulse">
+                            ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
+                        </h3>
+                    </div>
+                    
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6 max-w-md">
+                        Your trusted partner in premium digital experiences. We provide quality subscriptions 
+                        at unbeatable prices with innovative service methods and personalized customer support.
+                    </p>
+
+                    <!-- Social Links -->
+                    <div class="flex space-x-4" id="socialLinks">
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="facebook" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="twitter" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="instagram" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="youtube" class="w-5 h-5 relative z-10"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="fade-in-element">
+                    <h4 class="text-xl font-bold text-white mb-6 relative">
+                        Quick Links
+                        <div class="absolute bottom-0 left-0 w-12 h-0.5 btn-gradient"></div>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Home
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Courses
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Teachers
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            About
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Support
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-purple-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Privacy
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Courses -->
+                <div class="fade-in-element">
+                    <h4 class="text-xl font-bold text-white mb-6 relative">
+                        Popular Courses
+                        <div class="absolute bottom-0 left-0 w-12 h-0.5 btn-gradient"></div>
+                    </h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Mathematics
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Physics
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Chemistry
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            Biology
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            English
+                        </a></li>
+                        <li><a href="#" class="footer-link text-gray-300 hover:text-white transition-all duration-300 hover:translate-x-2 flex items-center group">
+                            <div class="w-0 h-0.5 mr-0 bg-pink-400 transition-all duration-300 group-hover:w-3 group-hover:mr-2"></div>
+                            ICT
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="p-8 rounded-2xl mb-12 bg-gradient-to-r from-blue-700 via-indigo-800 to-purple-800 fade-in-element">
+                <h4 class="text-2xl font-bold text-white mb-6 text-center">
+                    Get in Touch
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="flex items-center space-x-4 group">
+                        <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
+                        </div>
+                        <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
+                            +880 1234-567890
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
+                        </div>
+                        <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
+                            info@hsccourses.com
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-4 group">
+                        <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-purple-400"></i>
+                        </div>
+                        <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
+                            123 Education Street, Dhaka, Bangladesh
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Section -->
+            <div class="border-t border-gray-700/50 pt-8 fade-in-element">
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                    <div class="flex items-center space-x-4 text-gray-400 text-sm">
+                        <span>&copy; 2024 Premium Subscription. All rights reserved.</span>
+                        <span class="hidden md:inline">|</span>
+                        <a href="#" class="hover:text-white transition-colors duration-300">Privacy Policy</a>
+                        <span class="hidden md:inline">|</span>
+                        <a href="#" class="hover:text-white transition-colors duration-300">Terms of Service</a>
+                    </div>
+                    
+                    <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                        <span>Made with</span>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 animate-pulse"></i>
+                        <span>by Premium Team</span>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-400 animate-spin"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
