@@ -1378,22 +1378,20 @@
                     return;
                 }
                 
-        // User has access, redirect to previous page or fallback
-        
- // User has access, redirect to course selection
+                // User has access, redirect to course selection
                 console.log('✅ User has access to:', accessList);
-                showAlert(Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection..., 'success');
+                showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection...`, 'success');
                 setTimeout(() => {
-                    console.log('🔄 Redirecting to Class Portal');
-
-window.location.href = 'https://wakilbd.github.io/ps/class';
+                    console.log('🔄 Redirecting to courses.html');
+                    window.location.href = 'courses.html';
                 }, 2000);
-
+                
             } catch (error) {
                 console.error('💥 Error in handleAuthSuccess:', error);
-                showAlert(Authentication error: ${error.message}, 'error');
+                showAlert(`Authentication error: ${error.message}`, 'error');
             }
-        }             
+        }
+
         // Google Sign In
         async function signInWithGoogle() {
             try {
