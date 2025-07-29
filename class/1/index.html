@@ -590,9 +590,9 @@ class="h-10 w-auto filter drop-shadow-lg hover:scale-105 transition-transform du
 <nav class="hidden md:flex items-center space-x-2" id="desktopNav">
 <a href="#home" class="nav-link">Home</a>
 <a href="#courses" class="nav-link">Courses</a>
-<a href="#teachers" class="nav-link">Teachers</a>
+<a href="#class" class="nav-link">Class Portal</a>
+<a href="#exam" class="nav-link">Exam</a>
 <a href="#about" class="nav-link">About</a>
-<a href="#contact" class="nav-link">Contact</a>
 </nav>
 
 <!-- Theme Toggle & Auth Buttons -->
@@ -606,7 +606,7 @@ class="h-10 w-auto filter drop-shadow-lg hover:scale-105 transition-transform du
 Login
 </button>
 <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg text-white">
-Sign Up
+Contact
 </button>
 </div>
 
@@ -622,15 +622,15 @@ Sign Up
 <nav class="flex flex-col space-y-2">
 <a href="#home" class="mobile-nav-link">Home</a>
 <a href="#courses" class="mobile-nav-link">Courses</a>
-<a href="#teachers" class="mobile-nav-link">Teachers</a>
+<a href="#class" class="mobile-nav-link">Class Portal</a>
+<a href="#exam" class="mobile-nav-link">Exam</a>
 <a href="#about" class="mobile-nav-link">About</a>
-<a href="#contact" class="mobile-nav-link">Contact</a>
 <div class="flex space-x-3 pt-3 border-t border-gray-300/20">
 <button class="flex-1 auth-btn login-btn px-4 py-2 rounded-lg font-semibold">
 Login
 </button>
 <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient shadow-lg text-white">
-Sign Up
+Contact
 </button>
 </div>
 </nav>
@@ -1036,7 +1036,7 @@ header.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-trans
 
 // Typing animation
 function initializeTypingAnimation() {
-const text = "Welcome to the Class Portal";
+const text = "Welcome to Premium's Class Portal";
 const typedTextElement = document.getElementById('typed-text');
 let index = 0;
 
@@ -1105,15 +1105,6 @@ handleClassClick(classData);
 
 return card;
 }
-
-// Handle class click
-function handleClassClick(classData) {
-console.log('Opening class:', classData.title);
-alert(`Opening: ${classData.title}\
-Duration: ${classData.duration}\
-Difficulty: ${classData.difficulty}`);
-}
-
 // Generate Footer Particles
 function generateFooterParticles() {
 const container = document.getElementById('footerParticles');
