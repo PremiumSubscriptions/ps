@@ -1378,19 +1378,25 @@
                     return;
                 }
                 
-                // User has access, redirect to course selection
-                console.log('✅ User has access to:', accessList);
-                showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection...`, 'success');
-                setTimeout(() => {
-                    console.log('🔄 Redirecting to courses.html');
-                    window.location.href = 'https://wakilbd.github.io/ps/class';
-                }, 2000);
-                
-            } catch (error) {
-                console.error('💥 Error in handleAuthSuccess:', error);
-                showAlert(`Authentication error: ${error.message}`, 'error');
-            }
-        }
+                // User has access, redirect to course selection or back to referrer
+console.log('✅ User has access to:', accessList);
+showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting...`, 'success');
+
+setTimeout(() => {
+    // Check if there's a referrer URL stored or passed as parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const referrerUrl = urlParams.get('redirect') || sessionStorage.getItem('referrerUrl') || document.referrer;
+    
+    // Validate referrer URL (optional security check)
+    if (referrerUrl && referrerUrl !== window.location.href && referrerUrl.includes(window.location.origin)) {
+        console.log('🔄 Redirecting back to referrer:', referrerUrl);
+        window.location.href = referrerUrl;
+    } else {
+        // Default redirect to course selection if no valid referrer
+        console.log('🔄 Redirecting to courses.html');
+        window.location.href = 'https://wakilbd.github.io/ps/class';
+    }
+}, 2000);
 
         // Google Sign In
         async function signInWithGoogle() {
