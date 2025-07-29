@@ -1098,7 +1098,13 @@ ${classData.topics.map(topic => `
 </div>
 </div>
 `;
-
+function handleClassClick(classData) {
+  if (classData.link) {
+    window.location.href = classData.link; 
+  } else {
+    alert("No link provided for this class.");
+  }
+}
 card.addEventListener('click', function() {
 handleClassClick(classData);
 });
