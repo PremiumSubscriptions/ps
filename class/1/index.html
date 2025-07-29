@@ -1285,7 +1285,18 @@ behavior: 'smooth'
 window.addEventListener('load', function() {
 document.body.classList.add('loaded');
 });
+// Option 1: Using URL parameter
+function redirectToLogin() {
+    const currentUrl = window.location.href;
+    const loginUrl = `your-login-page-url.html?redirect=${encodeURIComponent(currentUrl)}`;
+    window.location.href = loginUrl;
+}
 
+// Option 2: Using sessionStorage
+function redirectToLoginWithSession() {
+    sessionStorage.setItem('referrerUrl', window.location.href);
+    window.location.href = 'your-login-page-url.html';
+}
 </script>
 </body>
 </html>
