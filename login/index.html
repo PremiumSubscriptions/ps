@@ -71,12 +71,18 @@
             50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(66, 133, 244, 0); }
         }
         
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
         /* Animation Classes */
         .animate-logo-glow { animation: logoGlow 2s ease-in-out infinite alternate; }
         .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
         .animate-float { animation: float 15s infinite ease-in-out; }
         .animate-wave { animation: wave 8s ease-in-out infinite; }
         .animate-google-pulse { animation: googlePulse 2s infinite; }
+        .animate-spin { animation: spin 1s linear infinite; }
         
         /* Custom Styles */
         .text-gradient {
@@ -335,6 +341,7 @@
             justify-content: center;
             gap: 12px;
             box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3);
+            width: 100%;
         }
         
         .google-signin-btn::before {
@@ -359,6 +366,12 @@
         
         .google-signin-btn:active {
             transform: translateY(-1px) scale(0.98);
+        }
+        
+        .google-signin-btn:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
         }
         
         /* Google Icon */
@@ -457,6 +470,43 @@
             transform: translateY(0);
         }
         
+        /* Alert Styles */
+        .alert {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        /* Spinner */
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        /* User Info Styles */
+        .user-info {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--card-border);
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
         /* Smooth Transitions */
         * {
             transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
@@ -513,7 +563,7 @@
                         <button class="auth-btn login-btn px-6 py-2 rounded-full font-semibold" onclick="scrollToLoginForm()">
                             Login
                         </button>
-                        <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg" onclick="switchToSignup()">
+                        <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient text-white shadow-lg" onclick="switchToSignup()">
                             Sign Up
                         </button>
                     </div>
@@ -537,7 +587,7 @@
                         <button class="flex-1 auth-btn login-btn px-4 py-2 rounded-lg font-semibold" onclick="scrollToLoginForm()">
                             Login
                         </button>
-                        <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient shadow-lg" onclick="switchToSignup()">
+                        <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient text-white shadow-lg" onclick="switchToSignup()">
                             Sign Up
                         </button>
                     </div>
@@ -555,9 +605,21 @@
                     <p class="text-xl" style="color: var(--text-secondary);">Sign in to your account to continue learning</p>
                 </div>
 
+                <!-- Alert Container -->
+                <div id="alert-container" class="hidden mb-4"></div>
+
+                <!-- User Info Display -->
+                <div id="user-info" class="user-info hidden mb-6">
+                    <img id="user-avatar" src="" alt="User Avatar" class="user-avatar">
+                    <div>
+                        <div id="user-name" class="font-semibold" style="color: var(--text-primary);"></div>
+                        <div id="user-email" class="text-sm" style="color: var(--text-secondary);"></div>
+                    </div>
+                </div>
+
                 <div class="card-glass rounded-2xl p-8 mb-6">
                     <!-- Google Sign In Button -->
-                    <button class="login-btn w-full mb-6 animate-google-pulse" onclick="handleGoogleSignIn()">
+                    <button id="login-btn" class="google-signin-btn w-full mb-6">
                         <div class="google-icon">
                             <svg width="16" height="16" viewBox="0 0 24 24">
                                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -566,7 +628,8 @@
                                 <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
                             </svg>
                         </div>
-                        <span>Continue with Google</span>
+                        <span id="btn-text">🎓 Continue with Google</span>
+                        <div id="spinner" class="spinner hidden"></div>
                     </button>
 
                     <div class="relative mb-6">
@@ -745,7 +808,7 @@
                     Get in Touch
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="flex items-center space-x-4 group">
+                    <div class="flex items-center space-x-4 group cursor-pointer">
                         <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
                             <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
                         </div>
@@ -753,7 +816,7 @@
                             +1 (555) 123-4567
                         </span>
                     </div>
-                    <div class="flex items-center space-x-4 group">
+                    <div class="flex items-center space-x-4 group cursor-pointer">
                         <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
                             <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
                         </div>
@@ -761,7 +824,7 @@
                             info@hsccourses.com
                         </span>
                     </div>
-                    <div class="flex items-center space-x-4 group">
+                    <div class="flex items-center space-x-4 group cursor-pointer">
                         <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
                             <i data-lucide="map-pin" class="w-5 h-5 text-purple-400"></i>
                         </div>
@@ -810,15 +873,6 @@
             <p class="text-lg mb-6">This service is not available right now!</p>
             <p class="text-sm text-gray-500 mb-6">Please use Google Sign-In for now. Manual registration will be available soon.</p>
             <button class="btn-gradient text-white px-8 py-2 rounded-lg font-semibold" onclick="closePopup('signupPopup')">OK</button>
-        </div>
-    </div>
-
-    <div class="popup-overlay" id="googlePopup">
-        <div class="popup">
-            <h3 class="text-xl font-bold mb-4">🎉 Google Sign-In</h3>
-            <p class="text-lg mb-6">Google authentication is coming soon!</p>
-            <p class="text-sm text-gray-500 mb-6">This feature will be connected to Firebase in the next update. Stay tuned!</p>
-            <button class="btn-gradient text-white px-8 py-2 rounded-lg font-semibold" onclick="closePopup('googlePopup')">OK</button>
         </div>
     </div>
 
@@ -972,6 +1026,7 @@
         function closePopup(popupId) {
             document.getElementById(popupId).classList.remove('active');
         }
+
         // Scroll to Login Form
         function scrollToLoginForm() {
             document.getElementById('authContainer').scrollIntoView({
@@ -1152,7 +1207,8 @@
         // Start the app
         document.addEventListener('DOMContentLoaded', initApp);
     </script>
-        <!-- Firebase SDKs -->
+
+    <!-- Firebase SDKs -->
     <script type="module">
         // Import Firebase SDKs
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js';
@@ -1160,15 +1216,16 @@
         import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js';
 
         // Firebase configuration
-          const firebaseConfig = {
-    apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
-    authDomain: "courseaccess-921b8.firebaseapp.com",
-    projectId: "courseaccess-921b8",
-    storageBucket: "courseaccess-921b8.firebasestorage.app",
-    messagingSenderId: "35662960447",
-    appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
-    measurementId: "G-SKDTD3FK91"
-  };
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+            authDomain: "courseaccess-921b8.firebaseapp.com",
+            projectId: "courseaccess-921b8",
+            storageBucket: "courseaccess-921b8.firebasestorage.app",
+            messagingSenderId: "35662960447",
+            appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+            measurementId: "G-SKDTD3FK91"
+        };
+
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
@@ -1193,7 +1250,7 @@
                 loginBtn.disabled = true;
                 loginBtn.classList.add('opacity-70');
             } else {
-                btnText.textContent = '🎓 Login with Google';
+                btnText.textContent = '🎓 Continue with Google';
                 spinner.classList.add('hidden');
                 loginBtn.disabled = false;
                 loginBtn.classList.remove('opacity-70');
@@ -1222,124 +1279,118 @@
         }
 
         // Check user access in Firestore
-        // Robust Check user access in Firestore
-async function checkUserAccess(userEmail) {
-    try {
-        console.log('🔍 Starting access check for:', userEmail);
-        
-        // Check if db is initialized
-        if (!db) {
-            console.error('❌ Firestore not initialized');
-            throw new Error('Database not initialized');
-        }
-        
-        console.log('✅ Database initialized');
-        
-        const docRef = doc(db, 'whitelist', userEmail);
-        console.log('✅ Document reference created');
-        
-        const docSnap = await getDoc(docRef);
-        console.log('✅ Document fetch completed');
-        console.log('📄 Document exists:', docSnap.exists());
-        
-        if (docSnap.exists()) {
-            const userData = docSnap.data();
-            console.log('✅ Document data:', userData);
-            
-            // Handle different possible field structures
-            let accessArray = [];
-            
-            if (userData && userData.access) {
-                if (Array.isArray(userData.access)) {
-                    accessArray = userData.access;
-                    console.log('✅ Found access array:', accessArray);
-                } else {
-                    console.log('⚠️ Access field is not an array:', userData.access);
-                    // Try to convert to array if it's a string
-                    if (typeof userData.access === 'string') {
-                        accessArray = userData.access.split(',').map(s => s.trim());
-                        console.log('✅ Converted string to array:', accessArray);
-                    }
+        async function checkUserAccess(userEmail) {
+            try {
+                console.log('🔍 Starting access check for:', userEmail);
+                
+                if (!db) {
+                    console.error('❌ Firestore not initialized');
+                    throw new Error('Database not initialized');
                 }
-            } else {
-                console.log('⚠️ No access field found in document');
+                
+                console.log('✅ Database initialized');
+                
+                const docRef = doc(db, 'whitelist', userEmail);
+                console.log('✅ Document reference created');
+                
+                const docSnap = await getDoc(docRef);
+                console.log('✅ Document fetch completed');
+                console.log('📄 Document exists:', docSnap.exists());
+                
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    console.log('✅ Document data:', userData);
+                    
+                    let accessArray = [];
+                    
+                    if (userData && userData.access) {
+                        if (Array.isArray(userData.access)) {
+                            accessArray = userData.access;
+                            console.log('✅ Found access array:', accessArray);
+                        } else {
+                            console.log('⚠️ Access field is not an array:', userData.access);
+                            if (typeof userData.access === 'string') {
+                                accessArray = userData.access.split(',').map(s => s.trim());
+                                console.log('✅ Converted string to array:', accessArray);
+                            }
+                        }
+                    } else {
+                        console.log('⚠️ No access field found in document');
+                    }
+                    
+                    return accessArray;
+                } else {
+                    console.log('❌ Document not found for email:', userEmail);
+                    return null;
+                }
+            } catch (error) {
+                console.error('💥 Detailed error in checkUserAccess:');
+                console.error('💥 Error name:', error.name);
+                console.error('💥 Error message:', error.message);
+                console.error('💥 Error code:', error.code);
+                console.error('💥 Full error:', error);
+                
+                throw new Error(`Access check failed: ${error.message}`);
             }
-            
-            return accessArray;
-        } else {
-            console.log('❌ Document not found for email:', userEmail);
-            return null; // User not in whitelist
         }
-    } catch (error) {
-        console.error('💥 Detailed error in checkUserAccess:');
-        console.error('💥 Error name:', error.name);
-        console.error('💥 Error message:', error.message);
-        console.error('💥 Error code:', error.code);
-        console.error('💥 Full error:', error);
-        
-        // Re-throw with more context
-        throw new Error(`Access check failed: ${error.message}`);
-    }
-}
 
         // Handle successful authentication
-        // Handle successful authentication - DEBUG VERSION
-async function handleAuthSuccess(user) {
-    try {
-        console.log('🎯 handleAuthSuccess started for:', user.email);
-        
-        // Show user info
-        userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
-        userName.textContent = user.displayName || 'User';
-        userEmail.textContent = user.email;
-        userInfo.classList.remove('hidden');
-        
-        // Check access with detailed logging
-        showAlert('Checking your access permissions...', 'info');
-        
-        console.log('🔄 About to call checkUserAccess...');
-        
-        let accessList;
-        try {
-            accessList = await checkUserAccess(user.email);
-            console.log('✅ checkUserAccess completed, result:', accessList);
-        } catch (accessError) {
-            console.error('💥 checkUserAccess failed:', accessError);
-            showAlert(`Access check error: ${accessError.message}`, 'error');
-            return;
+        async function handleAuthSuccess(user) {
+            try {
+                console.log('🎯 handleAuthSuccess started for:', user.email);
+                
+                // Show user info
+                userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
+                userName.textContent = user.displayName || 'User';
+                userEmail.textContent = user.email;
+                userInfo.classList.remove('hidden');
+                
+                // Check access with detailed logging
+                showAlert('Checking your access permissions...', 'info');
+                
+                console.log('🔄 About to call checkUserAccess...');
+                
+                let accessList;
+                try {
+                    accessList = await checkUserAccess(user.email);
+                    console.log('✅ checkUserAccess completed, result:', accessList);
+                } catch (accessError) {
+                    console.error('💥 checkUserAccess failed:', accessError);
+                    showAlert(`Access check error: ${accessError.message}`, 'error');
+                    return;
+                }
+                
+                if (accessList === null) {
+                    console.log('❌ User not in whitelist');
+                    showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
+                    return;
+                }
+                
+                if (!Array.isArray(accessList)) {
+                    console.log('⚠️ Access list is not an array:', accessList);
+                    showAlert('Error: Invalid access data format.', 'error');
+                    return;
+                }
+                
+                if (accessList.length === 0) {
+                    console.log('❌ Empty access list');
+                    showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
+                    return;
+                }
+                
+                // User has access, redirect to course selection
+                console.log('✅ User has access to:', accessList);
+                showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection...`, 'success');
+                setTimeout(() => {
+                    console.log('🔄 Redirecting to courses.html');
+                    window.location.href = 'courses.html';
+                }, 2000);
+                
+            } catch (error) {
+                console.error('💥 Error in handleAuthSuccess:', error);
+                showAlert(`Authentication error: ${error.message}`, 'error');
+            }
         }
-        
-        if (accessList === null) {
-            console.log('❌ User not in whitelist');
-            showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
-            return;
-        }
-        
-        if (!Array.isArray(accessList)) {
-            console.log('⚠️ Access list is not an array:', accessList);
-            showAlert('Error: Invalid access data format.', 'error');
-            return;
-        }
-        
-        if (accessList.length === 0) {
-            console.log('❌ Empty access list');
-            showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
-            return;
-        }
-        
-        // User has access, redirect to course selection
-        console.log('✅ User has access to:', accessList);
-        showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection...`, 'success');
-        setTimeout(() => {
-            console.log('🔄 Redirecting to courses.html');
-            window.location.href = 'courses.html';
-        }, 2000);
-        
-    } catch (error) {
-        console.error('💥 Error in handleAuthSuccess:', error);
-        showAlert(`Authentication error: ${error.message}`, 'error');
-    }
-}
 
         // Google Sign In
         async function signInWithGoogle() {
@@ -1371,7 +1422,6 @@ async function handleAuthSuccess(user) {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log('User is signed in:', user.email);
-                // User is already signed in, you can handle this case
             } else {
                 console.log('User is signed out');
                 userInfo.classList.add('hidden');
