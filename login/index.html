@@ -1379,21 +1379,21 @@
                 }
                 
         // User has access, redirect to previous page or fallback
-        console.log('✅ User has access to:', accessList);
-            showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting...`, 'success');
-    // Get the "returnTo" URL from query string
-    const params = new URLSearchParams(window.location.search);
-    const returnTo = params.get('returnTo') || 'https://wakilbd.github.io/ps/class';
+        
+ // User has access, redirect to course selection
+                console.log('✅ User has access to:', accessList);
+                showAlert(Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection..., 'success');
+                setTimeout(() => {
+                    console.log('🔄 Redirecting to courses.html');
 
-        setTimeout(() => {
-            console.log('🔄 Redirecting to:', returnTo);
-            window.location.href = returnTo;
-            }, 2000);
-      } catch (error) {
+window.location.href = 'https://wakilbd.github.io/ps/class';
+                }, 2000);
+
+            } catch (error) {
                 console.error('💥 Error in handleAuthSuccess:', error);
                 showAlert(Authentication error: ${error.message}, 'error');
             }
-        }
+        }             
         // Google Sign In
         async function signInWithGoogle() {
             try {
