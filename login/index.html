@@ -897,7 +897,8 @@
             if (savedTheme === 'dark') {
                 toggleTheme();
             }
-
+            // Handle page load redirect check
+            handlePageLoadRedirect();
             // Generate footer particles
             generateFooterParticles();
 
@@ -1335,62 +1336,98 @@
         }
 
         // Handle successful authentication
-        async function handleAuthSuccess(user) {
-            try {
-                console.log('🎯 handleAuthSuccess started for:', user.email);
-                
-                // Show user info
-                userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
-                userName.textContent = user.displayName || 'User';
-                userEmail.textContent = user.email;
-                userInfo.classList.remove('hidden');
-                
-                // Check access with detailed logging
-                showAlert('Checking your access permissions...', 'info');
-                
-                console.log('🔄 About to call checkUserAccess...');
-                
-                let accessList;
-                try {
-                    accessList = await checkUserAccess(user.email);
-                    console.log('✅ checkUserAccess completed, result:', accessList);
-                } catch (accessError) {
-                    console.error('💥 checkUserAccess failed:', accessError);
-                    showAlert(`Access check error: ${accessError.message}`, 'error');
-                    return;
-                }
-                
-                if (accessList === null) {
-                    console.log('❌ User not in whitelist');
-                    showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
-                    return;
-                }
-                
-                if (!Array.isArray(accessList)) {
-                    console.log('⚠️ Access list is not an array:', accessList);
-                    showAlert('Error: Invalid access data format.', 'error');
-                    return;
-                }
-                
-                if (accessList.length === 0) {
-                    console.log('❌ Empty access list');
-                    showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
-                    return;
-                }
-                
-                // User has access, redirect to course selection
-                console.log('✅ User has access to:', accessList);
-                showAlert(`Access granted! You have access to: ${accessList.join(', ')}. Redirecting to course selection...`, 'success');
-                setTimeout(() => {
-                    console.log('🔄 Redirecting to courses.html');
-                    window.location.href = 'courses.html';
-                }, 2000);
-                
-            } catch (error) {
-                console.error('💥 Error in handleAuthSuccess:', error);
-                showAlert(`Authentication error: ${error.message}`, 'error');
-            }
+async function handleAuthSuccess(user) {
+    try {
+        console.log('🎯 handleAuthSuccess started for:', user.email);
+        
+        // Show user info
+        userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
+        userName.textContent = user.displayName || 'User';
+        userEmail.textContent = user.email;
+        userInfo.classList.remove('hidden');
+        
+        // Check access with detailed logging
+        showAlert('Checking your access permissions...', 'info');
+        
+        console.log('🔄 About to call checkUserAccess...');
+        
+        let accessList;
+        try {
+            accessList = await checkUserAccess(user.email);
+            console.log('✅ checkUserAccess completed, result:', accessList);
+        } catch (accessError) {
+            console.error('💥 checkUserAccess failed:', accessError);
+            showAlert(`Access check error: ${accessError.message}`, 'error');
+            return;
         }
+        
+        if (accessList === null) {
+            console.log('❌ User not in whitelist');
+            showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
+            return;
+        }
+        
+        if (!Array.isArray(accessList)) {
+            console.log('⚠️ Access list is not an array:', accessList);
+            showAlert('Error: Invalid access data format.', 'error');
+            return;
+        }
+        
+        if (accessList.length === 0) {
+            console.log('❌ Empty access list');
+            showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
+            return;
+        }
+        
+        // User has access, determine redirect URL
+        console.log('✅ User has access to:', accessList);
+        
+        // Check for returnTo parameter in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const returnToUrl = urlParams.get('returnTo');
+        
+        let redirectUrl;
+        let redirectMessage;
+        
+        if (returnToUrl) {
+            // Decode the returnTo URL
+            redirectUrl = decodeURIComponent(returnToUrl);
+            redirectMessage = `Access granted! Redirecting you back to where you were...`;
+            console.log('🔄 Redirecting back to:', redirectUrl);
+        } else {
+            // Default redirect to class portal
+            redirectUrl = 'https://wakilbd.github.io/ps/class';
+            redirectMessage = `Access granted! You have access to: ${accessList.join(', ')}. Redirecting to class portal...`;
+            console.log('🔄 Redirecting to default class portal:', redirectUrl);
+        }
+        
+        showAlert(redirectMessage, 'success');
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 2000);
+        
+    } catch (error) {
+        console.error('💥 Error in handleAuthSuccess:', error);
+        showAlert(`Authentication error: ${error.message}`, 'error');
+    }
+}
+        // Function to get URL parameters
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Function to handle page load redirect check
+function handlePageLoadRedirect() {
+    const returnToUrl = getUrlParameter('returnTo');
+    if (returnToUrl) {
+        console.log('🔍 Detected returnTo parameter:', decodeURIComponent(returnToUrl));
+        const alertContainer = document.getElementById('alert-container');
+        if (alertContainer) {
+            showAlert('Please login to continue to your requested page...', 'info');
+        }
+    }
+}
 
         // Google Sign In
         async function signInWithGoogle() {
