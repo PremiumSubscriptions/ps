@@ -79,6 +79,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "HSC 27",
                 courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/1",
                 image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
             },
             {
@@ -507,7 +508,9 @@ function renderClasses() {
 function enrollInClass(classId) {
     const classItem = mockClasses.find(c => c.id === classId);
     if (classItem) {
-        alert(`Thank you for your interest in ${classItem.title}! You will be redirected to the class portal.`);
+        window.location.href = classId.link; 
+  } else {
+    alert("No link provided for this class.");
     }
 }
 
