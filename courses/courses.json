@@ -1169,5 +1169,35 @@
     "students": 900,
     "rating": 5,
     "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": 79,
+    "title": "HSC 2026 Shoawn Reza 1st  Paper",
+    "description": "১ম পত্রের সকল অধ্যায়",
+    "category": "Chemistry",
+    "subject": ["Chemistry"],
+    "grade": ["HSC 26"],
+    "courseType": "Alchemy",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "5 months",
+    "students": 600,
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+  },
+  {
+    "id": 80,
+    "title": "HSC 2026 Shoawn Reza 2nd Paper",
+    "description": "২য় পত্রের সকল অধ্যায়",
+    "category": "Chemistry",
+    "subject": ["Chemistry"],
+    "grade": ["HSC 26"],
+    "courseType": "Alchemy",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "4 months",
+    "students": 400,
+    "rating": 5,
+    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
   }
 ]
