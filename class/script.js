@@ -305,7 +305,7 @@ async function loadClasses() {
     try {
         // Simplified class data structure as requested
         mockClasses = [
-            {
+                        {
                 id: 1,
                 title: "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-1)",
                 subject: "Physics",
@@ -325,59 +325,822 @@ async function loadClasses() {
             },
             {
                 id: 3,
-                title: "RTDS Mathematics HSC 26 Complete Course",
-                subject: "Mathematics",
-                grade: "HSC 26",
-                courseType: "RTDS",
-                image: "https://images.unsplash.com/photo-1509228627152-72ae9ae6848d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                title: "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-3)",
+                subject: "Physics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/3",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
             },
             {
                 id: 4,
-                title: "Battle of Biology HSC 27 Intensive Course",
-                subject: "Biology",
+                title: "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-4)",
+                subject: "Physics",
                 grade: "HSC 27",
-                courseType: "Battle of Biology",
-                image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/4",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
             },
             {
                 id: 5,
-                title: "CPS Chemistry HSC 26 Advanced Learning",
-                subject: "Chemistry",
-                grade: "HSC 26",
-                courseType: "CPS",
-                image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                title: "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-5)",
+                subject: "Physics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/5",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
             },
             {
                 id: 6,
-                title: "Bondi Pathshala ICT HSC 27",
-                subject: "ICT",
+                title: "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-6)",
+                subject: "Physics",
                 grade: "HSC 27",
-                courseType: "Bondi Pathshala",
-                image: "https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/6",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
             },
             {
                 id: 7,
-                title: "Physics Hunters HSC 26 Expert Class",
+                title: "ACS Physics HSC 27 By Apurbo Mashrur Apar ALL CYCLE",
                 subject: "Physics",
-                grade: "HSC 26",
-                courseType: "Physics Hunters",
-                image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/7",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
             },
             {
                 id: 8,
-                title: "OpenLearn English Admission 25",
-                subject: "English",
-                grade: "Admission 25",
-                courseType: "OpenLearn",
-                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                title: "ACS HSC 27 Higher Math Academic (Cycle-1)",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/8",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
             },
             {
                 id: 9,
-                title: "Biology Haters Admission 24 Crash Course",
+                title: "ACS HSC 27 Higher Math Academic (Cycle-2)",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/9",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 10,
+                title: "ACS HSC 27 Higher Math Academic (Cycle-3)",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/10",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 11,
+                title: "ACS HSC 27 Higher Math Academic (Cycle-4)",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/11",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 12,
+                title: "ACS HSC 27 Higher Math Academic (Cycle-5)",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/12",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 13,
+                title: "ACS HSC 27 Higher Math Academic (Cycle-6)",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/13",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 14,
+                title: "ACS HSC 27 Higher Math Academic ALL CYCLE Combo",
+                subject: "Mathematics",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/14",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 15,
+                title: "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-1)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/15",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 16,
+                title: "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-2)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/16",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 17,
+                title: "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-3)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/17",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 18,
+                title: "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-4)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/18",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 19,
+                title: "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-5)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/19",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 20,
+                title: "ACS HSC 27 Chemistry by Mottasin Pahlovi ALL CYCLE Combo",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/20",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 21,
+                title: "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-1)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/21",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 22,
+                title: "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-2)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/22",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 23,
+                title: "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-3)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/23",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 24,
+                title: "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-4)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/24",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 25,
+                title: "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-5)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/25",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 26,
+                title: "HSC-27 ACS Chemistry powered by ChemShifu ALL CYCLE Combo",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/26",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 27,
+                title: "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-1)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/27",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 28,
+                title: "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-2)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/28",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 29,
+                title: "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-3)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/29",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 30,
+                title: "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-4)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/30",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 31,
+                title: "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-5)",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/31",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 32,
+                title: "ACS HSC 27 Basic to Advance Chemistry by Hemel ALL CYCLE Combo",
+                subject: "Chemistry",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/32",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 33,
+                title: "ACS ICT BATCH DECODER HSC 27",
+                subject: "ICT",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/33",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 34,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-1)",
                 subject: "Biology",
-                grade: "Admission 24",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/34",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 35,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-2)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/35",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 36,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-3)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/36",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 37,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-4)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/37",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 38,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-5)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/38",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 39,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-6)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/39",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 40,
+                title: "ACS Biology Cycle for HSC 27 by DMC Dreamers ALL CYCLE Combo",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/40",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 41,
+                title: "ACS - College Biology Course by BioMission (Cycle-1)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/41",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 42,
+                title: "ACS - College Biology Course by BioMission (Cycle-2)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/42",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 43,
+                title: "ACS - College Biology Course by BioMission (Cycle-3)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/43",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 44,
+                title: "ACS - College Biology Course by BioMission (Cycle-4)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/44",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 45,
+                title: "ACS - College Biology Course by BioMission (Cycle-5)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/45",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 46,
+                title: "ACS - College Biology Course by BioMission (Cycle-6)",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/46",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 47,
+                title: "ACS - College Biology Course by BioMission ALL CYCLE Combo",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/47",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 48,
+                title: "BIOLOGY HATERS BIOLOGY Cycle -1",
+                subject: "Biology",
+                grade: "HSC 27",
                 courseType: "Biology Haters",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                link: "https://wakilbd.github.io/ps/class/48",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 49,
+                title: "BIOLOGY HATERS BIOLOGY Cycle -2",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/49",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 50,
+                title: "BIOLOGY HATERS BIOLOGY Cycle -3",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/50",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 51,
+                title: "BIOLOGY HATERS BIOLOGY Cycle -4",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/51",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 52,
+                title: "BIOLOGY HATERS BIOLOGY Cycle -5",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/52",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 53,
+                title: "BIOLOGY HATERS BIOLOGY Cycle -6",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/53",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 54,
+                title: "BIOLOGY HATERS BIOLOGY ALL Cycle Combo",
+                subject: "Biology",
+                grade: "HSC 27",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/54",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 55,
+                title: "HSC'26 ( বাংলা ১ম পত্র সম্পূর্ণ)- ACS",
+                subject: "Bangla",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/55",
+                image: ""
+            },
+            {
+                id: 56,
+                title: "ACS Higher Math 1st Paper (HSC 26) (Cycle-1)",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/56",
+                image: ""
+            },
+            {
+                id: 57,
+                title: "ACS Higher Math 1st Paper (HSC 26) (Cycle-2)",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/57",
+                image: ""
+            },
+            {
+                id: 58,
+                title: "ACS Higher Math 1st Paper (HSC 26) (Cycle-3)",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/58",
+                image: ""
+            },
+            {
+                id: 59,
+                title: "ACS Higher Math 2nd Paper (HSC 26) (Cycle-4)",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/59",
+                image: ""
+            },
+            {
+                id: 60,
+                title: "ACS Higher Math 2nd Paper (HSC 26) (Cycle-5)",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/60",
+                image: ""
+            },
+            {
+                id: 61,
+                title: "ACS Higher Math 2nd Paper (HSC 26) (Cycle-6)",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/61",
+                image: ""
+            },
+            {
+                id: 62,
+                title: "ACS Higher Math 1st  & 2nd Paper (HSC 26) ALL CYCLE COMBO",
+                subject: "Mathematics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/62",
+                image: ""
+            },
+            {
+                id: 63,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-1)",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/63",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 64,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-2)",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/64",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 65,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-3)",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/65",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 66,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-4)",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/66",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 67,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-5)",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/67",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 68,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-6)",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/68",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 69,
+                title: "ACS Physics HSC 26 By Apurbo Mashrur Apar ALL CYCLE",
+                subject: "Physics",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/69",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 70,
+                title: "ACS HSC 26 Chemistry (Cycle-1)",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/70",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 71,
+                title: "ACS HSC 26 Chemistry (Cycle-2)",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/71",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 72,
+                title: "ACS HSC 26 Chemistry (Cycle-3)",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/72",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 73,
+                title: "ACS HSC 26 Chemistry (Cycle-4)",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/73",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 74,
+                title: "ACS HSC 26 Chemistry (Cycle-5)",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/74",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 75,
+                title: "ACS HSC 26 Chemistry ALL CYCLE Combo",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/75",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 76,
+                title: "HSC 2026 ACS Biology ALL CYCLE",
+                subject: "Biology",
+                grade: "HSC 26",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/76",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 77,
+                title: "HSC 2026 BH TROOPS 1ST Paper ",
+                subject: "Biology",
+                grade: "HSC 26",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/77",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 78,
+                title: "HSC 2026 BH TROOPS 2ND Paper ",
+                subject: "Biology",
+                grade: "HSC 26",
+                courseType: "Biology Haters",
+                link: "https://wakilbd.github.io/ps/class/78",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 79,
+                title: "HSC 2026 Shoawn Reza 1st  Paper",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "Alchemy",
+                link: "https://wakilbd.github.io/ps/class/79",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 80,
+                title: "HSC 2026 Shoawn Reza 2nd Paper",
+                subject: "Chemistry",
+                grade: "HSC 26",
+                courseType: "Alchemy",
+                link: "https://wakilbd.github.io/ps/class/80",
+                image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 81,
+                title: "প্রত্যাবর্তন ৪.০  সম্পূর্ণ - Admission 2024/25",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "Physics Hunters",
+                link: "https://wakilbd.github.io/ps/class/81",
+                image: ""
+            },
+            {
+                id: 82,
+                title: "ALPHA 6 Medical Admission Full Course",
+                subject: "Biology",
+                grade: "Admission 25",
+                courseType: "Battle of Biology",
+                link: "https://wakilbd.github.io/ps/class/82",
+                image: ""
+            },
+            {
+                id: 83,
+                title: "দুরন্ত প্রয়াস 5.0s Restart ( 2nd Timer Medical Batch )",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "RTDS",
+                link: "https://wakilbd.github.io/ps/class/83",
+                image: ""
+            },
+            {
+                id: 84,
+                title: "ACS Varsity & GST Special Private Programme 2025",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/84",
+                image: ""
+            },
+            {
+                id: 85,
+                title: "ACS Engineering Admission Private Batch 2025",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "ACS",
+                link: "https://wakilbd.github.io/ps/class/85",
+                image: ""
+            },
+            {
+                id: 86,
+                title: "ACS Medical Admission Private Batch 2025",
+                subject: "Biology",
+                grade: "Admission 25",
+                courseType: "",
+                link: "https://wakilbd.github.io/ps/class/86",
+                image: ""
+            },
+            {
+                id: 87,
+                title: "Target DU 5.0",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "Bondi Pathshala",
+                link: "https://wakilbd.github.io/ps/class/87",
+                image: ""
+            },
+            {
+                id: 88,
+                title: "BP ENGINEERING & Varsity Biology - HSC 2025",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "Bondi Pathshala",
+                link: "https://wakilbd.github.io/ps/class/88",
+                image: ""
+            },
+            {
+                id: 89,
+                title: "Engneering Physics - HSC 2025",
+                subject: "Biology",
+                grade: "Admission 25",
+                courseType: "",
+                link: "https://wakilbd.github.io/ps/class/89",
+                image: ""
+            },
+            {
+                id: 90,
+                title: "Engneering Chemistry - HSC 2025",
+                subject: "Chemistry",
+                grade: "Admission 25",
+                courseType: "",
+                link: "https://wakilbd.github.io/ps/class/90",
+                image: ""
+            },
+            {
+                id: 91,
+                title: "Engneering Math - HSC 2025",
+                subject: "Mathematics",
+                grade: "Admission 25",
+                courseType: "",
+                link: "https://wakilbd.github.io/ps/class/91",
+                image: ""
+            },
+            {
+                id: 92,
+                title: "Varsity Biology - HSC 2025",
+                subject: "Biology",
+                grade: "Admission 25",
+                courseType: "",
+                link: "https://wakilbd.github.io/ps/class/92",
+                image: ""
+            },
+            {
+                id: 93,
+                title: "MediTroops - 1st Timer Medical Course (Avengers)",
+                subject: "Physics",
+                grade: "Admission 25",
+                courseType: "",
+                link: "https://wakilbd.github.io/ps/class/93",
+                image: ""
             }
         ];
 
