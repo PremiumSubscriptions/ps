@@ -588,13 +588,6 @@ function initEventListeners() {
         });
     });
 
-    // Auth button actions
-    document.querySelectorAll('.login-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            alert('Login functionality would go here!');
-        });
-    });
-
     document.querySelectorAll('button:not(.login-btn):not(#themeToggle):not(#mobileMenuToggle)').forEach(btn => {
         if (btn.textContent.includes('Sign Up')) {
             btn.addEventListener('click', () => {
