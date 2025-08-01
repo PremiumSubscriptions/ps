@@ -917,6 +917,19 @@
 
             // Initialize event listeners
             initEventListeners();
+            
+            // Generate floating shapes
+            generateFloatingShapes();
+            generateHeroParticles();
+            generateFooterParticles();
+
+            // Initialize animations
+            initScrollAnimations();
+            initSlider();
+            initSparkleEffects();
+
+            // Initialize event listeners
+            initEventListeners();
         }
 
         // Theme Toggle
@@ -974,7 +987,35 @@
                 }
             }
         }
-
+        // Generate Floating Shapes
+        function generateFloatingShapes() {
+            const container = document.getElementById('floatingShapes');
+            const shapes = 8;
+            
+            for (let i = 0; i < shapes; i++) {
+                const shape = document.createElement('div');
+                const size = Math.random() * 200 + 100;
+                const colors = [
+                    'bg-gradient-to-br from-blue-400 to-purple-400',
+                    'bg-gradient-to-br from-green-400 to-blue-400', 
+                    'bg-gradient-to-br from-purple-400 to-pink-400',
+                    'bg-gradient-to-br from-pink-500 to-orange-500',
+                    'bg-gradient-to-br from-cyan-400 to-purple-500'
+                ];
+                
+                shape.className = `absolute animate-float opacity-10 ${colors[i % colors.length]}`;
+                shape.style.width = `${size}px`;
+                shape.style.height = `${size}px`;
+                shape.style.left = `${Math.random() * 100}%`;
+                shape.style.top = `${Math.random() * 100}%`;
+                shape.style.borderRadius = i % 2 === 0 ? '50%' : '20px';
+                shape.style.animationDelay = `${i * 2}s`;
+                shape.style.animationDuration = `${Math.random() * 10 + 15}s`;
+                shape.style.filter = 'blur(1px)';
+                
+                container.appendChild(shape);
+            }
+        }
         // Generate Footer Particles
         function generateFooterParticles() {
             const container = document.getElementById('footerParticles');
@@ -993,7 +1034,11 @@
                 container.appendChild(particle);
             }
         }
-
+        // Observe fade-in elements
+            document.querySelectorAll('.fade-in-element').forEach(element => {
+                observer.observe(element);
+            });
+        
         // Scroll Animations
         function initScrollAnimations() {
             const observerOptions = {
