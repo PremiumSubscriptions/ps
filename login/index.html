@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HSC COURSES - Login & Sign Up</title>
     
-    <!-- Critical CSS Inlined -->
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
     <style>
-        /* Critical CSS for immediate rendering */
+        /* Custom CSS Variables for Theme */
         :root {
             --bg-primary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
             --bg-secondary: #ffffff;
@@ -32,111 +43,27 @@
             --shadow-color: rgba(168, 85, 247, 0.1);
         }
         
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg-primary);
-            min-height: 100vh;
-            margin: 0;
-            overflow-x: hidden;
-        }
-        
-        /* Mobile-optimized animations */
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-        
-        /* Mobile-first responsive design */
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-        @media (min-width: 640px) { .container { padding: 0 1.5rem; } }
-        @media (min-width: 1024px) { .container { padding: 0 2rem; } }
-    </style>
-    
-    <!-- Fallback CSS in case Tailwind fails to load -->
-    <noscript>
-        <style>
-            .btn-gradient { background: linear-gradient(135deg, #3b82f6, #8b5cf6); color: white; padding: 12px 24px; border-radius: 8px; border: none; }
-            .card-glass { background: white; border-radius: 16px; padding: 32px; box-shadow: 0 25px 60px rgba(0,0,0,0.1); }
-            .hidden { display: none !important; }
-            .flex { display: flex; }
-            .items-center { align-items: center; }
-            .justify-between { justify-content: space-between; }
-            .text-center { text-align: center; }
-            .w-full { width: 100%; }
-            .fixed { position: fixed; }
-            .top-0 { top: 0; }
-            .z-50 { z-index: 50; }
-            .py-4 { padding: 1rem 0; }
-            .px-6 { padding: 0 1.5rem; }
-        </style>
-    </noscript>
-
-    <!-- Load external resources with fallbacks -->
-    <script>
-        // Network-aware loading strategy
-        const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-        const isSlowConnection = connection && (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
-        const isOffline = !navigator.onLine;
-        
-        // Error handling for external resources
-        window.addEventListener('error', function(e) {
-            if (e.target !== window && e.target.tagName) {
-                console.warn('Resource failed to load:', e.target.src || e.target.href);
-                // Implement fallback behavior
-                handleResourceFailure(e.target);
-            }
-        });
-        
-        function handleResourceFailure(element) {
-            if (element.tagName === 'SCRIPT') {
-                console.log('Script failed, implementing fallback functionality');
-                // Add fallback functionality if needed
-            } else if (element.tagName === 'LINK') {
-                console.log('Stylesheet failed, critical CSS already inlined');
-            }
-        }
-        
-        // Load resources based on network conditions
-        if (!isSlowConnection && !isOffline) {
-            document.write('<script src="https://cdn.tailwindcss.com"><\\/script>');
-            document.write('<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;700;800&display=swap" rel="stylesheet">');
-            document.write('<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">');
-            document.write('<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"><\\/script>');
-        } else {
-            console.log('Slow connection or offline detected, using minimal resources');
-        }
-    </script>
-    
-    <style>
-        /* Enhanced CSS with mobile optimizations */
-        
-        /* Custom Animations - Reduced complexity for mobile */
+        /* Custom Animations */
         @keyframes logoGlow {
-            0% { text-shadow: 0 0 5px currentColor; }
-            100% { text-shadow: 0 0 15px currentColor; }
+            0% { text-shadow: 0 0 10px currentColor; }
+            100% { text-shadow: 0 0 30px currentColor, 0 0 40px currentColor; }
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-40px) rotate(0deg); }
+            75% { transform: translateY(-20px) rotate(-5deg); }
         }
         
         @keyframes wave {
             0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(15px); }
-        }
-        
-        @keyframes googlePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.01); }
+            50% { transform: translateX(25px); }
         }
         
         @keyframes spin {
@@ -144,19 +71,11 @@
             100% { transform: rotate(360deg); }
         }
         
-        /* Reduce animations on mobile devices */
-        @media (max-width: 768px) {
-            .animate-float { animation-duration: 8s; }
-            .animate-wave { animation-duration: 6s; }
-            .animate-logo-glow { animation-duration: 3s; }
-        }
-        
         /* Animation Classes */
         .animate-logo-glow { animation: logoGlow 2s ease-in-out infinite alternate; }
-        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; }
-        .animate-float { animation: float 8s infinite ease-in-out; }
-        .animate-wave { animation: wave 6s ease-in-out infinite; }
-        .animate-google-pulse { animation: googlePulse 2s infinite; }
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-float { animation: float 15s infinite ease-in-out; }
+        .animate-wave { animation: wave 8s ease-in-out infinite; }
         .animate-spin { animation: spin 1s linear infinite; }
         
         /* Custom Styles */
@@ -181,18 +100,18 @@
         }
         
         .btn-gradient:hover {
-            transform: scale(1.02);
-            box-shadow: 0 10px 25px var(--shadow-color);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px var(--shadow-color);
         }
         
         /* Enhanced Navigation Link Styles */
         .nav-link {
             position: relative;
             color: var(--text-primary);
-            font-weight: 600;
-            padding: 10px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            font-weight: 900;
+            padding: 12px 20px;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             text-decoration: none;
             display: inline-block;
@@ -206,17 +125,34 @@
             width: 0;
             height: 100%;
             background: linear-gradient(135deg, #dbeafe, #ede9fe);
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: -1;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .nav-link:hover {
             color: #2563eb;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
         }
         
         .nav-link:hover::before {
             width: 100%;
+        }
+        
+        .nav-link:hover::after {
+            width: 80%;
         }
         
         /* Dark theme navigation */
@@ -225,11 +161,16 @@
         }
         
         [data-theme="dark"] .nav-link::before {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
+        }
+        
+        [data-theme="dark"] .nav-link::after {
+            background: linear-gradient(135deg, #a855f7, #ec4899, #06b6d4);
         }
         
         [data-theme="dark"] .nav-link:hover {
             color: #ffffff;
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
         }
         
         /* Mobile Navigation Link Styles */
@@ -259,7 +200,7 @@
         
         .mobile-nav-link:hover {
             color: #2563eb;
-            transform: translateX(4px);
+            transform: translateX(8px);
         }
         
         .mobile-nav-link:hover::before {
@@ -271,7 +212,7 @@
         }
         
         [data-theme="dark"] .mobile-nav-link::before {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(236, 72, 153, 0.2));
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
         }
         
         [data-theme="dark"] .mobile-nav-link:hover {
@@ -291,8 +232,26 @@
             cursor: pointer;
         }
         
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .theme-toggle:hover::before {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+        
         .theme-toggle:hover {
-            transform: scale(1.05);
+            transform: scale(1.1) rotate(12deg);
+            box-shadow: 0 0 20px rgba(55, 65, 81, 0.5);
         }
         
         [data-theme="dark"] .theme-toggle {
@@ -300,11 +259,35 @@
             color: #0f172a;
         }
         
+        [data-theme="dark"] .theme-toggle::before {
+            background: radial-gradient(circle, rgba(251, 191, 36, 0.3), transparent);
+        }
+        
+        [data-theme="dark"] .theme-toggle:hover {
+            box-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+        
         /* Auth Button Styles */
         .auth-btn {
             position: relative;
             overflow: hidden;
             transition: all 0.3s ease;
+        }
+        
+        .auth-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            transition: all 0.3s ease;
+            z-index: -1;
+        }
+        
+        .auth-btn:hover::before {
+            left: 0;
         }
         
         .login-btn {
@@ -315,7 +298,8 @@
         .login-btn:hover {
             background: #3b82f6;
             color: #ffffff;
-            transform: translateY(-1px);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
         }
         
         [data-theme="dark"] .login-btn {
@@ -326,6 +310,11 @@
         [data-theme="dark"] .login-btn:hover {
             background: #a855f7;
             color: #ffffff;
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.25);
+        }
+        
+        [data-theme="dark"] .auth-btn::before {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
         }
         
         /* Google Sign In Button */
@@ -349,13 +338,28 @@
             width: 100%;
         }
         
+        .google-signin-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+        }
+        
         .google-signin-btn:hover {
-            transform: translateY(-2px) scale(1.01);
-            box-shadow: 0 6px 20px rgba(66, 133, 244, 0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4);
+        }
+        
+        .google-signin-btn:hover::before {
+            left: 0;
         }
         
         .google-signin-btn:active {
-            transform: translateY(-1px) scale(0.99);
+            transform: translateY(-1px) scale(0.98);
         }
         
         .google-signin-btn:disabled {
@@ -386,7 +390,6 @@
             transition: all 0.3s ease;
             background: #ffffff;
             color: var(--text-primary);
-            box-sizing: border-box;
         }
         
         .form-input:focus {
@@ -436,7 +439,7 @@
             text-align: center;
             max-width: 400px;
             width: 90%;
-            transform: scale(0.9);
+            transform: scale(0.7);
             transition: transform 0.3s ease;
         }
         
@@ -486,164 +489,59 @@
             object-fit: cover;
         }
         
-        /* Smooth Transitions */
-        * {
-            transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+        /* Fade in elements for animations */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
         
-        /* Focus States */
-        *:focus {
-            outline: 2px solid #8b5cf6;
-            outline-offset: 2px;
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
-        /* Footer Fixes */
+        /* Body Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            min-height: 100vh;
+            margin: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Footer specific fixes */
         footer {
             position: relative;
-            overflow: hidden;
+            width: 100%;
             margin-top: auto;
-            z-index: 1;
         }
         
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .text-4xl {
-                font-size: 2rem;
-            }
-            
-            .text-3xl {
-                font-size: 1.5rem;
-            }
-            
-            .p-8 {
-                padding: 1.5rem;
-            }
-            
-            .card-glass {
-                padding: 1.5rem;
-            }
-            
-            /* Reduce backdrop-filter on mobile for performance */
-            .card-glass {
-                backdrop-filter: blur(8px);
-            }
+        .footer-link:hover {
+            color: #ffffff;
         }
         
-        /* Health Check Indicator */
-        .health-indicator {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 12px;
-            height: 12px;
+        /* Social link hover effects */
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            background: #10b981;
-            z-index: 1000;
-            opacity: 0.7;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
         }
         
-        .health-indicator.offline {
-            background: #ef4444;
-        }
-        
-        /* Utility Classes */
-        .hidden { display: none !important; }
-        .block { display: block; }
-        .flex { display: flex; }
-        .fixed { position: fixed; }
-        .relative { position: relative; }
-        .absolute { position: absolute; }
-        .w-full { width: 100%; }
-        .h-full { height: 100%; }
-        .top-0 { top: 0; }
-        .left-0 { left: 0; }
-        .right-0 { right: 0; }
-        .bottom-0 { bottom: 0; }
-        .z-50 { z-index: 50; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        .text-center { text-align: center; }
-        .font-bold { font-weight: bold; }
-        .font-semibold { font-weight: 600; }
-        .text-white { color: white; }
-        .bg-white { background: white; }
-        .rounded-lg { border-radius: 8px; }
-        .rounded-xl { border-radius: 12px; }
-        .rounded-2xl { border-radius: 16px; }
-        .p-2 { padding: 0.5rem; }
-        .p-4 { padding: 1rem; }
-        .p-6 { padding: 1.5rem; }
-        .p-8 { padding: 2rem; }
-        .px-4 { padding-left: 1rem; padding-right: 1rem; }
-        .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-        .mb-4 { margin-bottom: 1rem; }
-        .mb-6 { margin-bottom: 1.5rem; }
-        .mb-8 { margin-bottom: 2rem; }
-        .mt-4 { margin-top: 1rem; }
-        .mt-6 { margin-top: 1.5rem; }
-        .space-x-2 > * + * { margin-left: 0.5rem; }
-        .space-x-3 > * + * { margin-left: 0.75rem; }
-        .space-x-4 > * + * { margin-left: 1rem; }
-        .space-y-2 > * + * { margin-top: 0.5rem; }
-        .space-y-3 > * + * { margin-top: 0.75rem; }
-        .max-w-md { max-width: 28rem; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
-        .text-xl { font-size: 1.25rem; }
-        .text-2xl { font-size: 1.5rem; }
-        .text-4xl { font-size: 2.25rem; }
-        .min-h-screen { min-height: 100vh; }
-        .pt-32 { padding-top: 8rem; }
-        .pb-20 { padding-bottom: 5rem; }
-        .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
-        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
-        .border-t { border-top-width: 1px; }
-        .border-gray-300 { border-color: #d1d5db; }
-        .opacity-70 { opacity: 0.7; }
-        
-        /* Responsive utilities */
-        @media (min-width: 768px) {
-            .md\\\\:hidden { display: none !important; }
-            .md\\\\:flex { display: flex; }
-            .md\\\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-            .md\\\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-        }
-        
-        @media (max-width: 767px) {
-            .md\\\\:hidden { display: block !important; }
-        }
-        
-        .grid { display: grid; }
-        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-        .gap-4 { gap: 1rem; }
-        .gap-6 { gap: 1.5rem; }
-        .gap-12 { gap: 3rem; }
-        
-        /* Additional mobile optimizations */
-        @media (max-width: 480px) {
-            .google-signin-btn {
-                font-size: 1rem;
-                padding: 14px 24px;
-            }
-            
-            .card-glass {
-                margin: 0 0.5rem;
-                padding: 1.25rem;
-            }
+        .social-link:hover::before {
+            opacity: 1;
         }
     </style>
 </head>
 <body class="font-sans">
-    <!-- Health Check Indicator -->
-    <div class="health-indicator" id="healthIndicator" title="System Status"></div>
-    
     <!-- Header -->
     <header class="fixed w-full top-0 z-50 transition-all duration-300" id="header">
         <div class="container mx-auto px-6 py-4">
@@ -654,8 +552,6 @@
                         src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
                         alt="HSC COURSES Logo"
                         class="h-10 w-auto filter drop-shadow-lg hover:scale-105 transition-transform duration-300"
-                        loading="lazy"
-                        onerror="this.style.display='none'"
                     /></a>
                     <a href="https://wakilbd.github.io/ps/login"><h1 class="text-2xl font-bold tracking-wide text-gradient animate-logo-glow hover:scale-105 transition-transform duration-300">
                         Premium Subscription
@@ -673,8 +569,8 @@
 
                 <!-- Theme Toggle & Auth Buttons -->
                 <div class="flex items-center space-x-4">
-                    <button id="themeToggle" class="theme-toggle transform hover:rotate-12" aria-label="Toggle theme">
-                        <span id="themeIcon">🌙</span>
+                    <button id="themeToggle" class="theme-toggle transform hover:rotate-12">
+                        <i data-lucide="moon" class="w-5 h-5"></i>
                     </button>
 
                     <div class="hidden md:flex space-x-3">
@@ -687,8 +583,8 @@
                     </div>
 
                     <!-- Mobile Menu Toggle -->
-                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-gray-100" aria-label="Toggle mobile menu">
-                        <span id="mobileMenuIcon">☰</span>
+                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-gray-100">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
             </div>
@@ -770,14 +666,14 @@
                             <div class="relative">
                                 <input type="password" id="password" name="password" class="form-input pr-12" placeholder="Enter your password" required>
                                 <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword('password')">
-                                    <span id="password-eye">👁️</span>
+                                    <i class="fas fa-eye" id="password-eye"></i>
                                 </button>
                             </div>
                         </div>
 
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center">
-                                <input type="checkbox" id="remember" name="remember" class="w-4 h-4" style="accent-color: #3b82f6;">
+                                <input type="checkbox" id="remember" name="remember" class="w-4 h-4 accent-color" style="accent-color: #3b82f6;">
                                 <label for="remember" class="ml-2 text-sm" style="color: var(--text-primary);">Remember me</label>
                             </div>
                             <a href="#forgot-password" class="text-sm text-blue-600 hover:text-blue-800">Forgot password?</a>
@@ -796,8 +692,8 @@
         </div>
     </main>
 
-    <!-- Footer - Fixed positioning and display issues -->
-    <footer id="contact" class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900" style="clear: both;">
+    <!-- Footer -->
+    <footer class="relative overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
         <!-- Animated Wave Background -->
         <div class="absolute top-0 left-0 w-full h-20 overflow-hidden">
             <svg 
@@ -813,22 +709,18 @@
         </div>
 
         <!-- Floating Particles -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none" id="footerParticles">
-            <!-- Particles will be generated by JavaScript -->
-        </div>
+        <div class="absolute inset-0 overflow-hidden pointer-events-none" id="footerParticles"></div>
 
         <div class="relative z-10 container mx-auto px-6 py-16">
             <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12 fade-in-element">
                 <!-- Company Info -->
                 <div class="lg:col-span-2">
                     <div class="flex items-center space-x-3 mb-6">
                         <img 
-                            src="logo.webp"
+                            src="https://customer-assets.emergentagent.com/job_1b8ae365-1e2c-44cd-aeea-3340540df5b2/artifacts/wouwc4b0_photo_6061985153485489562_x.jpg"
                             alt="Premium Subscription Logo"
                             class="h-12 w-auto filter drop-shadow-lg"
-                            loading="lazy"
-                            onerror="this.style.display='none'"
                         />
                         <h3 class="text-3xl font-black tracking-wide text-gradient animate-pulse">
                             ᴘʀᴇᴍɪᴜᴍ ꜱᴜʙꜱᴄʀɪᴘᴛɪᴏɴ
@@ -843,23 +735,23 @@
 
                     <!-- Social Links -->
                     <div class="flex space-x-4" id="socialLinks">
-                        <a href="https://www.facebook.com/tgpatshala" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden" aria-label="Facebook">
-                            <span>📘</span>
+                        <a href="https://www.facebook.com/tgpatshala" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="facebook" class="w-5 h-5 relative z-10"></i>
                         </a>
-                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden" aria-label="Twitter">
-                            <span>🐦</span>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="twitter" class="w-5 h-5 relative z-10"></i>
                         </a>
-                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden" aria-label="Instagram">
-                            <span>📷</span>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="instagram" class="w-5 h-5 relative z-10"></i>
                         </a>
-                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden" aria-label="YouTube">
-                            <span>📺</span>
+                        <a href="#" class="social-link p-3 rounded-full transition-all duration-300 transform hover:scale-110 bg-gradient-to-r from-slate-700 to-slate-600 hover:from-purple-600 hover:to-pink-600 text-gray-300 hover:text-white hover:shadow-lg hover:shadow-purple-500/25 group relative overflow-hidden">
+                            <i data-lucide="youtube" class="w-5 h-5 relative z-10"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
-                <div>
+                <div class="fade-in-element">
                     <h4 class="text-xl font-bold text-white mb-6 relative">
                         Quick Links
                         <div class="absolute bottom-0 left-0 w-12 h-0.5 btn-gradient"></div>
@@ -897,7 +789,7 @@
                 </div>
 
                 <!-- Popular Services -->
-                <div>
+                <div class="fade-in-element">
                     <h4 class="text-xl font-bold text-white mb-6 relative">
                         Popular Services
                         <div class="absolute bottom-0 left-0 w-12 h-0.5 btn-gradient"></div>
@@ -932,14 +824,14 @@
             </div>
 
             <!-- Contact Info -->
-            <div class="p-8 rounded-2xl mb-12 bg-gradient-to-r from-blue-700 via-indigo-800 to-purple-800">
+            <div class="p-8 rounded-2xl mb-12 bg-gradient-to-r from-blue-700 via-indigo-800 to-purple-800 fade-in-element">
                 <h4 class="text-2xl font-bold text-white mb-6 text-center">
                     Get in Touch
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="flex items-center space-x-4 group">
                         <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
-                            <span>📞</span>
+                            <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
                         </div>
                         <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
                             Contact Us on Telegram 
@@ -947,7 +839,7 @@
                     </div>
                     <div class="flex items-center space-x-4 group">
                         <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
-                            <span>📧</span>
+                            <i data-lucide="mail" class="w-5 h-5 text-blue-400"></i>
                         </div>
                         <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
                             help.infodesk.premium@gmail.com
@@ -955,7 +847,7 @@
                     </div>
                     <div class="flex items-center space-x-4 group">
                         <div class="p-3 rounded-full bg-slate-700 group-hover:scale-110 transition-transform duration-300">
-                            <span>📍</span>
+                            <i data-lucide="map-pin" class="w-5 h-5 text-purple-400"></i>
                         </div>
                         <span class="text-gray-300 group-hover:text-white transition-colors duration-300">
                             123 Premium Street, Digital City
@@ -965,7 +857,7 @@
             </div>
 
             <!-- Bottom Section -->
-            <div class="border-t border-gray-700/50 pt-8">
+            <div class="border-t border-gray-700/50 pt-8 fade-in-element">
                 <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
                     <div class="flex items-center space-x-4 text-gray-400 text-sm">
                         <span>&copy; 2024 Premium Subscription. All rights reserved.</span>
@@ -977,9 +869,9 @@
                     
                     <div class="flex items-center space-x-2 text-gray-400 text-sm">
                         <span>Made by</span>
-                        <span>⭐</span>
+                        <i data-lucide="star" class="w-4 h-4 text-yellow-400 animate-pulse"></i>
                         <span> Premium Team</span>
-                        <span>✨</span>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-purple-400 animate-spin"></i>
                     </div>
                 </div>
             </div>
@@ -1005,171 +897,50 @@
         </div>
     </div>
 
-    <!-- Service Worker Registration -->
     <script>
-        // Register Service Worker for caching and offline functionality
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(function(registration) {
-                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
-                    })
-                    .catch(function(err) {
-                        console.log('ServiceWorker registration failed: ', err);
-                    });
-            });
-        }
-    </script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
 
-    <script>
-        // Mobile-optimized JavaScript with 99.99% uptime features
-        
         // Global Variables
         let isDark = false;
         let isScrolled = false;
-        let healthCheckInterval;
-        let isOnline = navigator.onLine;
 
         // DOM Elements
         const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-        const mobileMenuIcon = document.getElementById('mobileMenuIcon');
         const mobileMenu = document.getElementById('mobileMenu');
         const header = document.getElementById('header');
-        const healthIndicator = document.getElementById('healthIndicator');
-
-        // Network Detection
-        window.addEventListener('online', function() {
-            isOnline = true;
-            healthIndicator.classList.remove('offline');
-            console.log('Connection restored');
-        });
-
-        window.addEventListener('offline', function() {
-            isOnline = false;
-            healthIndicator.classList.add('offline');
-            console.log('Connection lost - switching to offline mode');
-        });
-
-        // Performance observer for monitoring
-        if ('PerformanceObserver' in window) {
-            const observer = new PerformanceObserver((list) => {
-                for (const entry of list.getEntries()) {
-                    if (entry.entryType === 'navigation') {
-                        console.log('Page load time:', entry.loadEventEnd - entry.fetchStart, 'ms');
-                    }
-                }
-            });
-            observer.observe({entryTypes: ['navigation']});
-        }
-
-        // Error handling and monitoring
-        window.addEventListener('error', function(e) {
-            console.error('JavaScript Error:', e.error);
-            // In production, send to monitoring service
-        });
-
-        window.addEventListener('unhandledrejection', function(e) {
-            console.error('Unhandled Promise Rejection:', e.reason);
-            // In production, send to monitoring service
-        });
 
         // Initialize App
         function initApp() {
-            try {
-                // Initialize theme from localStorage
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme === 'dark') {
-                    toggleTheme();
-                }
-
-                // Handle page load redirect check
-                handlePageLoadRedirect();
-                
-                // Generate footer particles (only if not on slow connection)
-                if (!isSlowConnection) {
-                    generateFooterParticles();
-                }
-
-                // Initialize event listeners
-                initEventListeners();
-                
-                // Start health monitoring
-                startHealthMonitoring();
-                
-                console.log('App initialized successfully');
-            } catch (error) {
-                console.error('Failed to initialize app:', error);
-                // Fallback functionality
-                document.body.innerHTML = '<div style="text-align: center; padding: 2rem;">Loading... Please refresh if this message persists.</div>';
+            // Initialize theme from localStorage
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                toggleTheme();
             }
+            
+            // Handle page load redirect check
+            handlePageLoadRedirect();
+            // Generate footer particles
+            generateFooterParticles();
+            // Initialize animations
+            initScrollAnimations();
+            // Initialize event listeners
+            initEventListeners();
         }
 
-        // Health Monitoring
-        function startHealthMonitoring() {
-            healthCheckInterval = setInterval(() => {
-                // Check if critical elements are still present
-                const criticalElements = ['header', 'authContainer'];
-                let healthStatus = true;
-                
-                criticalElements.forEach(id => {
-                    if (!document.getElementById(id)) {
-                        healthStatus = false;
-                    }
-                });
-                
-                if (!healthStatus) {
-                    console.warn('Health check failed - some critical elements missing');
-                    healthIndicator.classList.add('offline');
-                } else {
-                    if (isOnline) {
-                        healthIndicator.classList.remove('offline');
-                    }
-                }
-            }, 30000); // Check every 30 seconds
-        }
-
-        // Theme Toggle - Fixed and optimized
+        // Theme Toggle
         function toggleTheme() {
-            try {
-                isDark = !isDark;
-                document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                
-                // Update theme toggle icon with fallback
-                themeIcon.textContent = isDark ? '☀️' : '🌙';
-                
-                // Update mobile menu toggle color
-                updateMobileMenuStyle();
-                
-                console.log('Theme toggled to:', isDark ? 'dark' : 'light');
-            } catch (error) {
-                console.error('Theme toggle failed:', error);
-            }
-        }
+            isDark = !isDark;
+            document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Update theme toggle icon
+            const icon = themeToggle.querySelector('i');
+            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
+            lucide.createIcons();
 
-        // Mobile Menu Toggle - FIXED: Corrected variable reference
-        function toggleMobileMenu() {
-            try {
-                const isOpen = !mobileMenu.classList.contains('hidden');
-                
-                if (isOpen) {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenuIcon.textContent = '☰';
-                } else {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenuIcon.textContent = '✕';
-                }
-                
-                console.log('Mobile menu toggled:', isOpen ? 'closed' : 'opened');
-            } catch (error) {
-                console.error('Mobile menu toggle failed:', error);
-            }
-        }
-
-        // Update mobile menu styling
-        function updateMobileMenuStyle() {
+            // Update mobile menu toggle color
             if (isDark) {
                 mobileMenuToggle.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-gray-800');
                 mobileMenuToggle.classList.remove('hover:bg-gray-100');
@@ -1179,557 +950,533 @@
             }
         }
 
-        // Header Scroll Effect - Optimized for mobile
+        // Mobile Menu Toggle - FIXED
+        function toggleMobileMenu() {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            
+            if (isOpen) {
+                mobileMenu.classList.add('hidden');
+                mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+            } else {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'x');
+            }
+            
+            lucide.createIcons();
+        }
+
+        // Header Scroll Effect
         function handleScroll() {
-            try {
-                const scrollY = window.scrollY;
-                const newIsScrolled = scrollY > 50;
+            const scrollY = window.scrollY;
+            const newIsScrolled = scrollY > 50;
+            
+            if (newIsScrolled !== isScrolled) {
+                isScrolled = newIsScrolled;
                 
-                if (newIsScrolled !== isScrolled) {
-                    isScrolled = newIsScrolled;
-                    
-                    if (isScrolled) {
-                        header.className = `fixed w-full top-0 z-50 transition-all duration-300 ${
-                            isDark 
-                                ? 'bg-slate-900/95 backdrop-blur-xl border-b border-purple-500/20 shadow-2xl shadow-purple-500/10'
-                                : 'bg-white/95 backdrop-blur-xl border-b border-blue-200/50 shadow-xl'
-                        }`;
-                    } else {
-                        header.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-transparent';
-                    }
+                if (isScrolled) {
+                    header.className = `fixed w-full top-0 z-50 transition-all duration-300 ${
+                        isDark 
+                            ? 'bg-slate-900/95 backdrop-blur-xl border-b border-purple-500/20 shadow-2xl shadow-purple-500/10'
+                            : 'bg-white/95 backdrop-blur-xl border-b border-blue-200/50 shadow-xl'
+                    }`;
+                } else {
+                    header.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-transparent';
                 }
-            } catch (error) {
-                console.error('Scroll handling failed:', error);
             }
         }
 
-        // Generate Footer Particles - Only on good connections
+        // Generate Footer Particles
         function generateFooterParticles() {
-            try {
-                const container = document.getElementById('footerParticles');
-                if (!container) return;
+            const container = document.getElementById('footerParticles');
+            if (!container) return;
+            
+            const particles = 15;
+            
+            for (let i = 0; i < particles; i++) {
+                const particle = document.createElement('div');
+                const colors = ['bg-purple-400', 'bg-pink-400', 'bg-cyan-400', 'bg-blue-400'];
                 
-                const particles = 15; // Reduced for mobile performance
+                particle.className = `absolute w-1 h-1 rounded-full animate-float opacity-30 ${colors[i % colors.length]}`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particle.style.animationDuration = `${Math.random() * 3 + 4}s`;
                 
-                for (let i = 0; i < particles; i++) {
-                    const particle = document.createElement('div');
-                    const colors = ['bg-purple-400', 'bg-pink-400', 'bg-cyan-400', 'bg-blue-400'];
-                    
-                    particle.className = `absolute w-1 h-1 rounded-full animate-float opacity-30 ${colors[i % colors.length]}`;
-                    particle.style.left = `${Math.random() * 100}%`;
-                    particle.style.top = `${Math.random() * 100}%`;
-                    particle.style.animationDelay = `${Math.random() * 5}s`;
-                    particle.style.animationDuration = `${Math.random() * 3 + 4}s`;
-                    
-                    container.appendChild(particle);
-                }
-            } catch (error) {
-                console.error('Failed to generate footer particles:', error);
+                container.appendChild(particle);
             }
+        }
+        
+        // Scroll Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe fade-in elements
+            document.querySelectorAll('.fade-in-element').forEach(element => {
+                observer.observe(element);
+            });
         }
 
         // Toggle Password Visibility
         function togglePassword(fieldId) {
-            try {
-                const passwordField = document.getElementById(fieldId);
-                const eyeIcon = document.getElementById(fieldId + '-eye');
-                
-                if (!passwordField || !eyeIcon) return;
-                
-                if (passwordField.type === 'password') {
-                    passwordField.type = 'text';
-                    eyeIcon.textContent = '🙈';
-                } else {
-                    passwordField.type = 'password';
-                    eyeIcon.textContent = '👁️';
-                }
-            } catch (error) {
-                console.error('Password toggle failed:', error);
+            const passwordField = document.getElementById(fieldId);
+            const eyeIcon = document.getElementById(fieldId + '-eye');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.className = 'fas fa-eye-slash';
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.className = 'fas fa-eye';
             }
         }
 
         // Show/Close Popups
         function showPopup(popupId) {
-            try {
-                const popup = document.getElementById(popupId);
-                if (popup) {
-                    popup.classList.add('active');
-                }
-            } catch (error) {
-                console.error('Show popup failed:', error);
-            }
+            document.getElementById(popupId).classList.add('active');
         }
 
         function closePopup(popupId) {
-            try {
-                const popup = document.getElementById(popupId);
-                if (popup) {
-                    popup.classList.remove('active');
-                }
-            } catch (error) {
-                console.error('Close popup failed:', error);
-            }
+            document.getElementById(popupId).classList.remove('active');
         }
 
         // Scroll to Login Form
         function scrollToLoginForm() {
-            try {
-                const authContainer = document.getElementById('authContainer');
-                if (authContainer) {
-                    authContainer.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'center'
-                    });
-                }
-            } catch (error) {
-                console.error('Scroll to login failed:', error);
-            }
+            document.getElementById('authContainer').scrollIntoView({
+                behavior: 'smooth',
+                block: 'center'
+            });
         }
 
         // Switch to Signup Form
         function switchToSignup() {
-            try {
-                const authHeader = document.getElementById('authHeader');
-                const loginForm = document.getElementById('loginForm');
-                
-                if (!authHeader || !loginForm) return;
-                
-                authHeader.innerHTML = `
-                    <h1 class="text-4xl font-bold text-gradient mb-4">Join HSC COURSES</h1>
-                    <p class="text-xl" style="color: var(--text-secondary);">Create your account to start your learning journey</p>
-                `;
-                
-                loginForm.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label for="firstName" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">First Name</label>
-                            <input type="text" id="firstName" name="firstName" class="form-input" placeholder="First name" required>
-                        </div>
-                        <div>
-                            <label for="lastName" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Last name" required>
-                        </div>
+            const authHeader = document.getElementById('authHeader');
+            
+            authHeader.innerHTML = `
+                <h1 class="text-4xl font-bold text-gradient mb-4">Join HSC COURSES</h1>
+                <p class="text-xl" style="color: var(--text-secondary);">Create your account to start your learning journey</p>
+            `;
+            
+            const loginForm = document.getElementById('loginForm');
+            loginForm.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">First Name</label>
+                        <input type="text" id="firstName" name="firstName" class="form-input" placeholder="First name" required>
                     </div>
-
-                    <div class="mb-4">
-                        <label for="signupEmail" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Email Address</label>
-                        <input type="email" id="signupEmail" name="email" class="form-input" placeholder="Enter your email" required>
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Last name" required>
                     </div>
+                </div>
 
-                    <div class="mb-4">
-                        <label for="signupPassword" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Password</label>
-                        <div class="relative">
-                            <input type="password" id="signupPassword" name="password" class="form-input pr-12" placeholder="Create a password" required>
-                            <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword('signupPassword')">
-                                <span id="signupPassword-eye">👁️</span>
-                            </button>
-                        </div>
+                <div class="mb-4">
+                    <label for="signupEmail" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Email Address</label>
+                    <input type="email" id="signupEmail" name="email" class="form-input" placeholder="Enter your email" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="signupPassword" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Password</label>
+                    <div class="relative">
+                        <input type="password" id="signupPassword" name="password" class="form-input pr-12" placeholder="Create a password" required>
+                        <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword('signupPassword')">
+                            <i class="fas fa-eye" id="signupPassword-eye"></i>
+                        </button>
                     </div>
+                </div>
 
-                    <div class="mb-4">
-                        <label for="confirmPassword" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Confirm Password</label>
-                        <div class="relative">
-                            <input type="password" id="confirmPassword" name="confirmPassword" class="form-input pr-12" placeholder="Confirm your password" required>
-                            <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword('confirmPassword')">
-                                <span id="confirmPassword-eye">👁️</span>
-                            </button>
-                        </div>
+                <div class="mb-4">
+                    <label for="confirmPassword" class="block text-sm font-medium mb-2" style="color: var(--text-primary);">Confirm Password</label>
+                    <div class="relative">
+                        <input type="password" id="confirmPassword" name="confirmPassword" class="form-input pr-12" placeholder="Confirm your password" required>
+                        <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700" onclick="togglePassword('confirmPassword')">
+                            <i class="fas fa-eye" id="confirmPassword-eye"></i>
+                        </button>
                     </div>
+                </div>
 
-                    <div class="flex items-center mb-6">
-                        <input type="checkbox" id="terms" name="terms" class="w-4 h-4" style="accent-color: #3b82f6;" required>
-                        <label for="terms" class="ml-2 text-sm" style="color: var(--text-primary);">
-                            I agree to the <a href="#terms" class="text-blue-600 hover:text-blue-800">Terms of Service</a> and <a href="#privacy" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>
-                        </label>
-                    </div>
+                <div class="flex items-center mb-6">
+                    <input type="checkbox" id="terms" name="terms" class="w-4 h-4 accent-color" style="accent-color: #3b82f6;" required>
+                    <label for="terms" class="ml-2 text-sm" style="color: var(--text-primary);">
+                        I agree to the <a href="#terms" class="text-blue-600 hover:text-blue-800">Terms of Service</a> and <a href="#privacy" class="text-blue-600 hover:text-blue-800">Privacy Policy</a>
+                    </label>
+                </div>
 
-                    <button type="submit" class="w-full py-3 px-4 btn-gradient text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105">
-                        Create Account
-                    </button>
+                <button type="submit" class="w-full py-3 px-4 btn-gradient text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105">
+                    Create Account
+                </button>
 
-                    <div class="text-center mt-6" style="color: var(--text-secondary);">
-                        <p>Already have an account? <a href="#" onclick="switchToLogin()" class="text-blue-600 hover:text-blue-800 font-semibold">Sign in</a></p>
-                    </div>
-                `;
-                
-                // Add event listener for new signup form
-                loginForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    showPopup('signupPopup');
-                });
-            } catch (error) {
-                console.error('Switch to signup failed:', error);
-            }
+                <div class="text-center mt-6" style="color: var(--text-secondary);">
+                    <p>Already have an account? <a href="#" onclick="switchToLogin()" class="text-blue-600 hover:text-blue-800 font-semibold">Sign in</a></p>
+                </div>
+            `;
+            
+            // Add event listener for new signup form
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                showPopup('signupPopup');
+            });
         }
 
         // Switch back to Login Form
         function switchToLogin() {
-            try {
-                location.reload();
-            } catch (error) {
-                console.error('Switch to login failed:', error);
-            }
+            location.reload();
         }
 
-        // Handle page load redirect check
-        function handlePageLoadRedirect() {
-            try {
-                const urlParams = new URLSearchParams(window.location.search);
-                const returnToUrl = urlParams.get('returnTo');
-                if (returnToUrl) {
-                    console.log('Detected returnTo parameter:', decodeURIComponent(returnToUrl));
-                    const alertContainer = document.getElementById('alert-container');
-                    if (alertContainer) {
-                        showAlert('Please login to continue to your requested page...', 'info');
+        // Event Listeners
+        function initEventListeners() {
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+            
+            // Mobile menu toggle - FIXED
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            
+            // Scroll handling
+            window.addEventListener('scroll', handleScroll);
+            
+            // Form submission
+            document.getElementById('loginForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                showPopup('loginPopup');
+            });
+
+            // Close popup when clicking outside
+            document.addEventListener('click', function(e) {
+                const popups = document.querySelectorAll('.popup-overlay');
+                popups.forEach(popup => {
+                    if (e.target === popup) {
+                        popup.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close popup with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const activePopup = document.querySelector('.popup-overlay.active');
+                    if (activePopup) {
+                        activePopup.classList.remove('active');
                     }
                 }
-            } catch (error) {
-                console.error('Handle page load redirect failed:', error);
+            });
+        }
+
+        // Start the app
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        // Import Firebase SDKs
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js';
+        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+            authDomain: "courseaccess-921b8.firebaseapp.com",
+            projectId: "courseaccess-921b8",
+            storageBucket: "courseaccess-921b8.firebasestorage.app",
+            messagingSenderId: "35662960447",
+            appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+            measurementId: "G-SKDTD3FK91"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const provider = new GoogleAuthProvider();
+
+        // DOM elements
+        const loginBtn = document.getElementById('login-btn');
+        const btnText = document.getElementById('btn-text');
+        const spinner = document.getElementById('spinner');
+        const alertContainer = document.getElementById('alert-container');
+        const userInfo = document.getElementById('user-info');
+        const userAvatar = document.getElementById('user-avatar');
+        const userName = document.getElementById('user-name');
+        const userEmail = document.getElementById('user-email');
+
+        // Show/hide loading state
+        function setLoading(loading) {
+            if (loading) {
+                btnText.textContent = 'Signing in...';
+                spinner.classList.remove('hidden');
+                loginBtn.disabled = true;
+                loginBtn.classList.add('opacity-70');
+            } else {
+                btnText.textContent = '🎓 Continue with Google';
+                spinner.classList.add('hidden');
+                loginBtn.disabled = false;
+                loginBtn.classList.remove('opacity-70');
             }
         }
 
         // Show alert message
         function showAlert(message, type = 'error') {
-            try {
-                const alertContainer = document.getElementById('alert-container');
-                if (!alertContainer) return;
-                
-                const alertClass = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500';
-                const icon = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
-                
-                alertContainer.innerHTML = `
-                    <div class="alert ${alertClass} text-white p-4 rounded-lg text-center">
-                        <div class="flex items-center justify-center space-x-2">
-                            <span class="text-xl">${icon}</span>
-                            <span>${message}</span>
-                        </div>
+            const alertClass = type === 'error' ? 'bg-red-500' : type === 'success' ? 'bg-green-500' : 'bg-blue-500';
+            const icon = type === 'error' ? '❌' : type === 'success' ? '✅' : 'ℹ️';
+            
+            alertContainer.innerHTML = `
+                <div class="alert ${alertClass} text-white p-4 rounded-lg text-center">
+                    <div class="flex items-center justify-center space-x-2">
+                        <span class="text-xl">${icon}</span>
+                        <span>${message}</span>
                     </div>
-                `;
-                alertContainer.classList.remove('hidden');
-                
-                // Auto-hide after 5 seconds
-                setTimeout(() => {
-                    alertContainer.classList.add('hidden');
-                }, 5000);
-            } catch (error) {
-                console.error('Show alert failed:', error);
-            }
+                </div>
+            `;
+            alertContainer.classList.remove('hidden');
+            
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                alertContainer.classList.add('hidden');
+            }, 5000);
         }
 
-        // Event Listeners
-        function initEventListeners() {
+        // Check user access in Firestore
+        async function checkUserAccess(userEmail) {
             try {
-                // Theme toggle
-                if (themeToggle) {
-                    themeToggle.addEventListener('click', toggleTheme);
+                console.log('🔍 Starting access check for:', userEmail);
+                
+                if (!db) {
+                    console.error('❌ Firestore not initialized');
+                    throw new Error('Database not initialized');
                 }
                 
-                // Mobile menu toggle - FIXED: Now using correct variable
-                if (mobileMenuToggle) {
-                    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
-                }
+                console.log('✅ Database initialized');
                 
-                // Scroll handling with throttling for mobile performance
-                let scrollTimeout;
-                window.addEventListener('scroll', () => {
-                    if (scrollTimeout) {
-                        clearTimeout(scrollTimeout);
-                    }
-                    scrollTimeout = setTimeout(handleScroll, 16); // ~60fps
-                });
+                const docRef = doc(db, 'whitelist', userEmail);
+                console.log('✅ Document reference created');
                 
-                // Form submission
-                const loginForm = document.getElementById('loginForm');
-                if (loginForm) {
-                    loginForm.addEventListener('submit', function(e) {
-                        e.preventDefault();
-                        showPopup('loginPopup');
-                    });
-                }
-
-                // Close popup when clicking outside
-                document.addEventListener('click', function(e) {
-                    const popups = document.querySelectorAll('.popup-overlay');
-                    popups.forEach(popup => {
-                        if (e.target === popup) {
-                            popup.classList.remove('active');
+                const docSnap = await getDoc(docRef);
+                console.log('✅ Document fetch completed');
+                console.log('📄 Document exists:', docSnap.exists());
+                
+                if (docSnap.exists()) {
+                    const userData = docSnap.data();
+                    console.log('✅ Document data:', userData);
+                    
+                    let accessArray = [];
+                    
+                    if (userData && userData.access) {
+                        if (Array.isArray(userData.access)) {
+                            accessArray = userData.access;
+                            console.log('✅ Found access array:', accessArray);
+                        } else {
+                            console.log('⚠️ Access field is not an array:', userData.access);
+                            if (typeof userData.access === 'string') {
+                                accessArray = userData.access.split(',').map(s => s.trim());
+                                console.log('✅ Converted string to array:', accessArray);
+                            }
                         }
-                    });
-                });
-
-                // Close popup with Escape key
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape') {
-                        const activePopup = document.querySelector('.popup-overlay.active');
-                        if (activePopup) {
-                            activePopup.classList.remove('active');
-                        }
+                    } else {
+                        console.log('⚠️ No access field found in document');
                     }
-                });
-
-                console.log('Event listeners initialized');
+                    
+                    return accessArray;
+                } else {
+                    console.log('❌ Document not found for email:', userEmail);
+                    return null;
+                }
             } catch (error) {
-                console.error('Failed to initialize event listeners:', error);
+                console.error('💥 Detailed error in checkUserAccess:');
+                console.error('💥 Error name:', error.name);
+                console.error('💥 Error message:', error.message);
+                console.error('💥 Error code:', error.code);
+                console.error('💥 Full error:', error);
+                
+                throw new Error(`Access check failed: ${error.message}`);
             }
         }
 
-        // Start the app when DOM is ready
-        document.addEventListener('DOMContentLoaded', initApp);
+        // Handle successful authentication
+        async function handleAuthSuccess(user) {
+            try {
+                console.log('🎯 handleAuthSuccess started for:', user.email);
+                
+                // Show user info
+                userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
+                userName.textContent = user.displayName || 'User';
+                userEmail.textContent = user.email;
+                userInfo.classList.remove('hidden');
+                
+                // Check access with detailed logging
+                showAlert('Checking your access permissions...', 'info');
+                
+                console.log('🔄 About to call checkUserAccess...');
+                
+                let accessList;
+                try {
+                    accessList = await checkUserAccess(user.email);
+                    console.log('✅ checkUserAccess completed, result:', accessList);
+                } catch (accessError) {
+                    console.error('💥 checkUserAccess failed:', accessError);
+                    showAlert(`Access check error: ${accessError.message}`, 'error');
+                    return;
+                }
+                
+                if (accessList === null) {
+                    console.log('❌ User not in whitelist');
+                    showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
+                    return;
+                }
+                
+                if (!Array.isArray(accessList)) {
+                    console.log('⚠️ Access list is not an array:', accessList);
+                    showAlert('Error: Invalid access data format.', 'error');
+                    return;
+                }
+                
+                if (accessList.length === 0) {
+                    console.log('❌ Empty access list');
+                    showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
+                    return;
+                }
+                
+                // User has access, determine redirect URL
+                console.log('✅ User has access to:', accessList);
+                
+                // Check for returnTo parameter in URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const returnToUrl = urlParams.get('returnTo');
+                
+                let redirectUrl;
+                let redirectMessage;
+                
+                if (returnToUrl) {
+                    // Decode the returnTo URL
+                    redirectUrl = decodeURIComponent(returnToUrl);
+                    redirectMessage = `Access granted! Redirecting you back to where you were...`;
+                    console.log('🔄 Redirecting back to:', redirectUrl);
+                } else {
+                    // Default redirect to class portal
+                    redirectUrl = 'https://wakilbd.github.io/ps/class';
+                    redirectMessage = `Access granted! You have access to: ${accessList.join(', ')}. Redirecting to class portal...`;
+                    console.log('🔄 Redirecting to default class portal:', redirectUrl);
+                }
+                
+                showAlert(redirectMessage, 'success');
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 2000);
+                
+            } catch (error) {
+                console.error('💥 Error in handleAuthSuccess:', error);
+                showAlert(`Authentication error: ${error.message}`, 'error');
+            }
+        }
 
-        // Cleanup on page unload
-        window.addEventListener('beforeunload', function() {
-            if (healthCheckInterval) {
-                clearInterval(healthCheckInterval);
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Function to handle page load redirect check
+        function handlePageLoadRedirect() {
+            const returnToUrl = getUrlParameter('returnTo');
+            if (returnToUrl) {
+                console.log('🔍 Detected returnTo parameter:', decodeURIComponent(returnToUrl));
+                const alertContainer = document.getElementById('alert-container');
+                if (alertContainer) {
+                    showAlert('Please login to continue to your requested page...', 'info');
+                }
+            }
+        }
+
+        // Google Sign In
+        async function signInWithGoogle() {
+            try {
+                setLoading(true);
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                console.log('User signed in:', user.email);
+                await handleAuthSuccess(user);
+                
+            } catch (error) {
+                console.error('Error during sign in:', error);
+                let errorMessage = 'Sign in failed. Please try again.';
+                
+                if (error.code === 'auth/popup-closed-by-user') {
+                    errorMessage = 'Sign in cancelled by user.';
+                } else if (error.code === 'auth/network-request-failed') {
+                    errorMessage = 'Network error. Please check your connection.';
+                }
+                
+                showAlert(errorMessage, 'error');
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        // Auth state observer
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                console.log('User is signed in:', user.email);
+            } else {
+                console.log('User is signed out');
+                userInfo.classList.add('hidden');
+                alertContainer.classList.add('hidden');
             }
         });
-    </script>
 
-    <!-- Firebase SDKs -->
-    <script type="module">
-        try {
-            // Import Firebase SDKs with error handling
-            const { initializeApp } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js');
-            const { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged, signOut } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js');
-            const { getFirestore, doc, getDoc } = await import('https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js');
+        // Event listeners
+        loginBtn.addEventListener('click', signInWithGoogle);
 
-            // Firebase configuration - keeping your existing config
-            const firebaseConfig = {
-                apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
-                authDomain: "courseaccess-921b8.firebaseapp.com",
-                projectId: "courseaccess-921b8",
-                storageBucket: "courseaccess-921b8.firebasestorage.app",
-                messagingSenderId: "35662960447",
-                appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
-                measurementId: "G-SKDTD3FK91"
-            };
-
-            // Initialize Firebase
-            const app = initializeApp(firebaseConfig);
-            const auth = getAuth(app);
-            const db = getFirestore(app);
-            const provider = new GoogleAuthProvider();
-
-            // DOM elements
-            const loginBtn = document.getElementById('login-btn');
-            const btnText = document.getElementById('btn-text');
-            const spinner = document.getElementById('spinner');
-            const alertContainer = document.getElementById('alert-container');
-            const userInfo = document.getElementById('user-info');
-            const userAvatar = document.getElementById('user-avatar');
-            const userName = document.getElementById('user-name');
-            const userEmail = document.getElementById('user-email');
-
-            // Show/hide loading state
-            function setLoading(loading) {
-                if (loading) {
-                    btnText.textContent = 'Signing in...';
-                    spinner.classList.remove('hidden');
-                    loginBtn.disabled = true;
-                    loginBtn.classList.add('opacity-70');
-                } else {
-                    btnText.textContent = '🎓 Continue with Google';
-                    spinner.classList.add('hidden');
-                    loginBtn.disabled = false;
-                    loginBtn.classList.remove('opacity-70');
-                }
+        // Optional: Add logout functionality
+        window.logout = async function() {
+            try {
+                await signOut(auth);
+                showAlert('Signed out successfully', 'success');
+            } catch (error) {
+                console.error('Error signing out:', error);
+                showAlert('Error signing out', 'error');
             }
+        };
 
-            // Check user access in Firestore
-            async function checkUserAccess(userEmail) {
-                try {
-                    console.log('🔍 Starting access check for:', userEmail);
-                    
-                    if (!db) {
-                        console.error('❌ Firestore not initialized');
-                        throw new Error('Database not initialized');
-                    }
-                    
-                    console.log('✅ Database initialized');
-                    
-                    const docRef = doc(db, 'whitelist', userEmail);
-                    console.log('✅ Document reference created');
-                    
-                    const docSnap = await getDoc(docRef);
-                    console.log('✅ Document fetch completed');
-                    console.log('📄 Document exists:', docSnap.exists());
-                    
-                    if (docSnap.exists()) {
-                        const userData = docSnap.data();
-                        console.log('✅ Document data:', userData);
-                        
-                        let accessArray = [];
-                        
-                        if (userData && userData.access) {
-                            if (Array.isArray(userData.access)) {
-                                accessArray = userData.access;
-                                console.log('✅ Found access array:', accessArray);
-                            } else {
-                                console.log('⚠️ Access field is not an array:', userData.access);
-                                if (typeof userData.access === 'string') {
-                                    accessArray = userData.access.split(',').map(s => s.trim());
-                                    console.log('✅ Converted string to array:', accessArray);
-                                }
-                            }
-                        } else {
-                            console.log('⚠️ No access field found in document');
-                        }
-                        
-                        return accessArray;
-                    } else {
-                        console.log('❌ Document not found for email:', userEmail);
-                        return null;
-                    }
-                } catch (error) {
-                    console.error('💥 Detailed error in checkUserAccess:');
-                    console.error('💥 Error name:', error.name);
-                    console.error('💥 Error message:', error.message);
-                    console.error('💥 Error code:', error.code);
-                    console.error('💥 Full error:', error);
-                    
-                    throw new Error(`Access check failed: ${error.message}`);
+        // Optional: Function for different courses
+        window.authAndCheckAccess = async function(courseKey) {
+            try {
+                setLoading(true);
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                const accessList = await checkUserAccess(user.email);
+                
+                if (accessList === null) {
+                    showAlert('Access denied: Your email is not in the whitelist.', 'error');
+                    return;
                 }
-            }
-
-            // Handle successful authentication
-            async function handleAuthSuccess(user) {
-                try {
-                    console.log('🎯 handleAuthSuccess started for:', user.email);
-                    
-                    // Show user info
-                    userAvatar.src = user.photoURL || 'https://via.placeholder.com/40';
-                    userName.textContent = user.displayName || 'User';
-                    userEmail.textContent = user.email;
-                    userInfo.classList.remove('hidden');
-                    
-                    // Check access with detailed logging
-                    showAlert('Checking your access permissions...', 'info');
-                    
-                    console.log('🔄 About to call checkUserAccess...');
-                    
-                    let accessList;
-                    try {
-                        accessList = await checkUserAccess(user.email);
-                        console.log('✅ checkUserAccess completed, result:', accessList);
-                    } catch (accessError) {
-                        console.error('💥 checkUserAccess failed:', accessError);
-                        showAlert(`Access check error: ${accessError.message}`, 'error');
-                        return;
-                    }
-                    
-                    if (accessList === null) {
-                        console.log('❌ User not in whitelist');
-                        showAlert('Access denied: Your email is not in the whitelist. Please contact the administrator.', 'error');
-                        return;
-                    }
-                    
-                    if (!Array.isArray(accessList)) {
-                        console.log('⚠️ Access list is not an array:', accessList);
-                        showAlert('Error: Invalid access data format.', 'error');
-                        return;
-                    }
-                    
-                    if (accessList.length === 0) {
-                        console.log('❌ Empty access list');
-                        showAlert('Access denied: You do not have access to any courses. Please contact the administrator.', 'error');
-                        return;
-                    }
-                    
-                    // User has access, determine redirect URL
-                    console.log('✅ User has access to:', accessList);
-                    
-                    // Check for returnTo parameter in URL
-                    const urlParams = new URLSearchParams(window.location.search);
-                    const returnToUrl = urlParams.get('returnTo');
-                    
-                    let redirectUrl;
-                    let redirectMessage;
-                    
-                    if (returnToUrl) {
-                        // Decode the returnTo URL
-                        redirectUrl = decodeURIComponent(returnToUrl);
-                        redirectMessage = `Access granted! Redirecting you back to where you were...`;
-                        console.log('🔄 Redirecting back to:', redirectUrl);
-                    } else {
-                        // Default redirect to class portal
-                        redirectUrl = 'https://wakilbd.github.io/ps/class';
-                        redirectMessage = `Access granted! You have access to: ${accessList.join(', ')}. Redirecting to class portal...`;
-                        console.log('🔄 Redirecting to default class portal:', redirectUrl);
-                    }
-                    
-                    showAlert(redirectMessage, 'success');
+                
+                if (accessList.includes(courseKey)) {
+                    showAlert(`Access granted! Redirecting to ${courseKey} course...`, 'success');
                     setTimeout(() => {
-                        window.location.href = redirectUrl;
+                        window.location.href = `${courseKey}.html`;
                     }, 2000);
-                    
-                } catch (error) {
-                    console.error('💥 Error in handleAuthSuccess:', error);
-                    showAlert(`Authentication error: ${error.message}`, 'error');
-                }
-            }
-
-            // Google Sign In
-            async function signInWithGoogle() {
-                try {
-                    setLoading(true);
-                    const result = await signInWithPopup(auth, provider);
-                    const user = result.user;
-                    
-                    console.log('User signed in:', user.email);
-                    await handleAuthSuccess(user);
-                    
-                } catch (error) {
-                    console.error('Error during sign in:', error);
-                    let errorMessage = 'Sign in failed. Please try again.';
-                    
-                    if (error.code === 'auth/popup-closed-by-user') {
-                        errorMessage = 'Sign in cancelled by user.';
-                    } else if (error.code === 'auth/network-request-failed') {
-                        errorMessage = 'Network error. Please check your connection.';
-                    }
-                    
-                    showAlert(errorMessage, 'error');
-                } finally {
-                    setLoading(false);
-                }
-            }
-
-            // Auth state observer
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    console.log('User is signed in:', user.email);
                 } else {
-                    console.log('User is signed out');
-                    userInfo.classList.add('hidden');
-                    alertContainer.classList.add('hidden');
+                    showAlert(`Access denied: You do not have access to ${courseKey} course.`, 'error');
                 }
-            });
-
-            // Event listeners
-            loginBtn.addEventListener('click', signInWithGoogle);
-
-            // Optional: Add logout functionality
-            window.logout = async function() {
-                try {
-                    await signOut(auth);
-                    showAlert('Signed out successfully', 'success');
-                } catch (error) {
-                    console.error('Error signing out:', error);
-                    showAlert('Error signing out', 'error');
-                }
-            };
-
-            console.log('Firebase initialized successfully');
-
-        } catch (error) {
-            console.error('Failed to initialize Firebase:', error);
-            // Fallback functionality without Firebase
-            const loginBtn = document.getElementById('login-btn');
-            if (loginBtn) {
-                loginBtn.addEventListener('click', function() {
-                    showAlert('Firebase authentication is currently unavailable. Please try again later.', 'error');
-                });
+                
+            } catch (error) {
+                console.error('Error:', error);
+                showAlert('Authentication failed. Please try again.', 'error');
+            } finally {
+                setLoading(false);
             }
-        }
+        };
     </script>
 </body>
 </html>
