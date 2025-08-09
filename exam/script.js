@@ -788,7 +788,7 @@ function createClassCard(classItem) {
                 </div>
                 <div class="course-footer">
                     <button class="enroll-btn" onclick="enrollInClass(${classItem.id})">
-                        Join Class
+                        Exam Page
                     </button>
                 </div>
             </div>
@@ -813,7 +813,7 @@ function renderClasses() {
 function enrollInClass(classId) {
     // Check if user is authenticated
     if (!currentUser) {
-        showAuthAlert('Please login to join classes', 'error');
+        showAuthAlert('Please login to take exams', 'error');
         redirectToLogin();
         return;
     }
