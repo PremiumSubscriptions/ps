@@ -275,7 +275,7 @@ function showAuthAlert(message, type = 'info') {
 
 // Typing Animation
 function startTypingAnimation() {
-    const text = "Welcome to Premium's Class Portal";
+    const text = "Welcome to Premium's Exam Hub";
     const typingElement = document.getElementById('typingText');
     const cursor = document.getElementById('cursor');
     
