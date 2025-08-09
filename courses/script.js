@@ -643,23 +643,6 @@ function initEventListeners() {
         }
     });
 
-    // Social links in footer
-    document.querySelectorAll('.social-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const platform = link.querySelector('i').getAttribute('data-lucide');
-            alert(`Navigate to ${platform} - Social media integration would go here!`);
-        });
-    });
-
-    // Footer links
-    document.querySelectorAll('.footer-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const linkText = link.textContent.trim();
-            alert(`Navigate to ${linkText} - Page navigation would go here!`);
-        });
-    });
 
     // Contact info interactions
     document.querySelectorAll('.group').forEach(group => {
@@ -675,11 +658,11 @@ function initEventListeners() {
         }
         
         if (mailIcon) {
-            group.addEventListener('click', () => {
-                alert('Email: info@hsccourses.com - Would open email client in real app');
-            });
-            group.style.cursor = 'pointer';
-        }
+    group.addEventListener('click', () => {
+        window.location.href = 'mailto:help.infodesk.premium@gmail.com';
+    });
+    group.style.cursor = 'pointer';
+}
         
         if (mapIcon) {
             group.addEventListener('click', () => {
