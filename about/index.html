@@ -1175,24 +1175,6 @@
                     }
                 });
             });
-            // Social links
-            document.querySelectorAll('.social-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const platform = link.querySelector('i').getAttribute('data-lucide');
-                    alert(`Navigate to ${platform} - Social media integration would go here!`);
-                });
-            });
-
-            // Footer links
-            document.querySelectorAll('.footer-link').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const linkText = link.textContent.trim();
-                    alert(`Navigate to ${linkText} - Page navigation would go here!`);
-                });
-            });
-        }
 
         // Start the app
         document.addEventListener('DOMContentLoaded', initApp);
