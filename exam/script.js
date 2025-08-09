@@ -311,7 +311,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "Physics Hunters",
-                link: "https://wakilbd.github.io/ps/class/81",
+                link: "https://wakilbd.github.io/ps/exam/1",
                 image: ""
             },
             {
@@ -320,7 +320,7 @@ async function loadClasses() {
                 subject: "Biology",
                 grade: "Admission 25",
                 courseType: "Battle of Biology",
-                link: "https://wakilbd.github.io/ps/class/82",
+                link: "https://wakilbd.github.io/ps/exam/2",
                 image: ""
             },
             {
@@ -329,7 +329,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "RTDS",
-                link: "https://wakilbd.github.io/ps/class/83",
+                link: "https://wakilbd.github.io/ps/exam/3",
                 image: ""
             },
             {
@@ -338,7 +338,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "ACS",
-                link: "https://wakilbd.github.io/ps/class/84",
+                link: "https://wakilbd.github.io/ps/exam/4",
                 image: ""
             },
             {
@@ -347,7 +347,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "ACS",
-                link: "https://wakilbd.github.io/ps/class/85",
+                link: "https://wakilbd.github.io/ps/exam/5",
                 image: ""
             },
             {
@@ -356,7 +356,7 @@ async function loadClasses() {
                 subject: "Biology",
                 grade: "Admission 25",
                 courseType: "",
-                link: "https://wakilbd.github.io/ps/class/86",
+                link: "https://wakilbd.github.io/ps/exam/6",
                 image: ""
             },
             {
@@ -365,7 +365,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "Bondi Pathshala",
-                link: "https://wakilbd.github.io/ps/class/87",
+                link: "https://wakilbd.github.io/ps/exam/7",
                 image: ""
             },
             {
@@ -374,7 +374,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "Bondi Pathshala",
-                link: "https://wakilbd.github.io/ps/class/88",
+                link: "https://wakilbd.github.io/ps/exam/8",
                 image: ""
             },
             {
@@ -383,7 +383,7 @@ async function loadClasses() {
                 subject: "Biology",
                 grade: "Admission 25",
                 courseType: "",
-                link: "https://wakilbd.github.io/ps/class/89",
+                link: "https://wakilbd.github.io/ps/exam/9",
                 image: ""
             },
             {
@@ -392,7 +392,7 @@ async function loadClasses() {
                 subject: "Chemistry",
                 grade: "Admission 25",
                 courseType: "",
-                link: "https://wakilbd.github.io/ps/class/90",
+                link: "https://wakilbd.github.io/ps/exam/10",
                 image: ""
             },
             {
@@ -401,7 +401,7 @@ async function loadClasses() {
                 subject: "Mathematics",
                 grade: "Admission 25",
                 courseType: "",
-                link: "https://wakilbd.github.io/ps/class/91",
+                link: "https://wakilbd.github.io/ps/exam/11",             
                 image: ""
             },
             {
@@ -410,7 +410,7 @@ async function loadClasses() {
                 subject: "Biology",
                 grade: "Admission 25",
                 courseType: "",
-                link: "https://wakilbd.github.io/ps/class/92",
+                link: "https://wakilbd.github.io/ps/exam/12",
                 image: ""
             },
             {
@@ -419,7 +419,7 @@ async function loadClasses() {
                 subject: "Physics",
                 grade: "Admission 25",
                 courseType: "",
-                link: "https://wakilbd.github.io/ps/class/93",
+                link: "https://wakilbd.github.io/ps/exam/13",
                 image: ""
             }
         ];
