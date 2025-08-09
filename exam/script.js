@@ -796,12 +796,12 @@ function createClassCard(classItem) {
     `;
 }
 
-// Function to render classes
+// Function to render exams
 function renderClasses() {
     if (!coursesGrid) return;
     
     if (filteredClasses.length === 0) {
-        coursesGrid.innerHTML = '<div class="loading">No classes found for the selected filters.</div>';
+        coursesGrid.innerHTML = '<div class="loading">No exams found for the selected filters.</div>';
         return;
     }
 
@@ -825,7 +825,7 @@ function enrollInClass(classId) {
             window.location.href = classItem.link;
         }, 1500);
     } else {
-        showAuthAlert("No link provided for this class.", 'error');
+        showAuthAlert("No link provided for this exam.", 'error');
     }
 }
 
