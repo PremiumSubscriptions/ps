@@ -716,453 +716,590 @@
     </footer>
 
     <script>
-        // Initialize Lucide Icons
-        document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', function() {
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    });
+
+    // Global Variables
+    let isDark = false;
+    let isScrolled = false;
+    let mockCourses = [];
+    let filteredCourses = [];
+    let selectedGrades = ['All Grade/Level'];
+    let selectedCourse = 'All Course';
+    let selectedSubjects = ['All Subject'];
+
+    // Mock Courses Data
+    const coursesData = [
+        {
+            id: 1,
+            title: "Advanced Chemistry Solutions",
+            description: "Master chemistry concepts with detailed explanations and practical examples for HSC students.",
+            category: "ACS",
+            courseType: "ACS",
+            subject: "Chemistry",
+            grade: "HSC 27",
+            price: 2500,
+            originalPrice: 3500,
+            duration: "6 months",
+            students: 1250,
+            rating: 4.8,
+            image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop&q=80"
+        },
+        {
+            id: 2,
+            title: "Physics Mastery Program",
+            description: "Comprehensive physics course covering all HSC topics with interactive problem solving.",
+            category: "Physics Hunters",
+            courseType: "Physics Hunters",
+            subject: "Physics",
+            grade: "HSC 26",
+            price: 3000,
+            originalPrice: 4000,
+            duration: "8 months",
+            students: 980,
+            rating: 4.9,
+            image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=400&h=250&fit=crop&q=80"
+        },
+        {
+            id: 3,
+            title: "Biology Battle Ground",
+            description: "Intensive biology preparation with focus on medical admission tests and HSC excellence.",
+            category: "Battle of Biology",
+            courseType: "Battle of Biology",
+            subject: "Biology",
+            grade: "HSC 27",
+            price: 2800,
+            originalPrice: 3800,
+            duration: "7 months",
+            students: 1500,
+            rating: 4.7,
+            image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop&q=80"
+        },
+        {
+            id: 4,
+            title: "Mathematics Excellence",
+            description: "Advanced mathematics course for HSC and admission test preparation with detailed solutions.",
+            category: "CPS",
+            courseType: "CPS",
+            subject: "Mathematics",
+            grade: "Admission 25",
+            price: 2200,
+            originalPrice: 3200,
+            duration: "5 months",
+            students: 2100,
+            rating: 4.6,
+            image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=250&fit=crop&q=80"
+        },
+        {
+            id: 5,
+            title: "English Mastery Course",
+            description: "Comprehensive English language course focusing on grammar, literature, and communication skills.",
+            category: "RTDS",
+            courseType: "RTDS",
+            subject: "English",
+            grade: "HSC 26",
+            price: 1800,
+            originalPrice: 2500,
+            duration: "4 months",
+            students: 1800,
+            rating: 4.5,
+            image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop&q=80"
+        },
+        {
+            id: 6,
+            title: "ICT Complete Guide",
+            description: "Complete ICT course covering programming, database, and computer fundamentals for HSC.",
+            category: "Bondi Pathshala",
+            courseType: "Bondi Pathshala",
+            subject: "ICT",
+            grade: "HSC 27",
+            price: 2600,
+            originalPrice: 3600,
+            duration: "6 months",
+            students: 950,
+            rating: 4.8,
+            image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop&q=80"
+        }
+    ];
+
+    // Initialize App
+    function initApp() {
+        mockCourses = coursesData;
+        filteredCourses = [...mockCourses];
+        
+        // Generate footer particles
+        generateFooterParticles();
+        
+        // Initialize scroll animations
+        initScrollAnimations();
+        
+        // Initialize event listeners
+        initEventListeners();
+        
+        // Load courses after a short delay
+        setTimeout(() => {
+            renderCourses();
+        }, 1000);
+    }
+
+    // Theme Toggle
+    function toggleTheme() {
+        isDark = !isDark;
+        document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
+        
+        const icon = document.querySelector('#themeToggle i');
+        if (icon) {
+            icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
             if (typeof lucide !== 'undefined') {
                 lucide.createIcons();
+            }
+        }
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        
+        const isOpen = !mobileMenu.classList.contains('hidden');
+        
+        if (isOpen) {
+            mobileMenu.classList.add('hidden');
+            mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
+        } else {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'x');
+        }
+        
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    }
+
+    // Smooth scroll to section
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Header scroll effect
+    function handleScroll() {
+        const scrollY = window.scrollY;
+        const newIsScrolled = scrollY > 50;
+        
+        if (newIsScrolled !== isScrolled) {
+            isScrolled = newIsScrolled;
+            const header = document.getElementById('header');
+            
+            if (isScrolled) {
+                header.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-xl';
+            } else {
+                header.className = 'fixed w-full top-0 z-50 transition-all duration-300';
+            }
+        }
+    }
+
+    // Check if device is mobile
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // Toggle dropdown
+    function toggleDropdown(type) {
+        if (isMobile()) {
+            const popup = document.getElementById(type + 'Popup');
+            popup.classList.remove('hidden');
+            updatePopupSelections(type);
+        } else {
+            const dropdown = document.getElementById(type + 'Dropdown');
+            const button = dropdown.previousElementSibling;
+            const arrow = button.querySelector('.dropdown-arrow');
+
+            // Close other dropdowns
+            const dropdownTypes = ['grade', 'course', 'subject'];
+            dropdownTypes.forEach(otherType => {
+                if (otherType !== type) {
+                    const otherDropdown = document.getElementById(otherType + 'Dropdown');
+                    if (otherDropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                }
+            });
+
+            // Toggle current
+            dropdown.classList.toggle('active');
+            arrow.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        }
+    }
+
+    // Close popup
+    function closePopup(type) {
+        const popup = document.getElementById(type + 'Popup');
+        popup.classList.add('hidden');
+    }
+
+    // Update popup selections
+    function updatePopupSelections(type) {
+        const popup = document.getElementById(type + 'Popup');
+        const items = popup.querySelectorAll('.popup-item');
+        let currentSelections;
+
+        if (type === 'grade') currentSelections = selectedGrades;
+        else if (type === 'course') currentSelections = [selectedCourse];
+        else if (type === 'subject') currentSelections = selectedSubjects;
+
+        items.forEach(item => {
+            item.classList.remove('selected');
+            if (currentSelections.includes(item.textContent)) {
+                item.classList.add('selected');
             }
         });
+    }
 
-        // Global Variables
-        let isDark = false;
-        let isScrolled = false;
-        let mockCourses = [];
-        let filteredCourses = [];
-        let selectedGrade = 'All Grade/Level';
-        let selectedCourse = 'All Course';
-        let selectedSubject = 'All Subject';
-
-        // Mock Courses Data
-        const coursesData = [
-            {
-                id: 1,
-                title: "Advanced Chemistry Solutions",
-                description: "Master chemistry concepts with detailed explanations and practical examples for HSC students.",
-                category: "ACS",
-                courseType: "ACS",
-                subject: "Chemistry",
-                grade: "HSC 27",
-                price: 2500,
-                originalPrice: 3500,
-                duration: "6 months",
-                students: 1250,
-                rating: 4.8,
-                image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=250&fit=crop&q=80"
-            },
-            {
-                id: 2,
-                title: "Physics Mastery Program",
-                description: "Comprehensive physics course covering all HSC topics with interactive problem solving.",
-                category: "Physics Hunters",
-                courseType: "Physics Hunters",
-                subject: "Physics",
-                grade: "HSC 26",
-                price: 3000,
-                originalPrice: 4000,
-                duration: "8 months",
-                students: 980,
-                rating: 4.9,
-                image: "https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?w=400&h=250&fit=crop&q=80"
-            },
-            {
-                id: 3,
-                title: "Biology Battle Ground",
-                description: "Intensive biology preparation with focus on medical admission tests and HSC excellence.",
-                category: "Battle of Biology",
-                courseType: "Battle of Biology",
-                subject: "Biology",
-                grade: "HSC 27",
-                price: 2800,
-                originalPrice: 3800,
-                duration: "7 months",
-                students: 1500,
-                rating: 4.7,
-                image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop&q=80"
-            },
-            {
-                id: 4,
-                title: "Mathematics Excellence",
-                description: "Advanced mathematics course for HSC and admission test preparation with detailed solutions.",
-                category: "CPS",
-                courseType: "CPS",
-                subject: "Mathematics",
-                grade: "Admission 25",
-                price: 2200,
-                originalPrice: 3200,
-                duration: "5 months",
-                students: 2100,
-                rating: 4.6,
-                image: "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=250&fit=crop&q=80"
-            },
-            {
-                id: 5,
-                title: "English Mastery Course",
-                description: "Comprehensive English language course focusing on grammar, literature, and communication skills.",
-                category: "RTDS",
-                courseType: "RTDS",
-                subject: "English",
-                grade: "HSC 26",
-                price: 1800,
-                originalPrice: 2500,
-                duration: "4 months",
-                students: 1800,
-                rating: 4.5,
-                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=250&fit=crop&q=80"
-            },
-            {
-                id: 6,
-                title: "ICT Complete Guide",
-                description: "Complete ICT course covering programming, database, and computer fundamentals for HSC.",
-                category: "Bondi Pathshala",
-                courseType: "Bondi Pathshala",
-                subject: "ICT",
-                grade: "HSC 27",
-                price: 2600,
-                originalPrice: 3600,
-                duration: "6 months",
-                students: 950,
-                rating: 4.8,
-                image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=400&h=250&fit=crop&q=80"
+    // Selection functions for mobile popups
+    function selectGradeFromPopup(grade) {
+        if (grade === 'All Grade/Level') {
+            selectedGrades = ['All Grade/Level'];
+        } else {
+            if (selectedGrades.includes('All Grade/Level')) {
+                selectedGrades = selectedGrades.filter(g => g !== 'All Grade/Level');
             }
-        ];
-
-        // Initialize App
-        function initApp() {
-            mockCourses = coursesData;
-            filteredCourses = [...mockCourses];
-            
-            // Generate footer particles
-            generateFooterParticles();
-            
-            // Initialize scroll animations
-            initScrollAnimations();
-            
-            // Initialize event listeners
-            initEventListeners();
-            
-            // Load courses after a short delay
-            setTimeout(() => {
-                renderCourses();
-            }, 1000);
-        }
-
-        // Theme Toggle
-        function toggleTheme() {
-            isDark = !isDark;
-            document.body.setAttribute('data-theme', isDark ? 'dark' : 'light');
-            
-            const icon = document.querySelector('#themeToggle i');
-            if (icon) {
-                icon.setAttribute('data-lucide', isDark ? 'sun' : 'moon');
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
+            if (selectedGrades.includes(grade)) {
+                selectedGrades = selectedGrades.filter(g => g !== grade);
+                if (selectedGrades.length === 0) {
+                    selectedGrades = ['All Grade/Level'];
                 }
-            }
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-            
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            
-            if (isOpen) {
-                mobileMenu.classList.add('hidden');
-                mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'menu');
             } else {
-                mobileMenu.classList.remove('hidden');
-                mobileMenuToggle.querySelector('i').setAttribute('data-lucide', 'x');
-            }
-            
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
+                selectedGrades.push(grade);
             }
         }
+        updateGradeDisplay();
+        closePopup('grade');
+        filterCourses();
+    }
 
-        // Smooth scroll to section
-        function scrollToSection(sectionId) {
-            const element = document.getElementById(sectionId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth'
-                });
+    function selectCourseFromPopup(course) {
+        selectedCourse = course;
+        document.getElementById('courseSelected').textContent = course;
+        closePopup('course');
+        filterCourses();
+    }
+
+    function selectSubjectFromPopup(subject) {
+        if (subject === 'All Subject') {
+            selectedSubjects = ['All Subject'];
+        } else {
+            if (selectedSubjects.includes('All Subject')) {
+                selectedSubjects = selectedSubjects.filter(s => s !== 'All Subject');
             }
-        }
-
-        // Header scroll effect
-        function handleScroll() {
-            const scrollY = window.scrollY;
-            const newIsScrolled = scrollY > 50;
-            
-            if (newIsScrolled !== isScrolled) {
-                isScrolled = newIsScrolled;
-                const header = document.getElementById('header');
-                
-                if (isScrolled) {
-                    header.className = 'fixed w-full top-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-xl';
-                } else {
-                    header.className = 'fixed w-full top-0 z-50 transition-all duration-300';
+            if (selectedSubjects.includes(subject)) {
+                selectedSubjects = selectedSubjects.filter(s => s !== subject);
+                if (selectedSubjects.length === 0) {
+                    selectedSubjects = ['All Subject'];
                 }
-            }
-        }
-
-        // Check if device is mobile
-        function isMobile() {
-            return window.innerWidth <= 768;
-        }
-
-        // Toggle dropdown
-        function toggleDropdown(type) {
-            if (isMobile()) {
-                const popup = document.getElementById(type + 'Popup');
-                popup.classList.remove('hidden');
             } else {
-                const dropdown = document.getElementById(type + 'Dropdown');
-                const button = dropdown.previousElementSibling;
-                const arrow = button.querySelector('.dropdown-arrow');
-
-                // Close other dropdowns
-                const dropdownTypes = ['grade', 'course', 'subject'];
-                dropdownTypes.forEach(otherType => {
-                    if (otherType !== type) {
-                        const otherDropdown = document.getElementById(otherType + 'Dropdown');
-                        if (otherDropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    }
-                });
-
-                // Toggle current
-                dropdown.classList.toggle('active');
-                arrow.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+                selectedSubjects.push(subject);
             }
         }
+        updateSubjectDisplay();
+        closePopup('subject');
+        filterCourses();
+    }
 
-        // Close popup
-        function closePopup(type) {
-            const popup = document.getElementById(type + 'Popup');
-            popup.classList.add('hidden');
-        }
-
-        // Selection functions
-        function selectGrade(grade) {
-            selectedGrade = grade;
-            document.getElementById('gradeSelected').textContent = grade;
-            closeDropdown('grade');
-            filterCourses();
-        }
-
-        function selectCourse(course) {
-            selectedCourse = course;
-            document.getElementById('courseSelected').textContent = course;
-            closeDropdown('course');
-            filterCourses();
-        }
-
-        function selectSubject(subject) {
-            selectedSubject = subject;
-            document.getElementById('subjectSelected').textContent = subject;
-            closeDropdown('subject');
-            filterCourses();
-        }
-
-        function selectGradeFromPopup(grade) {
-            selectGrade(grade);
-            closePopup('grade');
-        }
-
-        function selectCourseFromPopup(course) {
-            selectCourse(course);
-            closePopup('course');
-        }
-
-        function selectSubjectFromPopup(subject) {
-            selectSubject(subject);
-            closePopup('subject');
-        }
-
-        function closeDropdown(type) {
-            const dropdown = document.getElementById(type + 'Dropdown');
-            if (dropdown) {
-                dropdown.classList.remove('active');
+    // Desktop selection functions
+    function selectGrade(grade) {
+        if (grade === 'All Grade/Level') {
+            selectedGrades = ['All Grade/Level'];
+        } else {
+            if (selectedGrades.includes('All Grade/Level')) {
+                selectedGrades = selectedGrades.filter(g => g !== 'All Grade/Level');
+            }
+            if (selectedGrades.includes(grade)) {
+                selectedGrades = selectedGrades.filter(g => g !== grade);
+                if (selectedGrades.length === 0) {
+                    selectedGrades = ['All Grade/Level'];
+                }
+            } else {
+                selectedGrades.push(grade);
             }
         }
+        updateGradeDisplay();
+        closeDropdown('grade');
+        updateSelectedDropdownItems('#gradeDropdown');
+        filterCourses();
+    }
 
-        // Filter courses
-        function filterCourses() {
-            let filtered = [...mockCourses];
+    function selectCourse(course) {
+        selectedCourse = course;
+        document.getElementById('courseSelected').textContent = course;
+        closeDropdown('course');
+        updateSelectedDropdownItem('#courseDropdown', course);
+        filterCourses();
+    }
 
-            if (selectedGrade !== 'All Grade/Level') {
-                filtered = filtered.filter(course => course.grade === selectedGrade);
+    function selectSubject(subject) {
+        if (subject === 'All Subject') {
+            selectedSubjects = ['All Subject'];
+        } else {
+            if (selectedSubjects.includes('All Subject')) {
+                selectedSubjects = selectedSubjects.filter(s => s !== 'All Subject');
             }
-
-            if (selectedCourse !== 'All Course') {
-                filtered = filtered.filter(course => course.courseType === selectedCourse);
+            if (selectedSubjects.includes(subject)) {
+                selectedSubjects = selectedSubjects.filter(s => s !== subject);
+                if (selectedSubjects.length === 0) {
+                    selectedSubjects = ['All Subject'];
+                }
+            } else {
+                selectedSubjects.push(subject);
             }
+        }
+        updateSubjectDisplay();
+        closeDropdown('subject');
+        updateSelectedDropdownItems('#subjectDropdown');
+        filterCourses();
+    }
 
-            if (selectedSubject !== 'All Subject') {
-                filtered = filtered.filter(course => course.subject === selectedSubject);
+    // Helper functions to update display
+    function updateGradeDisplay() {
+        const displayText = selectedGrades.includes('All Grade/Level') ? 
+            'All Grade/Level' : 
+            selectedGrades.length > 1 ? 
+                `${selectedGrades[0]} +${selectedGrades.length - 1}` : 
+                selectedGrades[0];
+        document.getElementById('gradeSelected').textContent = displayText;
+    }
+
+    function updateSubjectDisplay() {
+        const displayText = selectedSubjects.includes('All Subject') ? 
+            'All Subject' : 
+            selectedSubjects.length > 1 ? 
+                `${selectedSubjects[0]} +${selectedSubjects.length - 1}` : 
+                selectedSubjects[0];
+        document.getElementById('subjectSelected').textContent = displayText;
+    }
+
+    // Utility functions
+    function closeDropdown(dropdownId) {
+        const dropdown = document.getElementById(dropdownId);
+        if (!dropdown) return;
+        dropdown.classList.remove('active');
+        const button = dropdown.previousElementSibling;
+        button?.querySelector('.dropdown-arrow').style.transform = 'rotate(0deg)';
+    }
+
+    function updateSelectedDropdownItem(selector, value) {
+        const items = document.querySelectorAll(`${selector} .dropdown-item`);
+        items.forEach(item => {
+            item.classList.remove('selected');
+            if (item.textContent === value) {
+                item.classList.add('selected');
             }
+        });
+    }
 
-            filteredCourses = filtered;
-            renderCourses();
+    function updateSelectedDropdownItems(selector) {
+        const items = document.querySelectorAll(`${selector} .dropdown-item`);
+        items.forEach(item => {
+            item.classList.remove('selected');
+            let currentSelections;
+            if (selector.includes('grade')) currentSelections = selectedGrades;
+            else if (selector.includes('subject')) currentSelections = selectedSubjects;
+
+            if (currentSelections && currentSelections.includes(item.textContent)) {
+                item.classList.add('selected');
+            }
+        });
+    }
+
+    // Filter courses function
+    function filterCourses() {
+        let filtered = [...mockCourses];
+
+        // Grade filtering (multi)
+        if (!selectedGrades.includes('All Grade/Level')) {
+            filtered = filtered.filter(course => {
+                return selectedGrades.includes(course.grade);
+            });
         }
 
-        // Render courses
-        function renderCourses() {
-            const coursesGrid = document.getElementById('coursesGrid');
-            
-            if (filteredCourses.length === 0) {
-                coursesGrid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-600">No courses found for the selected filters.</div>';
-                return;
-            }
+        // CourseType filtering (still single-select)
+        if (selectedCourse !== 'All Course') {
+            filtered = filtered.filter(course => course.courseType === selectedCourse);
+        }
 
-            const coursesHTML = filteredCourses.map(course => `
-                <div class="course-card">
-                    <img 
-                        src="${course.image}" 
-                        alt="${course.title}"
-                        class="w-full h-48 object-cover"
-                    />
-                    <div class="p-6">
-                        <div class="inline-block bg-gradient-to-r from-warm-100 to-warm-200 text-white text-sm px-3 py-1 rounded-full font-semibold mb-3">
-                            ${course.category}
+        // Subject filtering (multi)
+        if (!selectedSubjects.includes('All Subject')) {
+            filtered = filtered.filter(course => {
+                return selectedSubjects.includes(course.subject);
+            });
+        }
+
+        filteredCourses = filtered;
+        renderCourses();
+    }
+
+    // Render courses
+    function renderCourses() {
+        const coursesGrid = document.getElementById('coursesGrid');
+        
+        if (filteredCourses.length === 0) {
+            coursesGrid.innerHTML = '<div class="col-span-full text-center py-12 text-gray-600">No courses found for the selected filters.</div>';
+            return;
+        }
+
+        const coursesHTML = filteredCourses.map(course => `
+            <div class="course-card">
+                <img 
+                    src="${course.image}" 
+                    alt="${course.title}"
+                    class="w-full h-48 object-cover"
+                />
+                <div class="p-6">
+                    <div class="inline-block bg-gradient-to-r from-warm-100 to-warm-200 text-white text-sm px-3 py-1 rounded-full font-semibold mb-3">
+                        ${course.category}
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">${course.title}</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">${course.description}</p>
+                    
+                    <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-clock w-4 h-4"></i>
+                            <span>${course.duration}</span>
                         </div>
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">${course.title}</h3>
-                        <p class="text-gray-600 mb-4 line-clamp-3">${course.description}</p>
-                        
-                        <div class="flex items-center justify-between text-sm text-gray-500 mb-4">
-                            <div class="flex items-center space-x-1">
-                                <i class="fas fa-clock w-4 h-4"></i>
-                                <span>${course.duration}</span>
-                            </div>
-                            <div class="flex items-center space-x-1">
-                                <i class="fas fa-users w-4 h-4"></i>
-                                <span>${course.students}</span>
-                            </div>
-                            <div class="flex items-center space-x-1">
-                                <div class="flex">
-                                    ${Array.from({length: 5}, (_, i) => `
-                                        <i class="fas fa-star w-3 h-3 ${i < Math.floor(course.rating) ? 'text-yellow-400' : 'text-gray-300'}"></i>
-                                    `).join('')}
-                                </div>
-                                <span>${course.rating}</span>
-                            </div>
+                        <div class="flex items-center space-x-1">
+                            <i class="fas fa-users w-4 h-4"></i>
+                            <span>${course.students}</span>
                         </div>
-                        
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-2">
-                                <span class="text-2xl font-bold text-green-600">৳${course.price}</span>
-                                <span class="text-sm text-gray-400 line-through">৳${course.originalPrice}</span>
+                        <div class="flex items-center space-x-1">
+                            <div class="flex">
+                                ${Array.from({length: 5}, (_, i) => `
+                                    <i class="fas fa-star w-3 h-3 ${i < Math.floor(course.rating) ? 'text-yellow-400' : 'text-gray-300'}"></i>
+                                `).join('')}
                             </div>
-                            <button onclick="enrollCourse(${course.id})" class="px-6 py-2 rounded-full font-semibold text-white btn-gradient hover:shadow-lg transform hover:scale-105 transition-all duration-300">
-                                Enroll Now
-                            </button>
+                            <span>${course.rating}</span>
                         </div>
                     </div>
-                </div>
-            `).join('');
-
-            coursesGrid.innerHTML = coursesHTML;
-        }
-
-        // Enroll in course
-        function enrollCourse(courseId) {
-            const course = mockCourses.find(c => c.id === courseId);
-            if (course) {
-                alert(`Enrolling in "${course.title}". Contact us on Telegram for payment and enrollment details!`);
-                window.open('https://t.me/MYThymM', '_blank');
-            }
-        }
-
-        // Generate footer particles
-        function generateFooterParticles() {
-            const container = document.getElementById('footerParticles');
-            if (!container) return;
-            
-            for (let i = 0; i < 30; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'absolute w-2 h-2 bg-warm-200 rounded-full opacity-30 animate-float';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 5 + 's';
-                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
-                container.appendChild(particle);
-            }
-        }
-
-        // Scroll animations
-        function initScrollAnimations() {
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const scrollObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.fade-in-element').forEach(element => {
-                scrollObserver.observe(element);
-            });
-        }
-
-        // Initialize event listeners
-        function initEventListeners() {
-            // Theme toggle
-            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-            
-            // Mobile menu toggle
-            document.getElementById('mobileMenuToggle').addEventListener('click', toggleMobileMenu);
-            
-            // Scroll handling
-            window.addEventListener('scroll', handleScroll);
-            
-            // Smooth scrolling for nav links
-            document.querySelectorAll('a[href^="#"]').forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const target = link.getAttribute('href').substring(1);
-                    scrollToSection(target);
                     
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobileMenu');
-                    if (!mobileMenu.classList.contains('hidden')) {
-                        toggleMobileMenu();
-                    }
-                });
-            });
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-2xl font-bold text-green-600">৳${course.price}</span>
+                            <span class="text-sm text-gray-400 line-through">৳${course.originalPrice}</span>
+                        </div>
+                        <button onclick="enrollCourse(${course.id})" class="px-6 py-2 rounded-full font-semibold text-white btn-gradient hover:shadow-lg transform hover:scale-105 transition-all duration-300">
+                            Enroll Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
 
-            // Close popups when clicking outside
-            document.addEventListener('click', function(e) {
-                ['gradePopup', 'coursePopup', 'subjectPopup'].forEach(popupId => {
-                    const popup = document.getElementById(popupId);
-                    if (popup && !popup.classList.contains('hidden') && e.target === popup) {
-                        popup.classList.add('hidden');
-                    }
-                });
-            });
+        coursesGrid.innerHTML = coursesHTML;
+    }
+
+    // Enroll in course
+    function enrollCourse(courseId) {
+        const course = mockCourses.find(c => c.id === courseId);
+        if (course) {
+            alert(`Enrolling in "${course.title}". Contact us on Telegram for payment and enrollment details!`);
+            window.open('https://t.me/MYThymM', '_blank');
         }
+    }
 
-        // Make functions globally available
-        window.toggleDropdown = toggleDropdown;
-        window.closePopup = closePopup;
-        window.selectGrade = selectGrade;
-        window.selectCourse = selectCourse;
-        window.selectSubject = selectSubject;
-        window.selectGradeFromPopup = selectGradeFromPopup;
-        window.selectCourseFromPopup = selectCourseFromPopup;
-        window.selectSubjectFromPopup = selectSubjectFromPopup;
-        window.enrollCourse = enrollCourse;
-        window.scrollToSection = scrollToSection;
+    // Generate footer particles
+    function generateFooterParticles() {
+        const container = document.getElementById('footerParticles');
+        if (!container) return;
+        
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'absolute w-2 h-2 bg-warm-200 rounded-full opacity-30 animate-float';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 5 + 's';
+            particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            container.appendChild(particle);
+        }
+    }
 
-        // Start the app
-        document.addEventListener('DOMContentLoaded', initApp);
-    </script>
+    // Scroll animations
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-element').forEach(element => {
+            scrollObserver.observe(element);
+        });
+    }
+
+    // Initialize event listeners
+    function initEventListeners() {
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', toggleMobileMenu);
+        
+        // Scroll handling
+        window.addEventListener('scroll', handleScroll);
+        
+        // Smooth scrolling for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = link.getAttribute('href').substring(1);
+                scrollToSection(target);
+                
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobileMenu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Close popups when clicking outside
+        document.addEventListener('click', function(e) {
+            ['gradePopup', 'coursePopup', 'subjectPopup'].forEach(popupId => {
+                const popup = document.getElementById(popupId);
+                if (popup && !popup.classList.contains('hidden') && e.target === popup) {
+                    popup.classList.add('hidden');
+                }
+            });
+        });
+    }
+
+    // Make functions globally available
+    window.toggleDropdown = toggleDropdown;
+    window.closePopup = closePopup;
+    window.selectGrade = selectGrade;
+    window.selectCourse = selectCourse;
+    window.selectSubject = selectSubject;
+    window.selectGradeFromPopup = selectGradeFromPopup;
+    window.selectCourseFromPopup = selectCourseFromPopup;
+    window.selectSubjectFromPopup = selectSubjectFromPopup;
+    window.enrollCourse = enrollCourse;
+    window.scrollToSection = scrollToSection;
+
+    // Start the app
+    document.addEventListener('DOMContentLoaded', initApp);
+</script>
 </body>
 </html>
