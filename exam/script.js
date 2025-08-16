@@ -34,7 +34,7 @@ const mockExams = [
         questions: 30,
         participants: 567,
         date: "Jan 22, 2025",
-        status: "Completed"
+        status: "Model Test"
     },
     {
         id: 4,
@@ -82,7 +82,7 @@ const mockExams = [
         questions: 28,
         participants: 1156,
         date: "Jan 20, 2025",
-        status: "Completed"
+        status: "Model Test"
     },
     {
         id: 8,
@@ -178,6 +178,8 @@ function getDifficultyColor(difficulty) {
             return 'bg-yellow-100 text-yellow-800 border-yellow-200';
         case 'hard':
             return 'bg-red-100 text-red-800 border-red-200';
+        case 'standard':
+            return 'bg-red-100 text-blue-800 border-blue-200';
         default:
             return 'bg-gray-100 text-gray-800 border-gray-200';
     }
@@ -189,7 +191,7 @@ function getStatusColor(status) {
             return 'bg-yellow-100 text-yellow-800 border-yellow-200';
         case 'upcoming':
             return 'bg-blue-100 text-blue-800 border-blue-200';
-        case 'completed':
+        case 'modeltest':
             return 'bg-gray-100 text-gray-800 border-gray-200';
         default:
             return 'bg-gray-100 text-gray-800 border-gray-200';
