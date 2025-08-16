@@ -1,4 +1,4 @@
-// Mock exam data
+// Mock exam data with link property for redirection
 const mockExams = [
     {
         id: 1,
@@ -10,7 +10,8 @@ const mockExams = [
         questions: 50,
         participants: 1245,
         date: "Jan 25, 2025",
-        status: "Active"
+        status: "Active",
+        link: "https://example.com/exam/math-advanced"
     },
     {
         id: 2,
@@ -22,7 +23,8 @@ const mockExams = [
         questions: 35,
         participants: 892,
         date: "Jan 28, 2025",
-        status: "Upcoming"
+        status: "Upcoming",
+        link: "https://example.com/exam/physics-fundamentals"
     },
     {
         id: 3,
@@ -34,7 +36,8 @@ const mockExams = [
         questions: 30,
         participants: 567,
         date: "Jan 22, 2025",
-        status: "Model Test"
+        status: "Model Test",
+        link: "https://example.com/exam/chemistry-lab"
     },
     {
         id: 4,
@@ -46,7 +49,8 @@ const mockExams = [
         questions: 25,
         participants: 1834,
         date: "Jan 26, 2025",
-        status: "Active"
+        status: "Active",
+        link: "https://example.com/exam/english-literature"
     },
     {
         id: 5,
@@ -58,7 +62,8 @@ const mockExams = [
         questions: 40,
         participants: 623,
         date: "Jan 30, 2025",
-        status: "Upcoming"
+        status: "Upcoming",
+        link: "https://example.com/exam/cs-programming"
     },
     {
         id: 6,
@@ -70,7 +75,8 @@ const mockExams = [
         questions: 45,
         participants: 756,
         date: "Jan 24, 2025",
-        status: "Active"
+        status: "Active",
+        link: "https://example.com/exam/biology-cellular"
     },
     {
         id: 7,
@@ -82,7 +88,8 @@ const mockExams = [
         questions: 28,
         participants: 1156,
         date: "Jan 20, 2025",
-        status: "Model Test"
+        status: "Model Test",
+        link: "https://example.com/exam/history-world-wars"
     },
     {
         id: 8,
@@ -94,7 +101,8 @@ const mockExams = [
         questions: 38,
         participants: 445,
         date: "Feb 2, 2025",
-        status: "Upcoming"
+        status: "Upcoming",
+        link: "https://example.com/exam/economics-market"
     },
     {
         id: 9,
@@ -106,7 +114,8 @@ const mockExams = [
         questions: 32,
         participants: 689,
         date: "Jan 27, 2025",
-        status: "Active"
+        status: "Active",
+        link: "https://example.com/exam/geography-climate"
     },
     {
         id: 10,
@@ -118,7 +127,8 @@ const mockExams = [
         questions: 42,
         participants: 334,
         date: "Feb 5, 2025",
-        status: "Upcoming"
+        status: "Upcoming",
+        link: "https://example.com/exam/statistics-data"
     },
     {
         id: 11,
@@ -130,7 +140,8 @@ const mockExams = [
         questions: 22,
         participants: 523,
         date: "Jan 23, 2025",
-        status: "Active"
+        status: "Active",
+        link: "https://example.com/exam/art-history"
     },
     {
         id: 12,
@@ -142,31 +153,26 @@ const mockExams = [
         questions: 36,
         participants: 812,
         date: "Jan 29, 2025",
-        status: "Upcoming"
+        status: "Upcoming",
+        link: "https://example.com/exam/psychology-behavioral"
     }
 ];
 
-// Global variables
+// Global variables - removed subject filter
 let filteredExams = [...mockExams];
 let searchTerm = '';
-let filterSubject = 'all';
 let filterDifficulty = 'all';
 let filterStatus = 'all';
 
-// DOM Elements
+// DOM Elements - removed subject filter elements
 const elements = {
     searchInput: null,
-    subjectFilter: null,
     difficultyFilter: null,
     statusFilter: null,
     examsGrid: null,
     examCount: null,
     noResults: null,
-    activeFilters: null,
-    mobileMenuButton: null,
-    mobileMenu: null,
-    menuIcon: null,
-    closeIcon: null
+    activeFilters: null
 };
 
 // Utility functions
@@ -179,7 +185,7 @@ function getDifficultyColor(difficulty) {
         case 'hard':
             return 'bg-red-100 text-red-800 border-red-200';
         case 'standard':
-            return 'bg-red-100 text-blue-800 border-blue-200';
+            return 'bg-blue-100 text-blue-800 border-blue-200';
         default:
             return 'bg-gray-100 text-gray-800 border-gray-200';
     }
@@ -191,18 +197,26 @@ function getStatusColor(status) {
             return 'bg-yellow-100 text-yellow-800 border-yellow-200';
         case 'upcoming':
             return 'bg-blue-100 text-blue-800 border-blue-200';
-        case 'modeltest':
+        case 'model test':
             return 'bg-gray-100 text-gray-800 border-gray-200';
         default:
             return 'bg-gray-100 text-gray-800 border-gray-200';
     }
 }
 
+// Handle exam button click - redirect to exam link
+function handleExamButtonClick(exam) {
+    if (exam.link) {
+        window.open(exam.link, '_blank');
+    } else {
+        alert('Exam link not available');
+    }
+}
+
 function createExamCard(exam) {
-    const buttonText = exam.status === 'completed' ? 'View Results' : 
-                      exam.status === 'upcoming' ? 'Register Now' : 'Start Exam';
-    const isDisabled = exam.status === 'completed';
-    
+    const buttonText = exam.status === 'Model Test' ? 'Take Model Test' :
+                      exam.status === 'Upcoming' ? 'Register Now' : 'Take Exam';
+
     return `
         <div class="card-hover bg-white rounded-lg shadow-md border overflow-hidden" style="border-color: rgba(214, 173, 96, 0.3); background: linear-gradient(135deg, #f4ebd0 0%, #ffffff 100%);">
             <div class="p-6">
@@ -215,7 +229,7 @@ function createExamCard(exam) {
                 <p class="text-sm leading-relaxed line-clamp-2 mb-4" style="color: rgba(18, 38, 32, 0.7);">
                     ${exam.description}
                 </p>
-                
+
                 <div class="grid grid-cols-2 gap-4 mb-4">
                     <div class="flex items-center space-x-2">
                         <i class="fas fa-clock" style="color: #b68d40;"></i>
@@ -244,10 +258,10 @@ function createExamCard(exam) {
                     </span>
                 </div>
 
-                <button 
-                    class="w-full py-2.5 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 ${isDisabled ? 'opacity-50 cursor-not-allowed' : 'hover:shadow-lg'}" 
+                <button
+                    class="w-full py-2.5 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg exam-button"
                     style="background-color: #b68d40; color: white;"
-                    ${isDisabled ? 'disabled' : ''}
+                    onclick="handleExamButtonClick(${JSON.stringify(exam).replace(/"/g, '&quot;')})"
                 >
                     ${buttonText}
                 </button>
@@ -256,39 +270,32 @@ function createExamCard(exam) {
     `;
 }
 
-function populateSubjectFilter() {
-    const subjects = [...new Set(mockExams.map(exam => exam.subject))];
-    elements.subjectFilter.innerHTML = '<option value="all">All Subjects</option>';
-    subjects.forEach(subject => {
-        elements.subjectFilter.innerHTML += `<option value="${subject}">${subject}</option>`;
-    });
-}
-
+// Update stats with dynamic total exams calculation
 function updateStats() {
-    const total = mockExams.length;
+    const total = mockExams.length;  // Dynamic calculation
     const active = mockExams.filter(exam => exam.status === 'Active').length;
     const upcoming = mockExams.filter(exam => exam.status === 'Upcoming').length;
-    const completed = mockExams.filter(exam => exam.status === 'Completed').length;
-    
+    const modelTest = mockExams.filter(exam => exam.status === 'Model Test').length;
+
     document.getElementById('total-exams').textContent = total;
     document.getElementById('active-exams').textContent = active;
     document.getElementById('upcoming-exams').textContent = upcoming;
-    document.getElementById('completed-exams').textContent = completed;
+    document.getElementById('model-test-exams').textContent = modelTest;
 }
 
+// Filter exams - removed subject filtering
 function filterExams() {
     filteredExams = mockExams.filter(exam => {
         const matchesSearch = exam.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                              exam.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                              exam.subject.toLowerCase().includes(searchTerm.toLowerCase());
-        
-        const matchesSubject = filterSubject === 'all' || exam.subject === filterSubject;
+
         const matchesDifficulty = filterDifficulty === 'all' || exam.difficulty.toLowerCase() === filterDifficulty;
         const matchesStatus = filterStatus === 'all' || exam.status.toLowerCase() === filterStatus;
-        
-        return matchesSearch && matchesSubject && matchesDifficulty && matchesStatus;
+
+        return matchesSearch && matchesDifficulty && matchesStatus;
     });
-    
+
     renderExams();
     updateExamCount();
     updateActiveFilters();
@@ -300,10 +307,10 @@ function renderExams() {
         elements.noResults.classList.remove('hidden');
         return;
     }
-    
+
     elements.examsGrid.classList.remove('hidden');
     elements.noResults.classList.add('hidden');
-    
+
     elements.examsGrid.innerHTML = filteredExams.map(exam => createExamCard(exam)).join('');
 }
 
@@ -312,14 +319,12 @@ function updateExamCount() {
     elements.examCount.textContent = `${count} exam${count !== 1 ? 's' : ''} found`;
 }
 
+// Update active filters - removed subject filter
 function updateActiveFilters() {
     const filters = [];
-    
+
     if (searchTerm) {
         filters.push({ type: 'search', label: `Search: "${searchTerm}"` });
-    }
-    if (filterSubject !== 'all') {
-        filters.push({ type: 'subject', label: `Subject: ${filterSubject}` });
     }
     if (filterDifficulty !== 'all') {
         filters.push({ type: 'difficulty', label: `Difficulty: ${filterDifficulty}` });
@@ -327,56 +332,38 @@ function updateActiveFilters() {
     if (filterStatus !== 'all') {
         filters.push({ type: 'status', label: `Status: ${filterStatus}` });
     }
-    
+
     if (filters.length === 0) {
         elements.activeFilters.classList.add('hidden');
         return;
     }
-    
-    elements.activeFilters.classList.remove('hidden');
-    elements.activeFilters.innerHTML = filters.map(filter => 
-        `<span class="px-2 py-1 text-xs font-medium rounded-full border" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d40; border-color: rgba(182, 141, 64, 0.3);">
-            ${filter.label}
-        </span>`
-    ).join('');
-}
 
-function toggleMobileMenu() {
-    const isOpen = elements.mobileMenu.classList.contains('open');
-    if (isOpen) {
-        elements.mobileMenu.classList.remove('open');
-        elements.menuIcon.classList.remove('hidden');
-        elements.closeIcon.classList.add('hidden');
-    } else {
-        elements.mobileMenu.classList.add('open');
-        elements.menuIcon.classList.add('hidden');
-        elements.closeIcon.classList.remove('hidden');
+    elements.activeFilters.classList.remove('hidden');
+    const activeFiltersContent = document.getElementById('active-filters-content');
+    if (activeFiltersContent) {
+        activeFiltersContent.innerHTML = filters.map(filter =>
+            `<span class="px-2 py-1 text-xs font-medium rounded-full border" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d40; border-color: rgba(182, 141, 64, 0.3);">
+                ${filter.label}
+            </span>`
+        ).join('');
     }
 }
 
+// Initialize DOM elements - removed subject filter
 function initializeElements() {
     elements.searchInput = document.getElementById('search-input');
-    elements.subjectFilter = document.getElementById('subject-filter');
     elements.difficultyFilter = document.getElementById('difficulty-filter');
     elements.statusFilter = document.getElementById('status-filter');
     elements.examsGrid = document.getElementById('exams-grid');
     elements.examCount = document.getElementById('exam-count');
     elements.noResults = document.getElementById('no-results');
     elements.activeFilters = document.getElementById('active-filters');
-    elements.mobileMenuButton = document.getElementById('mobile-menu-button');
-    elements.mobileMenu = document.getElementById('mobile-menu');
-    elements.menuIcon = document.getElementById('menu-icon');
-    elements.closeIcon = document.getElementById('close-icon');
 }
 
+// Add event listeners - removed subject filter
 function addEventListeners() {
     elements.searchInput.addEventListener('input', (e) => {
         searchTerm = e.target.value;
-        filterExams();
-    });
-
-    elements.subjectFilter.addEventListener('change', (e) => {
-        filterSubject = e.target.value;
         filterExams();
     });
 
@@ -389,29 +376,12 @@ function addEventListeners() {
         filterStatus = e.target.value;
         filterExams();
     });
-
-    elements.mobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-    document.addEventListener('click', (e) => {
-        if (!elements.mobileMenuButton.contains(e.target) && !elements.mobileMenu.contains(e.target)) {
-            if (elements.mobileMenu.classList.contains('open')) {
-                toggleMobileMenu();
-            }
-        }
-    });
-
-    elements.mobileMenu.addEventListener('click', (e) => {
-        if (e.target.tagName === 'A') {
-            toggleMobileMenu();
-        }
-    });
 }
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
     initializeElements();
-    populateSubjectFilter();
-    updateStats();
+    updateStats();  // This will now dynamically calculate total exams
     filterExams();
     addEventListeners();
 });
