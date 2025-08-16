@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathshala - Exam Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom animations and transitions */
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+        
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .mobile-menu.open {
+            max-height: 300px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f4ebd0 0%, #ffffff 50%, rgba(244, 235, 208, 0.5) 100%);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(90deg, #122620 0%, rgba(18, 38, 32, 0.9) 100%);
+        }
+        
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Loading animation */
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f4ebd0;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #b68d40;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d6ad60;
+        }
+    </style>
+</head>
+<body class="min-h-screen gradient-bg">
+    <!-- Header -->
+    <header class="bg-gray-800 shadow-lg sticky top-0 z-50" style="background-color: #122620;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <h1 class="text-2xl font-bold" style="color: #f4ebd0;">Pathshala</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="https://wakilbd.github.io/ps" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Home</a>
+                    <a href="https://wakilbd.github.io/ps/courses" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Courses</a>
+                    <a href="https://wakilbd.github.io/ps/class" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Class Portal</a>
+                    <a href="https://wakilbd.github.io/ps/exam" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Exam</a>
+                    <a href="https://wakilbd.github.io/ps/about" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">About</a>
+                    <a href="https://wakilbd.github.io/ps/contact" class="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Contact</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 rounded-md text-sm font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">
+                        <i class="fas fa-bars" id="menu-icon"></i>
+                        <i class="fas fa-times hidden" id="close-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="md:hidden mobile-menu" id="mobile-menu">
+                <div class="space-y-2 pb-4">
+                    <a href="https://wakilbd.github.io/ps" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Home</a>
+                    <a href="https://wakilbd.github.io/ps/courses" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Courses</a>
+                    <a href="https://wakilbd.github.io/ps/class" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Class Portal</a>
+                    <a href="https://wakilbd.github.io/ps/exam" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Exam</a>
+                    <a href="https://wakilbd.github.io/ps/about" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">About</a>
+                    <a href="https://wakilbd.github.io/ps/contact" class="block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16" style="color: #f4ebd0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex items-center justify-center mb-6">
+                <i class="fas fa-book-open mr-4 text-5xl" style="color: #b68d40;"></i>
+                <h1 class="text-4xl md:text-6xl font-bold">
+                    Exam Portal
+                </h1>
+            </div>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed" style="color: rgba(244, 235, 208, 0.8);">
+                Discover and take comprehensive exams across various subjects. Test your knowledge and track your progress.
+            </p>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 max-w-4xl mx-auto">
+                <div class="rounded-lg p-6 border backdrop-blur-sm" style="background-color: rgba(244, 235, 208, 0.1); border-color: rgba(182, 141, 64, 0.3);">
+                    <div class="text-3xl font-bold" style="color: #b68d40;" id="total-exams">12</div>
+                    <div class="text-sm" style="color: rgba(244, 235, 208, 0.8);">Total Exams</div>
+                </div>
+                <div class="rounded-lg p-6 border backdrop-blur-sm" style="background-color: rgba(244, 235, 208, 0.1); border-color: rgba(182, 141, 64, 0.3);">
+                    <div class="text-3xl font-bold" style="color: #b68d40;" id="active-exams">5</div>
+                    <div class="text-sm" style="color: rgba(244, 235, 208, 0.8);">Active Now</div>
+                </div>
+                <div class="rounded-lg p-6 border backdrop-blur-sm" style="background-color: rgba(244, 235, 208, 0.1); border-color: rgba(182, 141, 64, 0.3);">
+                    <div class="text-3xl font-bold" style="color: #b68d40;" id="upcoming-exams">5</div>
+                    <div class="text-sm" style="color: rgba(244, 235, 208, 0.8);">Upcoming</div>
+                </div>
+                <div class="rounded-lg p-6 border backdrop-blur-sm" style="background-color: rgba(244, 235, 208, 0.1); border-color: rgba(182, 141, 64, 0.3);">
+                    <div class="text-3xl font-bold" style="color: #b68d40;" id="completed-exams">2</div>
+                    <div class="text-sm" style="color: rgba(244, 235, 208, 0.8);">Completed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-8 backdrop-blur-sm border-b" style="background-color: rgba(255, 255, 255, 0.5); border-color: rgba(214, 173, 96, 0.2);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <!-- Search -->
+                <div class="relative flex-1 max-w-md">
+                    <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+                    <input
+                        type="text"
+                        id="search-input"
+                        placeholder="Search exams..."
+                        class="w-full pl-10 pr-4 py-2 border rounded-md focus:outline-none focus:ring-2 transition-colors duration-200"
+                        style="border-color: rgba(214, 173, 96, 0.3); focus:border-color: #b68d40; focus:ring-color: rgba(182, 141, 64, 0.2);"
+                    />
+                </div>
+
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-filter text-gray-600"></i>
+                        <span class="text-sm font-medium text-gray-600">Filters:</span>
+                    </div>
+                    
+                    <select id="subject-filter" class="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-colors duration-200" style="border-color: rgba(214, 173, 96, 0.3); focus:border-color: #b68d40;">
+                        <option value="all">All Subjects</option>
+                    </select>
+
+                    <select id="difficulty-filter" class="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-colors duration-200" style="border-color: rgba(214, 173, 96, 0.3); focus:border-color: #b68d40;">
+                        <option value="all">All Levels</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+
+                    <select id="status-filter" class="px-3 py-2 border rounded-md focus:outline-none focus:ring-2 transition-colors duration-200" style="border-color: rgba(214, 173, 96, 0.3); focus:border-color: #b68d40;">
+                        <option value="all">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="upcoming">Upcoming</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Active Filters -->
+            <div id="active-filters" class="flex flex-wrap gap-2 mt-4 hidden">
+            </div>
+        </div>
+    </section>
+
+    <!-- Exams Grid -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold" style="color: #122620;">
+                    Available Exams
+                </h2>
+                <span class="px-3 py-1 border rounded-full text-sm" style="color: #122620; border-color: rgba(214, 173, 96, 0.5);" id="exam-count">
+                    12 exams found
+                </span>
+            </div>
+
+            <div id="exams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exam cards will be populated by JavaScript -->
+            </div>
+
+            <!-- No results message -->
+            <div id="no-results" class="text-center py-16 hidden">
+                <i class="fas fa-book-open text-6xl mb-4" style="color: rgba(182, 141, 64, 0.5);"></i>
+                <h3 class="text-2xl font-semibold mb-2" style="color: #122620;">No exams found</h3>
+                <p class="max-w-md mx-auto" style="color: rgba(18, 38, 32, 0.7);">
+                    Try adjusting your search criteria or filters to find more exams.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 mt-16" style="background-color: #122620; color: #f4ebd0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo and Description -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-book-open text-2xl" style="color: #b68d40;"></i>
+                        <h3 class="text-2xl font-bold">Pathshala</h3>
+                    </div>
+                    <p class="text-sm leading-relaxed" style="color: rgba(244, 235, 208, 0.8);">
+                        Your trusted online learning platform providing quality education and comprehensive exam preparation.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #b68d40;">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://wakilbd.github.io/ps" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Home</a></li>
+                        <li><a href="https://wakilbd.github.io/ps/courses" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Courses</a></li>
+                        <li><a href="https://wakilbd.github.io/ps/class" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Class Portal</a></li>
+                        <li><a href="https://wakilbd.github.io/ps/exam" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Exam</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #b68d40;">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://wakilbd.github.io/ps/about" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">About Us</a></li>
+                        <li><a href="https://wakilbd.github.io/ps/contact" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Contact</a></li>
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Help Center</a></li>
+                        <li><a href="#" class="text-sm transition-colors duration-200" style="color: #f4ebd0;" onmouseover="this.style.color='#b68d40'" onmouseout="this.style.color='#f4ebd0'">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" style="color: #b68d40;">Contact Info</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope" style="color: #b68d40;"></i>
+                            <span class="text-sm">info@pathshala.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone" style="color: #b68d40;"></i>
+                            <span class="text-sm">+880 123 456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt" style="color: #b68d40;"></i>
+                            <span class="text-sm">Dhaka, Bangladesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t mt-8 pt-8 text-center" style="border-color: rgba(244, 235, 208, 0.2);">
+                <p class="text-sm" style="color: rgba(244, 235, 208, 0.7);">
+                    © 2025 Pathshala. All rights reserved. Built with passion for education.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
