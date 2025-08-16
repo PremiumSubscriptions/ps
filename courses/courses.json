@@ -15,7 +15,7 @@
     "originalPrice": 1500,
     "duration": "2.5 months",
     "students": 6000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180818_395.jpg"
   },
   {
@@ -34,7 +34,7 @@
     "originalPrice": 1500,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180819_971.jpg"
   },
   {
@@ -53,7 +53,7 @@
     "originalPrice": 1500,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180821_720.jpg"
   },
   {
@@ -72,7 +72,7 @@
     "originalPrice": 1500,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180824_653.jpg"
   },
   {
@@ -91,7 +91,7 @@
     "originalPrice": 1500,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180825_788.jpg"
   },
   {
@@ -110,7 +110,7 @@
     "originalPrice": 1500,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180828_057.jpg"
   },
   {
@@ -129,8 +129,8 @@
     "originalPrice": 9000,
     "duration": "Lifetime",
     "students": 5000,
-    "rating": 5.0,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180829_463.jpg"
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180818_395.jpg"
   },
   {
     "id": 8,
@@ -149,7 +149,7 @@
     "duration": "4 months",
     "students": 6000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180937_978.jpg"
   },
   {
     "id": 9,
@@ -168,7 +168,7 @@
     "duration": "4 months",
     "students": 4000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180939_285.jpg"
   },
   {
     "id": 10,
@@ -187,7 +187,7 @@
     "duration": "4 months",
     "students": 4000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180940_617.jpg"
   },
   {
     "id": 11,
@@ -206,7 +206,7 @@
     "duration": "4 months",
     "students": 4000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/MG_20250813_180942_956.jpg"
   },
   {
     "id": 12,
@@ -225,7 +225,7 @@
     "duration": "4 months",
     "students": 4000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180945_218.jpg"
   },
   {
     "id": 13,
@@ -244,7 +244,7 @@
     "duration": "4 months",
     "students": 4000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_180943_442.jpg"
   },
   {
     "id": 14,
@@ -282,7 +282,7 @@
     "duration": "2.5 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181124_500.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181033_398.jpg"
   },
   {
     "id": 16,
@@ -301,7 +301,7 @@
     "duration": "2.5 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181125_706.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181034_598.jpg"
   },
   {
     "id": 17,
@@ -320,7 +320,7 @@
     "duration": "2.5 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181127_441.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181035_560.jpg"
   },
   {
     "id": 18,
@@ -339,7 +339,7 @@
     "duration": "2.5 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181129_571.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181036_865.jpg"
   },
   {
     "id": 19,
@@ -358,7 +358,7 @@
     "duration": "2.5 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181131_232.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181038_043.jpg"
   },
   {
     "id": 20,
@@ -377,7 +377,7 @@
     "duration": "10 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181133_024.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181033_398.jpg"
   },
   {
     "id": 21,
@@ -396,7 +396,7 @@
     "duration": "2.5 months",
     "students": 800,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181639_718.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181124_500.jpg"
   },
   {
     "id": 22,
@@ -415,7 +415,7 @@
     "duration": "2.5 months",
     "students": 800,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181706_477.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181125_706.jpg"
   },
   {
     "id": 23,
@@ -434,7 +434,7 @@
     "duration": "2.5 months",
     "students": 800,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181707_606.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181127_441.jpg"
   },
   {
     "id": 24,
@@ -453,7 +453,7 @@
     "duration": "2.5 months",
     "students": 800,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181709_005.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181129_571.jpg"
   },
   {
     "id": 25,
@@ -472,7 +472,7 @@
     "duration": "2.5 months",
     "students": 800,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181710_695.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181131_232.jpg"
   },
   {
     "id": 26,
@@ -491,7 +491,7 @@
     "duration": "10 months",
     "students": 800,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181627_706.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181124_500.jpg"
   },
   {
     "id": 27,
@@ -605,7 +605,7 @@
     "duration": "10 months",
     "students": 2000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181224_732.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181215_418.jpg"
   },
   {
     "id": 33,
@@ -643,7 +643,7 @@
     "duration": "3 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181409_984.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181312_420.jpg"
   },
   {
     "id": 35,
@@ -662,7 +662,7 @@
     "duration": "3 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181411_403.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181314_672.jpg"
   },
   {
     "id": 36,
@@ -681,7 +681,7 @@
     "duration": "3 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181412_949.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181315_521.jpg"
   },
   {
     "id": 37,
@@ -700,7 +700,7 @@
     "duration": "3 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181414_360.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181317_581.jpg"
   },
   {
     "id": 38,
@@ -719,7 +719,7 @@
     "duration": "3 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181416_064.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181319_313.jpg"
   },
   {
     "id": 39,
@@ -738,7 +738,7 @@
     "duration": "3 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181417_371.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181320_840.jpg"
   },
   {
     "id": 40,
@@ -757,7 +757,7 @@
     "duration": "10 months",
     "students": 900,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181321_691.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181312_420.jpg"
   },
   {
     "id": 41,
@@ -776,7 +776,7 @@
     "duration": "2.5 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181312_420.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181409_984.jpg"
   },
   {
     "id": 42,
@@ -795,7 +795,7 @@
     "duration": "2.5 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181314_672.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181411_403.jpg"
   },
   {
     "id": 43,
@@ -814,7 +814,7 @@
     "duration": "2.5 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181315_521.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181412_949.jpg"
   },
   {
     "id": 44,
@@ -833,7 +833,7 @@
     "duration": "2.5 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181317_581.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181414_360.jpg"
   },
   {
     "id": 45,
@@ -852,7 +852,7 @@
     "duration": "2.5 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181319_313.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181416_064.jpg"
   },
   {
     "id": 46,
@@ -871,7 +871,7 @@
     "duration": "2.5 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181320_840.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181417_371.jpg"
   },
   {
     "id": 47,
@@ -890,7 +890,7 @@
     "duration": "10 months ",
     "students": 1300,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181409_984.jpg"
   },
   {
     "id": 48,
@@ -909,7 +909,7 @@
     "duration": "3 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 49,
@@ -928,7 +928,7 @@
     "duration": "3 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 50,
@@ -947,7 +947,7 @@
     "duration": "3 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 51,
@@ -966,7 +966,7 @@
     "duration": "3 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 52,
@@ -985,7 +985,7 @@
     "duration": "3 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 53,
@@ -1004,7 +1004,7 @@
     "duration": "3 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 54,
@@ -1023,7 +1023,7 @@
     "duration": "10 months ",
     "students": 980,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181453_133.jpg"
   },
   {
     "id": 55,
@@ -1042,7 +1042,7 @@
     "duration": "5 months ",
     "students": 1500,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181956_133.jpg"
+    "image": ""
   },
   {
     "id": 56,
@@ -1175,7 +1175,7 @@
     "duration": "4 months ",
     "students": 5000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181956_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181957_503.jpg"
   },
   {
     "id": 63,
@@ -1193,7 +1193,7 @@
     "originalPrice": 1000,
     "duration": "2.5 months",
     "students": 6000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181823_507.jpg"
   },
   {
@@ -1212,7 +1212,7 @@
     "originalPrice": 1000,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181824_766.jpg"
   },
   {
@@ -1231,7 +1231,7 @@
     "originalPrice": 1000,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181826_373.jpg"
   },
   {
@@ -1250,7 +1250,7 @@
     "originalPrice": 1000,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181828_085.jpg"
   },
   {
@@ -1269,7 +1269,7 @@
     "originalPrice": 1000,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181829_468.jpg"
   },
   {
@@ -1288,7 +1288,7 @@
     "originalPrice": 1000,
     "duration": "2.5 months",
     "students": 2000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181833_951.jpg"
   },
   {
@@ -1307,7 +1307,7 @@
     "originalPrice": 6000,
     "duration": "Lifetime",
     "students": 5000,
-    "rating": 5.0,
+    "rating": 5,
     "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181821_360.jpg"
   },
   {
@@ -1441,7 +1441,7 @@
     "duration": "10 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181956_133.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_181604_471.jpg"
   },
   {
     "id": 77,
@@ -1460,7 +1460,7 @@
     "duration": "10 months",
     "students": 900,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_182033_532.jpg"
   },
   {
     "id": 78,
@@ -1479,7 +1479,7 @@
     "duration": "10 months",
     "students": 900,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_182033_532.jpg"
   },
   {
     "id": 79,
@@ -1498,7 +1498,7 @@
     "duration": "5 months",
     "students": 600,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_182018_514.jpg"
   },
   {
     "id": 80,
@@ -1517,7 +1517,7 @@
     "duration": "4 months",
     "students": 400,
     "rating": 5,
-    "image": "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250813_182018_514.jpg"
   },
   {
     "id": 81,
@@ -1541,7 +1541,7 @@
     "duration": "6 months ",
     "students": 3000,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133111_915.jpg"
   },
   {
     "id": 82,
@@ -1563,7 +1563,7 @@
     "duration": "6 months ",
     "students": 700,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133121_467.jpg"
   },
   {
     "id": 83,
@@ -1586,7 +1586,7 @@
     "duration": "9 months ",
     "students": 1110,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133150_714.jpg"
   },
   {
     "id": 84,
@@ -1608,7 +1608,7 @@
     "duration": "5 months ",
     "students": 400,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133249_979.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133130_439.jpg"
   },
   {
     "id": 85,
@@ -1675,7 +1675,7 @@
     "duration": "6 months ",
     "students": 200,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133208_888.jpg"
   },
   {
     "id": 88,
@@ -1717,7 +1717,7 @@
     "duration": "4 months ",
     "students": 300,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133224_683.jpg"
   },
   {
     "id": 90,
@@ -1737,7 +1737,7 @@
     "duration": "6 months ",
     "students": 300,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133234_296.jpg"
   },
   {
     "id": 91,
@@ -1757,7 +1757,7 @@
     "duration": "5 months ",
     "students": 300,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133242_687.jpg"
   },
   {
     "id": 92,
@@ -1798,7 +1798,6 @@
     "duration": "6 months ",
     "students": 600,
     "rating": 5,
-    "image": ""
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20250814_133257_222.jpg"
   }
 ]
-
