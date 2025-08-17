@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HSC COURSES - Login & Sign Up</title>
+    <title>Premium Subscriptions - Login & Sign Up</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -1372,10 +1372,10 @@
                     redirectMessage = `Access granted! Redirecting you back to where you were...`;
                     console.log('🔄 Redirecting back to:', redirectUrl);
                 } else {
-                    // Default redirect to class portal
-                    redirectUrl = 'https://wakilbd.github.io/ps/class';
+                    // Default redirect to Exam portal
+                    redirectUrl = 'https://wakilbd.github.io/ps/exam';
                     redirectMessage = `Access granted! You have access to: ${accessList.join(', ')}. Redirecting to class portal...`;
-                    console.log('🔄 Redirecting to default class portal:', redirectUrl);
+                    console.log('🔄 Redirecting to default exam portal:', redirectUrl);
                 }
                 
                 showAlert(redirectMessage, 'success');
