@@ -923,16 +923,23 @@
                 alert('Error loading exam questions. Please try again.');
             }
         }
-
-        // Start exam function - UPDATED to use individual question sets
+        // Start exam function - MODIFIED to fetch questions from external files
         async function startExam(exam) {
             currentExam = exam;
             
-            // Get the appropriate question set for this exam
-            const questionSetKey = exam.questionsFile.replace('.json', '_questions');
-            const allQuestions = examQuestionsData[questionSetKey] || examQuestionsData.math_questions; // Fallback to math questions
-            
-            examQuestions = allQuestions.slice(0, exam.questions); // Get required number of questions
+            try {
+                // Fetch questions from the external JSON file
+                const response = await fetch(exam.questionsFile);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch questions: ${response.status}`);
+                }
+                const allQuestions = await response.json();
+                examQuestions = allQuestions.slice(0, exam.questions); // Get required number of questions
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                alert('Error loading exam questions. Please try again.');
+                return;
+            }
             currentQuestionIndex = 0;
             userAnswers = {};
             isExamSubmitted = false;
@@ -946,7 +953,6 @@
             
             // Set exam title
             elements.examTitle.textContent = exam.title;
-            
             // Start timer
             startTimer();
             
@@ -964,7 +970,6 @@
             document.getElementById('question-content').style.display = 'block';
             document.querySelector('.nav-controls').style.display = 'flex';
         }
-
         // Timer functions
         function startTimer() {
             elements.timerDisplay.textContent = formatTime(timeRemaining);
