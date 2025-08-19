@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "What is the capital of Bangladesh?",
+    "options": ["Dhaka", "Khulna", "Chittagong", "Barisal"],
+    "correctAnswer": "Dhaka",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "Which programming language is known as the 'backbone of web development'?",
+    "options": ["Python", "Java", "JavaScript", "C++"],
+    "correctAnswer": "JavaScript",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "What does HTML stand for?",
+    "options": ["Hyper Text Markup Language", "High Tech Modern Language", "Home Tool Markup Language", "Hyperlink and Text Markup Language"],
+    "correctAnswer": "Hyper Text Markup Language",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "Which CSS property is used to change the text color of an element?",
+    "options": ["font-color", "text-color", "color", "background-color"],
+    "correctAnswer": "color",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=200&fit=crop&auto=format",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "What is the result of 15 + 25?",
+    "options": ["35", "40", "45", "50"],
+    "correctAnswer": "40",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "Which of the following is a NoSQL database?",
+    "options": ["MySQL", "PostgreSQL", "MongoDB", "SQLite"],
+    "correctAnswer": "MongoDB",
+    "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=200&fit=crop&auto=format",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "What does API stand for?",
+    "options": ["Application Programming Interface", "Advanced Programming Interface", "Application Protocol Interface", "Advanced Protocol Interface"],
+    "correctAnswer": "Application Programming Interface",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "Which HTTP method is used to retrieve data from a server?",
+    "options": ["POST", "GET", "PUT", "DELETE"],
+    "correctAnswer": "GET",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "What is the largest planet in our solar system?",
+    "options": ["Saturn", "Jupiter", "Neptune", "Earth"],
+    "correctAnswer": "Jupiter",
+    "image": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=200&fit=crop&auto=format",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "In React, what is used to pass data from parent to child component?",
+    "options": ["State", "Props", "Context", "Hooks"],
+    "correctAnswer": "Props",
+    "image": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=200&fit=crop&auto=format",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "Which of the following is NOT a valid way to declare a variable in JavaScript?",
+    "options": ["var myVar", "let myVar", "const myVar", "variable myVar"],
+    "correctAnswer": "variable myVar",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "What is the primary purpose of CSS in web development?",
+    "options": ["To structure content", "To style and layout web pages", "To handle server requests", "To manage databases"],
+    "correctAnswer": "To style and layout web pages",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "Which symbol is used for single-line comments in JavaScript?",
+    "options": ["//", "/*", "#", "<!--"],
+    "correctAnswer": "//",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "What does the 'typeof' operator return for an array in JavaScript?",
+    "options": ["array", "object", "list", "undefined"],
+    "correctAnswer": "object",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "Which HTML element is used to define the structure of a table?",
+    "options": ["<div>", "<table>", "<grid>", "<structure>"],
+    "correctAnswer": "<table>",
+    "image": null,
+    "type": "multiple-choice"
+  }
+]
