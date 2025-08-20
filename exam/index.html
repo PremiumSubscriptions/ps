@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium's Exam Portal</title>
     
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -807,6 +814,7 @@
             position: relative;
             animation: fadeIn 0.8s ease-out;
             z-index: 1;
+            will-change: transform;
         }
 
         .course-card:hover {
@@ -1539,6 +1547,7 @@
         let selectedSubjects = ['All Subject'];
         let observer;
         let currentUser = null;
+        let userAccessClassIds = [];
 
         // DOM Elements
         const themeToggle = document.getElementById('themeToggle');
@@ -1577,16 +1586,20 @@
         }
 
         // Enhanced Auth State Management
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, async (user) => {
             if (user) {
                 console.log('User is signed in:', user.email);
                 currentUser = user;
                 updateAuthButtons(user);
-                checkUserAccess(user.email);
+                // Check user access and store accessible class IDs
+                userAccessClassIds = await checkUserAccess(user.email);
+                filterClasses(); // Re-filter classes based on user access
             } else {
                 console.log('User is signed out');
                 currentUser = null;
+                userAccessClassIds = [];
                 updateAuthButtons(null);
+                filterClasses(); // Clear classes when user logs out
             }
         });
 
@@ -1613,7 +1626,7 @@
             container.innerHTML = `
                 <div class="relative">
                     <button id="userBtn" class="auth-btn user-btn px-4 py-2 rounded-full font-semibold flex items-center space-x-2 animate-pulse-gentle">
-                        <img src="${user.photoURL || 'https://ui-avatars.io/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=10b981&color=fff'}" 
+                        <img src="${user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=10b981&color=fff'}" 
                              alt="User Avatar" 
                              class="user-avatar">
                         <span class="hidden sm:inline">${truncatedName}</span>
@@ -1667,7 +1680,7 @@
             
             container.innerHTML = `
                 <button id="mobileUserBtn" class="auth-btn user-btn px-4 py-2 rounded-lg font-semibold w-full flex items-center justify-center space-x-2">
-                    <img src="${user.photoURL || 'https://ui-avatars.io/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=10b981&color=fff'}" 
+                    <img src="${user.photoURL || 'https://ui-avatars.com/api/?name=' + encodeURIComponent(user.displayName || user.email) + '&background=10b981&color=fff'}" 
                          alt="User Avatar" 
                          class="user-avatar w-6 h-6">
                     <span>${truncatedName}</span>
@@ -1768,8 +1781,10 @@
         async function handleLogout() {
             try {
                 await signOut(auth);
+                userAccessClassIds = [];
                 showAuthAlert('👋 Logged out successfully. See you soon!', 'success');
                 toggleUserDropdown();
+                filterClasses(); // Clear classes after logout
             } catch (error) {
                 console.error('Error signing out:', error);
                 showAuthAlert('❌ Error logging out. Please try again.', 'error');
@@ -2300,10 +2315,22 @@
             });
         }
 
-        // Filter classes function
+        // Filter classes function - UPDATED TO CHECK USER ACCESS
         function filterClasses() {
             let filtered = [...mockClasses];
 
+            // First filter by user access if logged in
+            if (currentUser && userAccessClassIds.length > 0) {
+                filtered = filtered.filter(classItem => userAccessClassIds.includes(classItem.id.toString()));
+            } else if (currentUser && userAccessClassIds.length === 0) {
+                // User is logged in but has no access
+                filtered = [];
+            } else {
+                // User is not logged in
+                filtered = [];
+            }
+
+            // Then apply other filters
             // Grade filtering
             if (!selectedGrades.includes('All Grade/Level')) {
                 filtered = filtered.filter(classItem => selectedGrades.includes(classItem.grade));
@@ -2369,15 +2396,40 @@
             if (!coursesGrid) return;
             
             if (filteredClasses.length === 0) {
-                coursesGrid.innerHTML = `
-                    <div class="col-span-full">
-                        <div class="text-center py-16">
-                            <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-600 mb-2">No exams found</h3>
-                            <p class="text-gray-500">Try adjusting your filters to find more exams</p>
+                if (!currentUser) {
+                    coursesGrid.innerHTML = `
+                        <div class="col-span-full">
+                            <div class="text-center py-16">
+                                <i class="fas fa-lock text-6xl text-gray-300 mb-4"></i>
+                                <h3 class="text-xl font-semibold text-gray-600 mb-2">Please login to access exams</h3>
+                                <p class="text-gray-500">You need to be logged in to view available exams</p>
+                                <button onclick="redirectToLogin()" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                                    Login Now
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                } else if (userAccessClassIds.length === 0) {
+                    coursesGrid.innerHTML = `
+                        <div class="col-span-full">
+                            <div class="text-center py-16">
+                                <i class="fas fa-ban text-6xl text-gray-300 mb-4"></i>
+                                <h3 class="text-xl font-semibold text-gray-600 mb-2">No access to exams</h3>
+                                <p class="text-gray-500">You don't have access to any exams. Please contact administrator.</p>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    coursesGrid.innerHTML = `
+                        <div class="col-span-full">
+                            <div class="text-center py-16">
+                                <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+                                <h3 class="text-xl font-semibold text-gray-600 mb-2">No exams found</h3>
+                                <p class="text-gray-500">Try adjusting your filters to find more exams</p>
+                            </div>
+                        </div>
+                    `;
+                }
                 return;
             }
 
@@ -2391,6 +2443,12 @@
             if (!currentUser) {
                 showAuthAlert('🔐 Please login to access exams', 'error');
                 setTimeout(() => redirectToLogin(), 2000);
+                return;
+            }
+
+            // Check if user has access to this class
+            if (!userAccessClassIds.includes(classId.toString())) {
+                showAuthAlert('❌ You do not have access to this exam', 'error');
                 return;
             }
 
@@ -2590,6 +2648,7 @@
         window.handleLogout = handleLogout;
         window.showProfile = showProfile;
         window.toggleUserDropdown = toggleUserDropdown;
+        window.redirectToLogin = redirectToLogin;
 
         // Start the app
         document.addEventListener('DOMContentLoaded', initApp);
