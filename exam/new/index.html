@@ -1525,5 +1525,37 @@
             addEventListeners();
         });
     </script>
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+    authDomain: "courseaccess-921b8.firebaseapp.com",
+    projectId: "courseaccess-921b8",
+    storageBucket: "courseaccess-921b8.firebasestorage.app",
+    messagingSenderId: "35662960447",
+    appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+    measurementId: "G-SKDTD3FK91"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // 🔒 Check if user is logged in
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            // 🚪 Not logged in, redirect to login page with returnTo URL
+            const currentUrl = window.location.href;
+            const loginUrl = `https://wakilbd.github.io/ps/login?returnTo=${encodeURIComponent(currentUrl)}`;
+            console.log("⛔ Not logged in, redirecting to:", loginUrl);
+            window.location.href = loginUrl;
+        } else {
+            console.log("✅ Logged in as:", user.email);
+            // You can allow page content to load here
+        }
+    });
+</script>
 </body>
 </html>
