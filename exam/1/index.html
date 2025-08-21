@@ -445,17 +445,6 @@
             font-size: 1.5rem;
             line-height: 1.2;
         }
-        
-        /* Access denied message */
-        .access-denied {
-            background: linear-gradient(135deg, #fee2e2 0%, #fef2f2 100%);
-            border: 1px solid #fecaca;
-            color: #991b1b;
-            padding: 16px;
-            border-radius: 12px;
-            text-align: center;
-            margin: 16px 0;
-        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -682,86 +671,8 @@
         </div>
     </div>
 
-    <script type="module">
-        // Import Firebase modules
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { 
-            getAuth, 
-            onAuthStateChanged, 
-            signOut 
-        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-        import { 
-            getFirestore, 
-            doc, 
-            getDoc 
-        } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
-            authDomain: "courseaccess-921b8.firebaseapp.com",
-            projectId: "courseaccess-921b8",
-            storageBucket: "courseaccess-921b8.firebasestorage.app",
-            messagingSenderId: "35662960447",
-            appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
-            measurementId: "G-SKDTD3FK91"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-
-        // Global variables
-        let currentUser = null;
-        let userAccessExamIds = [];
-        let filteredExams = [];
-        let searchTerm = '';
-        let filterDifficulty = 'all';
-        let filterStatus = 'all';
-
-        // === EXAM STATE VARIABLES - ADDITION ===
-        let currentExam = null;
-        let examQuestions = [];
-        let currentQuestionIndex = 0;
-        let userAnswers = {};
-        let examTimer = null;
-        let timeRemaining = 0;
-        let isExamSubmitted = false;
-
-        // DOM Elements
-        const elements = {
-            searchInput: null,
-            difficultyFilter: null,
-            statusFilter: null,
-            examsGrid: null,
-            examCount: null,
-            noResults: null,
-            activeFilters: null,
-            // === MODAL ELEMENTS - ADDITION ===
-            examModal: null,
-            examTitle: null,
-            timerDisplay: null,
-            questionContent: null,
-            progressFill: null,
-            questionProgress: null,
-            answeredCount: null,
-            jumpInput: null,
-            jumpBtn: null,
-            prevBtn: null,
-            nextBtn: null,
-            submitBtn: null,
-            resultsSection: null,
-            scoreCircle: null,
-            scorePercentage: null,
-            scoreSummary: null,
-            detailedResults: null,
-            retakeBtn: null,
-            closeModalBtn: null,
-            closeResultsBtn: null
-        };
-
-        // Mock exam data
+    <script>
+        // Mock exam data with link property for redirection
         const mockExams = [
             {
                 id: 1,
@@ -921,40 +832,52 @@
             }
         ];
 
-        // Check user access in Firestore
-        async function checkUserAccess(userEmail) {
-            try {
-                const docRef = doc(db, 'whitelist', userEmail);
-                const docSnap = await getDoc(docRef);
-                
-                if (docSnap.exists()) {
-                    const userData = docSnap.data();
-                    let accessArray = [];
+        // Global variables - removed subject filter
+        let filteredExams = [...mockExams];
+        let searchTerm = '';
+        let filterDifficulty = 'all';
+        let filterStatus = 'all';
 
-                    if (userData && userData.access) {
-                        if (Array.isArray(userData.access)) {
-                            accessArray = userData.access;
-                        } else if (typeof userData.access === 'string') {
-                            accessArray = userData.access.split(',').map(s => s.trim());
-                        }
-                    }
+        // === EXAM STATE VARIABLES - ADDITION ===
+        let currentExam = null;
+        let examQuestions = [];
+        let currentQuestionIndex = 0;
+        let userAnswers = {};
+        let examTimer = null;
+        let timeRemaining = 0;
+        let isExamSubmitted = false;
 
-                    if (accessArray.length > 0) {
-                        console.log('User has access to:', accessArray);
-                        return accessArray;
-                    } else {
-                        console.log('User does not have access to any exams');
-                        return [];
-                    }
-                } else {
-                    console.log('User email is not authorized');
-                    return [];
-                }
-            } catch (error) {
-                console.error('Error checking user access:', error);
-                return [];
-            }
-        }
+        // DOM Elements - removed subject filter elements
+        const elements = {
+            searchInput: null,
+            difficultyFilter: null,
+            statusFilter: null,
+            examsGrid: null,
+            examCount: null,
+            noResults: null,
+            activeFilters: null,
+            // === MODAL ELEMENTS - ADDITION ===
+            examModal: null,
+            examTitle: null,
+            timerDisplay: null,
+            questionContent: null,
+            progressFill: null,
+            questionProgress: null,
+            answeredCount: null,
+            jumpInput: null,
+            jumpBtn: null,
+            prevBtn: null,
+            nextBtn: null,
+            submitBtn: null,
+            resultsSection: null,
+            scoreCircle: null,
+            scorePercentage: null,
+            scoreSummary: null,
+            detailedResults: null,
+            retakeBtn: null,
+            closeModalBtn: null,
+            closeResultsBtn: null
+        };
 
         // Utility functions
         function getDifficultyColor(difficulty) {
@@ -986,16 +909,10 @@
         }
 
         // === EXAM FUNCTIONS - ADDITION ===
-        // Handle exam button click - MODIFIED to check access
+        // Handle exam button click - MODIFIED to add popup functionality
         async function handleExamButtonClick(exam) {
             if (exam.status !== 'Active' && exam.status !== 'Model Test') {
                 return; // Do nothing for upcoming exams
-            }
-            
-            // Check if user has access to this exam
-            if (!userAccessExamIds.includes(exam.id.toString())) {
-                alert('You do not have access to this exam. Please contact administrator.');
-                return;
             }
             
             try {
@@ -1006,7 +923,6 @@
                 alert('Error loading exam questions. Please try again.');
             }
         }
-
         // Start exam function - MODIFIED to fetch questions from external files
         async function startExam(exam) {
             currentExam = exam;
@@ -1054,7 +970,6 @@
             document.getElementById('question-content').style.display = 'block';
             document.querySelector('.nav-controls').style.display = 'flex';
         }
-
         // Timer functions
         function startTimer() {
             elements.timerDisplay.textContent = formatTime(timeRemaining);
@@ -1363,27 +1278,19 @@
             }
         }
 
-        // MODIFIED createExamCard function to handle access control
+        // MODIFIED createExamCard function to handle upcoming exams properly
         function createExamCard(exam) {
-            const hasAccess = userAccessExamIds.includes(exam.id.toString());
             const buttonText = exam.status === 'Model Test' ? 'Take Model Test' :
-                            exam.status === 'Upcoming' ? 'Coming Soon' : 'Take Exam';
+                            exam.status === 'Upcoming' ? 'Take Exam' : 'Take Exam';
             
-            const buttonClass = exam.status === 'Upcoming' || !hasAccess ? 'btn-disabled' : '';
-            const buttonStyle = exam.status === 'Upcoming' || !hasAccess
+            const buttonClass = exam.status === 'Upcoming' ? 'btn-disabled' : '';
+            const buttonStyle = exam.status === 'Upcoming' 
                 ? 'background-color: #9ca3af; color: #6b7280; cursor: not-allowed;' 
                 : 'background-color: #b68d40; color: white;';
-
-            // Add access indicator
-            const accessIndicator = !hasAccess 
-                ? '<div class="access-denied mb-4"><i class="fas fa-lock mr-2"></i>You do not have access to this exam</div>' 
-                : '';
 
             return `
                 <div class="card-hover bg-white rounded-lg shadow-md border overflow-hidden" style="border-color: rgba(214, 173, 96, 0.3); background: linear-gradient(135deg, #f4ebd0 0%, #ffffff 100%);">
                     <div class="p-6">
-                        ${accessIndicator}
-                        
                         <div class="flex justify-between items-start mb-3">
                             <h3 class="text-xl font-bold line-clamp-2 flex-1 mr-3 hover:text-opacity-80 transition-colors" style="color: #122620;">${exam.title}</h3>
                             <span class="px-2 py-1 text-xs font-medium rounded-full border ${getStatusColor(exam.status)} whitespace-nowrap">
@@ -1401,7 +1308,7 @@
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-book-open" style="color: #b68d40;"></i>
-                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7;">">${exam.questions} questions</span>
+                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7);">${exam.questions} questions</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-users" style="color: #b68d40;"></i>
@@ -1425,8 +1332,8 @@
                         <button
                             class="w-full py-2.5 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg exam-button ${buttonClass}"
                             style="${buttonStyle}"
-                            onclick="${(exam.status !== 'Upcoming' && hasAccess) ? `handleExamButtonClick(${JSON.stringify(exam).replace(/"/g, '&quot;')})` : ''}"
-                            ${exam.status === 'Upcoming' || !hasAccess ? 'disabled' : ''}
+                            onclick="handleExamButtonClick(${JSON.stringify(exam).replace(/"/g, '&quot;')})"
+                            ${exam.status === 'Upcoming' ? 'disabled' : ''}
                         >
                             ${buttonText}
                         </button>
@@ -1448,7 +1355,7 @@
             document.getElementById('model-test-exams').textContent = modelTest;
         }
 
-        // Filter exams
+        // Filter exams - removed subject filtering
         function filterExams() {
             filteredExams = mockExams.filter(exam => {
                 const matchesSearch = exam.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -1484,7 +1391,7 @@
             elements.examCount.textContent = `${count} exam${count !== 1 ? 's' : ''} found`;
         }
 
-        // Update active filters
+        // Update active filters - removed subject filter
         function updateActiveFilters() {
             const filters = [];
 
@@ -1610,45 +1517,45 @@
             });
         }
 
-        // Initialize the app
+        // Initialize the app - UNCHANGED
         document.addEventListener('DOMContentLoaded', () => {
             initializeElements();
             updateStats();  // This will now dynamically calculate total exams
-            
-            // Check authentication state
-            onAuthStateChanged(auth, async (user) => {
-                if (user) {
-                    console.log('User is signed in:', user.email);
-                    currentUser = user;
-                    
-                    // Check user access and store accessible exam IDs
-                    userAccessExamIds = await checkUserAccess(user.email);
-                    console.log('User has access to exams:', userAccessExamIds);
-                    
-                    // Filter and render exams based on access
-                    filterExams();
-                } else {
-                    console.log('User is signed out');
-                    // Redirect to login page with returnTo URL
-                    const currentUrl = window.location.href;
-                    const loginUrl = `https://wakilbd.github.io/ps/login?returnTo=${encodeURIComponent(currentUrl)}`;
-                    console.log("Not logged in, redirecting to:", loginUrl);
-                    window.location.href = loginUrl;
-                }
-            });
-            
+            filterExams();
             addEventListeners();
         });
-
-        // Make functions available globally
-        window.handleExamButtonClick = handleExamButtonClick;
-        window.selectAnswer = selectAnswer;
-        window.jumpToQuestion = jumpToQuestion;
-        window.previousQuestion = previousQuestion;
-        window.nextQuestion = nextQuestion;
-        window.submitExam = submitExam;
-        window.retakeExam = retakeExam;
-        window.closeModal = closeModal;
     </script>
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+    const firebaseConfig = {
+    apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
+    authDomain: "courseaccess-921b8.firebaseapp.com",
+    projectId: "courseaccess-921b8",
+    storageBucket: "courseaccess-921b8.firebasestorage.app",
+    messagingSenderId: "35662960447",
+    appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
+    measurementId: "G-SKDTD3FK91"
+  };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // 🔒 Check if user is logged in
+    onAuthStateChanged(auth, (user) => {
+        if (!user) {
+            // 🚪 Not logged in, redirect to login page with returnTo URL
+            const currentUrl = window.location.href;
+            const loginUrl = `https://wakilbd.github.io/ps/login?returnTo=${encodeURIComponent(currentUrl)}`;
+            console.log("⛔ Not logged in, redirecting to:", loginUrl);
+            window.location.href = loginUrl;
+        } else {
+            console.log("✅ Logged in as:", user.email);
+            // You can allow page content to load here
+        }
+    });
+</script>
 </body>
 </html>
