@@ -461,9 +461,9 @@ function createCourseCard(course) {
                         <span class="course-price">৳${course.price}</span>
                         <span class="course-original-price">৳${course.originalPrice}</span>
                     </div>
-                    <button class="enroll-btn" onclick="enrollInCourse(${course.id})">
+                    <a href="https://t.me/Premium_Subscriptonpro_bot"><button class="enroll-btn" onclick="enrollInCourse(${course.id})">
                         Enroll Now
-                    </button>
+                    </button></a>
                 </div>
             </div>
         </div>
