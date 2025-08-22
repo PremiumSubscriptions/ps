@@ -445,6 +445,75 @@
             font-size: 1.5rem;
             line-height: 1.2;
         }
+                /* Password Modal Styles */
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .password-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .password-modal-content {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 16px;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .password-modal.show .password-modal-content {
+            transform: scale(1);
+        }
+        
+        .password-modal-header {
+            background: linear-gradient(135deg, #122620 0%, #1a3a2e 100%);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .password-modal-body {
+            padding: 24px;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(214, 173, 96, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 16px 0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .password-input:focus {
+            border-color: #b68d40;
+        }
+        
+        .password-error {
+            color: #ef4444;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -458,7 +527,7 @@
                     Exam Portal
                 </h1>
                 <p class="text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed">
-                    Varsity Biology - HSC 2025 এর এক্সাম পোর্টাল এ স্বাগতম! নির্দিষ্ট সময়ের মধ্যে পরীক্ষা শেষ করতে হবে। তবে তোমার যত খুশি তত বার পরীক্ষা দিতে পারবে! তাহলে আর দেরি কেনো? Test your knowledge and track your progress.
+                      Varsity Biology - HSC 2025 এর এক্সাম পোর্টাল এ স্বাগতম! নির্দিষ্ট সময়ের মধ্যে পরীক্ষা শেষ করতে হবে। তবে তোমার যত খুশি তত বার পরীক্ষা দিতে পারবে! তাহলে আর দেরি কেনো? Test your knowledge and track your progress.
                 </p>
             </div>
 
@@ -571,7 +640,34 @@
             </div>
         </section>
     </main>
-
+        <!-- Password Modal -->
+    <div id="password-modal" class="password-modal">
+        <div class="password-modal-content">
+            <div class="password-modal-header">
+                <h2 id="password-exam-title" class="text-xl font-bold">Enter Exam Password</h2>
+                <div class="btn-icon btn-icon-close" id="close-password-modal-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="password-modal-body">
+                <p id="password-exam-description" class="mb-4" style="color: rgba(18, 38, 32, 0.7);">
+                    This exam is password protected. Please enter the password to continue.
+                </p>
+                <input type="password" id="password-input" class="password-input" placeholder="Enter password">
+                <p id="password-error" class="password-error">
+                    <i class="fas fa-exclamation-circle mr-1"></i> Incorrect password. Please try again.
+                </p>
+                <div class="flex justify-end gap-3 mt-6">
+                    <button id="cancel-password-btn" class="btn-secondary">
+                        Cancel
+                    </button>
+                    <button id="submit-password-btn" class="btn-primary">
+                        <i class="fas fa-lock-open mr-2"></i>Unlock Exam
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Footer -->
     <footer class="mt-12 py-8" style="background-color: #122620;">
         <div class="container mx-auto px-4 text-center">
@@ -685,6 +781,7 @@
                 participants: 1245,
                 date: "Jan 25, 2025",
                 status: "Active",
+                password: "premium",
                 questionsFile: "math_questions.json"
             },
             {
@@ -698,6 +795,7 @@
                 participants: 892,
                 date: "Jan 28, 2025",
                 status: "Upcoming",
+                password: "premium",
                 questionsFile: "physics_questions.json"
             },
             {
@@ -711,6 +809,7 @@
                 participants: 567,
                 date: "Jan 22, 2025",
                 status: "Model Test",
+                password: "premium",
                 questionsFile: "chemistry_questions.json"
             },
             {
@@ -724,6 +823,7 @@
                 participants: 1834,
                 date: "Jan 26, 2025",
                 status: "Active",
+                password: "premium",
                 questionsFile: "english_questions.json"
             },
             {
@@ -737,6 +837,7 @@
                 participants: 623,
                 date: "Jan 30, 2025",
                 status: "Upcoming",
+                password: "premium",
                 questionsFile: "cs_questions.json"
             },
             {
@@ -750,6 +851,7 @@
                 participants: 756,
                 date: "Jan 24, 2025",
                 status: "Active",
+                password: "premium",
                 questionsFile: "biology_questions.json"
             },
             {
@@ -763,6 +865,7 @@
                 participants: 1156,
                 date: "Jan 20, 2025",
                 status: "Model Test",
+                password: "premium",
                 questionsFile: "history_questions.json"
             },
             {
@@ -776,6 +879,7 @@
                 participants: 445,
                 date: "Feb 2, 2025",
                 status: "Upcoming",
+                password: "premium",
                 questionsFile: "economics_questions.json"
             },
             {
@@ -789,6 +893,7 @@
                 participants: 689,
                 date: "Jan 27, 2025",
                 status: "Active",
+                password: "premium",
                 questionsFile: "geography_questions.json"
             },
             {
@@ -802,6 +907,7 @@
                 participants: 334,
                 date: "Feb 5, 2025",
                 status: "Upcoming",
+                password: "premium",
                 questionsFile: "statistics_questions.json"
             },
             {
@@ -815,6 +921,7 @@
                 participants: 523,
                 date: "Jan 23, 2025",
                 status: "Active",
+                password: "premium",
                 questionsFile: "art_questions.json"
             },
             {
@@ -828,17 +935,18 @@
                 participants: 812,
                 date: "Jan 29, 2025",
                 status: "Upcoming",
+                password: "premium",
                 questionsFile: "psychology_questions.json"
             }
         ];
 
-        // Global variables - removed subject filter
+        // Global variables
         let filteredExams = [...mockExams];
         let searchTerm = '';
         let filterDifficulty = 'all';
         let filterStatus = 'all';
-
-        // === EXAM STATE VARIABLES - ADDITION ===
+        
+        // Exam state variables
         let currentExam = null;
         let examQuestions = [];
         let currentQuestionIndex = 0;
@@ -846,7 +954,7 @@
         let examTimer = null;
         let timeRemaining = 0;
         let isExamSubmitted = false;
-
+        let passwordExam = null;
         // DOM Elements - removed subject filter elements
         const elements = {
             searchInput: null,
@@ -856,7 +964,6 @@
             examCount: null,
             noResults: null,
             activeFilters: null,
-            // === MODAL ELEMENTS - ADDITION ===
             examModal: null,
             examTitle: null,
             timerDisplay: null,
@@ -876,7 +983,15 @@
             detailedResults: null,
             retakeBtn: null,
             closeModalBtn: null,
-            closeResultsBtn: null
+            closeResultsBtn: null,
+            passwordModal: null,
+            passwordExamTitle: null,
+            passwordExamDescription: null,
+            passwordInput: null,
+            passwordError: null,
+            closePasswordModalBtn: null,
+            cancelPasswordBtn: null,
+            submitPasswordBtn: null
         };
 
         // Utility functions
@@ -909,18 +1024,56 @@
         }
 
         // === EXAM FUNCTIONS - ADDITION ===
-        // Handle exam button click - MODIFIED to add popup functionality
+        // MODIFIED: Handle exam button click - now shows password modal
         async function handleExamButtonClick(exam) {
             if (exam.status !== 'Active' && exam.status !== 'Model Test') {
                 return; // Do nothing for upcoming exams
             }
             
-            try {
-                // Start the exam
-                await startExam(exam);
-            } catch (error) {
-                console.error('Error starting exam:', error);
-                alert('Error loading exam questions. Please try again.');
+            // Store the exam and show password modal
+            passwordExam = exam;
+            showPasswordModal();
+        }
+
+        // NEW: Show password modal
+        function showPasswordModal() {
+            elements.passwordExamTitle.textContent = passwordExam.title;
+            elements.passwordExamDescription.textContent = `This "${passwordExam.title}" exam is password protected. Please enter the password to continue.`;
+            elements.passwordInput.value = '';
+            elements.passwordError.style.display = 'none';
+            
+            elements.passwordModal.style.display = 'flex';
+            setTimeout(() => {
+                elements.passwordModal.classList.add('show');
+                elements.passwordInput.focus();
+            }, 10);
+        }
+
+        // NEW: Hide password modal
+        function hidePasswordModal() {
+            elements.passwordModal.classList.remove('show');
+            setTimeout(() => {
+                elements.passwordModal.style.display = 'none';
+            }, 300);
+        }
+
+        // NEW: Verify password and start exam if correct
+        async function verifyPasswordAndStartExam() {
+            const enteredPassword = elements.passwordInput.value;
+            
+            if (enteredPassword === passwordExam.password) {
+                hidePasswordModal();
+                try {
+                    // Start the exam
+                    await startExam(passwordExam);
+                } catch (error) {
+                    console.error('Error starting exam:', error);
+                    alert('Error loading exam questions. Please try again.');
+                }
+            } else {
+                // Show error message
+                elements.passwordError.style.display = 'block';
+                elements.passwordInput.focus();
             }
         }
         // Start exam function - MODIFIED to fetch questions from external files
@@ -1452,6 +1605,14 @@
             elements.retakeBtn = document.getElementById('retake-btn');
             elements.closeModalBtn = document.getElementById('close-modal-btn');
             elements.closeResultsBtn = document.getElementById('close-results-btn');
+            elements.passwordModal = document.getElementById('password-modal');
+            elements.passwordExamTitle = document.getElementById('password-exam-title');
+            elements.passwordExamDescription = document.getElementById('password-exam-description');
+            elements.passwordInput = document.getElementById('password-input');
+            elements.passwordError = document.getElementById('password-error');
+            elements.closePasswordModalBtn = document.getElementById('close-password-modal-btn');
+            elements.cancelPasswordBtn = document.getElementById('cancel-password-btn');
+            elements.submitPasswordBtn = document.getElementById('submit-password-btn');
         }
 
         // Add event listeners - ENHANCED to include modal event listeners
@@ -1515,47 +1676,33 @@
                     }
                 }
             });
+            // Password modal event listeners
+            elements.closePasswordModalBtn.addEventListener('click', hidePasswordModal);
+            elements.cancelPasswordBtn.addEventListener('click', hidePasswordModal);
+            elements.submitPasswordBtn.addEventListener('click', verifyPasswordAndStartExam);
+            
+            // Allow submitting password with Enter key
+            elements.passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    verifyPasswordAndStartExam();
+                }
+            });
+            
+            // Close password modal when clicking outside
+            elements.passwordModal.addEventListener('click', (e) => {
+                if (e.target === elements.passwordModal) {
+                    hidePasswordModal();
+                }
+            });
         }
 
-        // Initialize the app - UNCHANGED
+        // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
             initializeElements();
-            updateStats();  // This will now dynamically calculate total exams
+            updateStats();
             filterExams();
             addEventListeners();
         });
     </script>
-    <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-    const firebaseConfig = {
-    apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
-    authDomain: "courseaccess-921b8.firebaseapp.com",
-    projectId: "courseaccess-921b8",
-    storageBucket: "courseaccess-921b8.firebasestorage.app",
-    messagingSenderId: "35662960447",
-    appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
-    measurementId: "G-SKDTD3FK91"
-  };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    // 🔒 Check if user is logged in
-    onAuthStateChanged(auth, (user) => {
-        if (!user) {
-            // 🚪 Not logged in, redirect to login page with returnTo URL
-            const currentUrl = window.location.href;
-            const loginUrl = `https://wakilbd.github.io/ps/login?returnTo=${encodeURIComponent(currentUrl)}`;
-            console.log("⛔ Not logged in, redirecting to:", loginUrl);
-            window.location.href = loginUrl;
-        } else {
-            console.log("✅ Logged in as:", user.email);
-            // You can allow page content to load here
-        }
-    });
-</script>
 </body>
 </html>
