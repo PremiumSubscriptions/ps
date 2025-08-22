@@ -964,7 +964,6 @@
             examCount: null,
             noResults: null,
             activeFilters: null,
-            // === MODAL ELEMENTS - ADDITION ===
             examModal: null,
             examTitle: null,
             timerDisplay: null,
@@ -984,7 +983,7 @@
             detailedResults: null,
             retakeBtn: null,
             closeModalBtn: null,
-            closeResultsBtn: null
+            closeResultsBtn: null,
             passwordModal: null,
             passwordExamTitle: null,
             passwordExamDescription: null,
@@ -1697,10 +1696,10 @@
             });
         }
 
-        // Initialize the app - UNCHANGED
+        // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
             initializeElements();
-            updateStats();  // This will now dynamically calculate total exams
+            updateStats();
             filterExams();
             addEventListeners();
         });
