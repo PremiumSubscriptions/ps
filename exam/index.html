@@ -1134,23 +1134,13 @@
                     <button id="themeToggle" class="theme-toggle transform hover:rotate-12">
                         <i data-lucide="moon" class="w-5 h-5"></i>
                     </button>
-
                     <div class="hidden md:flex space-x-3">
-                        <!-- Login/User Button Container -->
-                        <div class="relative" id="authButtonContainer">
-                            <button id="loginBtn" class="auth-btn login-btn px-6 py-2 rounded-full font-semibold">
-                                <i data-lucide="log-in" class="w-4 h-4"></i>
-                                <span>Login</span>
-                            </button>
-                            <!-- User dropdown will be inserted here dynamically -->
-                        </div>
-                        
-                        <a href="https://premiumsubscriptions.github.io/ps/contact/">
-                            <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg">
-                                Contact
-                            </button>
-                        </a>
-                    </div>
+    <a href="https://premiumsubscriptions.github.io/ps/contact/">
+        <button class="px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 btn-gradient shadow-lg">
+            Contact
+        </button>
+    </a>
+</div>
 
                     <!-- Mobile Menu Toggle -->
                     <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg transition-all duration-300 hover:bg-gray-100">
@@ -1168,12 +1158,6 @@
                     <a href="https://premiumsubscriptions.github.io/ps/exam/" class="mobile-nav-link">Exam</a>
                     <a href="https://premiumsubscriptions.github.io/ps/about/" class="mobile-nav-link">About</a>
                     <div class="flex space-x-3 pt-3 border-t border-gray-300/20">
-                        <div class="flex-1" id="mobileAuthContainer">
-                            <button id="mobileLoginBtn" class="auth-btn login-btn px-4 py-2 rounded-lg font-semibold w-full">
-                                <i data-lucide="log-in" class="w-4 h-4"></i>
-                                <span>Login</span>
-                            </button>
-                        </div>
                         <a href="https://premiumsubscriptions.github.io/ps/contact/">
                             <button class="flex-1 px-4 py-2 rounded-lg font-semibold transition-all duration-300 btn-gradient shadow-lg">
                                 Contact
@@ -1196,12 +1180,6 @@
                 </h1>
                 <p class="hero-subtitle">Admission & Academic Exam Portal</p>
             </div>
-
-            <!-- Auth Alert Container -->
-            <div id="authAlertContainer" class="mb-6 hidden">
-                <!-- Alerts will be inserted here dynamically -->
-            </div>
-
             <!-- Filter Section -->
             <div class="filter-section">
                 <div class="filter-container">
@@ -1515,28 +1493,6 @@
                 lucide.createIcons();
             }
         });
-
-        // Firebase Configuration and Authentication
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js';
-        import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js';
-        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js';
-
-        // Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyB4Dka1pJP24mJg91RCiyUukCQvufofJU8",
-            authDomain: "courseaccess-921b8.firebaseapp.com",
-            projectId: "courseaccess-921b8",
-            storageBucket: "courseaccess-921b8.firebasestorage.app",
-            messagingSenderId: "35662960447",
-            appId: "1:35662960447:web:02dc2ca06c8c9032c0658a",
-            measurementId: "G-SKDTD3FK91"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-
         // Global Variables
         let isDark = false;
         let isScrolled = false;
@@ -1568,7 +1524,6 @@
             if (savedTheme === 'dark') {
                 toggleTheme();
             }
-
             // Start typing animation
             startTypingAnimation();
 
@@ -1584,25 +1539,6 @@
             // Initialize event listeners
             initEventListeners();
         }
-
-        // Enhanced Auth State Management
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                console.log('User is signed in:', user.email);
-                currentUser = user;
-                updateAuthButtons(user);
-                // Check user access and store accessible class IDs
-                userAccessClassIds = await checkUserAccess(user.email);
-                filterClasses(); // Re-filter classes based on user access
-            } else {
-                console.log('User is signed out');
-                currentUser = null;
-                userAccessClassIds = [];
-                updateAuthButtons(null);
-                filterClasses(); // Clear classes when user logs out
-            }
-        });
-
         // Enhanced Auth Button Updates
         function updateAuthButtons(user) {
             if (user) {
@@ -2315,40 +2251,27 @@
             });
         }
 
-        // Filter classes function - UPDATED TO CHECK USER ACCESS
-        function filterClasses() {
-            let filtered = [...mockClasses];
+        // Filter classes function 
+function filterClasses() {
+    let filtered = [...mockClasses];
 
-            // First filter by user access if logged in
-            if (currentUser && userAccessClassIds.length > 0) {
-                filtered = filtered.filter(classItem => userAccessClassIds.includes(classItem.id.toString()));
-            } else if (currentUser && userAccessClassIds.length === 0) {
-                // User is logged in but has no access
-                filtered = [];
-            } else {
-                // User is not logged in
-                filtered = [];
-            }
+    // Remove user access checks
+    // Keep only grade, course, and subject filtering
+    if (!selectedGrades.includes('All Grade/Level')) {
+        filtered = filtered.filter(classItem => selectedGrades.includes(classItem.grade));
+    }
 
-            // Then apply other filters
-            // Grade filtering
-            if (!selectedGrades.includes('All Grade/Level')) {
-                filtered = filtered.filter(classItem => selectedGrades.includes(classItem.grade));
-            }
+    if (selectedCourse !== 'All Course') {
+        filtered = filtered.filter(classItem => classItem.courseType === selectedCourse);
+    }
 
-            // CourseType filtering
-            if (selectedCourse !== 'All Course') {
-                filtered = filtered.filter(classItem => classItem.courseType === selectedCourse);
-            }
+    if (!selectedSubjects.includes('All Subject')) {
+        filtered = filtered.filter(classItem => selectedSubjects.includes(classItem.subject));
+    }
 
-            // Subject filtering
-            if (!selectedSubjects.includes('All Subject')) {
-                filtered = filtered.filter(classItem => selectedSubjects.includes(classItem.subject));
-            }
-
-            filteredClasses = filtered;
-            renderClasses();
-        }
+    filteredClasses = filtered;
+    renderClasses();
+}
 
         // Function to create class card
         function createClassCard(classItem) {
@@ -2392,76 +2315,33 @@
         }
 
         // Function to render exams
-        function renderClasses() {
-            if (!coursesGrid) return;
-            
-            if (filteredClasses.length === 0) {
-                if (!currentUser) {
-                    coursesGrid.innerHTML = `
-                        <div class="col-span-full">
-                            <div class="text-center py-16">
-                                <i class="fas fa-lock text-6xl text-gray-300 mb-4"></i>
-                                <h3 class="text-xl font-semibold text-gray-600 mb-2">Please login to access exams</h3>
-                                <p class="text-gray-500">You need to be logged in to view available exams</p>
-                                <button onclick="redirectToLogin()" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-                                    Login Now
-                                </button>
-                            </div>
-                        </div>
-                    `;
-                } else if (userAccessClassIds.length === 0) {
-                    coursesGrid.innerHTML = `
-                        <div class="col-span-full">
-                            <div class="text-center py-16">
-                                <i class="fas fa-ban text-6xl text-gray-300 mb-4"></i>
-                                <h3 class="text-xl font-semibold text-gray-600 mb-2">No access to exams</h3>
-                                <p class="text-gray-500">You don't have access to any exams. Please contact administrator.</p>
-                            </div>
-                        </div>
-                    `;
-                } else {
-                    coursesGrid.innerHTML = `
-                        <div class="col-span-full">
-                            <div class="text-center py-16">
-                                <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
-                                <h3 class="text-xl font-semibold text-gray-600 mb-2">No exams found</h3>
-                                <p class="text-gray-500">Try adjusting your filters to find more exams</p>
-                            </div>
-                        </div>
-                    `;
-                }
-                return;
-            }
+   function renderClasses() {
+    if (!coursesGrid) return;
+    
+    if (filteredClasses.length === 0) {
+        coursesGrid.innerHTML = `
+            <div class="col-span-full">
+                <div class="text-center py-16">
+                    <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-gray-600 mb-2">No exams found</h3>
+                    <p class="text-gray-500">Try adjusting your filters to find more exams</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
 
-            const classesHTML = filteredClasses.map(classItem => createClassCard(classItem)).join('');
-            coursesGrid.innerHTML = classesHTML;
-        }
+    const classesHTML = filteredClasses.map(classItem => createClassCard(classItem)).join('');
+    coursesGrid.innerHTML = classesHTML;
+}
 
-        // Function to handle class enrollment
-        function enrollInClass(classId) {
-            // Check if user is authenticated
-            if (!currentUser) {
-                showAuthAlert('🔐 Please login to access exams', 'error');
-                setTimeout(() => redirectToLogin(), 2000);
-                return;
-            }
-
-            // Check if user has access to this class
-            if (!userAccessClassIds.includes(classId.toString())) {
-                showAuthAlert('❌ You do not have access to this exam', 'error');
-                return;
-            }
-
-            const classItem = mockClasses.find(c => c.id === classId);
-            if (classItem && classItem.link) {
-                showAuthAlert(`🚀 Starting ${classItem.title}...`, 'success');
-                setTimeout(() => {
-                    window.location.href = classItem.link;
-                }, 1500);
-            } else {
-                showAuthAlert("❌ Exam link not available", 'error');
-            }
-        }
+        // Function to handle class 
+function enrollInClass(classId) {
+    const classItem = mockClasses.find(c => c.id === classId);
+    if (classItem && classItem.link) {
+        window.location.href = classItem.link;
+    }
+}
 
         // Generate Footer Particles
         function generateFooterParticles() {
