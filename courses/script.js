@@ -485,15 +485,6 @@ function renderCourses() {
         observer.observe();
     }
 }
-
-// Function to handle course enrollment
-function enrollInCourse(courseId) {
-    const course = mockCourses.find(c => c.id === courseId);
-    if (course) {
-        alert(`Thank you for your interest in ${course.title}! You will be redirected to the enrollment page.`);
-    }
-}
-
 // Function to handle smooth scrolling
 function smoothScroll(target) {
     const element = document.querySelector(target);
