@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "question": "C3H8O যৌগের কয় ধরনের কার্যকরীমূলক সমাণু সম্ভব?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "correctAnswer": "2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "নিচের কোনটি টটোমারিজম দেখাবে ?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "correctAnswer": "D",
+    "image": "c2.2.png",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "রেসিমিক মিশ্রনে বিদ্যমান যৌগগুলো কেমন হয়?",
+    "options": [
+      "আলোক নিষ্ক্রিয়",
+      "দর্পন প্রতিবিম্ব",
+      "মেসো যৌগ",
+      "a ও b উভয়ই"
+    ],
+    "correctAnswer": "দর্পন প্রতিবিম্ব",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "কোন সংকেতে টটোমারিজম সমাণু লক্ষ করা যায়?",
+    "options": [
+      "C3H7O",
+      "C4H10O",
+      "C4H8O",
+      "C4H8"
+    ],
+    "correctAnswer": "C4H8O",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "যে এনানসিওমার সমতলীয় আলোকে ডানদিকে ঘোরায় তাকে কি বলে ?",
+    "options": [
+      "ডেক্সট্রেোরোটেটরি",
+      "লিভারোটেটরি",
+      "সমতলীয় ঘূর্ণন",
+      "অসমতলীয় ঘূর্ণন"
+    ],
+    "correctAnswer": "ডেক্সট্রেোরোটেটরি",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "COOH − CH(Cl) − CH(Cl) − COOH যৌগটিতে কতটি সমাণু আছে ?",
+    "options": [
+      "4",
+      "6",
+      "2",
+      "16"
+    ],
+    "correctAnswer": "2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "C6H3Cl2Br এর কয়টি সমাণু আছে ?",
+    "options": [
+      "10",
+      "3",
+      "6",
+      "2"
+    ],
+    "correctAnswer": "6",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "C5H12 এ কতটি iso-পেন্টেন থাকে ?",
+    "options": [
+      "3",
+      "2",
+      "1",
+      "5"
+    ],
+    "correctAnswer": "1",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "কাইরাল কেন্দ্রবিশিষ্ট 1° -অ্যালকোহল হলো কোনটি?",
+    "options": [
+      "2-মি থা ইল-1-বি উটা নল",
+      "2-মি থা ইল-2-বি উটা নল",
+      "বি উটা নল-2",
+      "3-মি থা ইল বি উটা নল-1"
+    ],
+    "correctAnswer": "2-মি থা ইল-1-বি উটা নল",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "C6H12 যৌগে কতটি অবস্থান সমাণু সম্ভব?",
+    "options": [
+      "4",
+      "3",
+      "5",
+      "6"
+    ],
+    "correctAnswer": "3",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "প্রোপোনোন এবং প্রোপিন-2-অল যৌগদ্বয় পরস্পর কোন ধরনের সমা ণু?",
+    "options": [
+      "কা র্যকরী মূলক",
+      "টটো মা র",
+      "অবস্থা ন",
+      "a ও b উভয়ই"
+    ],
+    "correctAnswer": "a ও b উভয়ই",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "2,3-ডাই ব্রোমো বিউটেন যৌগের মেসো সমাণু কয়টি?",
+    "options": [
+      "2",
+      "1",
+      "4",
+      "16"
+    ],
+    "correctAnswer": "1",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "2:1 অনুপাতে মিশ্রিত এনানশিওমারের মিশ্রণকে কি বলে ?",
+    "options": [
+      "রে সি মি ক মি শ্রণ",
+      "ডা য়া স্টে রি ওমা র",
+      "পো লা র যৌ গ",
+      "কো নো টিই নয়"
+    ],
+    "correctAnswer": "কো নো টিই নয়",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "3-মিথাইল বিউটান-2-ওন যৌগর মেটামার কোনটি?",
+    "options": [
+      "CH3 − CO − CH2 − CH2 − CH3",
+      "CH3COCH3",
+      "CH3 − CO − CH2 − CH3",
+      "CH3CH2CH2COCH2CH3"
+    ],
+    "correctAnswer": "CH3 − CO − CH2 − CH2 − CH3",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "নি চে র কো নটি সঠিক নয়?",
+    "options": [
+      "টটোমারিজমে পরমাণু উপস্থিত থাকতে হয়",
+      "কার্বন কার্বন এিবন্ধন জ্যামিতিক সমানুতা প্রদর্শনর্শ করে না",
+      "ভিন্ন কার্যকারী মূলকের উপস্থিতি থাকতে হয় মেটামারে",
+      "সি স সমা ণুর ডা ইপো ল মো মে ন্ট রয়ে ছে"
+    ],
+    "correctAnswer": "ভিন্ন কার্যকারী মূলকের উপস্থিতি থাকতে হয় মেটামারে",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "সর্বনিম্ন কত কার্বনের অ্যালকাইল আলোক সমাণুতা প্রদর্শনর্শ করে ?",
+    "options": [
+      "7",
+      "6",
+      "5",
+      "4"
+    ],
+    "correctAnswer": "6",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "নি চে র কো নটি সি স ট্রা ন্স সমা ণু দি বে ?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "4",
+    "image": "c2.17.png",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "ডাইক্লোরো প্রোপেন (C3H6Cl2) এর কয়টি গাঠনক সমাণুতা আছে ?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "10"
+    ],
+    "correctAnswer": "4",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "কোন যৌগগুলো মেটামারিজম প্রদর্শনর্শ করে ?",
+    "options": [
+      "অ্যা লকি ন",
+      "অ্যা মি ন",
+      "ইথা র",
+      "অ্যা লডি হা ইড"
+    ],
+    "correctAnswer": "ইথা র",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "ট্রান্স-সমাণুর সিস-সমাণু অপে ক্ষা -",
+    "options": [
+      "দহন তাপ বেশি",
+      "গলনাঙ্ক কম",
+      "পানিতে দ্রাব্যতা কম",
+      "প্রতিসরাঙ্ক বেশি"
+    ],
+    "correctAnswer": "পানিতে দ্রাব্যতা কম",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "এনানসিওমার যৌগ দুটির মাঝে ধর্মের পার্থক্য হলো -",
+    "options": [
+      "আলোর প্রতিসরণ",
+      "আলোর প্রতিফলন",
+      "সমতলী য় আলো র ঘূর্ণনে র দি ক",
+      "সমতলী য় আলো র ঘূর্ণনে র মা ন"
+    ],
+    "correctAnswer": "সমতলী য় আলো র ঘূর্ণনে র দি ক",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "d ল্যাকটিক এসিডের আপেক্ষিক আবর্তন কোণ +2.24° হলে , L ল্যাকটিক এসিডের আপেক্ষিক আবর্তন কোণ\nকত?",
+    "options": [
+      "+2.24°",
+      "-22.4°",
+      "-2.24°",
+      "None"
+    ],
+    "correctAnswer": "-2.24°",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "নিচের কোন দুটি অ্যালিফেটিক যৌগের মাঝে সমাণুতা সম্ভব নয়?",
+    "options": [
+      "ইথার ও অ্যলকোহল",
+      "ইথার ও অ্যালডিহাইড",
+      "অ্যালডিহাইড ও কিটোন",
+      "কার্বক্সিলিক এসিড ও ইথার"
+    ],
+    "correctAnswer": "ইথার ও অ্যালডিহাইড",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "C3H8O এর সর্বাধিক কয়টি অ্যালকোহল হতে পারে ?",
+    "options": [
+      "3",
+      "5",
+      "4",
+      "2"
+    ],
+    "correctAnswer": "2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "নিচের কোনটি আলোক সক্রিয় যৌগ?",
+    "options": [
+      "CH3 − CH(OH) − CH(OH) − CH3",
+      "CH3 − CH = CH − CH3",
+      "CH3 − CH(OH) − CH2 − CH3",
+      "O2N − CH2Cl"
+    ],
+    "correctAnswer": "CH3 − CH(OH) − CH2 − CH3",
+    "image": null,
+    "type": "multiple-choice"
+  }
+]
