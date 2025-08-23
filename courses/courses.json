@@ -1867,7 +1867,7 @@
     "category": "Admission 25",
     "subject": ["Biology"],
     "grade": ["Admission 25"],
-    "courseType": "ACS",
+    "courseType": "RTDS",
     "price": 150,
     "originalPrice": 5950,
     "duration": "3 months",
