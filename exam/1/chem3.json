@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "question": "নি চে র কো নটি Controlled বি জা রণ ঘটায়?",
+    "options": [
+      "Pd + BaSO4",
+      "SnCl2 + HCl",
+      "Pt/Ni",
+      "Sn + HCl"
+    ],
+    "correctAnswer": "Pd + BaSO4",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "নি চে র কো নটি অপসা রণ বি ক্রি য়া দি বে ?",
+    "options": [
+      "-CO-",
+      "C ≡ C",
+      "R − X",
+      "C6H6"
+    ],
+    "correctAnswer": "R − X",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "ফ্রি -রে ডি ক্যা ল কী ভা বে তৈ রি হয়?",
+    "options": [
+      "বি ষম বি ভা জন",
+      "সুষম বি ভা জন",
+      "অসম বি ভা জন",
+      "None"
+    ],
+    "correctAnswer": "সুষম বি ভা জন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "কো নটি উর্টজ (Wurtz) বি ক্রি য়া য় অং শগ্রহণ করে না ?",
+    "options": [
+      "CH3I",
+      "CH3CH2Br",
+      "(CH3) 2CHCH2I",
+      "(CH3) 3CBr"
+    ],
+    "correctAnswer": "(CH3) 3CBr",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "ক্যা লসি য়া ম কা র্বা ইড এর সা থে পা নি র সং মি শ্রণ করলে নি চে র কো নটি উৎপন্ন হবে ?",
+    "options": [
+      "ইথা ন্যা ল",
+      "ইথে ন",
+      "ইথা ইন",
+      "ইথি ন"
+    ],
+    "correctAnswer": "ইথা ইন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "নি চে র কো ন বি ক্রি য়া য় কা র্বন সং খ্যা সমা ন থা কে ?",
+    "options": [
+      "ডি কা র্বক্সি লে শন",
+      "উর্টজ",
+      "গ্রি গনা র্ড বি কা রক + পা নি",
+      "None"
+    ],
+    "correctAnswer": "গ্রি গনা র্ড বি কা রক + পা নি",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "নি চে র কো নটি লুইস এসি ড?",
+    "options": [
+      "NH3",
+      "CH4",
+      "H2O",
+      "BeCl2"
+    ],
+    "correctAnswer": "BeCl2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "নি চে র কো নটি মা র্কি নি কভ নী তি অনুসরণ করবে ?",
+    "options": [
+      "CH3 − CH = CH − CH3 + HBr →",
+      "(CH3)2C = C(CH3) + Br2 →",
+      "CH3 − CH = CH2 + Br2 →",
+      "(CH3)2C = CH2 + HBr →"
+    ],
+    "correctAnswer": "(CH3)2C = CH2 + HBr →",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "A যৌ গটি-",
+    "options": [
+      "i,ii",
+      "ii,iii",
+      "i,iii",
+      "i,ii,iii"
+    ],
+    "correctAnswer": "i,ii,iii",
+    "image": "c3.9.PNG",
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "10. নি চে র কো নটি সঠিক?",
+    "options": [
+      "অ্যালকেনকে প্যারাফিন বলা হয়",
+      "অ্যালকেন হ্যালোজিনেশন বিক্রিয়া দেয়",
+      "অ্যা লকে ন না ইট্রে শন বি ক্রি য়া দে য়",
+      "সবগুলো"
+    ],
+    "correctAnswer": "সবগুলো",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "আসিটিলিন +H2 →(Pd+BaSO4 ) X; X = ?",
+    "options": [
+      "CH3 − CH2 − SO3H",
+      "CH2 = CH2",
+      "CH3 − CH3",
+      "C6H6"
+    ],
+    "correctAnswer": "CH2 = CH2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "টেট্রাক্লোরো বিউটেনের সাথে Zn বিক্রিয়ায় কি উৎপন্ন হয়?",
+    "options": [
+      "বি উটিন-2",
+      "বি উটে ন",
+      "বি উট-2-আইন",
+      "none"
+    ],
+    "correctAnswer": "বি উট-2-আইন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "2,3-ডা ইক্লোরো বিউটেনের সাথে অ্যলকোহলী NaOH বিক্রিয়া করে কি পাওয়া যায়?",
+    "options": [
+      "অ্যা লকে ন",
+      "অ্যা লকি ন",
+      "অ্যা লকা ইন",
+      "অ্যা লকা ইল হ্যা লা ইড"
+    ],
+    "correctAnswer": "অ্যা লকা ইন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "গ্রি গনা র্ড বি কা রকে র সা থে কো নটির বি ক্রি য়া য় কা র্বক্সি লি ক এসি ড উৎপন্ন হয়?",
+    "options": [
+      "CO2",
+      "HCHO",
+      "CH3CHO",
+      "H2O"
+    ],
+    "correctAnswer": "CO2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "উর্টজ বি ক্রি য়া র সা হা য্যে নি চে র কো ন অ্যা লকে নটি প্রস্তুত করা সম্ভব নয়?",
+    "options": [
+      "CH4",
+      "CH3 − CH3",
+      "(CH3)2 − CHCH2CH(CH3)2",
+      "(CH3) 2CHCH2 − CH2 − CH(CH3) 2"
+    ],
+    "correctAnswer": "CH4",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "নি চে র কো নটি প্রশম নিউক্লিওফাইল?",
+    "options": [
+      "CN −",
+      "AlCl3",
+      "BF3",
+      "NH3"
+    ],
+    "correctAnswer": "NH3",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "সর্বা ধি ক স্থা য়ী কো ন ফ্রি রে ডি ক্যা ল?",
+    "options": [
+      "3°",
+      "2°",
+      "1°",
+      "CH3"
+    ],
+    "correctAnswer": "3°",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "হা ইড্রো জে ন ব্রো মা ইডে র সা থে প্রো পি নে র বি ক্রি য়া য় প্রধা ন উৎপা দ হলো -",
+    "options": [
+      "1-bromopropane",
+      "2-bromopropane",
+      "1, 2-dibromopropane",
+      "2-bromopropene"
+    ],
+    "correctAnswer": "2-bromopropane",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "পারঅক্সাইডের উপস্থিতিতে নিচর কোনটি থাকলে অপ্রতিসম অ্যালকিনে এন্টিমার্কনিকভ নীতি\nপ্রযো জ্য হয়?",
+    "options": [
+      "HF",
+      "HCl",
+      "HBr",
+      "HI"
+    ],
+    "correctAnswer": "HBr",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "কো ন বি ক্রি য়া য় অ্যা লডি হা ইড মূলক মি থি লি ন মূলকে পরি ণত হয়?",
+    "options": [
+      "গ্রি গনা র্ড বি ক্রি য়া য়",
+      "উর্টজ বি ক্রি য়া য়",
+      "ক্লি মে নসে ন বি জা রণে",
+      "ডি কা র্বক্সি লে শনে"
+    ],
+    "correctAnswer": "ক্লি মে নসে ন বি জা রণে",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "নি চে র কো নটির যো জ্য তা শক্তি স্তরে তি নজো ড়া ইলে কট্রন আছে ?",
+    "options": [
+      "কা র্বো ক্যা টা য়ন",
+      "কা র্বো অ্যা না য়ন",
+      "ফ্রি -র‍্যা ডি ক্যা ল",
+      "ইলে কট্রো ফা ইল"
+    ],
+    "correctAnswer": "ইলে কট্রো ফা ইল",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "নি কে ল প্রভা বকে র উপস্থি তি তে তা পমা ত্রা য় সং যো জন করলে কো নটি উৎপন্ন হয়?",
+    "options": [
+      "CnH2n",
+      "CnH2n−2",
+      "CnH2n+2",
+      "CnH2n+1OH"
+    ],
+    "correctAnswer": "CnH2n+2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "ডি কা র্বক্সি লে শন বি ক্রি য়া য় প্রো পে ন পে তে হলে নি চে র কো নটি ব্য বহা র করতে হবে ?",
+    "options": [
+      "সো ডি য়া ম প্রো পা নয়ে ট",
+      "সো ডি য়া ম বি উটা নয়ে ট",
+      "সো ডি য়া ম ইথা নয়ে ট",
+      "সো ডি য়া ম পে ন্টা নয়ে ট"
+    ],
+    "correctAnswer": "সো ডি য়া ম বি উটা নয়ে ট",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "দুইয়ে র অধি ক কা র্বনবি শি ষ্ট অ্যা লকা ইন যৌ গে এবং এর উপস্থি তি তে\nপা নি যো গ করলে কি পা ওয়া যা য়?",
+    "options": [
+      "অ্যা লডি হা ইড",
+      "কি টো ন",
+      "এসি ড",
+      "কো নো টি নয়"
+    ],
+    "correctAnswer": "কি টো ন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "নি চে র কো নটি বে য়া র টে স্ট দি বে ?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correctAnswer": "4",
+    "image": "c3.25.PNG",
+    "type": "multiple-choice"
+  }
+]
