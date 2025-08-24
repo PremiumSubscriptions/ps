@@ -1,1 +1,282 @@
-
+[
+  {
+    "id": 1,
+    "question": "একটি খুব ভারী বস্তু v বেগে একটি খুব হালকা স্থির বস্তুকে স্থিতিস্থাপকভাবে আঘাত করলে হালকা বস্তুর বেগ কত হবে?",
+    "options": ["v", "2v", "3v", "4v"],
+    "correctAnswer": "2v",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "4kg ভরের একটি বন্দুক হতে 0.005kg ভরের একটি গুলি 200ms⁻¹ বেগে ছোড়া হলে বন্দুকের পশ্চাৎবেগ কত?",
+    "options": ["2.5ms⁻¹", "0.025ms⁻¹", "0.25ms⁻¹", "25ms⁻¹"],
+    "correctAnswer": "0.25ms⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "টর্কের মাত্রা সমীকরণ কোনটি?",
+    "options": ["[ML²T⁻²]", "[ML⁻¹T⁻¹]", "[MT⁻¹L]", "[MLT⁻²]"],
+    "correctAnswer": "[ML²T⁻²]",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "দ্বিগুণ চক্রগতির ব্যাসার্ধের একটি বস্তুর জড়তার ভ্রামক একই রাখতে হলে এর ভর প্রথম বস্তুর তুলনায় কত করতে হবে?",
+    "options": ["√2", "1/√2", "1/2", "1/4"],
+    "correctAnswer": "1/4",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "একটি ধাতব গোলকের ভর 6g। একে 3m দীর্ঘ একটি সুতার প্রান্তে বেঁধে প্রতি সেকেন্ডে 4 বার ঘুরানো হচ্ছে । এর কৌণিক ভরবেগ কত?",
+    "options": ["0.57kgm²s⁻¹", "2.35kgm²s⁻¹", "1.35kgm²s⁻¹", "0.92kgm²s⁻¹"],
+    "correctAnswer": "1.35kgm²s⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "একটি ঘূর্ণায়মান বস্তুর ভর 4kg। ঘূর্ণন অক্ষ হতে এর দূরত্ব 1m, বস্তু 5rads⁻¹ কৌণিক বেগে ঘুরলে গতি শক্তি কত হবে?",
+    "options": ["12.5J", "25J", "75J", "50J"],
+    "correctAnswer": "50J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "100m ব্যাসার্ধের বৃত্তাকার পথে কোনো মোটর সাইকেল আরও কী বেগে ঘুরলে উক্ত তলের সাথে 45° কোণে আনত হবে তা নির্ণয় কর। [g = 10ms⁻²]",
+    "options": ["12√10ms⁻¹", "10√11ms⁻¹", "10√10ms⁻¹", "11√10ms⁻¹"],
+    "correctAnswer": "10√10ms⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "5kg ভরের এবং 4m ব্যাসার্ধের একটি নিরেট সিলিন্ডারের নিজ অক্ষের সাপেক্ষে চক্রগতির ব্যাসার্ধ কত?",
+    "options": ["√2m", "2m", "2√2m", "4m"],
+    "correctAnswer": "2√2m",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "2 kg ভরের একটি পাথরকে 9.8m দীর্ঘ একটি সুতার সাহায্যে বেঁধে আনুভূমিক তলে ঘোরানো হচ্ছে। সুতা সর্বোচ্চ 19.6 N টান সহ্য করতে পারে। সুতা না ছিঁড়ে পাথরকে সর্বোচ্চ কত বেগে ঘোরানো যেতে পারে?",
+    "options": ["19.6ms⁻¹", "9.2ms⁻¹", "9.8ms⁻¹", "10ms⁻¹"],
+    "correctAnswer": "9.8ms⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "অক্ষের উপর অবস্থিত চারটি বিন্দুর ভর 2kg, 4kg, 5kg, 7kg। ঐ অক্ষ সাপেক্ষে ভরগুলোর বিন্যাসের জড়তার ভ্রামক কত?",
+    "options": ["280kgm²", "325kgm²", "10kgm²", "0kgm²"],
+    "correctAnswer": "0kgm²",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "একজন লোক 200 মিটার উপর হতে তার মাথায় 100 kg ওজনের ভারী বস্তু নিয়ে লাফ দেয়। শূন্যে থাকা অবস্থায় তার মাথার উপর চাপের পরিমাণ কত?",
+    "options": ["0N", "100kg", "150kg", "200kg"],
+    "correctAnswer": "0N",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "2 kg ভরের একটি বস্তু সুতায় ঝুলানো আছে। সুতার টান 27.6 N হলে বস্তুর ত্বরণ কত? [g = 9.8ms⁻²]",
+    "options": ["9.8ms⁻²", "4.9ms⁻²", "4ms⁻²", "113.8ms⁻²"],
+    "correctAnswer": "4ms⁻²",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "20 বার ঘুরবার পর একটি বৈদ্যুতিক পাখার কৌণিক বেগ 30rads⁻¹ হতে হ্রাস পেয়ে 10rads⁻¹ হয়। কৌণিক মন্দন কত?",
+    "options": ["3.183rads⁻²", "4.27rads⁻²", "3.97rads⁻²", "2.92rads⁻²"],
+    "correctAnswer": "3.183rads⁻²",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "একটি স্যাটেলাইটের ঘূর্ণনের সময়কাল T-এর গতি শক্তির সমানুপাতিক হল-",
+    "options": ["1/T", "1/T²", "1/T³", "T⁻²/₃"],
+    "correctAnswer": "1/T²",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "একটি 1kg ভরের বস্তুকে 625 m উপর থেকে খাড়াভাবে নিচের দিকে ছেড়ে দেয়া হলো। পড়ার অবস্থায় 7.8N মানের একটি বিপরীতমুখী বাধাদানকারী বল ক্রিয়া শীল ছিল। বস্তু কত সময় পর মাটিতে পড়বে?",
+    "options": ["30s", "25s", "1min", "0.5s"],
+    "correctAnswer": "25s",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "একটি সিলিন্ডারের ভর 50kg এবং ব্যাসার্ধ 0.2m। সিলিন্ডারটির অক্ষের সাপেক্ষে এর জড়তার ভ্রামক 1kgm²। সিলিন্ডারটি যখন 4ms⁻¹ বেগে গড়াতে থাকে তখন তার মোট গতি শক্তি কত হবে?",
+    "options": ["300J", "270J", "500J", "600J"],
+    "correctAnswer": "600J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "সরল দোল গতি সম্পন্ন একটি বস্তুকণার যে কোনো মুহূর্তের ত্বরণ 2ms⁻² এবং সরণ 0.02m হলে এর কৌণিক কম্পাঙ্ক কত?",
+    "options": ["10rads⁻¹", "0.1rads⁻¹", "100rads⁻¹", "10rads⁻¹"],
+    "correctAnswer": "10rads⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "নিউক্লীয়নের মধ্যে কোন কণার পারস্পরিক বিনিময়ের দ্বারা সবল নিউক্লীয় বলের উৎপত্তি হয়?",
+    "options": ["গ্র্যাভিটন", "নিউট্রন", "মেসন", "ইলেকট্রন"],
+    "correctAnswer": "মেসন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "0.6 kg ভরের একটি ক্রিকেট বল 40ms⁻¹ বেগে গিয়েইল ভাবে একটি ব্যাটকে আঘাত করলো এবং বিপরীত দিকে 20ms⁻¹ বেগে ফিরে গেল। বলের দ্বারা ব্যাটের উপর প্রযুক্ত বলের ঘাত-",
+    "options": ["25Ns", "36Ns", "37Ns", "42Ns"],
+    "correctAnswer": "36Ns",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "নিউটনীয় বা চিরায়িত বলবিদ্যার মৌলিক রাশি নয় কোনটি?",
+    "options": ["স্থান", "সময় বা কাল", "বেগ", "ভর"],
+    "correctAnswer": "বেগ",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "একটি বস্তুর জড়তার ভ্রামক, 9000gcm², বস্তুর ভর 10g হলে চক্রগতির ব্যাসার্ধ কত হবে?",
+    "options": ["900 cm", "300 cm", "30 × 10⁻² cm", "30 cm"],
+    "correctAnswer": "30 cm",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "16 kg ভর এর একটি বোমা বিস্ফোরিত হয়ে 4kg এবং 12 kg ভর এর দুটি টুকরো হলো। 12 kg ভরের টুকরার বেগ 4ms⁻¹ হলে অন্য টুকরোর গতি শক্তি কত?",
+    "options": ["144J", "250J", "288J", "320J"],
+    "correctAnswer": "288J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "একটি বস্তু 4.0ms⁻¹ বেগে ব্যাসার্ধের বৃত্তাকার পথে সমবেগে ঘুরছে। একবার ঘুরে আসতে বস্তুর কত সময় লাগবে?",
+    "options": ["(π²/2)s", "(2/π²)s", "(1/π)s", "π²s"],
+    "correctAnswer": "(π²/2)s",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "একটি পানি পূর্ণ বালতি এমনভাবে ঘুরানো হচ্ছে, যেন পানি না পড়ে। বৃত্তাকার পথের ব্যাসার্ধ r হলে, বালতির সমকৌণিক বেগ কত?",
+    "options": ["∞", "√(g/r)", "√gr", "√(2g/r)"],
+    "correctAnswer": "√(g/r)",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "5kg ভরের একটি কাঁকড়কে একটি আনুভূমিক তলের উপর দিয়ে কত বলে টানলে বস্তু সমবেগে চলবে? (গতীয় ঘর্ষণ গুণাংক= 0.2)",
+    "options": ["2.94N", "4.9N", "7.8N", "9.8N"],
+    "correctAnswer": "9.8N",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 26,
+    "question": "2000Nm টর্ক প্রয়োগে জড়তার ভ্রামক 500kgm² বিশিষ্ট চাকাকে 26rads⁻¹ কৌণিক বেগে উন্নীত করতে কত সময় লাগবে?",
+    "options": ["5.5s", "6.5s", "7.5s", "8.5s"],
+    "correctAnswer": "6.5s",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 27,
+    "question": "নিচের কোনটি মৌলিক বল নয়?",
+    "options": ["মহাকর্ষ বল", "সবল নিউক্লীয় বল", "দুর্বল নিউক্লীয় বল", "কেন্দ্রমুখী বল"],
+    "correctAnswer": "কেন্দ্রমুখী বল",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 28,
+    "question": "একক সমকৌণিক বেগে আবর্তনকৃত একটি দৃঢ় বস্তুর জড়তার ভ্রামক এর গতি শক্তির কত গুণ?",
+    "options": ["1", "2", "3", "4"],
+    "correctAnswer": "2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 29,
+    "question": "25ms⁻¹ বেগে আগত 200 gm ভরের একটি ক্রিকেট বলকে একজন খেলোয়াড় ক্যাচ ধরে 0.1 sec সময়ের মধ্যে থামিয়ে দিল। খেলোয়াড় কর্তৃক প্রযুক্ত গড় বল কত?",
+    "options": ["100N", "50N", "60N", "70N"],
+    "correctAnswer": "50N",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 30,
+    "question": "ঘড়ির মিনিটের কাটার কৌণিক বেগের মান কত?",
+    "options": ["rads⁻¹/60", "π rad/s/1800", "πrad/s", "π rad/s/1800"],
+    "correctAnswer": "π rad/s/1800",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 31,
+    "question": "কোনো বস্তুর ওপর কার্যরত কৌণিক ভরবেগ, L = ⅓t³ + t² + 5 হলে t=2sec এর সময় বস্তুর ওপর ক্রিয়ারত টর্ক (Nm এ)-",
+    "options": ["6", "7", "8", "9"],
+    "correctAnswer": "8",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 32,
+    "question": "কোন অক্ষ সাপেক্ষে একটি বস্তুর জড়তার ভ্রামক 400kgm²। উক্ত অক্ষ্য সাপেক্ষে বস্তুর চক্রগতির ব্যাসার্ধ কত? (বস্তুর ওজন 39.2N)",
+    "options": ["10m", "40m", "50m", "20m"],
+    "correctAnswer": "10m",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 33,
+    "question": "2.0 m/sec বেগে 1.0 kg ভরের বস্তুকে 1.0 মিটার উচ্চতায় উঠাতে কতটুকু বল প্রয়োগ করতে হবে?",
+    "options": ["2 kg-wt", "4 kg-wt", "3 kg-wt", "5 kg-wt"],
+    "correctAnswer": "2 kg-wt",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 34,
+    "question": "2π কোণে ঘুরাতে কৃত কাজের পরিমাণ 50 J হলে টর্কের মান কত?",
+    "options": ["0Nm", "8.96Nm", "9.85Nm", "8.95Nm"],
+    "correctAnswer": "0Nm",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 35,
+    "question": "একটি লিফট 3m/s² ত্বরণে নিচে নামলে, লিফটে 40kg ভরের একজন মানুষ তার ওজন কত অনুভব করবে? [g = 10m/s²]",
+    "options": ["280N", "140N", "520N", "260N"],
+    "correctAnswer": "280N",
+    "image": null,
+    "type": "multiple-choice"
+  }
+]
