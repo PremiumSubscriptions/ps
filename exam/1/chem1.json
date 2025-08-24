@@ -1,13 +1,8 @@
 [
   {
     "id": 1,
-    "question": "1. নিচের কোন কার্যকরী মূলক এর সক্রিয়তা বেশি?\n",
-    "options": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
+    "question": "1. নিচের কোন কার্যকরী মূলকের সক্রিয়তা বেশি?",
+    "options": ["A", "B", "C", "D"],
     "correctAnswer": "C",
     "image": "c1.png",
     "type": "multiple-choice"
@@ -15,25 +10,15 @@
   {
     "id": 2,
     "question": "2. নিচের কোনটি অ্যারোমেটিক যৌগ?",
-    "options": [
-      "সাইক্লোবিউটেন",
-      "ফেনল",
-      "সাইক্লোপ্রোপেন",
-      "ইথিন"
-    ],
+    "options": ["সাইক্লোবিউটেন", "ফেনল", "সাইক্লোপ্রোপেন", "ইথিন"],
     "correctAnswer": "ফেনল",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 3,
-    "question": "এসিড ব্রোমাইড এর সংকেতকি ?",
-    "options": [
-      "−COOR",
-      "−COOH",
-      "−COOBr",
-      "−COBr"
-    ],
+    "question": "এসিড ব্রোমাইডের সংকেত কি?",
+    "options": ["−COOR", "−COOH", "−COOBr", "−COBr"],
     "correctAnswer": "−COBr",
     "image": null,
     "type": "multiple-choice"
@@ -41,12 +26,7 @@
   {
     "id": 4,
     "question": "নিচের কোনটি অজৈব যৌগ নয়?",
-    "options": [
-      "CaC2",
-      "H2N-CO-NH2",
-      "CS2",
-      "None"
-    ],
+    "options": ["CaC2", "H2N-CO-NH2", "CS2", "None"],
     "correctAnswer": "H2N-CO-NH2",
     "image": null,
     "type": "multiple-choice"
@@ -54,51 +34,31 @@
   {
     "id": 5,
     "question": "উদ্ভূত পদ্ধতি অনুসারে নিচের কোনটি ট্রাইমিথাইল কার্বিনল?",
-    "options": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
+    "options": ["A", "B", "C", "D"],
     "correctAnswer": "C",
     "image": "c5.png",
     "type": "multiple-choice"
   },
   {
     "id": 6,
-    "question": "কার্যকরী মূলকভিত্তিক জৈব যৌগের শ্রেণিকে কী বলে ?",
-    "options": [
-      "আইসোমার",
-      "সমগোত্রীয় শ্রেনি",
-      "ক্যাটেনেশন",
-      "None"
-    ],
-    "correctAnswer": "সমগোত্রীয় শ্রেনি",
+    "question": "কার্যকরী মূলকভিত্তিক জৈব যৌগের শ্রেণিকে কী বলে?",
+    "options": ["আইসোমার", "সমগোত্রীয় শ্রেণি", "ক্যাটেনেশন", "None"],
+    "correctAnswer": "সমগোত্রীয় শ্রেণি",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 7,
-    "question": "ফরমালডিহাইড এর কার্বন পরমাণুতে নিম্নের কোন সংকরঅরবিটালটি ব্যবহার হয়েছে ?",
-    "options": [
-      "sp",
-      "sp^2",
-      "sp^3",
-      "d^2sp^3"
-    ],
+    "question": "ফরমালডিহাইডের কার্বন পরমাণুতে নিম্নের কোন সংকর অরবিটালটি ব্যবহার হয়েছে?",
+    "options": ["sp", "sp^2", "sp^3", "d^2sp^3"],
     "correctAnswer": "sp^2",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 8,
-    "question": "নিচের যৌগটিতে কতটি কার্যকরীমূলক আছে ?",
-    "options": [
-      "3 টি",
-      "6 টি",
-      "5 টি",
-      "4 টি"
-    ],
+    "question": "নিচের যৌগটিতে কতটি কার্যকরীমূলক আছে?",
+    "options": ["3 টি", "6 টি", "5 টি", "4 টি"],
     "correctAnswer": "5 টি",
     "image": "c8.PNG",
     "type": "multiple-choice"
@@ -106,12 +66,7 @@
   {
     "id": 9,
     "question": "অ্যালাইল মূলকের গাঠনিক সংকেত-",
-    "options": [
-      "−CH2 − CH2 − CH3",
-      "CH2 = CH −",
-      "CH ≡ C −",
-      "−CH2 − CH = CH2"
-    ],
+    "options": ["−CH2 − CH2 − CH3", "CH2 = CH −", "CH ≡ C −", "−CH2 − CH = CH2"],
     "correctAnswer": "−CH2 − CH = CH2",
     "image": null,
     "type": "multiple-choice"
@@ -119,12 +74,7 @@
   {
     "id": 10,
     "question": "CH3-CH3 যৌগে সংকরীকরণ কোনটি?",
-    "options": [
-      "sp",
-      "sp^2",
-      "sp^3",
-      "sp^3d"
-    ],
+    "options": ["sp", "sp^2", "sp^3", "sp^3d"],
     "correctAnswer": "sp^3",
     "image": null,
     "type": "multiple-choice"
@@ -132,12 +82,7 @@
   {
     "id": 11,
     "question": "নিচের কোন যৌগে 'নাইট্রাইল' কার্যকরী মূলকটি বিদ্যমান?",
-    "options": [
-      "CH3NH2",
-      "CCl3NO2",
-      "CH3CN",
-      "NH4CNO"
-    ],
+    "options": ["CH3NH2", "CCl3NO2", "CH3CN", "NH4CNO"],
     "correctAnswer": "CH3CN",
     "image": null,
     "type": "multiple-choice"
@@ -145,25 +90,15 @@
   {
     "id": 12,
     "question": "নিচের কোনটি হেটারো সাইক্লিক যৌগ?",
-    "options": [
-      "হেক্সিন",
-      "বেনজিন",
-      "ইথিলিন অক্সাইড",
-      "সাইক্লোপ্রোপেন"
-    ],
+    "options": ["হেক্সিন", "বেনজিন", "ইথিলিন অক্সাইড", "সাইক্লোপ্রোপেন"],
     "correctAnswer": "ইথিলিন অক্সাইড",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 13,
-    "question": "অ্যালকোহলের সাধারন সংকেত-",
-    "options": [
-      "CnH2n+2",
-      "CnH2n",
-      "CnH2n+1OH",
-      "CnH2n−1"
-    ],
+    "question": "অ্যালকোহলের সাধারণ সংকেত-",
+    "options": ["CnH2n+2", "CnH2n", "CnH2n+1OH", "CnH2n−1"],
     "correctAnswer": "CnH2n+1OH",
     "image": null,
     "type": "multiple-choice"
@@ -171,12 +106,7 @@
   {
     "id": 14,
     "question": "নিচের কোনটি সঠিক নয়?",
-    "options": [
-      "নাইট্রাইল → −CN",
-      "আইসোনাইট্রাইল→ −NC",
-      "এস্টার→ COOCO −",
-      "থায়োনিল→ SH"
-    ],
+    "options": ["নাইট্রাইল → −CN", "আইসোনাইট্রাইল→ −NC", "এস্টার→ COOCO −", "থায়োনিল→ SH"],
     "correctAnswer": "এস্টার→ COOCO −",
     "image": null,
     "type": "multiple-choice"
@@ -184,12 +114,7 @@
   {
     "id": 15,
     "question": "2 মিথাইল-প্রোপ-2-ইন-1-অল যৌগে কতটি সমযোজী বন্ধন বিদ্যমান?",
-    "options": [
-      "12",
-      "11",
-      "13",
-      "14"
-    ],
+    "options": ["12", "11", "13", "14"],
     "correctAnswer": "11",
     "image": null,
     "type": "multiple-choice"
@@ -197,12 +122,7 @@
   {
     "id": 16,
     "question": "ফিউরান যৌগে সঞ্চরণশীল ইলেকট্রন কয়টি?",
-    "options": [
-      "2",
-      "4",
-      "6",
-      "8"
-    ],
+    "options": ["2", "4", "6", "8"],
     "correctAnswer": "6",
     "image": null,
     "type": "multiple-choice"
@@ -210,12 +130,7 @@
   {
     "id": 17,
     "question": "গ্রাফাইটের গঠনে প্রতিটি কার্বন পরমাণুর সংকরণ হচ্ছে -",
-    "options": [
-      "sp",
-      "sp^3",
-      "dsp^3",
-      "sp^2"
-    ],
+    "options": ["sp", "sp^3", "dsp^3", "sp^2"],
     "correctAnswer": "sp^2",
     "image": null,
     "type": "multiple-choice"
@@ -235,26 +150,16 @@
   },
   {
     "id": 19,
-    "question": "উদ্দীপকের বিক্রিয়াটি কোন ধরনের বিক্রিয়া ?",
-    "options": [
-      "সংযোজন",
-      "সমাণুকরণ",
-      "অপসারণ",
-      "প্রতিস্থাপন"
-    ],
+    "question": "উদ্দীপকের বিক্রিয়াটি কোন ধরনের বিক্রিয়া?",
+    "options": ["সংযোজন", "সমাণুকরণ", "অপসারণ", "প্রতিস্থাপন"],
     "correctAnswer": "সমাণুকরণ",
     "image": "c19.PNG",
     "type": "multiple-choice"
   },
   {
     "id": 20,
-    "question": "20. C-C, C ≡ C, C=C এর বন্ধন কোণ যথাক্রমে হলে নিচের কনটি সঠিক?",
-    "options": [
-      "x > y > z",
-      "y > x > z",
-      "y > z > x",
-      "z > y > x"
-    ],
+    "question": "20. C-C, C ≡ C, C=C এর বন্ধন কোণ যথাক্রমে x, y, z হলে নিচের কোনটি সঠিক?",
+    "options": ["x > y > z", "y > x > z", "y > z > x", "z > y > x"],
     "correctAnswer": "y > z > x",
     "image": null,
     "type": "multiple-choice"
@@ -262,12 +167,7 @@
   {
     "id": 21,
     "question": "5-মিথাইলহেক্স-1, 3-ডাইইন যৌগটির গাঠনিক সংকেত-",
-    "options": [
-      "A",
-      "B",
-      "C",
-      "D"
-    ],
+    "options": ["A", "B", "C", "D"],
     "correctAnswer": "B",
     "image": "c21.PNG",
     "type": "multiple-choice"
@@ -275,52 +175,37 @@
   {
     "id": 22,
     "question": "ফুলারিন-এ কার্বন পরমাণুর সংখ্যা কত?",
-    "options": [
-      "66",
-      "60",
-      "55",
-      "50"
-    ],
+    "options": ["66", "60", "55", "50"],
     "correctAnswer": "60",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 23,
-    "question": "C5H6 স্থূল সংকেত বিশিষ্ট যৌগটির নাম কী ?",
+    "question": "C5H6 স্থূল সংকেত বিশিষ্ট যৌগটির নাম কী?",
     "options": [
       "5-মিথাইল হেক্স-1-আইন",
-      "2-মিথাইল 1, 3-পেন্টা -ডাইইন",
+      "2-মিথাইল 1, 3-পেন্টা-ডাইইন",
       "5-মিথাইল-1, 3-হেক্সা-ডাইআইন",
       "পেন্ট-1-ইন-4-আইন"
     ],
-    "correctAnswer": "পেন্ট-1-ইন-4-আইন",
+    "correctAnswer": "পেন্ট-1-ইন-4-आইন",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 24,
-    "question": "দ্বিবন্ধন ও ত্রি-বন্ধনযুক্ত কার্যকরী মূলকে কোন বিক্রিয়া ঘটে ?",
-    "options": [
-      "বি য়ো জন",
-      "অপসা রন",
-      "প্রতি স্থা পন",
-      "সং যো জন"
-    ],
-    "correctAnswer": "সং যো জন",
+    "question": "দ্বিবন্ধন ও ত্রি-বন্ধনযুক্ত কার্যকরী মূলকে কোন বিক্রিয়া ঘটে?",
+    "options": ["বিয়োজন", "অপসারণ", "প্রতিস্থাপন", "সংযোজন"],
+    "correctAnswer": "সংযোজন",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 25,
     "question": "কোনটি হাইড্রোজেন না থাকা সত্ত্বেও জৈব যৌগ?",
-    "options": [
-      "ক্লো রো পি ক্রি ন",
-      "সা ইক্লো হে ক্সা নল",
-      "গ্যা মা ক্সি ন",
-      "আয়ো ডফর্ম"
-    ],
-    "correctAnswer": "ক্লো রো পি ক্রি ন",
+    "options": ["ক্লোরো পিক্রিন", "সাইক্লোহেক্সানল", "গ্যামাক্সিন", "আয়োডোফর্ম"],
+    "correctAnswer": "ক্লোরো পিক্রিন",
     "image": null,
     "type": "multiple-choice"
   }
