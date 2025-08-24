@@ -6,30 +6,20 @@
     <title>Premium Subscriptions - Exam Portal</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- MathJax Configuration -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        packages: {'[+]': ['mhchem']}
-      },
-      startup: {
-        pageReady: () => {
-          return MathJax.startup.defaultPageReady().then(() => {
-            console.log('MathJax initialized');
-          });
-        }
-      }
-    };
-    </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <!-- SMILES Drawer for chemical structures -->
-    <script src="https://cdn.jsdelivr.net/npm/smiles-drawer@1.0.10/dist/smiles-drawer.min.js"></script>
-
+window.MathJax = {
+  tex: {
+    packages: {'[+]': ['mhchem']}
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+ 
     <style>
-        /* [All your existing CSS styles remain unchanged] */
         .card-hover {
             transition: all 0.3s ease;
         }
@@ -468,8 +458,7 @@
             font-size: 1.5rem;
             line-height: 1.2;
         }
-        
-        /* Password Modal Styles */
+                /* Password Modal Styles */
         .password-modal {
             position: fixed;
             top: 0;
@@ -537,25 +526,6 @@
             font-size: 14px;
             margin-top: 8px;
             display: none;
-        }
-        
-        /* SMILES Canvas Styles */
-        .smiles-canvas {
-            display: inline-block;
-            vertical-align: middle;
-            margin: 0 5px;
-            border: 1px solid #e5e7eb;
-            border-radius: 4px;
-            padding: 4px;
-        }
-        
-        /* MathJax Styles */
-        .MathJax {
-            outline: none;
-        }
-        
-        .mjx-chtml {
-            font-size: 110% !important;
         }
     </style>
 </head>
@@ -683,8 +653,7 @@
             </div>
         </section>
     </main>
-    
-    <!-- Password Modal -->
+        <!-- Password Modal -->
     <div id="password-modal" class="password-modal">
         <div class="password-modal-content">
             <div class="password-modal-header">
@@ -712,7 +681,6 @@
             </div>
         </div>
     </div>
-    
     <!-- Footer -->
     <footer class="mt-12 py-8" style="background-color: #122620;">
         <div class="container mx-auto px-4 text-center">
@@ -774,7 +742,7 @@
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
-                    <button id="submit-exam-btn" class="btn-success">
+                    <button id="submit-btn" class="btn-success">
                         <i class="fas fa-check mr-2"></i>Submit Exam
                     </button>
                 </div>
@@ -878,7 +846,7 @@
                 subject: "Computer Science",
                 difficulty: "Hard",
                 duration: 25, // 25 minutes for demo
-                questions: 25,
+                questions: 15,
                 participants: 623,
                 date: "Jan 30, 2025",
                 status: "Active",
@@ -1000,10 +968,6 @@
         let timeRemaining = 0;
         let isExamSubmitted = false;
         let passwordExam = null;
-        
-        // Initialize SmilesDrawer
-        const smilesDrawer = new SmilesDrawer.Drawer({ width: 150, height: 100 });
-        
         // DOM Elements - removed subject filter elements
         const elements = {
             searchInput: null,
@@ -1024,7 +988,7 @@
             jumpBtn: null,
             prevBtn: null,
             nextBtn: null,
-            submitExamBtn: null,
+            submitBtn: null,
             resultsSection: null,
             scoreCircle: null,
             scorePercentage: null,
@@ -1070,35 +1034,6 @@
                 default:
                     return 'bg-gray-100 text-gray-800 border-gray-200';
             }
-        }
-
-        // Function to parse SMILES notation and render chemical structures
-        function processSmiles(smilesString) {
-            if (!smilesString.includes('<smiles>')) return smilesString;
-            
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = smilesString;
-            
-            const smilesElements = tempDiv.querySelectorAll('smiles');
-            smilesElements.forEach(smilesEl => {
-                const smilesCode = smilesEl.textContent;
-                const canvas = document.createElement('canvas');
-                canvas.className = 'smiles-canvas';
-                
-                try {
-                    // Parse and draw the SMILES structure
-                    SmilesDrawer.parse(smilesCode, function(tree) {
-                        smilesDrawer.draw(tree, canvas, 'light', false);
-                    });
-                } catch(e) {
-                    console.error('Error drawing SMILES:', e);
-                    canvas.innerText = smilesCode;
-                }
-                
-                smilesEl.parentNode.replaceChild(canvas, smilesEl);
-            });
-            
-            return tempDiv.innerHTML;
         }
 
         // === EXAM FUNCTIONS - ADDITION ===
@@ -1154,7 +1089,6 @@
                 elements.passwordInput.focus();
             }
         }
-        
         // Start exam function - MODIFIED to fetch questions from external files
         async function startExam(exam) {
             currentExam = exam;
@@ -1202,7 +1136,6 @@
             document.getElementById('question-content').style.display = 'block';
             document.querySelector('.nav-controls').style.display = 'flex';
         }
-        
         // Timer functions
         function startTimer() {
             elements.timerDisplay.textContent = formatTime(timeRemaining);
@@ -1238,7 +1171,7 @@
             }
         }
 
-        // Question loading and display - MODIFIED to handle LaTeX and SMILES
+        // Question loading and display
         function loadQuestion() {
             if (currentQuestionIndex < 0 || currentQuestionIndex >= examQuestions.length) {
                 return;
@@ -1274,7 +1207,7 @@
                 questionHTML += `
                     <div class="option-item ${isSelected ? 'selected' : ''}" onclick="selectAnswer(${question.id}, '${option.replace(/'/g, "\\'")}')">
                         <input type="radio" name="question-${question.id}" value="${option}" ${isSelected ? 'checked' : ''}>
-                        <span class="font-medium">${processSmiles(option)}</span>
+                        <span class="font-medium">${option}</span>
                     </div>
                 `;
             });
@@ -1284,9 +1217,6 @@
             
             // Update navigation buttons
             updateNavigationButtons();
-            
-            // Trigger MathJax to render LaTeX
-            MathJax.typesetPromise().catch(err => console.error('MathJax typeset error:', err));
         }
 
         // Answer selection
@@ -1472,11 +1402,11 @@
                         <p class="font-semibold mb-3" style="color: #122620;">${result.question}</p>
                         <div class="space-y-2">
                             <div class="answer-box user-answer ${result.userAnswer === 'Not answered' ? 'not-answered' : result.isCorrect ? 'correct' : 'wrong'}">
-                                <strong>Your answer:</strong> ${processSmiles(result.userAnswer)}
+                                <strong>Your answer:</strong> ${result.userAnswer}
                             </div>
                             ${!result.isCorrect ? `
                                 <div class="answer-box correct-answer">
-                                    <strong>Correct answer:</strong> ${processSmiles(result.correctAnswer)}
+                                    <strong>Correct answer:</strong> ${result.correctAnswer}
                                 </div>
                             ` : ''}
                         </div>
@@ -1485,9 +1415,6 @@
             });
             
             elements.detailedResults.innerHTML = detailedHTML;
-            
-            // Trigger MathJax to render LaTeX in results
-            MathJax.typesetPromise().catch(err => console.error('MathJax typeset error:', err));
         }
 
         // Modal controls
@@ -1682,7 +1609,7 @@
             elements.jumpBtn = document.getElementById('jump-btn');
             elements.prevBtn = document.getElementById('prev-btn');
             elements.nextBtn = document.getElementById('next-btn');
-            elements.submitExamBtn = document.getElementById('submit-exam-btn');
+            elements.submitBtn = document.getElementById('submit-btn');
             elements.resultsSection = document.getElementById('results-section');
             elements.scoreCircle = document.getElementById('score-circle');
             elements.scorePercentage = document.getElementById('score-percentage');
@@ -1728,7 +1655,7 @@
             });
             elements.prevBtn.addEventListener('click', previousQuestion);
             elements.nextBtn.addEventListener('click', nextQuestion);
-            elements.submitExamBtn.addEventListener('click', submitExam);
+            elements.submitBtn.addEventListener('click', submitExam);
             elements.retakeBtn.addEventListener('click', retakeExam);
             elements.closeModalBtn.addEventListener('click', closeModal);
             elements.closeResultsBtn.addEventListener('click', closeModal);
@@ -1762,7 +1689,6 @@
                     }
                 }
             });
-            
             // Password modal event listeners
             elements.closePasswordModalBtn.addEventListener('click', hidePasswordModal);
             elements.cancelPasswordBtn.addEventListener('click', hidePasswordModal);
