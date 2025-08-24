@@ -1,0 +1,287 @@
+[
+  {
+    "id": 1,
+    "question": "y অক্ষ বরাবর চলতে থাকা একটি বস্তুর উপর ম্যানে র বল F = (−2i + 15j + 6k) N প্রয়োগ করে y অক্ষ বরাবর সরণ ঘটালে এর উপর কৃত কাজ কত হবে?",
+    "options": ["190J", "160J", "150J", "120J"],
+    "correctAnswer": "150J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "80 kg ও 60 kg ভরের দুই ব্যক্তি যথাক্রমে 12s ও 11s-এ একটি সিঁড়ি বেয়ে নির্দিষ্ট উঁচুতে পৌঁছেছে। তাদের ক্ষমতার অনুপাত হবে -",
+    "options": ["11:12", "11:9", "12:11", "9:11"],
+    "correctAnswer": "11:9",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "m ও 4m ভরের দুটি গতিশীল বস্তুর গতি শক্তি একই হলে তাদের রৈখিক ভরবেগের অনুপাত কত?",
+    "options": ["1:4", "1:2", "1:1", "4:1"],
+    "correctAnswer": "1:2",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "m এবং 2m ভরের দুটি বস্তুর রৈখিক ভরবেগের অনুপাত 2:1 হলে এদের গতি শক্তির অনুপাত কত হবে?",
+    "options": ["√2:1", "2:1", "4:1", "8:1"],
+    "correctAnswer": "8:1",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "200 Nm⁻¹ স্প্রিং ধ্রুবক বিশিষ্ট স্প্রিং কে 2 cm সংকুচিত করে 1 gm ভরের একটি লিফট ছোড়া হলো। লিফটের বেগ কত?",
+    "options": ["4 ms⁻¹", "4√5 ms⁻¹", "√5 ms⁻¹", "2√5 ms⁻¹"],
+    "correctAnswer": "4√5 ms⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "10 m উঁচু স্থান হতে 100 gm ভর বিশিষ্ট একটি বলকে ফেলে দিলে যদি বলটি পুনরায় 8 m উঁচু পর্যন্ত উঠে তবে কি পরিমাণ শক্তি ব্যয় হবে?",
+    "options": ["19.6J", "9.8J", "27J", "1.96J"],
+    "correctAnswer": "1.96J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "5 m উচ্চতা হতে একটি 2 kg ভরের বস্তুকে ফেলে দিলে ভূমি স্পর্শ করার মুহূর্তে ঐ বস্তুর বেগ কত?",
+    "options": ["√9.8 ms⁻¹", "√98 ms⁻¹", "√196 ms⁻¹", "9.8 ms⁻¹"],
+    "correctAnswer": "√98 ms⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "একটি বস্তুর রৈখিক ভরবেগ 50% বৃদ্ধি করলে, গতি শক্তি বৃদ্ধি পায় কত?",
+    "options": ["25%", "50%", "225%", "125%"],
+    "correctAnswer": "125%",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "1 Km² এলাকায় অবস্থিত মেঘ হতে বৃষ্টি পড়ে। এভাবে 1 cm উচ্চতার পানি জমা হলে অভিকর্ষ বল দ্বারা কৃতকাজ কত?",
+    "options": ["9.8 × 10⁹ J", "98 × 10⁹ J", "9.8 × 10⁸ J", "9.8 × 10¹⁰ J"],
+    "correctAnswer": "9.8 × 10⁹ J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "100 m গভীর একটি কুয়া থেকে ইঞ্জিনের সাহায্যে 1 মিনিট 10 সেকেন্ডে 100 L পানি উঠানো হয়। যদি ইঞ্জিনের দক্ষতা 30% না হয় তবে এর মোট ক্ষমতা কত হবে?",
+    "options": ["20000W", "1000W", "2000W", "100KW"],
+    "correctAnswer": "2000W",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "20 kg ভরের একটি পাথর কত উঁচু থেকে পড়লে এর গতি শক্তি 20 ms⁻¹ বেগে চলমান 2000 kg ভরের গাড়ির গতি শক্তির সমান হবে?",
+    "options": ["400m", "1147m", "1020m", "2000m"],
+    "correctAnswer": "2000m",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "একটি দালানের ছাদে লাগানো 10 m লম্বা একটি মই ভূমির সাথে 30° কোণে আনত আছে। 68 kg ভরের এক ব্যক্তি 12 kg ভরের জিনিসসহ 19.6 s এ মই বেয়ে ছাদে উঠে। ঐ ব্যক্তি কত ওয়াট (W) ক্ষমতা প্রয়োগ করেছে?",
+    "options": ["200", "300", "400", "600"],
+    "correctAnswer": "200",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "100 kg ভরের একটি বস্তুকে ক্রেনের সাহায্যে 10 cm s⁻¹ বেগে ছাদের উপর উঠালে ক্রেনের ক্ষমতা কত watt?",
+    "options": ["0.98", "10", "98", "9800"],
+    "correctAnswer": "98",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "নিচের কোনটি ক্ষমতার মাত্রা?",
+    "options": ["[ML²T²]", "[ML⁻²T⁻²]", "[ML²T⁻³]", "[ML⁻²T⁻³]"],
+    "correctAnswer": "[ML²T⁻³]",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "1 m উঁচু টেবিলের উপর অবস্থিত 100 g ভরের একটি বইকে আনুভূমিক দিকে 30 cm দূরে সরানো হলো। বইটির স্থিতি শক্তির পরিবর্তন কত?",
+    "options": ["9.8 × 10⁵ erg", "2.94 × 10⁴ erg", "0 erg", "3 × 10⁴ erg"],
+    "correctAnswer": "0 erg",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "2 kg ভরের স্থির বস্তুর উপর বল প্রয়োগ করার ফলে এটি 10 ms⁻¹ বেগে চলতে শুরু করে। বল কর্তৃক কৃতকাজ কত?",
+    "options": ["200J", "100J", "20J", "50J"],
+    "correctAnswer": "100J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "M ভরের একটি বস্তুর গতি শক্তি E হলে, এর ভরবেগ কত?",
+    "options": ["√(ME/2)", "√(2ME)", "(√2M)E", "M√(2E)"],
+    "correctAnswer": "√(2ME)",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "একটি বস্তু সরলপথে (3,0,0) বিন্দু থেকে (3,3,0) বিন্দুতে গেল। বস্তুর উপর ক্রিয়াশীল বল F = (4i - 3j + k) N হলে কৃতকাজ কত হবে?",
+    "options": ["-18J", "0J", "-9J", "21J"],
+    "correctAnswer": "-9J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "একটি মোটর প্রতি মিনিটে 60 L পানি 100 m উঁচু ছাদে তোলে। মোটরের কর্মদক্ষতা 70% হলে, এর ক্ষমতা কত?",
+    "options": ["1400W", "0.14MW", "0.14KW", "14KW"],
+    "correctAnswer": "1400W",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "m₁ ও m₂ ভরের দুইটি বস্তুর ভরবেগ P₁, P₂ ও গতি শক্তি, E₁ ও E₂ হলে নিচের কোনটি সঠিক?",
+    "options": [
+      "E₁ > E₂ হলে, P₁ < P₂ যখন m₁ = m₂",
+      "E₁ > E₂ হলে m₁ < m₂ যখন P₁ = P₂",
+      "P₁ > P₂ হলে E₁ > E₂ যখন m₁ < m₂",
+      "P₁ > P₂ এবং m₁ < m₂ হলে, E₂ > E₁"
+    ],
+    "correctAnswer": "E₁ > E₂ হলে m₁ < m₂ যখন P₁ = P₂",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "200 gm ভরের একটি বস্তুর বেগ v = (2i + 5j) ms⁻¹ হলে এর গতি শক্তি কত হবে?",
+    "options": ["3J", "2.9J", "3.74J", "6J"],
+    "correctAnswer": "2.9J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "বস্তুর ভর ধ্রুবক হলে, রৈখিক ভরবেগ (P) বনাম গতি শক্তি (E) লেখচিত্র হবে -",
+    "options": ["পরাবৃত্ত", "সরলরেখা", "বৃত্ত", "দ্বিঘাত সমীকরণ"],
+    "correctAnswer": "পরাবৃত্ত",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "স্থিরাবস্থায় একটি কণার উপর F = kx বল প্রয়োগ করলে কণাটির সরণ x=0 m থেকে x=6 m হয়, k = 2 Nm⁻¹ হলে কাজের পরিমাণ কত?",
+    "options": ["6Nm", "12Nm", "24Nm", "36Nm"],
+    "correctAnswer": "36Nm",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "300 Nm⁻¹ বল ধ্রুবক সহ একটি স্প্রিংকে কতটুকু সংকুচিত করলে 1.5 J কাজ হবে?",
+    "options": ["1m", "10m", "0.1m", "100m"],
+    "correctAnswer": "0.1m",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "100 kg ভরের একটি বস্তুর ভরবেগ 100 kgms⁻¹ হলে এর গতি শক্তি -",
+    "options": ["100J", "200J", "50J", "25J"],
+    "correctAnswer": "50J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 26,
+    "question": "60 kg ভরের এক লোক 30 মিনিটে 600 m উঁচুতে উঠতে পারে। তার কাজ করার ক্ষমতা কত?",
+    "options": ["276W", "165W", "167W", "196W"],
+    "correctAnswer": "196W",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 27,
+    "question": "একটি বস্তুকে নির্দিষ্ট উচ্চতা থেকে ফেলে দেওয়া হলো। ভূমি হতে 15 m উচ্চতায় গতি শক্তি বিভবশক্তির দ্বিগুণ হলে কত উচ্চতা থেকে বস্তু ফেলা হয়েছে?",
+    "options": ["30m", "45m", "20m", "25m"],
+    "correctAnswer": "45m",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 28,
+    "question": "10টি ইট একটি র উপর আরেকটি রেখে স্মৃতিস্তম্ভ তৈরিতে সম্পাদিত কাজের পরিমাণ কত? প্রতিটি ইটের উচ্চতা h = 0.20 m এবং ইটের ভর 1 kg",
+    "options": ["75J", "80J", "90J", "112.3J"],
+    "correctAnswer": "90J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 29,
+    "question": "3 kg ভরের একটি পাথরকে 30 ms⁻¹ বেগে উপরের দিকে নিক্ষেপ করা হলো। 2 s পর উহার গতি শক্তি কত?",
+    "options": ["150J", "200J", "1000J", "1500J"],
+    "correctAnswer": "150J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 30,
+    "question": "একটি চলমান বস্তু সমান ভরের অপর একটি স্থির বস্তুকে আঘাত করল। সংঘর্ষ স্থিতিস্থাপক হলে চলমান বস্তুর গতি শক্তির কত অংশ স্থির বস্তুতে স্থানান্তরিত হবে?",
+    "options": ["0%", "1%", "50%", "100%"],
+    "correctAnswer": "100%",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 31,
+    "question": "0.5 kg ভরের বস্তু 4 ms⁻¹ বেগে অনুভূমিকভাবে কোনো স্প্রিংকে আঘাত করার ফলে তা 2 m সংকুচিত হলো। স্প্রিং ধ্রুবক কত?",
+    "options": ["4 Nm⁻¹", "2 Nm⁻¹", "5 Nm⁻¹", "16 Nm⁻¹"],
+    "correctAnswer": "2 Nm⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 32,
+    "question": "অনুভূমিকের সাথে কোণ তলের আনতি 30° এবং তলের দৈর্ঘ্য 10 m হলে 2 kg ভরের বস্তুকে তুলতে কৃতকাজ কত?",
+    "options": ["10J", "9.8J", "98J", "49J"],
+    "correctAnswer": "98J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 33,
+    "question": "রৈখিক ভরবেগ 60% বাড়লে গতি শক্তি বৃদ্ধি পায় -",
+    "options": ["60%", "160%", "165%", "156%"],
+    "correctAnswer": "156%",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 34,
+    "question": "একটি কণার উপর ধ্রুব বল F = (4N)i + (2N)j - (4N)k কাজ করার ফলে ধনাত্মক x-অক্ষের দিকে কণাটির সরণ হয় 5 m। বল দ্বারা কণাটির উপর কৃতকাজ কত?",
+    "options": ["18J", "16J", "20J", "22J"],
+    "correctAnswer": "20J",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 35,
+    "question": "2 kg ভরের ও 2 m দৈর্ঘ্যের কোনো সুষম লাঠির একপ্রান্তে 5 kg ভরের বস্তু বেঁধে লাঠিকে অনুভূমিক অবস্থা হতে খাড়া করে বস্তুকে উপরে তুলতে কী পরিমাণ কাজ করতে হবে?",
+    "options": ["12J", "70J", "120J", "700J"],
+    "correctAnswer": "120J",
+    "image": null,
+    "type": "multiple-choice"
+  }
+]
