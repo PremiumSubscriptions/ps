@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "question": "নিচের কোনটি Controlled বিজারণ ঘটায়?",
+    "options": [
+      "$\\mathrm{Pd}+\\mathrm{BaSO}_{4}$",
+      "$\\mathrm{SnCl}_{2}+\\mathrm{HCl}$",
+      "Pt/Ni",
+      "$\\mathrm{Sn}+\\mathrm{HCl}$"
+    ],
+    "correctAnswer": "$\\mathrm{Pd}+\\mathrm{BaSO}_{4}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "নিচের কোনটি অপসারণ বিক্রিয়া দিবে?",
+    "options": [
+      "<smiles>CC(=O)[IH-]</smiles>",
+      "$C \\equiv C$",
+      "$R-X$",
+      "$\\mathrm{C}_{6} \\mathrm{H}_{6}$"
+    ],
+    "correctAnswer": "$R-X$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "ফ্রি-রেডিক্যাল কীভাবে তৈরি হয়?",
+    "options": [
+      "বিষম বিভাজন",
+      "সুষম বিভাজন",
+      "অসম বিভাজন",
+      "None"
+    ],
+    "correctAnswer": "সুষম বিভাজন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "কোনটি উর্টজ (Wurtz) বিক্রিয়ায় অংশগ্রহণ করে না?",
+    "options": [
+      "$\\mathrm{CH}_{3} \\mathrm{I}$",
+      "$\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{Br}$",
+      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CHCH}_{2} \\mathrm{I}$",
+      "$\\left(\\mathrm{CH}_{3}\\right)_{3} \\mathrm{CBr}$"
+    ],
+    "correctAnswer": "$\\left(\\mathrm{CH}_{3}\\right)_{3} \\mathrm{CBr}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "ক্যালসিয়াম কার্বাইড এর সাথে পানির সংমিশ্রণ করলে নিচের কোনটি উৎপন্ন হবে?",
+    "options": [
+      "ইথান্যাল",
+      "ইথেন",
+      "ইথাইন",
+      "ইথিন"
+    ],
+    "correctAnswer": "ইথাইন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "নিচের কোন বিক্রিয়ায় কার্বন সংখ্যা সমান থাকে?",
+    "options": [
+      "ডিকার্বক্সিলেশন",
+      "উর্টজ",
+      "গ্রিগনার্ড বিকারক + পানি",
+      "None"
+    ],
+    "correctAnswer": "গ্রিগনার্ড বিকারক + পানি",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "নিচের কোনটি লুইস এসিড?",
+    "options": [
+      "$\\mathrm{NH}_{3}$",
+      "$\\mathrm{CH}_{4}$",
+      "$\\mathrm{H}_{2} \\mathrm{O}$",
+      "$\\mathrm{BeCl}_{2}$"
+    ],
+    "correctAnswer": "$\\mathrm{BeCl}_{2}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "নিচের কোনটি মার্কিনিকভ নীতি অনুসরণ করবে?",
+    "options": [
+      "$\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}-\\mathrm{CH}_{3}+\\mathrm{HBr} \\rightarrow$",
+      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}=\\mathrm{C}\\left(\\mathrm{CH}_{3}\\right)+\\mathrm{Br}_{2} \\rightarrow$",
+      "$\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{Br}_{2} \\rightarrow$",
+      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}=\\mathrm{CH}_{2}+\\mathrm{HBr} \\rightarrow$"
+    ],
+    "correctAnswer": "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}=\\mathrm{CH}_{2}+\\mathrm{HBr} \\rightarrow$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "$\\mathrm{R}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{OH} \\rightarrow{ }^{A l_{2} \\mathrm{O}_{3}, \\Delta} A+\\mathrm{H}_{2} \\mathrm{O} ; \\mathbf{A}$ যৌগটি- (i) ' $\\mathrm{Br}_{2}{ }^{\\prime} \\mathrm{CCl}_{4}$ দ্রবণকে বর্ণহীন করে; (ii) ইলেক্ট্রোফিলিক সংযোজন বিক্রিয়া দেয়; (iii) হাইড্রোজেনের সাথে বিক্রিয়ায় অ্যালকেন গঠন করে;নিচের কোনটি সঠিক?",
+    "options": [
+      "i,ii",
+      "ii,iii",
+      "i,iii",
+      "i,ii,iii"
+    ],
+    "correctAnswer": "i,ii,iii",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "নিচের কোনটি সঠিক?",
+    "options": [
+      "অ্যালকেনকে প্যারাফিন বলা হয়",
+      "অ্যালকেন হ্যালোজিনেশন বিক্রিয়া দেয়",
+      "অ্যালকেন নাইট্রেশন বিক্রিয়া দেয়",
+      "সবগুলো"
+    ],
+    "correctAnswer": "সবগুলো",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "আসিটিলিন $+H_{2} \\rightarrow{ }^{\\left(P d+B a S O_{4}\\right)} X ; X=$ ?",
+    "options": [
+      "$\\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{SO}_{3} \\mathrm{H}$",
+      "$\\mathrm{CH}_{2}=\\mathrm{CH}_{2}$",
+      "$\\mathrm{CH}_{3}-\\mathrm{CH}_{3}$",
+      "$C_{6} H_{6}$"
+    ],
+    "correctAnswer": "$\\mathrm{CH}_{2}=\\mathrm{CH}_{2}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "টেট্রাক্লোরো বিউটেনের সাথে $\\mathbf{Z n}$ বিক্রিয়ায় কি উৎপন্ন হয়?",
+    "options": [
+      "বিউটিন-2",
+      "বিউটেন",
+      "বিউট-2-আইন",
+      "none"
+    ],
+    "correctAnswer": "বিউট-2-আইন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "2,3-ডাইক্লোরো বিউটেনের সাথে অ্যালকোহলী NaOH বিক্রিয়া করে কি পাওয়া যায়?",
+    "options": [
+      "অ্যালকেন",
+      "অ্যালকিন",
+      "অ্যালকাইন",
+      "অ্যালকাইল হ্যালাইড"
+    ],
+    "correctAnswer": "অ্যালকিন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "গ্রিগনার্ড বিকারকের সাথে কোনটির বিক্রিয়ায় কার্বক্সিলিক এসিড উৎপন্ন হয়?",
+    "options": [
+      "$\\mathrm{CO}_{2}$",
+      "HCHO",
+      "$\\mathrm{CH}_{3} \\mathrm{CHO}$",
+      "$\\mathrm{H}_{2} \\mathrm{O}$"
+    ],
+    "correctAnswer": "$\\mathrm{CO}_{2}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "উর্টজ বিক্রিয়ার সাহায্যে নিচের কোন অ্যালকেনটি প্রস্তুত করা সম্ভব নয়?",
+    "options": [
+      "$\\mathrm{CH}_{4}$",
+      "$\\mathrm{CH}_{3}-\\mathrm{CH}_{3}$",
+      "$\\left(\\mathrm{CH}_{3}\\right)_{2}-\\mathrm{CHCH}_{2} \\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$",
+      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CHCH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$"
+    ],
+    "correctAnswer": "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CHCH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "নিচের কোনটি প্রশম নিউক্লিওফাইল?",
+    "options": [
+      "$\\mathrm{CN}^{-}$",
+      "$\\mathrm{AlCl}_{3}$",
+      "$B F_{3}$",
+      "$\\mathrm{NH}_{3}$"
+    ],
+    "correctAnswer": "$\\mathrm{NH}_{3}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "সর্বাধিক স্থায়ী কোন ফ্রি রেডিক্যাল?",
+    "options": [
+      "$3{ }^{\\circ}$",
+      "$2^{\\circ}$",
+      "$1^{\\circ}$",
+      "$\\mathrm{CH}_{3}$"
+    ],
+    "correctAnswer": "$3{ }^{\\circ}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "হাইড্রোজেন ব্রোমাইডের সাথে প্রোপিনের বিক্রিয়ায় প্রধান উৎপাদ হলো-",
+    "options": [
+      "1-bromopropane",
+      "2-bromopropane",
+      "1, 2-dibromopropane",
+      "2-bromopropene"
+    ],
+    "correctAnswer": "2-bromopropane",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "পারঅক্সাইডের উপস্থিতিতে নিচের কোনটি থাকলে অপ্রতিসম অ্যালকিনে এন্টিমার্কনিকভ নীতি প্রযোজ্য হয়?",
+    "options": [
+      "$H F$",
+      "HCl",
+      "HBr",
+      "HI"
+    ],
+    "correctAnswer": "HBr",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "কোন বিক্রিয়ায় অ্যালডিহাইড মূলক মিথিলিন মূলকে পরিণত হয়?",
+    "options": [
+      "গ্রিগনার্ড বিক্রিয়ায়",
+      "উর্টজ বিক্রিয়ায়",
+      "ক্লিমেনসেন বিজারণে",
+      "ডিকার্বক্সিলেশনে"
+    ],
+    "correctAnswer": "ক্লিমেনসেন বিজারণে",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "নিচের কোনটির যোজ্যতা শক্তিস্তরে তিনজোড়া ইলেকট্রন আছে?",
+    "options": [
+      "কার্বোক্যাটায়ন",
+      "কার্বোঅ্যানায়ন",
+      "ফ্রি-র্যাডিক্যাল",
+      "ইলেকট্রোফাইল"
+    ],
+    "correctAnswer": "ইলেকট্রোফাইল",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "নিকেল প্রভাবকের উপস্থিতিতে $180^{\\circ} \\mathrm{C}$ তাপমাত্রায় $H_{2}$ সংযোজন করলে কোনটি উৎপন্ন হয়?",
+    "options": [
+      "$C_{n} H_{2 n}$",
+      "$C_{n} H_{2 n-2}$",
+      "$C_{n} H_{2 n+2}$",
+      "$\\mathrm{C}_{n} \\mathrm{H}_{2 n+1} \\mathrm{OH}$"
+    ],
+    "correctAnswer": "$C_{n} H_{2 n+2}$",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "ডিকার্বক্সিলেশন বিক্রিয়ায় প্রোপেন পেতে হলে নিচের কোনটি ব্যবহার করতে হবে?",
+    "options": [
+      "সোডিয়াম প্রোপানয়েট",
+      "সোডিয়াম বিউটানয়েট",
+      "সোডিয়াম ইথানয়েট",
+      "সোডিয়াম পেন্টানয়েট"
+    ],
+    "correctAnswer": "সোডিয়াম বিউটানয়েট",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "দুইয়ের অধিক কার্বনবিশিষ্ট অ্যালকাইন যৌগে $2 \\% \\mathrm{HgSO}_{4}$ এবং $20 \\% \\mathrm{H}_{2} \\mathrm{SO}_{4}$ এর উপস্থিতিতে পানি যোগ করলে কি পাওয়া যায়?",
+    "options": [
+      "অ্যালডিহাইড",
+      "কিটোন",
+      "এসিড",
+      "কোনোটি নয়"
+    ],
+    "correctAnswer": "কিটোন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "নিচের কোনটি বেয়ার টেস্ট দিবে?",
+    "options": [
+      "[1]",
+      "四",
+      "a ও b উভয়ই"
+    ],
+    "correctAnswer": "a ও b উভয়ই",
+    "image": null,
+    "type": "multiple-choice"
+  }
+    ]
