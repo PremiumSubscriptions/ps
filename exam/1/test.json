@@ -1,326 +1,282 @@
 [
   {
     "id": 1,
-    "question": "নিচের কোনটি Controlled বিজারণ ঘটায়?",
-    "options": [
-      "$\\mathrm{Pd}+\\mathrm{BaSO}_{4}$",
-      "$\\mathrm{SnCl}_{2}+\\mathrm{HCl}$",
-      "Pt/Ni",
-      "$\\mathrm{Sn}+\\mathrm{HCl}$"
-    ],
-    "correctAnswer": "$\\mathrm{Pd}+\\mathrm{BaSO}_{4}$",
+    "question": "এক লোক বেগে যাওয়ার সময় বৃদ্ধির সম্মুখীন হয়। বৃদ্ধি বেগে পতিত হলে লোককে বৃদ্ধি থেকে বাঁচতে উলম্বের সাথে কত কোণে ছাতা ধরতে হবে ?",
+    "options": ["30°", "45°", "60°", "90°"],
+    "correctAnswer": "60°",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 2,
-    "question": "নিচের কোনটি অপসারণ বিক্রিয়া দিবে?",
-    "options": [
-      "<smiles>CC(=O)[IH-]</smiles>",
-      "$C \\equiv C$",
-      "$R-X$",
-      "$\\mathrm{C}_{6} \\mathrm{H}_{6}$"
-    ],
-    "correctAnswer": "$R-X$",
+    "question": "p এর মান কত হলে ভেক্টর V = (5x + 2y)i + (2py - z)j + (x - 2z)k সলিনয়ডাল হবে ?",
+    "options": ["1/2", "-1/2", "3/2", "-3/2"],
+    "correctAnswer": "-3/2",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 3,
-    "question": "ফ্রি-রেডিক্যাল কীভাবে তৈরি হয়?",
-    "options": [
-      "বিষম বিভাজন",
-      "সুষম বিভাজন",
-      "অসম বিভাজন",
-      "None"
-    ],
-    "correctAnswer": "সুষম বিভাজন",
+    "question": "ভেক্টর P = 3i - 2j + 5k X-অক্ষের সাথে কত কোণ তৈরি করবে ?",
+    "options": ["sin^{-1}(3/√38)", "tan^{-1}(3/√38)", "cos^{-1}(3/√38)", "None"],
+    "correctAnswer": "cos^{-1}(3/√38)",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 4,
-    "question": "কোনটি উর্টজ (Wurtz) বিক্রিয়ায় অংশগ্রহণ করে না?",
-    "options": [
-      "$\\mathrm{CH}_{3} \\mathrm{I}$",
-      "$\\mathrm{CH}_{3} \\mathrm{CH}_{2} \\mathrm{Br}$",
-      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CHCH}_{2} \\mathrm{I}$",
-      "$\\left(\\mathrm{CH}_{3}\\right)_{3} \\mathrm{CBr}$"
-    ],
-    "correctAnswer": "$\\left(\\mathrm{CH}_{3}\\right)_{3} \\mathrm{CBr}$",
+    "question": "এক কণার উপর বল F = (5i + 3j - 2k)N প্রয়োগ করা হলে কণার সরণ হয় r = (3i + k - 2j)m. কণার উপর বল দ্বারা সম্পাদিত কাজের মান কত?",
+    "options": ["22J", "20J", "7J", "14J"],
+    "correctAnswer": "7J",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 5,
-    "question": "ক্যালসিয়াম কার্বাইড এর সাথে পানির সংমিশ্রণ করলে নিচের কোনটি উৎপন্ন হবে?",
-    "options": [
-      "ইথান্যাল",
-      "ইথেন",
-      "ইথাইন",
-      "ইথিন"
-    ],
-    "correctAnswer": "ইথাইন",
+    "question": "দুই বল পরস্পর এক সমকোণে ক্রিয়ারত থাকলে তাদের লব্ধি √13N এবং তারা 120° কোণে ক্রিয়ারত থাকলে তাদের লব্ধি √7N। বল দুটির সমান কত?",
+    "options": ["7N", "8N", "5N", "6N"],
+    "correctAnswer": "5N",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 6,
-    "question": "নিচের কোন বিক্রিয়ায় কার্বন সংখ্যা সমান থাকে?",
-    "options": [
-      "ডিকার্বক্সিলেশন",
-      "উর্টজ",
-      "গ্রিগনার্ড বিকারক + পানি",
-      "None"
-    ],
-    "correctAnswer": "গ্রিগনার্ড বিকারক + পানি",
+    "question": "অবস্থান ভেক্টর r = 3x i + 2y j + 4z k এর ডাইভারজেন্স কত?",
+    "options": ["9", "7", "24", "5"],
+    "correctAnswer": "9",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 7,
-    "question": "নিচের কোনটি লুইস এসিড?",
-    "options": [
-      "$\\mathrm{NH}_{3}$",
-      "$\\mathrm{CH}_{4}$",
-      "$\\mathrm{H}_{2} \\mathrm{O}$",
-      "$\\mathrm{BeCl}_{2}$"
-    ],
-    "correctAnswer": "$\\mathrm{BeCl}_{2}$",
+    "question": "এক বাক্সকে 50N বল দ্বারা পশ্চিম দিকে এবং 20N বল দ্বারা উত্তর দিকে টানা হচ্ছে । লব্ধি বলের মান কত হবে ?",
+    "options": ["53.85 N", "63.85 N", "42.78N", "23.72 N"],
+    "correctAnswer": "53.85 N",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 8,
-    "question": "নিচের কোনটি মার্কিনিকভ নীতি অনুসরণ করবে?",
-    "options": [
-      "$\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}-\\mathrm{CH}_{3}+\\mathrm{HBr} \\rightarrow$",
-      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}=\\mathrm{C}\\left(\\mathrm{CH}_{3}\\right)+\\mathrm{Br}_{2} \\rightarrow$",
-      "$\\mathrm{CH}_{3}-\\mathrm{CH}=\\mathrm{CH}_{2}+\\mathrm{Br}_{2} \\rightarrow$",
-      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}=\\mathrm{CH}_{2}+\\mathrm{HBr} \\rightarrow$"
-    ],
-    "correctAnswer": "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{C}=\\mathrm{CH}_{2}+\\mathrm{HBr} \\rightarrow$",
+    "question": "ভেক্টরের বিভাজনের দৃষ্টান্ত কোনটি?",
+    "options": ["নট না নৌকার গতি", "চলন্ত গাড়ীতে পড়ন্ত বৃক্ষ", "পাখির উড্ডয়ন", "গাড়ীর গতি"],
+    "correctAnswer": "নট না নৌকার গতি",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 9,
-    "question": "$\\mathrm{R}-\\mathrm{CH}_{2}-\\mathrm{CH}_{2}-\\mathrm{OH} \\rightarrow{ }^{A l_{2} \\mathrm{O}_{3}, \\Delta} A+\\mathrm{H}_{2} \\mathrm{O} ; \\mathbf{A}$ যৌগটি- (i) ' $\\mathrm{Br}_{2}{ }^{\\prime} \\mathrm{CCl}_{4}$ দ্রবণকে বর্ণহীন করে; (ii) ইলেক্ট্রোফিলিক সংযোজন বিক্রিয়া দেয়; (iii) হাইড্রোজেনের সাথে বিক্রিয়ায় অ্যালকেন গঠন করে;নিচের কোনটি সঠিক?",
-    "options": [
-      "i,ii",
-      "ii,iii",
-      "i,iii",
-      "i,ii,iii"
-    ],
-    "correctAnswer": "i,ii,iii",
+    "question": "i - j এবং i + j ভেক্টর দুটির মধ্য বর্তী কোণ কত?",
+    "options": ["30°", "60°", "45°", "90°"],
+    "correctAnswer": "90°",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 10,
-    "question": "নিচের কোনটি সঠিক?",
-    "options": [
-      "অ্যালকেনকে প্যারাফিন বলা হয়",
-      "অ্যালকেন হ্যালোজিনেশন বিক্রিয়া দেয়",
-      "অ্যালকেন নাইট্রেশন বিক্রিয়া দেয়",
-      "সবগুলো"
-    ],
-    "correctAnswer": "সবগুলো",
+    "question": "ব্যাসার্ধ ভেক্টর r = 2i + j + 0k এবং বল ভেক্টর F = 3i + j + 5k হলে বলের ভ্রামকের মান হবে -",
+    "options": ["2i - 2k", "5i - 10j - k", "2i - 3j - 2k", "2i + 2k"],
+    "correctAnswer": "5i - 10j - k",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 11,
-    "question": "আসিটিলিন $+H_{2} \\rightarrow{ }^{\\left(P d+B a S O_{4}\\right)} X ; X=$ ?",
-    "options": [
-      "$\\mathrm{CH}_{3}-\\mathrm{CH}_{2}-\\mathrm{SO}_{3} \\mathrm{H}$",
-      "$\\mathrm{CH}_{2}=\\mathrm{CH}_{2}$",
-      "$\\mathrm{CH}_{3}-\\mathrm{CH}_{3}$",
-      "$C_{6} H_{6}$"
-    ],
-    "correctAnswer": "$\\mathrm{CH}_{2}=\\mathrm{CH}_{2}$",
+    "question": "কোনটি y-অক্ষের উপর লম্ব হবে ?",
+    "options": ["(i×j)×i", "(i×j)×k", "(k×j)×k", "(j×i)×j"],
+    "correctAnswer": "(j×i)×j",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 12,
-    "question": "টেট্রাক্লোরো বিউটেনের সাথে $\\mathbf{Z n}$ বিক্রিয়ায় কি উৎপন্ন হয়?",
-    "options": [
-      "বিউটিন-2",
-      "বিউটেন",
-      "বিউট-2-আইন",
-      "none"
-    ],
-    "correctAnswer": "বিউট-2-আইন",
+    "question": "সুরমা নদীতে স্রোতের বেগ 3 km/h। এক ব্যক্তি বেগ 5 km/h নৌকা চালাতে সক্ষম। নদীর প্রস্থ 0.5 km। স্রোতের সঙ্গে কত ডিগ্রি কোণে নৌকা চালালে সে 12 min এ নদীর অপর পারে এক নির্দিষ্ট ঘাটে পৌঁছাতে পারবে ?",
+    "options": ["30°", "50°", "45°", "59°"],
+    "correctAnswer": "30°",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 13,
-    "question": "2,3-ডাইক্লোরো বিউটেনের সাথে অ্যালকোহলী NaOH বিক্রিয়া করে কি পাওয়া যায়?",
-    "options": [
-      "অ্যালকেন",
-      "অ্যালকিন",
-      "অ্যালকাইন",
-      "অ্যালকাইল হ্যালাইড"
-    ],
-    "correctAnswer": "অ্যালকিন",
+    "question": "সুমন ভাই একটি লন রোলারের আনুভূমিকের সাথে 30° কোণে 10 N বলে টানতে থাকে। অপরদিকে সুমনা ভাবি একটি লন রোলারের আনুভূমিকের সাথে 30° কোণে 10N বল দ্বারা ঠেলতে থাকে। সুমনা ভাবির তুলনায় সুমন ভাইয়ের ক্ষেত্রে কত ওজন কম হবে ?",
+    "options": ["20N", "4N", "10N", "40N"],
+    "correctAnswer": "10N",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 14,
-    "question": "গ্রিগনার্ড বিকারকের সাথে কোনটির বিক্রিয়ায় কার্বক্সিলিক এসিড উৎপন্ন হয়?",
-    "options": [
-      "$\\mathrm{CO}_{2}$",
-      "HCHO",
-      "$\\mathrm{CH}_{3} \\mathrm{CHO}$",
-      "$\\mathrm{H}_{2} \\mathrm{O}$"
-    ],
-    "correctAnswer": "$\\mathrm{CO}_{2}$",
+    "question": "যদি A = 3i - k এবং B = i + 2j একই সামান্তরিকের দুটি সন্নিহিত বাহু হয় তবে সামান্তরিকের ক্ষেত্রফল কত?",
+    "options": ["4√7", "√41", "√43", "3√3"],
+    "correctAnswer": "√41",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 15,
-    "question": "উর্টজ বিক্রিয়ার সাহায্যে নিচের কোন অ্যালকেনটি প্রস্তুত করা সম্ভব নয়?",
-    "options": [
-      "$\\mathrm{CH}_{4}$",
-      "$\\mathrm{CH}_{3}-\\mathrm{CH}_{3}$",
-      "$\\left(\\mathrm{CH}_{3}\\right)_{2}-\\mathrm{CHCH}_{2} \\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$",
-      "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CHCH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$"
-    ],
-    "correctAnswer": "$\\left(\\mathrm{CH}_{3}\\right)_{2} \\mathrm{CHCH}_{2}-\\mathrm{CH}_{2}-\\mathrm{CH}\\left(\\mathrm{CH}_{3}\\right)_{2}$",
+    "question": "বৃহত্তম বলের মান 13N এবং ক্ষুদ্রতম বল লব্ধি বলের সাথে 90° কোণ উৎপন্ন করে। ক্ষুদ্রতম বলের মান 5N হলে লব্ধি বল কত?",
+    "options": ["15N", "18N", "8N", "12N"],
+    "correctAnswer": "12N",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 16,
-    "question": "নিচের কোনটি প্রশম নিউক্লিওফাইল?",
-    "options": [
-      "$\\mathrm{CN}^{-}$",
-      "$\\mathrm{AlCl}_{3}$",
-      "$B F_{3}$",
-      "$\\mathrm{NH}_{3}$"
-    ],
-    "correctAnswer": "$\\mathrm{NH}_{3}$",
+    "question": "A = 2i + m j + n k এবং B = 4i + 6j + 8k এবং A ∥ B হলে m ও n এর মান কত?",
+    "options": ["m=3, n=4", "m=2, n=3", "m=4, n=3", "m=1, n=2"],
+    "correctAnswer": "m=3, n=4",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 17,
-    "question": "সর্বাধিক স্থায়ী কোন ফ্রি রেডিক্যাল?",
-    "options": [
-      "$3{ }^{\\circ}$",
-      "$2^{\\circ}$",
-      "$1^{\\circ}$",
-      "$\\mathrm{CH}_{3}$"
-    ],
-    "correctAnswer": "$3{ }^{\\circ}$",
+    "question": "ভেক্টর A = 2i + 4j - 5k এবং B = i + 2j + 3k দেওয়া আছে। তবে |A + B| কত?",
+    "options": ["3", "6", "7", "9"],
+    "correctAnswer": "7",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 18,
-    "question": "হাইড্রোজেন ব্রোমাইডের সাথে প্রোপিনের বিক্রিয়ায় প্রধান উৎপাদ হলো-",
-    "options": [
-      "1-bromopropane",
-      "2-bromopropane",
-      "1, 2-dibromopropane",
-      "2-bromopropene"
-    ],
-    "correctAnswer": "2-bromopropane",
+    "question": "কোনো এক কণা A(3,5,7) বিন্দু থেকে B(5,6,7) বিন্দুতে স্থানান্তরিত হলে কণার সরণ ভেক্টরের মান-",
+    "options": ["i + j + 7k", "2i + 2j + k", "2i + j", "8i + 11k"],
+    "correctAnswer": "2i + j",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 19,
-    "question": "পারঅক্সাইডের উপস্থিতিতে নিচের কোনটি থাকলে অপ্রতিসম অ্যালকিনে এন্টিমার্কনিকভ নীতি প্রযোজ্য হয়?",
-    "options": [
-      "$H F$",
-      "HCl",
-      "HBr",
-      "HI"
-    ],
-    "correctAnswer": "HBr",
+    "question": "তিনটি ভেক্টরের সহগসমূহ নিয়ে গঠিত নির্ণায়কের মান শূন্য। নিচের কোনটি সঠিক?",
+    "options": ["(A×B)·C = 0", "(B×C)·A = 0", "(C×A)·B = 0", "তিনটি ই"],
+    "correctAnswer": "তিনটি ই",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 20,
-    "question": "কোন বিক্রিয়ায় অ্যালডিহাইড মূলক মিথিলিন মূলকে পরিণত হয়?",
-    "options": [
-      "গ্রিগনার্ড বিক্রিয়ায়",
-      "উর্টজ বিক্রিয়ায়",
-      "ক্লিমেনসেন বিজারণে",
-      "ডিকার্বক্সিলেশনে"
-    ],
-    "correctAnswer": "ক্লিমেনসেন বিজারণে",
+    "question": "x i + (1/2) j + (1/√2) k একক ভেক্টর হলে x এর মান কত হবে ?",
+    "options": ["1/4", "1/√2", "1/2", "1"],
+    "correctAnswer": "1/2",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 21,
-    "question": "নিচের কোনটির যোজ্যতা শক্তিস্তরে তিনজোড়া ইলেকট্রন আছে?",
-    "options": [
-      "কার্বোক্যাটায়ন",
-      "কার্বোঅ্যানায়ন",
-      "ফ্রি-র্যাডিক্যাল",
-      "ইলেকট্রোফাইল"
-    ],
-    "correctAnswer": "ইলেকট্রোফাইল",
+    "question": "ঘটায় 25 km বেগে পূর্বদিকে চলমান একটি গাড়ীর चालক ঘণ্টায় 25√3 km বেগে একটি ট্রাককে উত্তর দিকে চলতে দেখলো। ট্রাক কোন দিকে চলছে ?",
+    "options": ["20°", "30°", "45°", "60°"],
+    "correctAnswer": "60°",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 22,
-    "question": "নিকেল প্রভাবকের উপস্থিতিতে $180^{\\circ} \\mathrm{C}$ তাপমাত্রায় $H_{2}$ সংযোজন করলে কোনটি উৎপন্ন হয়?",
-    "options": [
-      "$C_{n} H_{2 n}$",
-      "$C_{n} H_{2 n-2}$",
-      "$C_{n} H_{2 n+2}$",
-      "$\\mathrm{C}_{n} \\mathrm{H}_{2 n+1} \\mathrm{OH}$"
-    ],
-    "correctAnswer": "$C_{n} H_{2 n+2}$",
+    "question": "ভেক্টর 4i + 2j + 8k এর xy সমতলে দৈর্ঘ্য কত?",
+    "options": ["√10", "2√10", "2√5", "√5"],
+    "correctAnswer": "2√5",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 23,
-    "question": "ডিকার্বক্সিলেশন বিক্রিয়ায় প্রোপেন পেতে হলে নিচের কোনটি ব্যবহার করতে হবে?",
-    "options": [
-      "সোডিয়াম প্রোপানয়েট",
-      "সোডিয়াম বিউটানয়েট",
-      "সোডিয়াম ইথানয়েট",
-      "সোডিয়াম পেন্টানয়েট"
-    ],
-    "correctAnswer": "সোডিয়াম বিউটানয়েট",
+    "question": "ত্রিমাত্রিক ভেক্টর R = 3i + 4j + 5k হলে Y অক্ষের উপাংশের মান কত?",
+    "options": ["3", "4", "5", "7"],
+    "correctAnswer": "4",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 24,
-    "question": "দুইয়ের অধিক কার্বনবিশিষ্ট অ্যালকাইন যৌগে $2 \\% \\mathrm{HgSO}_{4}$ এবং $20 \\% \\mathrm{H}_{2} \\mathrm{SO}_{4}$ এর উপস্থিতিতে পানি যোগ করলে কি পাওয়া যায়?",
-    "options": [
-      "অ্যালডিহাইড",
-      "কিটোন",
-      "এসিড",
-      "কোনোটি নয়"
-    ],
-    "correctAnswer": "কিটোন",
+    "question": "নিচের কোনটি ভেক্টর রাশি নয়?",
+    "options": ["বৈদ্যুতিক প্রাবল্য", "বৈদ্যুতিক বিভব", "ওজন", "ভরবেগ"],
+    "correctAnswer": "বৈদ্যুতিক বিভব",
     "image": null,
     "type": "multiple-choice"
   },
   {
     "id": 25,
-    "question": "নিচের কোনটি বেয়ার টেস্ট দিবে?",
-    "options": [
-      "[1]",
-      "四",
-      "a ও b উভয়ই"
-    ],
-    "correctAnswer": "a ও b উভয়ই",
+    "question": "5N এবং 10N মানের দুইটি বল একটি কণার উপর আরোপিত হলে কোন বলটি কণার উপর লব্ধি বল হতে পারে না ?",
+    "options": ["5N", "10N", "15N", "20N"],
+    "correctAnswer": "20N",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 26,
+    "question": "দুটি ভেক্টর রাশির স্কেলার গুণফল 21 একক। এদের ভেক্টর গুণফলের মান 7√3 একক। ভেক্টর দুটির মধ্য বর্তী কোণ কত?",
+    "options": ["60°", "50°", "45°", "30°"],
+    "correctAnswer": "30°",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 27,
+    "question": "মা নুষকে সা মনে চলতে সা হা য্য করে -",
+    "options": ["উল্লম্ব উপাংশ", "আনুভূমিক উপাংশ", "(উল্লম্ব-আনুভূমিক) উপাংশ", "None"],
+    "correctAnswer": "আনুভূমিক উপাংশ",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 28,
+    "question": "|A+B| = |A-B| হলে নিচের কোনটি সঠিক?",
+    "options": ["A×B=0", "A·B=0", "A·B=AB", "None"],
+    "correctAnswer": "A·B=0",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 29,
+    "question": "স্রোত না থাকলে রিয়াজ 4km/h বেগে সাতার কাটতে পারে। নদীর ঐপারে ডিপোজল শাবনুরকে কিডনা প করে নিয়ে গেছে। 2 km/h বেগে বাহিত নদীর এপার থেকে ক ওপারের বিপরীত বিন্দুতে যেতে রিয়াজকে কত কোণে সাঁতার কাটতে হবে ?",
+    "options": ["90°", "120°", "0°", "180°"],
+    "correctAnswer": "120°",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 30,
+    "question": "10N এবং 10N মানের দুইটি বল কোনো বিন্দুতে একসাথে কত কোণে কাজ করলে লব্ধির মান 10N হবে ?",
+    "options": ["50°", "120°", "60°", "90°"],
+    "correctAnswer": "120°",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 31,
+    "question": "A×B = C হলে C·A কত হবে ?",
+    "options": ["|A||B|", "|C||A|", "0", "None"],
+    "correctAnswer": "0",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 32,
+    "question": "(1, -1, 1) অবস্থানে A = 3xyz³ i + 2xy² j - x³y²z k এর ডাইভারজেন্স নির্ণয় কর।",
+    "options": ["0", "8", "-2", "-8"],
+    "correctAnswer": "-8",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 33,
+    "question": "দুটি ভেক্টরের মধ্যে একটি অন্যটির দ্বিগুণ এবং এদের লব্ধির মান বড় ভেক্টরের সমান হলে ভেক্টর দুটির মধ্যকার কোণের মান-",
+    "options": ["cos^{-1}(1/2)", "cos^{-1}(-1/4)", "cos^{-1}(1/4)", "None"],
+    "correctAnswer": "cos^{-1}(-1/4)",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 34,
+    "question": "P = 2i + 2j - k এবং Q = 6i + 3j - 3k ভেক্টর দুটির উভয়ের উপর লম্ব দিকে একটি একক ভেক্টর কোনটি হবে ?",
+    "options": ["-j -2k", "-3i -6k", "-3(i+2k)/√45", "-3(i-2k)/√45"],
+    "correctAnswer": "-3(i+2k)/√45",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 35,
+    "question": "A = 2a i + a j - a k; B = a i - 2j + k এবং A ⊥ B হলে a=?",
+    "options": ["2, -3", "-1, 3", "0, 3/2", "-3, -2"],
+    "correctAnswer": "0, 3/2",
     "image": null,
     "type": "multiple-choice"
   }
-    ]
+]
