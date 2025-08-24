@@ -1,0 +1,457 @@
+[
+  {
+    "id": 1,
+    "question": "যখন একটি পরমাণুর নিউক্লিয়াস থেকে একটি বিটা কণা নির্গত হল, তখন-",
+    "options": [
+      "পরমাণবিক সংখ্যা এক কমে যায়",
+      "ভর সংখ্যা এক কমে যায়",
+      "পরমাণবিক সংখ্যা এক বেড়ে যায়",
+      "পরমাণবিক সংখ্যা দুই কমে যায়"
+    ],
+    "correctAnswer": "পরমাণবিক সংখ্যা এক বেড়ে যায়",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "কোনো উদ্ভিদ বা প্রাণীর মৃত্যুকাল নির্ণয়ের জন্য নিম্নের কোন তেজস্ক্রিয় আইসোটোপ ব্যবহার করা হয়?",
+    "options": [
+      "12C",
+      "14C",
+      "235U",
+      "131I"
+    ],
+    "correctAnswer": "14C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "রেডনের অর্ধায়ু হলে এর মান-",
+    "options": [
+      "10d",
+      "100d",
+      "1000d",
+      "100y"
+    ],
+    "correctAnswer": "100d",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "P₄ এর 15 অণুর মধ্যে কয়টি নিউট্রন আছে?",
+    "options": [
+      "160",
+      "64",
+      "960",
+      "1800"
+    ],
+    "correctAnswer": "960",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "ফিশন বিক্রিয়াটি পূর্ণ কর (x,y) কত হবে? ²³⁵U₉₂ + ¹n₀ → ⁹⁰Sr₃₈ + x + y",
+    "options": [
+      "¹⁴⁶Xe₅₄",
+      "¹⁴⁶Xe₅₄ + ¹n₀",
+      "¹⁴³Xe₅₄ + 3¹n₀",
+      "None"
+    ],
+    "correctAnswer": "¹⁴³Xe₅₄ + 3¹n₀",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "বিটা রশ্মির বর্ণালী হতে নিউক্লিয়াসে কোন কণার অস্তিত্বের পরিচয় পাওয়া যায়?",
+    "options": [
+      "মেসন",
+      "ইন",
+      "নিউট্রিনো",
+      "প্রোটন"
+    ],
+    "correctAnswer": "নিউট্রিনো",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "রেডিওমেয়ারের গড় আয়ু এবং অর্ধায়ুর অনুপাত-",
+    "options": [
+      "-0.367",
+      "0.367",
+      "0.693",
+      "1.44"
+    ],
+    "correctAnswer": "1.44",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "90 দিন পর একটি তেজস্ক্রিয় বস্তুর 25% অবশিষ্ট থাকলে বস্তুর অর্ধজীবন কত?",
+    "options": [
+      "20 দিন",
+      "45 দিন",
+      "30 দিন",
+      "40 দিন"
+    ],
+    "correctAnswer": "45 দিন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "²³Na₁₁ পরমাণুতে নিউক্লিয়ন আছে -",
+    "options": [
+      "23",
+      "44",
+      "11",
+      "12"
+    ],
+    "correctAnswer": "23",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "এক্স-রশ্মির (x-ray) চার্জ-",
+    "options": [
+      "ধনাত্মক",
+      "ঋণাত্মক",
+      "চার্জহীন",
+      "কোনই নয়"
+    ],
+    "correctAnswer": "চার্জহীন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "কোন বিষয়ের উপর তেজস্ক্রিয় মৌলের অর্ধজীবন নির্ভর করে?",
+    "options": [
+      "তাপমাত্রা",
+      "চাপ",
+      "মৌলের কৃতি",
+      "মৌলের পরিমাণ"
+    ],
+    "correctAnswer": "মৌলের কৃতি",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "হাইড্রোজেন পরমাণুর প্রথম বোর কক্ষে ইলেকট্রনের মোট শক্তি -13.6eV হলে, দ্বিতীয় বোর কক্ষে মোট শক্তি কত হবে?",
+    "options": [
+      "-1.5eV",
+      "-3.4eV",
+      "-4.5eV",
+      "-40.8eV"
+    ],
+    "correctAnswer": "-3.4eV",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "1kg ভরের তেজস্ক্রিয় মৌলের অর্ধায়ু 10 দিন। 30 দিন পর 1 kg পদার্থের কতটুকু অবশিষ্ট থাকবে?",
+    "options": [
+      "0.500kg",
+      "0.333kg",
+      "0kg",
+      "0.125kg"
+    ],
+    "correctAnswer": "0.125kg",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "তেজস্ক্রিয় রশ্মিগুলোর ভেদন ক্ষমতা বিবেচনায় নিচের কোনটি সঠিক?",
+    "options": [
+      "রশ্মি > রশ্মি > রশ্মি",
+      "রশ্মি > রশ্মি > রশ্মি",
+      "রশ্মি > রশ্মি > রশ্মি",
+      "রশ্মি > রশ্মি > রশ্মি"
+    ],
+    "correctAnswer": "রশ্মি > রশ্মি > রশ্মি",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "হাইড্রোজেন পরমাণুর ইলেকট্রনের সর্বনিম্ন কক্ষীয় কৌণিক ভরবেগ কোনটি?",
+    "options": [
+      "h",
+      "h/λ",
+      "h/π",
+      "h/2π"
+    ],
+    "correctAnswer": "h/2π",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "ইলেকট্রনের এন্টি পার্টিকেল হলো -",
+    "options": [
+      "প্রোটন",
+      "নিউট্রন",
+      "পজিট্রন",
+      "এন্টি প্রোটন"
+    ],
+    "correctAnswer": "পজিট্রন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "প্রথম ও দ্বিতীয় বোর কক্ষপথে ইলেকট্রনের শক্তির অনুপাত-",
+    "options": [
+      "1 : 2",
+      "1 : 4",
+      "2 : 1",
+      "4 : 1"
+    ],
+    "correctAnswer": "4 : 1",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "¹⁵N₇ ও ¹⁶O₈ পরমাণু দুটির-",
+    "options": [
+      "আইসোটোন",
+      "আイソトープ",
+      "আইসোবার",
+      "কোনই নয়"
+    ],
+    "correctAnswer": "আইসোটোন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "কোনো তেজস্ক্রিয় পদার্থের অর্ধায়ু 1.8 দিন। 5.4 দিন পর এর কত অংশ অপক্ষয় হবে -",
+    "options": [
+      "1/8",
+      "7/8",
+      "8/7",
+      "8"
+    ],
+    "correctAnswer": "7/8",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "কোনো তেজস্ক্রিয় পদার্থের অর্ধায়ু 5 দিন, তবে 20 দিন পর সম্পূর্ণ অংশের কত ভাগ অবশিষ্ট থাকবে?",
+    "options": [
+      "1/256",
+      "1/64",
+      "1/16",
+      "1/8"
+    ],
+    "correctAnswer": "1/16",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "স্ট্রনশিয়াম মেয়ারের অর্ধায়ু 12.5 বছর। এর গড় আয়ু কত?",
+    "options": [
+      "8.67 বছর",
+      "18 বছর",
+      "6.5 বছর",
+      "25 বছর"
+    ],
+    "correctAnswer": "18 বছর",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "সূর্যের শক্তির উৎস কী?",
+    "options": [
+      "ফিউশন",
+      "ফিশন",
+      "তেজস্ক্রিয়তা",
+      "কোনই নয়"
+    ],
+    "correctAnswer": "ফিউশন",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "কোনো তেজস্ক্রিয় পদার্থের ক্ষয় ধ্রুবকের মান 0.231×10⁻³y⁻¹ হলে এর অর্ধজীবন কত?",
+    "options": [
+      "0.3×10³y",
+      "0.3×10⁻³y",
+      "3×10³y",
+      "3.2×10³y"
+    ],
+    "correctAnswer": "3×10³y",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "হাইড্রোজেনের 10তম কক্ষপথের ব্যাসার্ধ কত? [r₀ = 0.53Å]",
+    "options": [
+      "5.3×10⁻¹⁰m",
+      "53×10⁻¹⁰m",
+      "5.3×10⁻⁸m",
+      "5.3×10⁻⁸m"
+    ],
+    "correctAnswer": "53×10⁻¹⁰m",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "A, B ও C তিনটি তেজস্ক্রিয় মৌলের অর্ধায়ু যথাক্রমে T_A, T_B, T_C এবং তাদের ক্ষয় ধ্রুবক যথাক্রমে λ_A, λ_B, λ_C; [এখানে λ_A > λ_B > λ_C] নিচের কোনটি সঠিক?",
+    "options": [
+      "T_A > T_B > T_C",
+      "T_C > T_A > T_B",
+      "T_C > T_B > T_A",
+      "T_A > T_C > T_B"
+    ],
+    "correctAnswer": "T_C > T_B > T_A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 26,
+    "question": "স্ট্রনশিয়াম মেয়ারের অর্ধ-জীবন 12.5 বছর। একখণ্ড স্ট্রনশিয়াম মেয়ারের অংশের 7/8 অংশ অপক্ষয় হতে কত সময় লাগবে?",
+    "options": [
+      "12.5 years",
+      "25 years",
+      "37.5 years",
+      "50 years"
+    ],
+    "correctAnswer": "37.5 years",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 27,
+    "question": "আলফা কণা বিক্ষেপণ পরীক্ষা করে নেন কে?",
+    "options": [
+      "থমসন",
+      "রাদারফোর্ড",
+      "বোর",
+      "বেকেরেল"
+    ],
+    "correctAnswer": "রাদারফোর্ড",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 28,
+    "question": "কোনো তেজস্ক্রিয় মৌলের ক্ষয় ধ্রুবকের মান 0.01/s। এর অর্ধায়ু-",
+    "options": [
+      "0.693s",
+      "6.93s",
+      "69.3s",
+      "693s"
+    ],
+    "correctAnswer": "69.3s",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 29,
+    "question": "কোনো একটি তেজস্ক্রিয় পদার্থের অর্ধায়ু 15 বছর। 30 বছরে ঐ পদার্থের একখণ্ডের কত অংশ অপক্ষয় হবে?",
+    "options": [
+      "1/2",
+      "1/4",
+      "3/4",
+      "2"
+    ],
+    "correctAnswer": "3/4",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 30,
+    "question": "জাল টাকা সনাক্তকরণে কোন রশ্মির ব্যবহার অত্যন্ত নির্ভুল ও সময় উপযোগী?",
+    "options": [
+      "X-ray",
+      "UV-ray",
+      "γ-ray",
+      "β-ray"
+    ],
+    "correctAnswer": "UV-ray",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 31,
+    "question": "দুর্বল নিউক্লিয় বল সৃষ্ট হয়-",
+    "options": [
+      "বিটা ক্ষয়ের জন্য",
+      "প্রোটন ক্ষয়ের জন্য",
+      "গামা ক্ষয়ের জন্য",
+      "নিউট্রন ক্ষয়ের জন্য"
+    ],
+    "correctAnswer": "বিটা ক্ষয়ের জন্য",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 32,
+    "question": "2 কুরি = কত?",
+    "options": [
+      "3.7×10⁻¹⁰decays⁻¹",
+      "7.4×10⁹decays⁻¹",
+      "3.7×10¹⁰decays⁻¹",
+      "7.4×10¹⁰decays⁻¹"
+    ],
+    "correctAnswer": "7.4×10¹⁰decays⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 33,
+    "question": "আইসোটোপ ²¹⁴Bi₈₃ হতে একটি আলফা কণা নিঃসরণ এর ফলে প্রোডাক্ট আইসোটোপ হবে -",
+    "options": [
+      "²¹⁰Au₇₉",
+      "²¹⁰Tl₈₁",
+      "²¹⁰Bi₈₃",
+      "²¹⁰At₈₅"
+    ],
+    "correctAnswer": "²¹⁰Tl₈₁",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 34,
+    "question": "রেডিওমেয়ারের গড় আয়ু 10 বছর; এর অর্ধ ক্ষয় ধ্রুবকের মান কত?",
+    "options": [
+      "0.1y⁻¹",
+      "0.15y⁻¹",
+      "0.3y⁻¹",
+      "0.4y⁻¹"
+    ],
+    "correctAnswer": "0.1y⁻¹",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 35,
+    "question": "নিচের কোন নিউক্লিয়াসে প্রোটন ও নিউট্রনের সংখ্যা সমান?",
+    "options": [
+      "¹H₁",
+      "⁷Li₃",
+      "¹²C₆",
+      "²³Na₁₁"
+    ],
+    "correctAnswer": "¹²C₆",
+    "image": null,
+    "type": "multiple-choice"
+  }
+]
