@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "question": "5W এ 2 ঘন্টায় কি পরিমাণ শক্তি ব্যয় হবে?",
+    "options": ["360J", "3600J", "36000 J", "360000 J"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 2,
+    "question": "ভূমধ্য সাগরীয় রোগ বলা হয় কোনকে?",
+    "options": ["হিমোফিলিয়া", "থ্যালাসেমিয়া", "সিকফাইব্রোসিস", "ব্রাকিফ্যালাঞ্জি"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 3,
+    "question": "Cycas এর পরাগায়ন ঘটে কিসের মাধ্যমে?",
+    "options": ["পানি", "বাতাস", "প্রাণী", "পানি ও বাতাস"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 4,
+    "question": "একটি 3m দৈর্ঘ্যের সরু সুষম দন্ডের ভর 4kg, দন্ডের প্রান্তবিন্দুগামী অক্ষকে কেন্দ্র করে ঘুরছে। ঘূর্ণন অক্ষ সম্পর্কে জড়তার ভ্রামক কত?",
+    "options": ["36kgm²", "18kgm²", "12kgm²", "24kgm²"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 5,
+    "question": "বৃত্তের অক্ষকে স্পর্শ করলে c = ?",
+    "options": ["1", "2", "3", "4"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 6,
+    "question": "কুমড়ার গর্ভাশয় কোন আকৃতির?",
+    "options": ["অধিগর্ভ", "উপ-অধঃগর্ভ", "উপ-অধিগর্ভ", "অধোঃগর্ভ"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 7,
+    "question": "কোনটি যৌগিক ফল?",
+    "options": ["কাঁঠাল", "আম", "বেরি", "আতা"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 8,
+    "question": "কোন রোগের কারণে মানুষের সমদেহে ঘন লোমের উপস্থিতি দেখা যায়?",
+    "options": ["মাসক্যুলার ডিস্ট্রফি", "হাইপারট্রাইকোসিস", "ফ্রাজাইল X সিন্ড্রোম", "ক্রিমাস ডিজিজ"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 9,
+    "question": "বৃত্তের কেন্দ্র থেকে পরিধি পর্যন্ত দূরত্ব কত?",
+    "options": ["2/√5", "4/√5", "√5", "3/4"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 10,
+    "question": "লবণ সেতুতে নিচের কোন রবণ ব্যবহার করা হয়?",
+    "options": ["NaCl", "KNO3", "KMnO4", "K2CO3"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 11,
+    "question": "কট এপিস্ট্যাসিসের অনুপাত হলো -",
+    "options": ["৩:১", "৯:৭", "১৩:৩", "২:১"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 12,
+    "question": "বল ও সরণের মধ্য বর্তী কোণের কোন মানের জন্য বলের দ্বারা ধনাত্মক কাজ হবে?",
+    "options": ["60°", "120°", "150°", "180°"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 13,
+    "question": "নিচের কোনটি সবচেয়ে দুর্বল বল?",
+    "options": ["মহাকর্ষ বল", "তড়িৎ বল", "সবল নিউক্লিয় বল", "দুর্বল নিউক্লিয় বল"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 14,
+    "question": "তড়িৎ বিশ্লেষণ ক্রিয়ায় ক্যাথোডে 0.39g পটাশিয়াম ধাতু সঞ্চিত করতে কত সংখ্যক (N = অ্যাভোগাড্রো সংখ্যা) ইলেকট্রন প্রয়োজন?",
+    "options": ["1000N", "N/100", "200N", "N/200"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 15,
+    "question": "এক কুলম্ব চার্জে কতগুলো ইলেকট্রনের চার্জ থাকবে?",
+    "options": ["একটি ইলেকট্রনের", "6.25×10^18 ইলেকট্রনের", "1.6×10^19 ইলেকট্রনের", "6.023×10^23 ইলেকট্রনের"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 16,
+    "question": "সমীকরণের মূলদ্বয়ের সমষ্টি 4 হলে b এর মান কত?",
+    "options": ["1", "-1", "0", "2"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 17,
+    "question": "The assignment for Monday is to write a _____ about your home town.",
+    "options": ["five hundred word composition", "five hundred words composition", "five hundreds words composition", "hundreds words composition"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 18,
+    "question": "একটি ত্রিভুজের দুইটি শীর্ষবিন্দু যথাক্রমে (2,7) এবং (6,1) এবং ভরকেন্দ্র (6,4) হলে তৃতীয় শীর্ষবিন্দুর স্থানাংক কত হবে?",
+    "options": ["(-10,-4)", "(10,4)", "(4,-10)", "(10,4)"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 19,
+    "question": "ফারিয়াল বর্ণান্ধতা (XcXc) তার বাবা ও মায়ের জিনোটাইপ কি হবে?",
+    "options": ["XX এবং XcY", "XY এবং XcXc", "XcY এবং XcXc", "XcY এবং XX"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 20,
+    "question": "সমীকরণের মূল দুটির যোগফলের সাথে মূল দুটির গুণফল যোগ করলে ফলাফল হবে -",
+    "options": ["0", "1", "2", "3"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 21,
+    "question": "কৃষ্ণচূড়া ফুলের পুষ্পবিন্যাস -",
+    "options": ["টুইস্টেড", "ইমব্রিকেট", "ভালভেট", "ভেক্সিলারি"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 22,
+    "question": "Which of the following is correct?",
+    "options": ["One of the most favourite fruit is mango", "One of the most favourite fruits is mango.", "One of most favourite fruit is mango.", "One of my most favourite fruits are mango"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 23,
+    "question": "2 ক্যালরি তাপ উৎপন্ন করতে কত জুল কাজ করতে হয়?",
+    "options": ["4.2J", "8.4J", "16.8J", "12.6J"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 24,
+    "question": "সিলভার নাইট্রেট দ্রবণের মধ্যে 5 অ্যাম্পিয়ার বিদ্যুৎ 10 মিনিট ধরে চালনা করলে পরিবাহিত বা বহিত মোট তড়িৎ এর পরিমাণ কত?",
+    "options": ["50C", "0.5C", "3000 C", "30 C"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 25,
+    "question": "বৃত্ত দ্বারা y অক্ষের খণ্ডিতাংশের পরিমান =?",
+    "options": ["3/2", "4/3", "√22/3", "2√22/3"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 26,
+    "question": "3x+4y+2=0 এবং 6x+8y+10=0 সমান্তরাল রেখা দুটির মধ্য বর্তী দূরত্ব কত?",
+    "options": ["5/3", "3/7", "8/3", "3/5"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 27,
+    "question": "সমবৃত্তীয় অঙ্গ হলো -",
+    "options": ["বাঁদরের ডানা-বিড়ালের পা", "পাখির ডানা-মানুষের হাত", "মানুষের হাত-বাঁদরের ডানা", "পাখির ডানা- পতঙ্গের ডানা"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 28,
+    "question": "বৃত্তের ব্যাসার্ধের মান 5 একক হলে c এর মান কত? x^2+y^2-4x+6y-c=0",
+    "options": ["12", "10", "-12", "-7"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 29,
+    "question": "α এর কোন মানের জন্য রেখা α(α-1)x+(α+1)y-7=0 রেখা 3x+5y+7=0 এর সমান্তরাল হবে?",
+    "options": ["1/4", "1/3", "2", "4"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 30,
+    "question": "x^2+y^2-5x=0 ও x^2+y^2+3x=0 বৃত্ত দুটির কেন্দ্র দুটির মধ্য বর্তী দূরত্ব কত?",
+    "options": ["1", "2", "3", "4"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 31,
+    "question": "একটি কণার উপর বল F=(-2i+3j+4k)N প্রয়োগের ফলে কণা (3,-4,-2) বিন্দু থেকে (-2,3,5) বিন্দুতে স্থানান্তরিত হয়। বল কর্তৃক সম্পাদিত কাজের পরিমান কত?",
+    "options": ["7J", "59.72J", "49J", "59J"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 32,
+    "question": "মূলবিন্দু থেকে কোনো সরলরেখার লম্বের দৈর্ঘ্য 4 একক এবং অক্ষের সাথে ওই লম্বের নতি 120° হলে ঐ সরল-রেখার সমীকরণ হবে -",
+    "options": ["x-√3y+8=0", "x-√3y+4=0", "x-√3y+5=0", "x-√3xy+8=0"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 33,
+    "question": "হলুদ(YY) এবং এগারু(yy) বর্ণেরর্ণের ইঁদুরের সংকরায়নে কোন জিনোটাইপবিশিষ্ট ইঁদুর মারা যাবে?",
+    "options": ["Yy", "YY", "yy", "yyy"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 34,
+    "question": "কোরালয়েড মূল দেখা যায় কোনটির?",
+    "options": ["Cycas", "Gnetum", "Pinus", "Fern"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 35,
+    "question": "Pt, H2/H+(aq) কোন ধরনের অর্ধকোষ?",
+    "options": ["গ্যাস", "জারণ", "ধাতু-ধাতব আয়ন", "জারণ-বিজারণ"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 36,
+    "question": "লপড্মের বৈজ্ঞানিক নাম কি?",
+    "options": ["Hibiscus cannabinus", "Hibiscus mutabilis", "Hibiscus rosa-sinensis", "Hibiscus sabdariffa"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 37,
+    "question": "একটি সরলরেখা মূলবিন্দু থেকে রেখাকে 3 একক দূরত্বে লম্বভাবে ছেদ করে। রেখাটির সমীকরণ কোনটি?",
+    "options": ["x+y=3√2", "x-y=3", "2x+y=3", "2x-3y=4"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 38,
+    "question": "কোনটি তৎস্ফূর্ততার শর্ত? (i) E°cell এর মান (+ve) হলে ; (ii) ∆G° এর মান -ve হলে (iii) ∆G° এর মান (+ve) হলে ; নিচের কোনটি সঠিক?",
+    "options": ["i ও ii", "i ও iii", "ii ও iii", "i,ii ও iii"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 39,
+    "question": "জীবের বৈশিষ্ট্য নির্ধারণকারী এককের নাম কী?",
+    "options": ["জিনোম", "ফ্যাক্টর", "ক্রোমোসোম", "DNA"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 40,
+    "question": "কোন অর্ধকোষের সাথে হাইড্রোজেন তড়িৎদ্বার ক্যাথোড হিসাবে কাজ করে?",
+    "options": ["Zn(s)/Zn2+(aq)", "Ag(s)/Ag+(aq)", "Cu(s)/Cu2+(aq)", "Au(s)/Au3+(aq)"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 41,
+    "question": "একটি চক্রের ভর 16 kg, চক্রগতির ব্যাসার্ধ 0.5m এবং প্রতি মিনিটে 300 বার আবর্তিত হচ্ছে। কৌণিক ত্বরণ 2rads^-2 সৃষ্টি করতে চক্রে কত টর্ক প্রয়োগ করতে হবে?",
+    "options": ["0.8Nm", "2Nm", "16Nm", "None"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 42,
+    "question": "1 kg ভর বিশিষ্ট একটি বৃত্তাকার চাকার মোমেন্ট 10 Nm এবং चक्रগতির ব্যাসার্ধ 1m হলে চাকার কৌণিক ত্বরণ কত?",
+    "options": ["1rads^-2", "0radms^-2", "0.1rads^-2", "10rads^-2"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 43,
+    "question": "বিজ্ঞানী Fisher-এর মতে, মেন্ডেলীয় ফ্যাক্টর হচ্ছে ---",
+    "options": ["C,D,E", "C,D,C", "C,D,D", "C,E,E"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 44,
+    "question": "একটি গ্রামোফোন রেকর্ড প্রতি দুই মিনিটে 60 বার ঘুরছে। কেন্দ্র হতে 10 cm দূরে রেকর্ডের উপর অবস্থিত কোনো বিন্দুর রৈখিক বেগ কত?",
+    "options": ["31.42ms^-1", "0.31cm/sec", "37.41cm/sec", "31.42cm/sec"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 45,
+    "question": "80kg ভরের বাক্সকে 600N আনুভূমিক বলে মেঝের উপর দিয়ে টানা হচ্ছে। চলমান অবস্থায় বাক্স ও মেঝের মধ্য বর্তী ঘর্ষণ সহগ 0.5 হলে বাক্সের ত্বরণ কত? [g=10ms^-2]",
+    "options": ["2ms^-2", "2.2ms^-2", "2.5ms^-2", "3ms^-2"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 46,
+    "question": "'The old man has a walking stick.' the underlined is example of-",
+    "options": ["participle", "gerund", "verbal noun", "adverbial"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 47,
+    "question": "একসঙ্গে একাধিক আয়ন থাকলে তড়িৎ বিশ্লেষণের সময় নিচের কোন আয়ন আগে চার্জযুক্ত হবে?",
+    "options": ["Mg2+", "Ca2+", "Li+", "Al3+"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 48,
+    "question": "কোনটির বীজ খাদ্য হিসাবে ব্যবহৃত হয়?",
+    "options": ["Cycas revoluta", "Podocarpus nerifolius", "Cycas circinalis", "Cycas pectinata"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 49,
+    "question": "সচূড়পল্লব যৌগিকপুষ্প থাকে নিচের কোনটির?",
+    "options": ["গোলাপ", "বাঁদরলাঠি", "কৃষ্ণচূড়া", "সজিনা"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 50,
+    "question": "যে কোষ তড়িৎ শক্তিকে রাসায়নিক শক্তিতে রূপান্তরিত করে, তাকে বলা হয়-",
+    "options": ["তড়িৎ বিশ্লেষ্য কোষ", "গ্যালভানিক কোষ", "জ্বালানী কোষ", "ড্যানিয়েল কোষ"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 51,
+    "question": "1kg ওজনের একটি গোলক বেগে গড়িয়ে যাচ্ছে বিপরীত দিক থেকে বেগে ধাবমান 1gm ওজনের একটি বুলেট গোলককে বিদ্ধ করলে বুলেট বিদ্ধ গোলকের বেগ কত হবে?",
+    "options": ["1ms^-1", "1000ms^-1", "0.75ms^-1", "0ms^-1"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 52,
+    "question": "একটি 20w ক্ষমতার বৈদ্যুতিক পাখা মিনিটে 240 বার ঘুরছে। পাখার মোটর কত টর্ক উৎপন্ন করছে?",
+    "options": ["Nm/(2π)", "Nm/3", "Nm/(5/(2π))", "Nm/(7π/2)"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 53,
+    "question": "63.5 gm Cu (1.0 mol) ক্যাথোডে সঞ্চিত হতে কি পরিমাণ বিদ্যুৎ চার্জ ব্যয়িত হবে?",
+    "options": ["96.500 C", "1F", "2F", "3F"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 54,
+    "question": "ধানের পুষ্পমঞ্জরী নিচের কোনটি?",
+    "options": ["রেসিম", "অ্যাম্বেল", "স্প্যাডিক্স", "স্পাইকলেট"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 55,
+    "question": "Y অক্ষ এবং (7,2) বিন্দু হতে (a,2) বিন্দুর দূরত্ব সমান হলে a এর মান কত?",
+    "options": ["29/7", "7/2", "2/7", "7/29"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 56,
+    "question": "তুঁতের দ্রবনে 1 ঘন্টা ধরে 10 ampere বিদ্যুৎ পরিবাহিত করলে তড়িৎদ্বারে কি পরিমান Cu জমা পড়বে?",
+    "options": ["8.475g", "10.50g", "11.85g", "15.62g"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 57,
+    "question": "কোনটির তড়িৎ পরিবাহিতা অধিক?",
+    "options": ["Be", "Al", "Cu", "Sc"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 58,
+    "question": "পুষ্পটির প্রতিটি সদস্যকে কি বলে?",
+    "options": ["টেপাল", "পেটাল", "সেপাল", "কার্পেলর্পে"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 59,
+    "question": "40kg ও 60kg ভরের দুই ব্যক্তি যথাক্রমে 4s ও 8s এ কতগুলো সিঁড়ি বেয়ে নির্দিষ্ট উচ্চতায় পৌঁছেছে। তাদের ক্ষমতার অনুপাত হবে -",
+    "options": ["11:12", "5:6", "4:3", "3:4"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 60,
+    "question": "Pt, H2(g)/H+(aq) ∥ Cu2+(aq)/Cu(s); কোষটির জন্য ইএমএফ এর মান কোনটি?",
+    "options": ["0.00V", "+0.34V", "-0.34V", "+0.17V"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 61,
+    "question": "তড়িৎ বিশ্লেষ্য দ্রবণের মধ্য দিয়ে তড়িৎ প্রবাহ কোন সূত্র মেনে চলে?",
+    "options": ["কুলম্বের সূত্র", "কের সূত্র", "ও'হমের সূত্র", "গ্রাহামের সূত্র"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 62,
+    "question": "Zn(s)∣Zn2+(aq) ∥ Cu2+(aq)∣Cu(s) কোষের অ্যানোড ও ক্যাথোডের বিচারণ বিভব যথাক্রমে -0.76 V ও 0.34 V। কোষটির সামগ্রিক বিভব-",
+    "options": ["1.10V", "-1.10V", "0.42V", "-0.42V"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 63,
+    "question": "কোনটি মেন্ডেলের প্রথম সূত্রের ব্যতিক্রম?",
+    "options": ["অসম্পূর্ণ প্রকটতা", "সহপ্রকটতা", "পলিজেনিক ইনহেরিটেন্স", "প্রকট এপিস্ট্যাসিস"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 64,
+    "question": "ফাংশন y=(x+5)^2+4 এর সর্বনিম্ন মান কত?",
+    "options": ["2", "-4", "4", "3"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 65,
+    "question": "নিচের কোনটি অসংরক্ষণশীল বল?",
+    "options": ["অভিকর্ষ বল", "ঘর্ষণ বল", "স্প্রিং বল", "তড়িৎ বল"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 66,
+    "question": "যে বিন্দু (1,4) এবং (9, -12) বিন্দু দুটির সংযোজকারী রেখাংশকে অন্তঃসূত্রে 3:5 অনুপাতে বিভক্ত করে তার স্থানাংক হবে -",
+    "options": ["(4,-2)", "(4,2)", "(-2,4)", "(2,4)"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 67,
+    "question": "লিথাল জিনের কারণে কোন রোগ হয়?",
+    "options": ["সিকল সেল অ্যানিমিয়া ও থ্যালাসেমিয়া", "থ্যালাসেমিয়া ও বর্ণান্ধতা", "বর্ণান্ধতা ও হিমোফিলিয়া", "রাতকানা ও হিমোфиিলিয়া"],
+    "correctAnswer": "A",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 68,
+    "question": "0.5kg ভরের একটি বস্তু 2m ব্যাসার্ধের বৃত্তাকার পথে আবর্তন করছে। আবর্তনকাল 10s হলে বস্তুর কৌণিক ভরবেগ কত?",
+    "options": ["1.25kgm²s²", "125kgm²s^-1", "12.5kgm²s^-1", "1.25kgm²s^-1"],
+    "correctAnswer": "D",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 69,
+    "question": "Choose the correct sentence.",
+    "options": ["I, you and he were present in the class", "You, he and I were present in the class", "You, he and I was present in the class", "He, you and I was present in the class"],
+    "correctAnswer": "B",
+    "image": null,
+    "type": "multiple-choice"
+  },
+  {
+    "id": 70,
+    "question": "The boy reads a book. What kind of verb 'read' in the sentence is?",
+    "options": ["principal verb", "auxiliary verb", "transitive verb", "intransitive verb"],
+    "correctAnswer": "C",
+    "image": null,
+    "type": "multiple-choice"
+  }
+]
