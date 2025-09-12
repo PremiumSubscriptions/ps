@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Portal with Negative Marking</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* All your existing CSS styles */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* Mobile menu animation */
+        #mobile-menu {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b68d40;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9a7635;
+        }
+
+        /* === EXAM MODAL STYLES - UPDATED === */
+        .exam-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .exam-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .exam-modal-content {
+            background: white;
+            width: 100%;
+            max-width: 900px;
+            max-height: 95vh;
+            margin: auto;
+            border-radius: 16px;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        .exam-modal.show .exam-modal-content {
+            transform: scale(1);
+        }
+        
+        .exam-modal-header {
+            background: linear-gradient(135deg, #122620 0%, #1a3a2e 100%);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .exam-modal-body {
+            height: calc(95vh - 120px);
+            overflow-y: auto;
+            padding: 24px;
+        }
+        
+        .timer-display {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .question-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 24px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .question-card:hover {
+            border-color: #b68d40;
+            transform: translateY(-2px);
+        }
+        
+        .option-item {
+            padding: 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            margin: 8px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .option-item:hover {
+            border-color: #b68d40;
+            background: #f4ebd0;
+            transform: translateX(4px);
+        }
+        
+        .option-item.selected {
+            border-color: #b68d40;
+            background: linear-gradient(135deg, #b68d40 0%, #9a7635 100%);
+            color: white;
+            transform: translateX(8px);
+        }
+        
+        .option-item input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #b68d40;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 16px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #b68d40 0%, #9a7635 100%);
+            transition: width 0.3s ease;
+        }
+        
+        .jump-to-question {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(182, 141, 64, 0.1);
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            border: 2px solid rgba(182, 141, 64, 0.3);
+        }
+        
+        .jump-input {
+            width: 70px;
+            padding: 6px 10px;
+            border: 2px solid rgba(214, 173, 96, 0.3);
+            border-radius: 8px;
+            text-align: center;
+            outline: none;
+            transition: border-color 极速3.0.3s ease;
+        }
+        
+        .jump-input:focus {
+            border-color: #b68d40;
+        }
+        
+        .jump-btn {
+            background: linear-gradient(135deg, #b68d40 极速3.0%, #9a7635 100%);
+            color: white;
+            padding: 6px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .jump-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(182, 141, 64, 0.4);
+        }
+        
+        .results-modal {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+        }
+        
+        .score-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 24px;
+            font-size: 极速3.0px;
+            font-weight: bold;
+            border: 6px solid;
+        }
+        
+        .score-excellent { border-color: #10b981; background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .score-good { border-color: #3b82f6; background: linear-gradient(135极速3.0deg, #3b82f6, #2563eb); color: white; }
+        .score-average { border-color: #f59e0b; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
+        .score-poor { border-color: #ef4444; background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
+        
+        .result-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 12px 0;
+            border-left: 4极速3.0px solid;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        
+        .result-item.correct { border-left-color: #10b981; background: linear-gradient(90deg, rgba(16, 185, 129, 0.05), white); }
+        .result-item.incorrect { border-left-color: #ef4444; background: linear-gradient(90deg, rgba(239, 68, 68, 0.05), white); }
+        .result-item.skipped { border-left-color: #9ca3af; background: linear-gradient(90deg, rgba(156, 163, 175, 0.05), white); }
+        
+        .answer-box {
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+        
+        .user-answer.correct { background: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+        .user-answer.wrong { background: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+        .user-answer.not-answered { background: #f3f4f6; color: #374151; border: 1px solid #9ca3af; }
+        .correct-answer { background: #d1fae5; color: #065f46; border: 1px solid #10b981; }
+        
+        /* Button Styles using original colors */
+        .btn-primary {
+            background: linear-gradient(135deg, #b68d40 0%, #9a7635 100%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+极速3.0            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(182, 141, 64, 0.4);
+        }
+        
+        .btn-secondary {
+            background: #f8fafc;
+            color: #64748b;
+            padding: 10px 20px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-secondary:hover {
+            background: #极速3.0e2e8f0;
+            transform: translateY(-1px);
+        }
+        
+        .极速3.0btn-success {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .btn-disabled {
+            background: #9ca3af;
+            color: #6b7280;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        
+        .btn-disabled:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        
+        /* Icon buttons */
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-icon-close {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .btn-icon-close:hover {
+            background: rgba(239, 68, 68, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .btn-icon-nav {
+            background: rgba(182, 141, 64, 0.2);
+            color: #b68d40;
+        }
+        
+        .btn-icon-nav:hover {
+            background: rgba(182, 141, 64, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .btn-icon-nav:disabled {
+            background: rgba(156, 163, 175, 0.2);
+            color: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Custom Scrollbar for modal */
+        .exam-modal-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .exam-modal-body::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        .exam-modal-body::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+极速3.0        }
+        
+        .exam-modal-body::-webkit极速3.0-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        /* Navigation controls */
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 24px;
+            padding-top: 16px;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+        }
+        
+        /* Updated header with close button */
+        .modal-header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .exam-title-container {
+            flex: 1;
+            margin-right: 16px;
+        }
+        
+        .exam-title {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+                /* Password Modal Styles */
+        .password-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .password-modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .password-modal-content {
+            background: white;
+            width: 100%;
+            max-width: 400px;
+            margin极速3.0: auto;
+            border-radius: 16px;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            box-shadow: 0 25px 50px -极速3.012px rgba(0, 极速3.00, 0, 0.25);
+        }
+        
+        .password-modal.show .password-modal-content {
+            transform: scale(1);
+        }
+        
+        .password-modal-header {
+            background: linear-gradient(135deg, #122620 0%, #1a3a2e 100%);
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .password-modal-body {
+            padding: 24px;
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid rgba(214, 173, 96, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 16px 0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        
+        .password-input:focus {
+            border-color: #b68d40;
+        }
+        
+        .password-error {
+            color: #ef4444;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+        }
+        
+        /* New styles for negative marking info */
+        .negative-marking-info {
+            background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
+            border-left: 4px solid #ef4444;
+            padding: 12px 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .negative-marking-info i {
+            color: #ef4444;
+            margin-right: 8px;
+        }
+        
+        .score-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        
+        .score-detail-item {
+            background: #f8fafc;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .score-detail-item.correct {
+            border: 1px solid #10b981;
+        }
+        
+        .score-detail-item.wrong {
+            border: 1px solid #ef4444;
+        }
+        
+        .score-detail-item.skipped {
+            border: 1px solid #9ca3af;
+        }
+        
+        .score-detail-item.total {
+            grid-column: span 2;
+            border: 1px solid #b68极速3.0d40;
+            background: rgba(182, 141, 64, 0.1);
+        }
+        
+        .score-detail-value {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+        
+        .score-correct { color: #10b981; }
+        .score-wrong { color: #ef4444; }
+        .score-skipped { color: #6b7280; }
+        .score-total { color: #b68d40; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="relative" style="background: linear-gradient(135deg, #122620 0%, #1a3a2e 100%);">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative container mx-auto px-4 py-8">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+                    <i class="fas fa-graduation-cap mr-3" style="color: #d6ad60;"></i>
+                    Exam Portal
+                </h1>
+                <p class="text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                      প্রত্যাবর্তন ৪.০ এর এক্সাম পোর্টাল এ স্বাগতম! নির্দিষ্ট সময়ের মধ্যে পরীক্ষা শেষ করতে হবে। তবে তোমার যত খুশি তত বার পরীক্ষা দিতে পারবে! তাহলে আর দেরি কেনো? Test your knowledge and track your progress.
+                </p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md极速3.0:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+                    <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="total-exams">12</div>
+                    <div class="text-sm text-gray-200">Total Exams</div>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p极速3.0-4 text-center border border-white border-opacity-20">
+                    <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="active-exams">5</div>
+                    <div class="text-sm text-gray-200">Active Now</div>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+                    <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="upcoming-exams">5</div>
+                    <div class="text-sm text-gray-200">Upcoming</div>
+                </div>
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
+                    <div class="text-2xl md:text-3xl font-bold text-white mb极速3.0-1" id="model-test-exams">2</div>
+                    <div class极速3.0="text-sm text-gray-200">Model Test</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Search and Filters -->
+        <div class="mb-8">
+            <div class="bg-white rounded-lg shadow-sm border p-6" style="border-color: rgba(214, 173, 96, 0.3);">
+                <h2 class="text-lg font-semibold mb-4" style="color: #122620;">
+                    <i class="fas fa-filter mr-2" style="color: #b68d40;"></i>
+                    Filters
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <!-- Search Input -->
+                    <div class="md:col-span-1">
+                        <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Search Exams</label>
+                        <input
+                            type="text"
+                            id="search-input"
+                            placeholder="Search by title, description, or subject..."
+                            class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent transition-all"
+                            style="border-color: rgba(214, 173, 96, 0.3); focus:ring-color: rgba(182, 141, 64, 0.3);"
+                        >
+                    </div>
+
+                    <!-- Difficulty Filter -->
+                    <div>
+                        <label class="block text极速3.0-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0极速3.0.7);">Difficulty Level</label>
+                        <select
+                            id="difficulty-filter"
+                            class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent transition-all"
+                            style="border-color: rgba(214, 173, 96, 0.3); focus:ring-color: rgba(182, 141, 64, 0.3);"
+                        >
+                            <option value="all">All Levels</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                            <option value="standard">Standard</option>
+                        </select>
+                    </div>
+
+                    <!-- Status Filter -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.极速3.07);">Exam Status</label>
+                        <select
+                            id="status-filter"
+                            class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent transition-all"
+                            style="border-color: rgba(214, 173, 96, 0.3); focus:ring-color: rgba(182, 141, 64, 0.3);"
+                        >
+                            <option value="all">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="upcoming">Upcoming</option>
+                            <option value="model test">Model Test</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Active Filters -->
+                <div id="active-filters" class="mt-4 hidden">
+                    <div class="text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Active Filters:</极速3.0div>
+                    <div class="flex flex-wrap gap-2" id="active-filters-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Section -->
+        <section>
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold" style="color: #122620;">Available Exams</h2>
+                <span class="text-sm font-medium px-3 py-1 rounded-full" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d40;" id="exam-count">
+                    12 exams found
+                </span>
+            </div>
+
+            <!-- Exams Grid -->
+            <div id="exams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Exam cards will be populated by JavaScript -->
+            </div>
+
+            <!-- No Results -->
+            <div id="no-results" class="hidden text-center py-12">
+                <div class="mx-auto w-24极速3.0 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-search text-2xl text-gray-400"></i>
+                </div>
+                <h3 class="text-xl font-semib极速3.0old text-gray-600 mb-2">No exams found</h3>
+                <极速3.0p class="text-gray-500">Try adjusting your search criteria or filters to find more exams.</p>
+            </div>
+        </section>
+    </main>
+        <!-- Password Modal -->
+    <div id="password-modal" class="password-modal">
+        <div class="password-modal-content">
+            <div class="password-modal-header">
+                <h2 id="password-exam-title" class="text-xl font-bold">Enter Exam Password</h2>
+                <div class="btn-icon btn-icon-close极速3.0" id="close-password-modal-btn">
+                    <i class="fas fa-times"></i>
+                </div>
+            </div>
+            <div class="password-modal-body">
+                <p id="password-exam-description" class="mb-4" style="color: rgba(18, 38, 32, 0.7);">
+                    This exam is password protected. Please enter the password to continue.
+                </p>
+                <input type="password" id="password-input" class="password-input" placeholder="Enter password">
+                <p id="password-error" class="password-error">
+                    <i class="fas fa-exclamation-circle mr-1"></i> Incorrect password. Please try again.
+                </p>
+                <div class="flex justify-end gap-3 mt-6">
+                    <button id="cancel-password-btn" class="btn-secondary">
+                        Cancel
+                    </button>
+                    <button id="submit-password-btn" class="btn-primary">
+                        <i class="fas fa-lock-open mr-2"></i>Unlock Exam
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="mt-12 py-8" style="background-color: #122620;">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-gray-300">
+                © 2025 Exam Portal. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- === EXAM MODAL - UPDATED === -->
+    <div id="exam-modal" class="exam-modal">
+        <div class="exam-modal-content">
+            <div class="exam-modal-header">
+                <div class="modal-header-content">
+                    <div class="exam-title-container">
+                        <h2 id="exam-title" class="exam-title">Exam Title</h2>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="timer-display">
+                            <i class="fas fa-clock"></i>
+                            <span id="timer-display">00:00</span>
+                        </div>
+                        <div class="btn-icon btn-icon-close" id="close-modal-btn">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="exam-modal-body">
+                <!-- Jump to Question Section -->
+                <div class="jump-to-question">
+                    <i class="fas fa-arrow-right" style="color: #b68d40;"></i>
+                    <span class="font-semibold" style极速3.0="color: #122620;">Jump to Question:</span>
+                    <input type="number" id="jump-input" class="jump-input" min="1" placeholder="1">
+                    <button id="jump-btn" class="jump-btn">Go</button>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-sm mb-6" style="极速3.0color: rgba(18, 38, 32, 0.7);">
+                    <span id="question-progress">Question 1 of 10</span>
+                    <span id="answered-count">0 answered</span>
+                </div>
+
+                <!-- Question Content -->
+                <div id="question-content">
+                    <!-- Questions will be dynamically loaded here -->
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="nav-controls">
+                    <div class="nav-buttons">
+                        <button id="prev-btn" class="btn-icon btn-icon-nav" disabled>
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button id="next-btn" class="btn-icon btn-icon-nav">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    <button id="submit-btn" class="btn-success">
+                        <极速3.0i class="fas fa-check mr-2"></i>Submit Exam
+                    </button>
+                </div>
+
+                <!-- Results Section (Initially Hidden) -->
+                <div id="results-section" class="hidden">
+                    <div class="results-modal fade-in-up">
+                        <div id="score-circle极速3.0" class="score-circle">
+                            <div id="score-percentage">0%</极速3.0div>
+                            <div class="text-sm">Score</div>
+                        </div>
+                        <h2 class="text-3xl font-bold mb-4" style="color: #122620;">Exam Results</h2>
+                        
+                        <!-- Negative Marking Info -->
+                        <div class="negative-marking-info mb-4">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>This exam uses negative marking: -0.25 for each wrong answer</span>
+                        </div>
+                        
+                        <!-- Score Details -->
+                        <div class="score-details mb-6">
+                            <div class="score-detail-item correct">
+                                <div>Correct Answers</div>
+                                <div id="correct-count" class="score-detail-value score-correct">0</div>
+                            </div>
+                            <div class="score-detail-item wrong">
+                                <div>Wrong Answers</div>
+                                <div id="wrong-count" class="score-detail-value score-wrong">0</div>
+                            </div>
+                            <div class="score-detail-item skipped">
+                                <div>Skipped Questions</div>
+                                <div id="skipped-count" class="score-detail-value score-skipped">0</div>
+                            </div>
+                            <div class="score-detail-item total">
+                                <div>Final Score</div>
+                                <div id="final-score" class="score-detail-value score-total">0.00 / 0</div>
+                            </div>
+                        </div>
+                        
+                        <p id="score-summary" class="text-lg mb-8" style="color: rgba(18, 38, 32, 0.7);">
+                            You scored 0 out of 10 questions
+                        </p>
+                        
+                        <div class="text-left">
+                            <h3 class="text-xl font-bold mb-4" style="color: #122620;">Detailed Results</h3>
+                            <div id="detailed-results">
+                                <!-- Detailed results will be shown here -->
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-center gap-4 mt-8">
+                            <button id="retake-btn" class="btn-secondary">
+                                <i class="fas fa-redo mr-2"></i>Retake Exam
+                            </button>
+                            <button id="close-results-btn" class="btn-primary">
+                                <i class="fas fa-times mr-2"></i>Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mock exam data with link property for redirection
+        const mockExams = [
+            {
+                id: 1,
+                title: "জৈব রসায়ন Part 01",
+                description: "জৈব রসায়ন Part 1",
+                subject: "Chemistry",
+                difficulty: "Easy",
+                duration: 25,
+                questions: 25,
+                participants: 1245,
+                date: "Aug 23, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "chem1.json"
+            },
+            {
+                id: 2,
+                title: "জৈব রসায়ন Part_02",
+                description: "",
+                subject: "Chemistry",
+                difficulty: "Medium",
+                duration: 25,
+                questions: 25,
+                participants极速3.0: 892,
+                date: "Aug 23, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "chem2.json"
+            },
+            {
+                id: 3,
+                title: "জৈব রসায়ন Part_03",
+                description: "জৈব রসায়ন Part_03",
+                subject: "Chemistry",
+                difficulty: "Medium",
+                duration: 25, 
+                questions: 25,
+                participants: 567,
+                date: "Aug 22, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "chem3.json"
+            },
+            {
+                id: 4,
+                title: "জৈব রসায়ন Part_04",
+                description: "জৈব রসায়ন Part_04",
+                subject: "Chemistry",
+                difficulty: "Easy",
+                duration: 25,
+                questions: 25,
+                participants: 1834,
+                date极速3.0: "Aug 22, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "chem4.json"
+            },
+            {
+                id: 5,
+                title: "Vector",
+                description: "",
+                subject: "Physics",
+                difficulty: "Hard",
+                duration: 35, 
+                questions: 35,
+                participants: 623,
+                date: "Jan 30, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "test.json"
+            },
+            {
+                id: 6,
+                title: "নিউটনীয় বলবিদ্যা",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 35,
+                questions: 35,
+                participants: 756,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "nb.json"
+            },
+            {
+                id: 7,
+                title: "পর্যায়বৃত্ত গতি",
+                description: "",
+                subject: "Physics",
+                difficulty: "Easy",
+                duration: 35,
+                questions: 35,
+                participants: 1156,
+                date: "Aug 20, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "pmotion.json"
+            },
+            {
+                id: 8,
+                title: "কাজ, শক্তি ও ক্ষমতা",
+                description: "",
+                subject: "Physics",
+                difficulty: "Hard",
+                duration: 35, 
+                questions: 35,
+                participants: 445,
+                date: "Aug 24极速3.0, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "kskh.json"
+            },
+            {
+                id: 9,
+                title: "মহাকর্ষ ও অভিকর্ষ",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 35, 
+                questions极速3.0: 35,
+                participants: 689,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password极速3.0: "PAID_极速3.0Protaborton_4.0",
+                questionsFile: "m&o.json"
+            },
+            {
+                id: 10,
+                title: "নিউক্লিয়ার পদার্থবিজ্ঞান",
+                description: "",
+                subject: "Physics",
+                difficulty: "Hard",
+                duration: 35,
+                questions: 35,
+                participants: 334,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "nuphy.json"
+            },
+            {
+                id: 11,
+                title极速3.0: "আদর্শ গ্যাস",
+                description: "",
+                subject: "Active",
+                difficulty: "Easy",
+                duration: 35,
+                questions: 35,
+                participants: 523,
+                date: "Aug 23, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "ag.json"
+            },
+            {
+                id: 12,
+                title: "তাপগতিবিদ্যা",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 35,
+                questions: 极速3.035,
+                participants: 812,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "tempgo.json"
+            },
+            {
+                id: 13,
+                title: "গতিবিদ্যা",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 35,
+                questions: 35,
+                participants: 812,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "gobida.json"
+            },
+            {
+                id: 14,
+                title: "Revision Exam 01 - Prottaborton 4.0",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 50,
+                questions: 50,
+                participants: 812,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "re1p4.json"
+            },
+            {
+                id: 15,
+                title: "Revision Exam 02 - Prottaborton 4.0",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 70,
+                questions: 70,
+                participants: 812,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+极速3.0                questionsFile: "re2p4.json"
+            },
+            {
+                id: 16,
+                title: "Revision Exam 03 - Prottaborton 4.0",
+                description: "",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 70,
+                questions: 70,
+                participants: 812,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "re3p极速3.04.json"
+            },
+            {
+                id: 17,
+                title: "Monthly Exam 01 - Prottaborton 4.0",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Medium",
+                duration: 100,
+                questions: 100,
+                participants: 812,
+                date: "Aug 24, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "me1p4.json"
+            },
+            {
+                id: 18,
+                title: "ম্যাটিক্স ও নির্ণায়ক",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Medium",
+                duration: 35,
+                questions: 35,
+                participants: 812,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "m&n.json"
+            },
+            {
+                id: 19,
+                title: "সরলরেখা",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Medium",
+                duration: 35,
+                questions: 35,
+                participants: 812,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "sorol.json"
+            },
+            {
+                id: 20,
+                title: "বৃত্ত",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Easy",
+                duration: 35,
+                questions: 35,
+                participants: 82,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questions极速3.0File: "circle.json"
+            },
+            {
+                id: 21,
+                title: "বহুপদী",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Easy",
+                duration: 35,
+                questions: 35,
+                participants: 82,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "bohupodi.json"
+            },
+            {
+                id: 22,
+                title: "স্থিতিবিদ্যা",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Easy",
+                duration: 35,
+                questions: 35,
+                participants: 82,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "sthithi.json"
+            },
+            {
+                id: 23,
+                title: "জটিল সংখ্যা",
+                description: "",
+                subject极速3.0: "Mathematics",
+                difficulty: "Easy",
+                duration: 35,
+极速3.0                questions: 35,
+                participants: 82,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "极速3.0PAID_Protaborton_4.0",
+                questionsFile: "complex.json"
+            },
+            {
+                id: 24,
+                title: "গতিবিদ্যা",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Easy",
+                duration: 35,
+                questions: 35,
+                participants: 82,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "gotibidda.json"
+极速3.0            },
+            {
+                id: 25,
+                title: "MONTHLY EXAM 02",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Easy",
+                duration: 125,
+                questions: 125,
+                participants: 189,
+                date: "Aug 25, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "me2p4.json"
+            },
+            {
+                id: 26,
+                title: "জৈব রসায়ন Part:05",
+                description: "",
+                subject: "Chemistry",
+                difficulty: "Easy",
+                duration: 25,
+                questions: 25,
+                participants: 189,
+                date: "Aug 27, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "oc5.json"
+            },
+            {
+                id: 27,
+                title: "কণিক Part:01",
+                description: "",
+                subject: "Mathematics",
+                difficulty: "Easy",
+                duration: 40,
+                questions: 40,
+                participants: 189,
+                date: "September 1, 2025",
+                status: "Active",
+                password: "PAID_Protaborton_4.0",
+                questionsFile: "konic1.json"
+            }
+        ];
+
+        // Global variables
+        let filteredExams = [...mockExams];
+        let searchTerm = '';
+        let filterDifficulty = 'all';
+        let filterStatus = 'all';
+        
+        // Exam state variables
+        let currentExam = null;
+        let examQuestions = [];
+        let currentQuestionIndex = 0;
+        let userAnswers = {};
+        let examTimer = null;
+        let timeRemaining = 0;
+        let isExamSubmitted = false;
+        let passwordExam = null;
+        
+        // DOM Elements - removed subject filter elements
+        const elements = {
+            searchInput: null,
+            difficultyFilter: null,
+            statusFilter: null,
+            examsGrid: null,
+            examCount: null,
+            noResults: null,
+            activeFilters: null,
+            examModal: null,
+            examTitle: null,
+            timerDisplay: null,
+            questionContent: null,
+            progressFill: null,
+            questionProgress极速3.0: null,
+            answeredCount: null,
+            jumpInput: null,
+            jumpBtn: null,
+            prevBtn: null,
+            nextBtn: null,
+            submitBtn: null,
+            resultsSection: null,
+            scoreCircle: null,
+            scorePercentage: null,
+            scoreSummary: null,
+            detailedResults: null,
+            retakeBtn: null,
+            closeModalBtn: null,
+            closeResultsBtn: null,
+            passwordModal: null,
+            passwordExamTitle: null,
+            passwordExamDescription: null,
+            passwordInput: null,
+            passwordError: null,
+            closePasswordModalBtn: null,
+            cancelPasswordBtn: null,
+            submitPasswordBtn: null,
+            correctCount: null,
+            wrongCount: null,
+            skippedCount: null,
+            finalScore: null
+        };
+
+        // Utility functions
+        function getDifficultyColor(difficulty) {
+            switch (difficulty.toLowerCase()) {
+                case 'easy':
+                    return 'bg-green-100 text-green-800 border-green-200';
+                case 'medium':
+                    return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+                case 'hard':
+                    return 'bg-red-100 text-red-800 border-red-200';
+                case 'standard':
+                    return 'bg-blue-100 text-blue-800 border-blue-200';
+                default:
+                    return 'bg-gray-100 text-gray-800 border-gray-200';
+            }
+        }
+
+        function getStatusColor(status) {
+            switch (status.toLowerCase()) {
+                case 'active':
+                    return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+                case 'upcoming':
+                    return 'bg-blue-100 text-blue-800 border-blue-200';
+                case 'model test':
+                    return 'bg-gray-100极速3.0 text-gray-800 border-gray-200';
+                default:
+                    return 'bg-gray-100 text-gray-800 border-gray-200';
+            }
+        }
+
+        // === EXAM FUNCTIONS - ADDITION ===
+        // MODIFIED: Handle exam button click - now shows password modal
+        async function handleExamButtonClick(exam) {
+            if (exam.status !== 'Active' && exam.status !== 'Model Test') {
+                return; // Do nothing for upcoming exams
+            }
+            
+            // Store the exam and show password modal
+            passwordExam = exam;
+            showPasswordModal();
+        }
+
+        // NEW: Show password modal
+        function showPasswordModal() {
+            elements.passwordExamTitle.textContent = passwordExam.title;
+            elements.passwordExamDescription.textContent = `This "${passwordExam.title}" exam is password protected. Please enter the password to continue.`;
+            elements.passwordInput.value = '';
+            elements.passwordError.style.display = 'none';
+            
+            elements.passwordModal.style.display = 'flex';
+            setTimeout(() => {
+                elements.passwordModal.classList.add('show');
+                elements.passwordInput.focus();
+            }, 10);
+        }
+
+        // NEW: Hide password modal
+        function hidePasswordModal() {
+            elements.passwordModal.classList.remove('show');
+            setTimeout(() => {
+                elements.passwordModal.style.display = 'none';
+            }, 300);
+        }
+
+        // NEW: Verify password and start exam if correct
+        async function verifyPasswordAndStartExam() {
+            const enteredPassword = elements.passwordInput.value;
+            
+            if (enteredPassword === passwordExam.password) {
+                hidePasswordModal();
+                try {
+                    // Start the exam
+                    await startExam(password极速3.0Exam);
+                } catch (error) {
+                    console.error('Error starting exam:', error);
+                    alert('Error loading exam questions. Please try again.');
+                }
+            } else {
+                // Show error message
+                elements.passwordError.style.display = 'block';
+                elements.passwordInput.focus();
+            }
+        }
+        
+        // Start exam function - MODIFIED to fetch questions from external files
+        async function startExam(exam) {
+            currentExam = exam;
+            
+            try {
+                // Fetch questions from the external JSON file
+                const response = await fetch(exam.questionsFile);
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch questions: ${response.status}`);
+                }
+                const allQuestions = await response.json();
+                examQuestions = allQuestions.slice(0, exam.questions); // Get required number of questions
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                alert('Error loading exam questions. Please try again.');
+                return;
+            }
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            isExamSubmitted = false;
+            timeRemaining = exam.duration * 60; // Convert minutes to seconds
+            
+            // Show modal
+            elements.examModal.style.display = 'flex';
+            setTimeout(() => {
+                elements.examModal.classList.add('show');
+            }, 10);
+            
+            // Set exam title
+            elements.examTitle.textContent = exam.title;
+            // Start timer
+            startTimer();
+            
+            // Load first question
+            loadQuestion();
+            
+            // Update jump input max value
+            elements.jumpInput.max = examQuestions.length;
+            
+            // Update progress
+            updateProgress();
+            
+            // Hide results section
+            elements.resultsSection.classList.add('hidden');
+            document.getElementById('question-content').style.display = 'block';
+            document.querySelector('.nav-controls').极速3.0style.display = 'flex';
+        }
+        
+        // Timer functions
+        function startTimer() {
+            elements.timerDisplay.textContent = formatTime(timeRemaining);
+            
+            examTimer = setInterval(() => {
+                timeRemaining--;
+                elements.timerDisplay.textContent = formatTime(timeRemaining);
+                
+                // Change color when time is running out
+                if (timeRemaining <= 60) {
+                    elements.timerDisplay.style.color = '#ef4444';
+                    elements.timerDisplay.classList.add('pulse');
+                } else if (timeRemaining <= 300) {
+                    elements.timerDisplay.style.color = '#f59e0b';
+                }
+                
+                if (timeRemaining <= 0) {
+                    autoSubmitExam();
+                }
+            }, 1000);
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function stopTimer() {
+            if (examTimer) {
+                clearInterval(examTimer);
+                examTimer = null;
+            }
+        }
+
+        // Question loading and display
+        function loadQuestion() {
+            if (currentQuestionIndex < 0 || currentQuestionIndex >= examQuestions.length) {
+                return;
+            }
+            
+            const question = examQuestions[currentQuestionIndex];
+            
+            let questionHTML = `
+                <div class="question-card fade-in-up">
+                    <div class="flex items-start gap-4 mb-6">
+                        <div class="px-4 py-2 rounded-lg font-bold text-lg text-white" style="background: linear-gradient(135deg, #b68d40 0%, #9a7635 100%);">
+                            Q${currentQuestionIndex + 1}
+                        </div>
+                        <h3 class="text-xl font-bold flex-1" style="color: #122620;">${question.question}</h3>
+                    </div>
+            `;
+            
+            // Add image if present
+            if (question.image) {
+                questionHTML += `
+                    <极速3.0div class="mb-6 text-center">
+                        <img src="${question.image}" alt="Question related image" 
+                             class="max-w-md mx-auto rounded-lg shadow-md" 
+                             onerror="this.style.display='none'">
+                    </div>
+                `;
+            }
+            
+            // Add options
+            questionHTML += '<div class="space-y-3">';
+            question.options.forEach((option, index) => {
+                const isSelected = userAnswers[question.id] === option;
+                questionHTML += `
+                    <div class="option-item ${isSelected ? 'selected' : ''}" onclick="selectAnswer(${question.id}, '${option.replace(/'/g, "\\'")}')">
+                        <input type="radio" name="question-${question.id}" value="${option}" ${isSelected ? 'checked' : ''}>
+                        <span class="font-medium">${option}</span>
+                    </div>
+                `;
+            });
+            questionHTML += '</div></div>';
+            
+            elements.questionContent.innerHTML = questionHTML;
+            
+            // Update navigation buttons
+            updateNavigationButtons();
+        }
+
+        // Answer selection
+        function selectAnswer(questionId, answer) {
+            userAnswers[questionId] = answer;
+            
+            // Update UI
+            const optionItems = document.querySelectorAll('.option-item');
+            optionItems.forEach(item => {
+                item.classList.remove('selected');
+                const radio = item.querySelector('input[type="radio"]');
+                radio.checked = false;
+            });
+            
+            // Select the clicked option
+            event.currentTarget.classList.add('selected');
+            const radio = event.currentTarget.querySelector('input[type="radio"]');
+            radio.checked = true;
+            
+            // Update progress
+            updateProgress();
+        }
+
+        // Navigation functions
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                loadQuestion();
+                updateProgress();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < examQuestions.length - 1) {
+                currentQuestionIndex++;
+                loadQuestion();
+                updateProgress();
+            }
+        }
+
+        function jumpToQuestion() {
+            const questionNumber = parseInt(elements.jumpInput.value);
+            if (questionNumber >= 1 && questionNumber <= examQuestions.length) {
+                currentQuestionIndex = questionNumber - 1;
+                loadQuestion();
+                updateProgress();
+            } else {
+                alert(`Please enter a question number between 1 and ${examQuestions.length}`);
+            }
+        }
+
+        // Progress tracking
+        function updateProgress极速3.0() {
+            const progress = ((currentQuestionIndex + 1) / examQuestions.length) * 100;
+            elements.progressFill.style.width = `${progress}%`;
+            
+            elements.questionProgress.textContent = `Question ${currentQuestionIndex + 1} of ${examQuestions.length}`;
+            
+            const answeredCount = Object.keys(userAnswers).length;
+            elements.answeredCount.textContent = `${answeredCount} answered`;
+            
+            // Update jump input
+            elements.jumpInput.value = currentQuestion极速3.0Index + 1;
+        }
+
+        function updateNavigationButtons() {
+            elements.prevBtn.disabled = currentQuestionIndex === 0;
+            elements.nextBtn.disabled = currentQuestionIndex === examQuestions.length - 1;
+            
+            if (elements.prevBtn.disabled) {
+                elements.prevBtn.classList.add('btn-disabled');
+            } else {
+                elements.prevBtn.classList.remove('btn-disabled');
+            }
+            
+            if (elements.nextBtn.disabled) {
+                elements.nextBtn.classList.add('btn-disabled');
+            } else {
+                elements.nextBtn.classList.remove('btn-disabled');
+            }
+        }
+
+        // Exam submission
+        function submitExam() {
+            if (confirm('Are you sure you want to submit the exam? You cannot change your answers after submission.')) {
+                stopTimer();
+                calculateResults();
+                showResults();
+            }
+        }
+
+        function autoSubmitExam() {
+            stopTimer();
+            alert('Time is up! The exam will be submitted automatically.');
+            calculateResults(true);
+            showResults();
+        }
+
+        // MODIFIED: Calculate results with negative marking
+        function calculateResults(autoSubmit = false) {
+            let correctAnswers = 0;
+            let wrongAnswers = 0;
+            let skippedQuestions = 0;
+            const detailedResults = [];
+            
+            examQuestions.forEach((question, index) => {
+                const userAnswer = userAnswers[question.id] || 'Not answered';
+                const isCorrect = userAnswer === question.correctAnswer;
+                const isSkipped = userAnswer === 'Not answered';
+                
+                if (isCorrect) {
+                    correctAnswers++;
+                } else if (!isSkipped) {
+                    wrongAnswers++;
+                } else {
+                    skippedQuestions++;
+                }
+                
+                detailedResults.push({
+                    questionNumber: index + 1,
+                    question: question.question,
+                    userAnswer,
+                    correctAnswer: question.correctAnswer,
+                    isCorrect,
+                    isSkipped,
+                    options: question.options
+                });
+            });
+            
+            // Calculate final score with negative marking
+            const finalScore = Math.max(0, correctAnswers - (wrongAnswers * 0.25));
+            const percentage = Math.round((finalScore / examQuestions.length) * 100);
+            
+            return {
+                correctAnswers,
+                wrongAnswers,
+                skippedQuestions,
+                totalQuestions: examQuestions.length,
+                finalScore,
+                percentage,
+                detailedResults,
+                autoSubmit
+            };
+        }
+
+        // MODIFIED: Show results with negative marking details
+        function showResults() {
+            const results = calculateResults();
+            isExamSubmitted = true;
+            
+            // Hide question content and navigation
+            document.getElementById('question-content').style.display = 'none';
+            document.querySelector('.nav-controls').style.display = 'none';
+            
+            // Show results section
+            elements.resultsSection.classList.remove('hidden');
+            
+            // Update score circle
+            elements.scorePercentage.textContent = `${results.percentage}%`;
+            
+            // Set score circle class based on percentage
+            elements.scoreCircle.className = 'score-circle';
+            if (results.percentage >= 80) {
+                elements.scoreCircle.classList.add('score-excellent');
+            } else if (results.percentage >= 60极速3.0) {
+                elements.scoreCircle.classList.add('score-good');
+            } else if (results.percentage >= 40) {
+                elements.scoreCircle.classList.add('score-average');
+            } else {
+                elements.scoreCircle.classList.add('score-poor');
+            }
+            
+            // Update score details
+            elements.correctCount.textContent = results.correctAnswers;
+            elements.wrongCount.textContent = results.wrongAnswers;
+            elements.skippedCount.textContent = results.skippedQuestions;
+            elements.finalScore.textContent = `${results.finalScore.toFixed(2)} / ${results.totalQuestions}`;
+            
+            // Update score summary
+            const performanceText = results.percentage >= 80 ? 'Excellent' : 
+                                results.percentage >= 60 ? 'Good' : 
+                                results.percentage >= 40 ? 'Average' : 'Poor';
+            
+            elements.scoreSummary.textContent = `You scored ${results.finalScore.toFixed(2)} out of ${results.totalQuestions} questions (${performanceText})`;
+            
+            if (results.autoSubmit) {
+                elements.scoreSummary.textContent += ' - Exam was auto-submitted due to time limit';
+            }
+            
+            // Show detailed results
+            let detailedHTML = '';
+            results.detailedResults.forEach(result => {
+                detailedHTML += `
+                    <div class="result-item ${result.isCorrect ? 'correct' : result.isSkipped ? 'skipped' : 'incorrect'}">
+                        <div class="flex justify-between items-center mb-3">
+                            <div class="px-3 py-1 rounded-lg font-bold text-white" style="background: linear-gradient(135deg, #b68d40 0%, #9a7635 100%);">
+                                Q${result.questionNumber}
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas ${result.isCorrect ? 'fa-check-circle text-green-600' : result.isSkipped ? 'fa-minus-circle text-gray-500' : 'fa-times-circle text-red-600'}"></i>
+                                <span class="font-semibold ${result.isCorrect ? 'text-green-600' : result.isSkipped ? 'text-gray-600' : 'text-red-600'}">
+                                    ${result.isCorrect ? 'Correct' : result.isSkipped ? 'Skipped' : 'Incorrect'}
+                                </span>
+                            </div>
+                        </div>
+                        <p class="font-semibold mb-3" style="color: #122620;">${result.question}</p>
+                        <div class="space-y-2">
+                            <div class="answer-box user-answer ${result.isSkipped ? 'not-answered' : result.isCorrect ? 'correct极速3.0' : 'wrong'}">
+                                <strong>Your answer:</strong> ${result.userAnswer}
+                            </div>
+                            ${!result.isCorrect || result.isSkipped ? `
+                                <div class="answer-box correct-answer">
+                                    <strong>Correct answer:</strong> ${result.correctAnswer}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            elements.detailedResults.innerHTML = detailedHTML;
+        }
+
+        // Modal controls
+        function closeModal() {
+            stopTimer();
+            elements.examModal.classList.remove('show');
+            setTimeout(() => {
+                elements.examModal.style.display = 'none';
+            }, 300);
+            
+            // Reset exam state
+            currentExam = null;
+            examQuestions = [];
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            timeRemaining = 0;
+            isExamSubmitted = false;
+            
+            // Reset timer display
+            elements.timerDisplay.style.color = 'white';
+            elements.timerDisplay.classList.remove('pulse');
+        }
+
+        function retakeExam() {
+            if (currentExam) {
+                startExam(currentExam);
+            }
+        }
+
+        // MODIFIED createExamCard function to handle upcoming exams properly
+        function createExamCard(exam) {
+            const buttonText = exam.status === 'Model Test' ? 'Take Model Test' :
+                            exam.status === 'Upcoming' ? 'Take Exam' : 'Take Exam';
+            
+            const buttonClass = exam.status === 'Upcoming' ? 'btn-disabled' : '';
+            const buttonStyle = exam.status === 'Upcoming' 
+                ? 'background-color: #9ca3af; color: #6b7280; cursor: not-allowed;' 
+                : 'background-color: #b68d40; color: white;';
+
+            return `
+                <div class="card-hover bg-white rounded-lg shadow-md border overflow-hidden" style="border-color: rgba(214, 173, 96, 0.3); background: linear-gradient(135deg, #f4极速3.0ebd0 0%, #ffffff 100%);">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-bold line-clamp-2 flex-1 mr-3 hover:text-opacity-80 transition-colors" style="color: #122620;">${exam.title}</极速3.0h3>
+                            <span class="px-2极速3.0 py-1 text-xs font-medium rounded-full border ${getStatusColor(exam.status)} whitespace-nowrap">
+                                ${exam.status}
+                            </span>
+                        </div>
+                        <p class="text-sm leading-relaxed line-clamp-2 mb-4" style="color: rgba(18, 38, 32, 0.7);">
+                            ${exam.description}
+                        </p>
+
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div class="极速3.0flex items-center space-x-2">
+                                <i class="fas fa-clock" style="极速3.0color: #b68d40;"></i>
+                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7);">${exam.duration} min</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-book-open" style="color: #b68d40;"></极速3.0i>
+                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 极速3.00.7);">${exam.questions} questions</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-users" style="color: #b68d40;"></i>
+                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7);">${exam.participants} took</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-calendar" style="color: #b68d40;"></i>
+                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7);">${exam.date}</span>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="px-2 py-1 text-xs font-medium rounded-full border" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d极速3.040; border-color: rgba(182, 141, 64, 0.3);">
+                                ${exam.subject}
+                            </span>
+                            <span class="px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(exam.difficulty)}">
+                                ${exam.difficulty}
+                            </span>
+                        </div>
+
+                        <button
+                            class="w-full py-2.5 px-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 hover:shadow-lg exam-button ${buttonClass}"
+                            style="${buttonStyle}"
+                            onclick="handleExamButtonClick(${JSON.stringify(exam).replace(/"/g, '&quot;')})"
+                            ${exam.status === 'Upcoming' ? 'disabled' : ''}
+                        >
+                            ${buttonText}
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Update stats with dynamic total exams calculation
+        function updateStats() {
+            const total = mockExams.length;  // Dynamic calculation
+            const active = mockExams.filter(exam => exam.status === 'Active').length;
+            const upcoming = mockExams.filter(exam => exam.status === 'Upcoming').length;
+            const modelTest = mockExams.filter(exam => exam.status === 'Model Test').length;
+
+            document.getElementById('total-exams').textContent = total;
+            document.getElementById('active-exams').textContent = active;
+            document.getElementById('upcoming-exams').textContent = upcoming;
+            document.getElementById('model-test-exams').textContent = modelTest;
+        }
+
+        // Filter exams - removed subject filtering
+        function filterExams() {
+            filteredExams = mockExams.filter(exam => {
+                const matchesSearch = exam.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    exam.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                    exam.subject.toLowerCase().includes(searchTerm.toLowerCase());
+
+                const matchesDifficulty = filterDifficulty === 'all' || exam.difficulty.toLowerCase() === filterDifficulty;
+                const matchesStatus = filterStatus === 'all' || exam.status.toLowerCase() === filterStatus;
+
+                return matchesSearch && matchesDifficulty && matchesStatus;
+            });
+
+            renderExams();
+            updateExamCount();
+            updateActiveFilters();
+        }
+
+        function renderExams() {
+            if (filtered极速3.0Exams.length === 0) {
+                elements.examsGrid.classList.add('hidden');
+                elements.noResults.classList.remove('hidden');
+                return;
+            }
+
+            elements.examsGrid.classList.remove('hidden');
+            elements.noResults.classList.add('hidden');
+
+            elements.examsGrid.innerHTML = filteredExams.map(exam => createExamCard(exam)).join('');
+        }
+
+        function updateExamCount() {
+            const count = filteredExams.length;
+            elements.examCount.textContent = `${count} exam${count !== 1 ? 's' : ''} found`;
+        }
+
+        // Update active filters - removed subject filter
+        function updateActiveFilters() {
+            const filters = [];
+
+            if (searchTerm) {
+                filters.push({ type: 'search', label: `Search: "${searchTerm}"` });
+            }
+            if (filterDifficulty !== 'all') {
+                filters.push({ type: 'difficulty', label: `Difficulty: ${filterDifficulty}` });
+            }
+            if (filterStatus !== 'all') {
+                filters.push({ type: 'status', label: `Status: ${filterStatus}` });
+            }
+
+            if (filters.length === 0) {
+                elements.activeFilters.classList.add('hidden');
+                return;
+            }
+
+            elements.activeFilters.classList.remove('hidden');
+            const activeFiltersContent = document.getElementById('active-filters-content');
+            if (activeFiltersContent) {
+                activeFiltersContent.innerHTML = filters.map(filter =>
+                    `<span class="px-2 py-1 text-xs font-medium rounded-full border" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d40; border-color: rgba(182, 141, 64, 0.3);">
+                        ${filter.label}
+                    </span>`
+                ).join('');
+            }
+        }
+
+        // Initialize DOM elements - ENHANCED to include modal elements
+        function initializeElements() {
+            elements.searchInput = document.getElementById('search-input');
+            elements.difficultyFilter = document.getElementById('difficulty-filter');
+            elements.statusFilter = document.getElementById('status-filter');
+            elements.examsGrid = document.getElementById('exams-grid');
+            elements.examCount = document.getElementById('exam-count');
+            elements.noResults = document.getElementById('no-results');
+            elements.activeFilters = document.getElementById('active-filters');
+            
+            // === MODAL ELEMENTS - ADDITION ===
+            elements.examModal = document.getElementById('exam-modal');
+            elements.examTitle = document.getElementById('exam-title');
+            elements.timerDisplay = document.getElementById('timer-display');
+            elements.questionContent = document.getElementById('question-content');
+            elements.progressFill = document.getElementById('progress-fill');
+            elements.questionProgress = document.getElementById('question-progress');
+            elements.answeredCount = document.getElementById('answered-count');
+            elements.jumpInput = document.getElementById('jump-input');
+            elements.jumpBtn = document.getElementById('jump-btn');
+            elements.prevBtn = document.getElementById('prev-btn');
+            elements.nextBtn = document.getElementById('next-btn');
+            elements.submitBtn = document.getElementById('submit-btn');
+            elements.resultsSection = document.getElementById('results-section');
+            elements.scoreCircle = document.getElementById极速3.0('score-circle');
+            elements.scorePercentage = document.getElementById('score-percentage');
+            elements.scoreSummary = document.getElementById('score-summary');
+            elements.detailedResults = document.getElementById('detailed-results');
+            elements.retakeBtn = document.getElementById('retake-btn');
+            elements.closeModalBtn = document.getElementById('close-modal-btn');
+            elements.closeResultsBtn = document.getElementById('close-results-btn');
+            elements.passwordModal = document.getElementById('password-modal');
+            elements.passwordExamTitle = document.getElementById('password-exam-title');
+            elements.passwordExamDescription = document.getElementById('password-exam-description');
+            elements.passwordInput = document.getElementById('password-input');
+            elements.passwordError = document.getElementById('password-error');
+            elements.closePasswordModalBtn = document.getElementById('close-password-modal-btn');
+            elements.cancelPasswordBtn = document.getElementById('cancel-password-btn');
+            elements.submitPasswordBtn = document.getElementById('submit-password-btn');
+            
+            // New elements for negative marking display
+            elements.correctCount = document.getElementById('correct-count');
+            elements.wrongCount = document.getElementById('wrong-count');
+            elements.skippedCount = document.getElementById('skipped-count');
+            elements.finalScore = document.getElementById('final-score');
+        }
+
+        // Add event listeners - ENHANCED to include modal event listeners
+        function addEventListeners() {
+            // Original filter event listeners
+            elements.searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value;
+                filterExams();
+            });
+
+            elements.difficultyFilter.addEventListener('change', (e) => {
+                filterDifficulty = e.target.value;
+                filterExams();
+            });
+
+            elements.statusFilter.addEventListener('change', (e) => {
+                filterStatus = e.target.value;
+                filterExams();
+            });
+
+            // === MODAL EVENT LISTENERS - ADDITION ===
+            elements.jumpBtn.addEventListener('click', jumpToQuestion);
+            elements.jumpInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    jumpToQuestion();
+                }
+            });
+            elements.prevBtn.addEventListener('click', previousQuestion);
+            elements.nextBtn.addEventListener('click', nextQuestion);
+            elements.submitBtn.addEventListener('click', submitExam);
+            elements.retakeBtn.addEventListener('click', retakeExam);
+            elements.closeModalBtn.addEventListener('click', closeModal);
+            elements.closeResultsBtn.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside
+            elements.examModal.addEventListener('click', (极速3.0e) => {
+                if (e.target === elements.examModal) {
+                    if (confirm('Are you sure you want to close the exam? Your progress will be lost.')) {
+                        closeModal();
+                    }
+                }
+            });
+
+            // Keyboard shortcuts
+            document.addEventListener('keydown', (e极速3.0) => {
+                if (elements.examModal.classList.contains('show') && !isExamSubmitted) {
+                    switch(e.key) {
+                        case 'ArrowLeft':
+                            e.preventDefault();
+                            previousQuestion();
+                            break;
+                        case 'ArrowRight':
+                            e.preventDefault();
+                            nextQuestion();
+                            break;
+                        case 'Escape':
+                            if (confirm('Are you sure you want to close the exam? Your progress will be lost.')) {
+                                closeModal();
+                            }
+                            break;
+                    }
+                }
+            });
+            // Password modal event listeners
+            elements.closePasswordModalBtn.addEventListener('click', hidePasswordModal);
+            elements.cancelPasswordBtn.addEventListener('click', hidePasswordModal);
+            elements.submitPasswordBtn.addEventListener('click', verifyPasswordAndStartExam);
+            
+            // Allow submitting password with Enter key
+            elements.passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    verifyPasswordAndStartExam();
+                }
+            });
+            
+            // Close password modal when clicking outside
+            elements.passwordModal.addEventListener('click', (e) => {
+                if (e.target === elements.passwordModal) {
+                    hidePasswordModal();
+                }
+            });
+        }
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeElements();
+            updateStats();
+            filterExams();
+            addEventListeners();
+        });
+    </script>
+</body>
+</html>
