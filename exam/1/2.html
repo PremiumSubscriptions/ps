@@ -188,7 +188,7 @@
             border-radius: 8px;
             text-align: center;
             outline: none;
-            transition: border-color 极速3.0.3s ease;
+            transition: border-color .3s ease;
         }
         
         .jump-input:focus {
@@ -196,7 +196,7 @@
         }
         
         .jump-btn {
-            background: linear-gradient(135deg, #b68d40 极速3.0%, #9a7635 100%);
+            background: linear-gradient(135deg, #b68d40 %, #9a7635 100%);
             color: white;
             padding: 6px 12px;
             border: none;
@@ -227,13 +227,13 @@
             justify-content: center;
             align-items: center;
             margin: 0 auto 24px;
-            font-size: 极速3.0px;
+            font-size: px;
             font-weight: bold;
             border: 6px solid;
         }
         
         .score-excellent { border-color: #10b981; background: linear-gradient(135deg, #10b981, #059669); color: white; }
-        .score-good { border-color: #3b82f6; background: linear-gradient(135极速3.0deg, #3b82f6, #2563eb); color: white; }
+        .score-good { border-color: #3b82f6; background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; }
         .score-average { border-color: #f59e0b; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; }
         .score-poor { border-color: #ef4444; background: linear-gradient(135deg, #ef4444, #dc2626); color: white; }
         
@@ -242,7 +242,7 @@
             border-radius: 12px;
             padding: 20px;
             margin: 12px 0;
-            border-left: 4极速3.0px solid;
+            border-left: 4px solid;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
@@ -269,7 +269,7 @@
             color: white;
             padding: 10px 20px;
             border: none;
-极速3.0            border-radius: 8px;
+            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -298,11 +298,11 @@
         }
         
         .btn-secondary:hover {
-            background: #极速3.0e2e8f0;
+            background: #e2e8f0;
             transform: translateY(-1px);
         }
         
-        .极速3.0btn-success {
+        .btn-success {
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             color: white;
             padding: 10px 20px;
@@ -408,9 +408,9 @@
         .exam-modal-body::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 4px;
-极速3.0        }
+     }
         
-        .exam-modal-body::-webkit极速3.0-scrollbar-thumb:hover {
+        .exam-modal-body::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
         
@@ -470,12 +470,12 @@
             background: white;
             width: 100%;
             max-width: 400px;
-            margin极速3.0: auto;
+            margin: auto;
             border-radius: 16px;
             overflow: hidden;
             transform: scale(0.9);
             transition: transform 0.3s ease;
-            box-shadow: 0 25px 50px -极速3.012px rgba(0, 极速3.00, 0, 0.25);
+            box-shadow: 0 25px 50px 12px rgba(0, 0, 0, 0.25);
         }
         
         .password-modal.show .password-modal-content {
@@ -560,7 +560,7 @@
         
         .score-detail-item.total {
             grid-column: span 2;
-            border: 1px solid #b68极速3.0d40;
+            border: 1px solid #b68d40;
             background: rgba(182, 141, 64, 0.1);
         }
         
@@ -592,12 +592,12 @@
             </div>
 
             <!-- Stats Cards -->
-            <div class="grid grid-cols-2 md极速3.0:grid-cols-4 gap-4 mb-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
                     <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="total-exams">12</div>
                     <div class="text-sm text-gray-200">Total Exams</div>
                 </div>
-                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p极速3.0-4 text-center border border-white border-opacity-20">
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
                     <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="active-exams">5</div>
                     <div class="text-sm text-gray-200">Active Now</div>
                 </div>
@@ -606,8 +606,8 @@
                     <div class="text-sm text-gray-200">Upcoming</div>
                 </div>
                 <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
-                    <div class="text-2xl md:text-3xl font-bold text-white mb极速3.0-1" id="model-test-exams">2</div>
-                    <div class极速3.0="text-sm text-gray-200">Model Test</div>
+                    <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="model-test-exams">2</div>
+                    <div class="text-sm text-gray-200">Model Test</div>
                 </div>
             </div>
         </div>
@@ -638,7 +638,7 @@
 
                     <!-- Difficulty Filter -->
                     <div>
-                        <label class="block text极速3.0-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0极速3.0.7);">Difficulty Level</label>
+                        <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Difficulty Level</label>
                         <select
                             id="difficulty-filter"
                             class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent transition-all"
@@ -654,7 +654,7 @@
 
                     <!-- Status Filter -->
                     <div>
-                        <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.极速3.07);">Exam Status</label>
+                        <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Exam Status</label>
                         <select
                             id="status-filter"
                             class="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:border-transparent transition-all"
@@ -670,7 +670,7 @@
 
                 <!-- Active Filters -->
                 <div id="active-filters" class="mt-4 hidden">
-                    <div class="text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Active Filters:</极速3.0div>
+                    <div class="text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Active Filters:</div>
                     <div class="flex flex-wrap gap-2" id="active-filters-content"></div>
                 </div>
             </div>
@@ -692,11 +692,11 @@
 
             <!-- No Results -->
             <div id="no-results" class="hidden text-center py-12">
-                <div class="mx-auto w-24极速3.0 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
+                <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                     <i class="fas fa-search text-2xl text-gray-400"></i>
                 </div>
-                <h3 class="text-xl font-semib极速3.0old text-gray-600 mb-2">No exams found</h3>
-                <极速3.0p class="text-gray-500">Try adjusting your search criteria or filters to find more exams.</p>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">No exams found</h3>
+                <p class="text-gray-500">Try adjusting your search criteria or filters to find more exams.</p>
             </div>
         </section>
     </main>
@@ -705,7 +705,7 @@
         <div class="password-modal-content">
             <div class="password-modal-header">
                 <h2 id="password-exam-title" class="text-xl font-bold">Enter Exam Password</h2>
-                <div class="btn-icon btn-icon-close极速3.0" id="close-password-modal-btn">
+                <div class="btn-icon btn-icon-close" id="close-password-modal-btn">
                     <i class="fas fa-times"></i>
                 </div>
             </div>
@@ -760,7 +760,7 @@
                 <!-- Jump to Question Section -->
                 <div class="jump-to-question">
                     <i class="fas fa-arrow-right" style="color: #b68d40;"></i>
-                    <span class="font-semibold" style极速3.0="color: #122620;">Jump to Question:</span>
+                    <span class="font-semibold" style="color: #122620;">Jump to Question:</span>
                     <input type="number" id="jump-input" class="jump-input" min="1" placeholder="1">
                     <button id="jump-btn" class="jump-btn">Go</button>
                 </div>
@@ -769,7 +769,7 @@
                 <div class="progress-bar">
                     <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
                 </div>
-                <div class="flex justify-between text-sm mb-6" style="极速3.0color: rgba(18, 38, 32, 0.7);">
+                <div class="flex justify-between text-sm mb-6" style="color: rgba(18, 38, 32, 0.7);">
                     <span id="question-progress">Question 1 of 10</span>
                     <span id="answered-count">0 answered</span>
                 </div>
@@ -790,15 +790,15 @@
                         </button>
                     </div>
                     <button id="submit-btn" class="btn-success">
-                        <极速3.0i class="fas fa-check mr-2"></i>Submit Exam
+                        <i class="fas fa-check mr-2"></i>Submit Exam
                     </button>
                 </div>
 
                 <!-- Results Section (Initially Hidden) -->
                 <div id="results-section" class="hidden">
                     <div class="results-modal fade-in-up">
-                        <div id="score-circle极速3.0" class="score-circle">
-                            <div id="score-percentage">0%</极速3.0div>
+                        <div id="score-circle" class="score-circle">
+                            <div id="score-percentage">0%</div>
                             <div class="text-sm">Score</div>
                         </div>
                         <h2 class="text-3xl font-bold mb-4" style="color: #122620;">Exam Results</h2>
@@ -1319,7 +1319,7 @@
                 case 'upcoming':
                     return 'bg-blue-100 text-blue-800 border-blue-200';
                 case 'model test':
-                    return 'bg-gray-100极速3.0 text-gray-800 border-gray-200';
+                    return 'bg-gray-100 text-gray-800 border-gray-200';
                 default:
                     return 'bg-gray-100 text-gray-800 border-gray-200';
             }
@@ -1367,7 +1367,7 @@
                 hidePasswordModal();
                 try {
                     // Start the exam
-                    await startExam(password极速3.0Exam);
+                    await startExam(passwordExam);
                 } catch (error) {
                     console.error('Error starting exam:', error);
                     alert('Error loading exam questions. Please try again.');
@@ -1424,7 +1424,7 @@
             // Hide results section
             elements.resultsSection.classList.add('hidden');
             document.getElementById('question-content').style.display = 'block';
-            document.querySelector('.nav-controls').极速3.0style.display = 'flex';
+            document.querySelector('.nav-controls').style.display = 'flex';
         }
         
         // Timer functions
@@ -1483,7 +1483,7 @@
             // Add image if present
             if (question.image) {
                 questionHTML += `
-                    <极速3.0div class="mb-6 text-center">
+                    <div class="mb-6 text-center">
                         <img src="${question.image}" alt="Question related image" 
                              class="max-w-md mx-auto rounded-lg shadow-md" 
                              onerror="this.style.display='none'">
@@ -1560,7 +1560,7 @@
         }
 
         // Progress tracking
-        function updateProgress极速3.0() {
+        function updateProgress() {
             const progress = ((currentQuestionIndex + 1) / examQuestions.length) * 100;
             elements.progressFill.style.width = `${progress}%`;
             
@@ -1570,7 +1570,7 @@
             elements.answeredCount.textContent = `${answeredCount} answered`;
             
             // Update jump input
-            elements.jumpInput.value = currentQuestion极速3.0Index + 1;
+            elements.jumpInput.value = currentQuestionIndex + 1;
         }
 
         function updateNavigationButtons() {
@@ -1672,7 +1672,7 @@
             elements.scoreCircle.className = 'score-circle';
             if (results.percentage >= 80) {
                 elements.scoreCircle.classList.add('score-excellent');
-            } else if (results.percentage >= 60极速3.0) {
+            } else if (results.percentage >= 60) {
                 elements.scoreCircle.classList.add('score-good');
             } else if (results.percentage >= 40) {
                 elements.scoreCircle.classList.add('score-average');
@@ -1715,7 +1715,7 @@
                         </div>
                         <p class="font-semibold mb-3" style="color: #122620;">${result.question}</p>
                         <div class="space-y-2">
-                            <div class="answer-box user-answer ${result.isSkipped ? 'not-answered' : result.isCorrect ? 'correct极速3.0' : 'wrong'}">
+                            <div class="answer-box user-answer ${result.isSkipped ? 'not-answered' : result.isCorrect ? 'correct' : 'wrong'}">
                                 <strong>Your answer:</strong> ${result.userAnswer}
                             </div>
                             ${!result.isCorrect || result.isSkipped ? `
@@ -1769,11 +1769,11 @@
                 : 'background-color: #b68d40; color: white;';
 
             return `
-                <div class="card-hover bg-white rounded-lg shadow-md border overflow-hidden" style="border-color: rgba(214, 173, 96, 0.3); background: linear-gradient(135deg, #f4极速3.0ebd0 0%, #ffffff 100%);">
+                <div class="card-hover bg-white rounded-lg shadow-md border overflow-hidden" style="border-color: rgba(214, 173, 96, 0.3); background: linear-gradient(135deg, #f4ebd0 0%, #ffffff 100%);">
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-3">
-                            <h3 class="text-xl font-bold line-clamp-2 flex-1 mr-3 hover:text-opacity-80 transition-colors" style="color: #122620;">${exam.title}</极速3.0h3>
-                            <span class="px-2极速3.0 py-1 text-xs font-medium rounded-full border ${getStatusColor(exam.status)} whitespace-nowrap">
+                            <h3 class="text-xl font-bold line-clamp-2 flex-1 mr-3 hover:text-opacity-80 transition-colors" style="color: #122620;">${exam.title}<h3>
+                            <span class="px-2 py-1 text-xs font-medium rounded-full border ${getStatusColor(exam.status)} whitespace-nowrap">
                                 ${exam.status}
                             </span>
                         </div>
@@ -1782,13 +1782,13 @@
                         </p>
 
                         <div class="grid grid-cols-2 gap-4 mb-4">
-                            <div class="极速3.0flex items-center space-x-2">
-                                <i class="fas fa-clock" style="极速3.0color: #b68d40;"></i>
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-clock" style="color: #b68d40;"></i>
                                 <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7);">${exam.duration} min</span>
                             </div>
                             <div class="flex items-center space-x-2">
-                                <i class="fas fa-book-open" style="color: #b68d40;"></极速3.0i>
-                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 极速3.00.7);">${exam.questions} questions</span>
+                                <i class="fas fa-book-open" style="color: #b68d40;"></i>
+                                <span class="text-sm font-medium" style="color: rgba(18, 38, 32, 0.7);">${exam.questions} questions</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <i class="fas fa-users" style="color: #b68d40;"></i>
@@ -1801,7 +1801,7 @@
                         </div>
 
                         <div class="flex justify-between items-center mb-4">
-                            <span class="px-2 py-1 text-xs font-medium rounded-full border" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d极速3.040; border-color: rgba(182, 141, 64, 0.3);">
+                            <span class="px-2 py-1 text-xs font-medium rounded-full border" style="background-color: rgba(182, 141, 64, 0.1); color: #b68d40; border-color: rgba(182, 141, 64, 0.3);">
                                 ${exam.subject}
                             </span>
                             <span class="px-2 py-1 text-xs font-medium rounded-full border ${getDifficultyColor(exam.difficulty)}">
@@ -1854,7 +1854,7 @@
         }
 
         function renderExams() {
-            if (filtered极速3.0Exams.length === 0) {
+            if (filteredExams.length === 0) {
                 elements.examsGrid.classList.add('hidden');
                 elements.noResults.classList.remove('hidden');
                 return;
@@ -1925,7 +1925,7 @@
             elements.nextBtn = document.getElementById('next-btn');
             elements.submitBtn = document.getElementById('submit-btn');
             elements.resultsSection = document.getElementById('results-section');
-            elements.scoreCircle = document.getElementById极速3.0('score-circle');
+            elements.scoreCircle = document.getElementById('score-circle');
             elements.scorePercentage = document.getElementById('score-percentage');
             elements.scoreSummary = document.getElementById('score-summary');
             elements.detailedResults = document.getElementById('detailed-results');
@@ -1981,7 +1981,7 @@
             elements.closeResultsBtn.addEventListener('click', closeModal);
 
             // Close modal when clicking outside
-            elements.examModal.addEventListener('click', (极速3.0e) => {
+            elements.examModal.addEventListener('click', (e) => {
                 if (e.target === elements.examModal) {
                     if (confirm('Are you sure you want to close the exam? Your progress will be lost.')) {
                         closeModal();
@@ -1990,7 +1990,7 @@
             });
 
             // Keyboard shortcuts
-            document.addEventListener('keydown', (e极速3.0) => {
+            document.addEventListener('keydown', (e) => {
                 if (elements.examModal.classList.contains('show') && !isExamSubmitted) {
                     switch(e.key) {
                         case 'ArrowLeft':
