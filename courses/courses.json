@@ -1,4 +1,23 @@
-[
+[ 
+  { 
+    "id": 102,
+    "title": "BP Powerplay 2026",
+    "description": "❄️কোর্স এর সাথে যা যা পাচ্ছো :\n\n➡️120+ Classes \n✏️Class ( With YouTube Link )\n▶️Archive Classes \n➡️ক্লাস এর লেকচার শীট \n🗒️Practice Sheet\n➡️Super Fast Uploading\n➡️লাইফটাইম এক্সেস\n➡️ ক্লাস সাজানো থাকবে টপিক অনুযায়ী \n(আগের আইডি নষ্ট হলে নতুন আইডি এড করা হবে।)\n\n💢মূল্য : 150 টাকা",
+    "category": "Physics",
+    "subject": [
+      "Physics"
+    ],
+    "grade": [
+      "HSC 26"
+    ],
+    "courseType": "Bondi Pathshala",
+    "price": 150,
+    "originalPrice": 5999,
+    "duration": "2.5 months",
+    "students": 6000,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20251107_185156_519.jpg"
+  },
   { 
     "id": 101,
     "title": "ACS FRB 2026",
