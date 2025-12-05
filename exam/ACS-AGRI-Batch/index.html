@@ -8,13 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-window.MathJax = {
-  tex: {
-    packages: {'[+]': ['mhchem']}
-  }
-};
-</script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    window.MathJax = {
+      tex: {
+        packages: {'[+]': ['mhchem']}
+      }
+    };
+    </script>
     <style>
         .card-hover {
             transition: all 0.3s ease;
@@ -526,7 +525,6 @@ window.MathJax = {
     </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Header -->
     <header class="relative" style="background: linear-gradient(135deg, #122620 0%, #1a3a2e 100%);">
         <div class="absolute inset-0 bg-black opacity-20"></div>
         <div class="relative container mx-auto px-4 py-8">
@@ -540,7 +538,6 @@ window.MathJax = {
                 </p>
             </div>
 
-            <!-- Stats Cards -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg p-4 text-center border border-white border-opacity-20">
                     <div class="text-2xl md:text-3xl font-bold text-white mb-1" id="total-exams">12</div>
@@ -562,9 +559,7 @@ window.MathJax = {
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
-        <!-- Search and Filters -->
         <div class="mb-8">
             <div class="bg-white rounded-lg shadow-sm border p-6" style="border-color: rgba(214, 173, 96, 0.3);">
                 <h2 class="text-lg font-semibold mb-4" style="color: #122620;">
@@ -573,7 +568,6 @@ window.MathJax = {
                 </h2>
                 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <!-- Search Input -->
                     <div class="md:col-span-1">
                         <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Search Exams</label>
                         <input
@@ -585,7 +579,6 @@ window.MathJax = {
                         >
                     </div>
 
-                    <!-- Difficulty Filter -->
                     <div>
                         <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Difficulty Level</label>
                         <select
@@ -601,7 +594,6 @@ window.MathJax = {
                         </select>
                     </div>
 
-                    <!-- Status Filter -->
                     <div>
                         <label class="block text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Exam Status</label>
                         <select
@@ -617,7 +609,6 @@ window.MathJax = {
                     </div>
                 </div>
 
-                <!-- Active Filters -->
                 <div id="active-filters" class="mt-4 hidden">
                     <div class="text-sm font-medium mb-2" style="color: rgba(18, 38, 32, 0.7);">Active Filters:</div>
                     <div class="flex flex-wrap gap-2" id="active-filters-content"></div>
@@ -625,7 +616,6 @@ window.MathJax = {
             </div>
         </div>
 
-        <!-- Results Section -->
         <section>
             <div class="flex justify-between items-center mb-6">
                 <h2 class="text-2xl font-bold" style="color: #122620;">Available Exams</h2>
@@ -634,12 +624,9 @@ window.MathJax = {
                 </span>
             </div>
 
-            <!-- Exams Grid -->
             <div id="exams-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <!-- Exam cards will be populated by JavaScript -->
-            </div>
+                </div>
 
-            <!-- No Results -->
             <div id="no-results" class="hidden text-center py-12">
                 <div class="mx-auto w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mb-4">
                     <i class="fas fa-search text-2xl text-gray-400"></i>
@@ -649,8 +636,7 @@ window.MathJax = {
             </div>
         </section>
     </main>
-        <!-- Password Modal -->
-    <div id="password-modal" class="password-modal">
+        <div id="password-modal" class="password-modal">
         <div class="password-modal-content">
             <div class="password-modal-header">
                 <h2 id="password-exam-title" class="text-xl font-bold">Enter Exam Password</h2>
@@ -677,7 +663,6 @@ window.MathJax = {
             </div>
         </div>
     </div>
-    <!-- Footer -->
     <footer class="mt-12 py-8" style="background-color: #122620;">
         <div class="container mx-auto px-4 text-center">
             <p class="text-gray-300">
@@ -686,7 +671,6 @@ window.MathJax = {
         </div>
     </footer>
 
-    <!-- === EXAM MODAL - UPDATED === -->
     <div id="exam-modal" class="exam-modal">
         <div class="exam-modal-content">
             <div class="exam-modal-header">
@@ -706,7 +690,6 @@ window.MathJax = {
                 </div>
             </div>
             <div class="exam-modal-body">
-                <!-- Jump to Question Section -->
                 <div class="jump-to-question">
                     <i class="fas fa-arrow-right" style="color: #b68d40;"></i>
                     <span class="font-semibold" style="color: #122620;">Jump to Question:</span>
@@ -714,7 +697,6 @@ window.MathJax = {
                     <button id="jump-btn" class="jump-btn">Go</button>
                 </div>
 
-                <!-- Progress Bar -->
                 <div class="progress-bar">
                     <div id="progress-fill" class="progress-fill" style="width: 0%"></div>
                 </div>
@@ -723,12 +705,9 @@ window.MathJax = {
                     <span id="answered-count">0 answered</span>
                 </div>
 
-                <!-- Question Content -->
                 <div id="question-content">
-                    <!-- Questions will be dynamically loaded here -->
-                </div>
+                    </div>
 
-                <!-- Navigation Buttons -->
                 <div class="nav-controls">
                     <div class="nav-buttons">
                         <button id="prev-btn" class="btn-icon btn-icon-nav" disabled>
@@ -743,7 +722,6 @@ window.MathJax = {
                     </button>
                 </div>
 
-                <!-- Results Section (Initially Hidden) -->
                 <div id="results-section" class="hidden">
                     <div class="results-modal fade-in-up">
                         <div id="score-circle" class="score-circle">
@@ -758,8 +736,7 @@ window.MathJax = {
                         <div class="text-left">
                             <h3 class="text-xl font-bold mb-4" style="color: #122620;">Detailed Results</h3>
                             <div id="detailed-results">
-                                <!-- Detailed results will be shown here -->
-                            </div>
+                                </div>
                         </div>
                         
                         <div class="flex justify-center gap-4 mt-8">
@@ -777,12 +754,12 @@ window.MathJax = {
     </div>
 
     <script>
-        // Mock exam data with link property for redirection
+        // Mock exam data with questionRange and questionsFile properties
         const mockExams = [
             {
                 id: 1,
                 title: "Advanced Mathematics - Final Assessment",
-                description: "Comprehensive exam covering calculus, algebra, and advanced mathematical concepts for final evaluation.",
+                description: "Comprehensive exam covering calculus, algebra, and advanced mathematical concepts.",
                 subject: "Mathematics",
                 difficulty: "Hard",
                 duration: 5, 
@@ -791,7 +768,38 @@ window.MathJax = {
                 date: "Jan 25, 2025",
                 status: "Active",
                 password: "AGRI_paid",
-                questionsFile: "math_questions.json"
+                questionsFile: "math_questions.json",
+                questionRange: "" // Specific file loaded
+            },
+            {
+                id: 2,
+                title: "Physics Random Quiz",
+                description: "A quiz that loads random questions from the general pool.",
+                subject: "Physics",
+                difficulty: "Medium",
+                duration: 10,
+                questions: 10,
+                participants: 850,
+                date: "Feb 10, 2025",
+                status: "Active",
+                password: "123",
+                questionsFile: "", // Empty means use default questions.json
+                questionRange: "random" // Load randomly
+            },
+            {
+                id: 3,
+                title: "Chemistry - Chapter 1 (Q1-10)",
+                description: "Specific questions from the general pool for Chapter 1.",
+                subject: "Chemistry",
+                difficulty: "Easy",
+                duration: 15,
+                questions: 10,
+                participants: 500,
+                date: "Feb 15, 2025",
+                status: "Active",
+                password: "123",
+                questionsFile: "",
+                questionRange: "1-10" // Load specific range
             }
         ];
 
@@ -810,7 +818,8 @@ window.MathJax = {
         let timeRemaining = 0;
         let isExamSubmitted = false;
         let passwordExam = null;
-        // DOM Elements - removed subject filter elements
+        
+        // DOM Elements
         const elements = {
             searchInput: null,
             difficultyFilter: null,
@@ -878,19 +887,25 @@ window.MathJax = {
             }
         }
 
-        // === EXAM FUNCTIONS - ADDITION ===
-        // MODIFIED: Handle exam button click - now shows password modal
+        // Helper function to shuffle array for random questions
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // === EXAM FUNCTIONS ===
         async function handleExamButtonClick(exam) {
             if (exam.status !== 'Active' && exam.status !== 'Model Test') {
-                return; // Do nothing for upcoming exams
+                return;
             }
             
-            // Store the exam and show password modal
             passwordExam = exam;
             showPasswordModal();
         }
 
-        // NEW: Show password modal
         function showPasswordModal() {
             elements.passwordExamTitle.textContent = passwordExam.title;
             elements.passwordExamDescription.textContent = `This "${passwordExam.title}" exam is password protected. Please enter the password to continue.`;
@@ -904,7 +919,6 @@ window.MathJax = {
             }, 10);
         }
 
-        // NEW: Hide password modal
         function hidePasswordModal() {
             elements.passwordModal.classList.remove('show');
             setTimeout(() => {
@@ -912,73 +926,100 @@ window.MathJax = {
             }, 300);
         }
 
-        // NEW: Verify password and start exam if correct
         async function verifyPasswordAndStartExam() {
             const enteredPassword = elements.passwordInput.value;
             
             if (enteredPassword === passwordExam.password) {
                 hidePasswordModal();
                 try {
-                    // Start the exam
                     await startExam(passwordExam);
                 } catch (error) {
                     console.error('Error starting exam:', error);
                     alert('Error loading exam questions. Please try again.');
                 }
             } else {
-                // Show error message
                 elements.passwordError.style.display = 'block';
                 elements.passwordInput.focus();
             }
         }
-        // Start exam function - MODIFIED to fetch questions from external files
+
+        // --- UPDATED START EXAM LOGIC ---
         async function startExam(exam) {
             currentExam = exam;
             
             try {
-                // Fetch questions from the external JSON file
-                const response = await fetch(exam.questionsFile);
-                if (!response.ok) {
-                    throw new Error(`Failed to fetch questions: ${response.status}`);
+                let allQuestions = [];
+                
+                // Case 1: questionsFile has a file name -> Load specific file
+                if (exam.questionsFile && exam.questionsFile.trim() !== "") {
+                    const response = await fetch(exam.questionsFile);
+                    if (!response.ok) throw new Error(`Failed to fetch questions: ${response.status}`);
+                    const json = await response.json();
+                    // Load normally as per original format
+                    examQuestions = json.slice(0, exam.questions);
+                } 
+                // Case 2: questionsFile is empty -> Load questions.json and apply logic
+                else {
+                    const response = await fetch('questions.json'); // Default file
+                    if (!response.ok) throw new Error(`Failed to fetch default questions: ${response.status}`);
+                    allQuestions = await response.json();
+                    
+                    // Logic for loading strategy
+                    if (exam.questionRange === 'random') {
+                        // Randomly shuffle and take N questions
+                        // Refreshing page re-runs this, so it loads different questions
+                        const shuffled = shuffleArray([...allQuestions]);
+                        examQuestions = shuffled.slice(0, exam.questions);
+                    } 
+                    else if (exam.questionRange && exam.questionRange.includes('-')) {
+                        // Parse range "1-20"
+                        const parts = exam.questionRange.split('-');
+                        const start = parseInt(parts[0]);
+                        const end = parseInt(parts[1]);
+                        
+                        // Slice the specific range (converting 1-based index to 0-based)
+                        if (!isNaN(start) && !isNaN(end)) {
+                            examQuestions = allQuestions.slice(start - 1, end);
+                        } else {
+                            // Fallback if parsing fails
+                            examQuestions = allQuestions.slice(0, exam.questions);
+                        }
+                    } else {
+                        // Default fallback if no range specified
+                        examQuestions = allQuestions.slice(0, exam.questions);
+                    }
                 }
-                const allQuestions = await response.json();
-                examQuestions = allQuestions.slice(0, exam.questions); // Get required number of questions
+                
+                // IMPORTANT: The UI logic (in loadQuestion) uses currentQuestionIndex + 1
+                // So visually it will always show 1, 2, 3... regardless of how we loaded the array.
+                
             } catch (error) {
                 console.error('Error loading questions:', error);
                 alert('Error loading exam questions. Please try again.');
                 return;
             }
+
             currentQuestionIndex = 0;
             userAnswers = {};
             isExamSubmitted = false;
-            timeRemaining = exam.duration * 60; // Convert minutes to seconds
+            timeRemaining = exam.duration * 60;
             
-            // Show modal
             elements.examModal.style.display = 'flex';
             setTimeout(() => {
                 elements.examModal.classList.add('show');
             }, 10);
             
-            // Set exam title
             elements.examTitle.textContent = exam.title;
-            // Start timer
             startTimer();
-            
-            // Load first question
             loadQuestion();
-            
-            // Update jump input max value
             elements.jumpInput.max = examQuestions.length;
-            
-            // Update progress
             updateProgress();
             
-            // Hide results section
             elements.resultsSection.classList.add('hidden');
             document.getElementById('question-content').style.display = 'block';
             document.querySelector('.nav-controls').style.display = 'flex';
         }
-        // Timer functions
+
         function startTimer() {
             elements.timerDisplay.textContent = formatTime(timeRemaining);
             
@@ -986,7 +1027,6 @@ window.MathJax = {
                 timeRemaining--;
                 elements.timerDisplay.textContent = formatTime(timeRemaining);
                 
-                // Change color when time is running out
                 if (timeRemaining <= 60) {
                     elements.timerDisplay.style.color = '#ef4444';
                     elements.timerDisplay.classList.add('pulse');
@@ -1013,7 +1053,7 @@ window.MathJax = {
             }
         }
 
-        // Question loading and display
+        // Question display logic - Visual numbering is independent of data
         function loadQuestion() {
             if (currentQuestionIndex < 0 || currentQuestionIndex >= examQuestions.length) {
                 return;
@@ -1031,7 +1071,6 @@ window.MathJax = {
                     </div>
             `;
             
-            // Add image if present
             if (question.image) {
                 questionHTML += `
                     <div class="mb-6 text-center">
@@ -1042,7 +1081,6 @@ window.MathJax = {
                 `;
             }
             
-            // Add options
             questionHTML += '<div class="space-y-3">';
             question.options.forEach((option, index) => {
                 const isSelected = userAnswers[question.id] === option;
@@ -1056,16 +1094,12 @@ window.MathJax = {
             questionHTML += '</div></div>';
             
             elements.questionContent.innerHTML = questionHTML;
-            
-            // Update navigation buttons
             updateNavigationButtons();
         }
 
-        // Answer selection
         function selectAnswer(questionId, answer) {
             userAnswers[questionId] = answer;
             
-            // Update UI
             const optionItems = document.querySelectorAll('.option-item');
             optionItems.forEach(item => {
                 item.classList.remove('selected');
@@ -1073,16 +1107,13 @@ window.MathJax = {
                 radio.checked = false;
             });
             
-            // Select the clicked option
             event.currentTarget.classList.add('selected');
             const radio = event.currentTarget.querySelector('input[type="radio"]');
             radio.checked = true;
             
-            // Update progress
             updateProgress();
         }
 
-        // Navigation functions
         function previousQuestion() {
             if (currentQuestionIndex > 0) {
                 currentQuestionIndex--;
@@ -1110,17 +1141,12 @@ window.MathJax = {
             }
         }
 
-        // Progress tracking
         function updateProgress() {
             const progress = ((currentQuestionIndex + 1) / examQuestions.length) * 100;
             elements.progressFill.style.width = `${progress}%`;
-            
             elements.questionProgress.textContent = `Question ${currentQuestionIndex + 1} of ${examQuestions.length}`;
-            
             const answeredCount = Object.keys(userAnswers).length;
             elements.answeredCount.textContent = `${answeredCount} answered`;
-            
-            // Update jump input
             elements.jumpInput.value = currentQuestionIndex + 1;
         }
 
@@ -1141,7 +1167,6 @@ window.MathJax = {
             }
         }
 
-        // Exam submission
         function submitExam() {
             if (confirm('Are you sure you want to submit the exam? You cannot change your answers after submission.')) {
                 stopTimer();
@@ -1192,17 +1217,12 @@ window.MathJax = {
             const results = calculateResults();
             isExamSubmitted = true;
             
-            // Hide question content and navigation
             document.getElementById('question-content').style.display = 'none';
             document.querySelector('.nav-controls').style.display = 'none';
-            
-            // Show results section
             elements.resultsSection.classList.remove('hidden');
             
-            // Update score circle
             elements.scorePercentage.textContent = `${results.percentage}%`;
             
-            // Set score circle class based on percentage
             elements.scoreCircle.className = 'score-circle';
             if (results.percentage >= 80) {
                 elements.scoreCircle.classList.add('score-excellent');
@@ -1214,10 +1234,9 @@ window.MathJax = {
                 elements.scoreCircle.classList.add('score-poor');
             }
             
-            // Update score summary
             const performanceText = results.percentage >= 80 ? 'Excellent' : 
-                                results.percentage >= 60 ? 'Good' : 
-                                results.percentage >= 40 ? 'Average' : 'Poor';
+                                    results.percentage >= 60 ? 'Good' : 
+                                    results.percentage >= 40 ? 'Average' : 'Poor';
             
             elements.scoreSummary.textContent = `You scored ${results.correctAnswers} out of ${results.totalQuestions} questions (${performanceText})`;
             
@@ -1225,7 +1244,6 @@ window.MathJax = {
                 elements.scoreSummary.textContent += ' - Exam was auto-submitted due to time limit';
             }
             
-            // Show detailed results
             let detailedHTML = '';
             results.detailedResults.forEach(result => {
                 detailedHTML += `
@@ -1259,7 +1277,6 @@ window.MathJax = {
             elements.detailedResults.innerHTML = detailedHTML;
         }
 
-        // Modal controls
         function closeModal() {
             stopTimer();
             elements.examModal.classList.remove('show');
@@ -1267,7 +1284,6 @@ window.MathJax = {
                 elements.examModal.style.display = 'none';
             }, 300);
             
-            // Reset exam state
             currentExam = null;
             examQuestions = [];
             currentQuestionIndex = 0;
@@ -1275,7 +1291,6 @@ window.MathJax = {
             timeRemaining = 0;
             isExamSubmitted = false;
             
-            // Reset timer display
             elements.timerDisplay.style.color = 'white';
             elements.timerDisplay.classList.remove('pulse');
         }
@@ -1286,10 +1301,9 @@ window.MathJax = {
             }
         }
 
-        // MODIFIED createExamCard function to handle upcoming exams properly
         function createExamCard(exam) {
             const buttonText = exam.status === 'Model Test' ? 'Take Model Test' :
-                            exam.status === 'Upcoming' ? 'Take Exam' : 'Take Exam';
+                             exam.status === 'Upcoming' ? 'Take Exam' : 'Take Exam';
             
             const buttonClass = exam.status === 'Upcoming' ? 'btn-disabled' : '';
             const buttonStyle = exam.status === 'Upcoming' 
@@ -1350,9 +1364,8 @@ window.MathJax = {
             `;
         }
 
-        // Update stats with dynamic total exams calculation
         function updateStats() {
-            const total = mockExams.length;  // Dynamic calculation
+            const total = mockExams.length;
             const active = mockExams.filter(exam => exam.status === 'Active').length;
             const upcoming = mockExams.filter(exam => exam.status === 'Upcoming').length;
             const modelTest = mockExams.filter(exam => exam.status === 'Model Test').length;
@@ -1363,7 +1376,6 @@ window.MathJax = {
             document.getElementById('model-test-exams').textContent = modelTest;
         }
 
-        // Filter exams - removed subject filtering
         function filterExams() {
             filteredExams = mockExams.filter(exam => {
                 const matchesSearch = exam.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -1399,7 +1411,6 @@ window.MathJax = {
             elements.examCount.textContent = `${count} exam${count !== 1 ? 's' : ''} found`;
         }
 
-        // Update active filters - removed subject filter
         function updateActiveFilters() {
             const filters = [];
 
@@ -1429,7 +1440,6 @@ window.MathJax = {
             }
         }
 
-        // Initialize DOM elements - ENHANCED to include modal elements
         function initializeElements() {
             elements.searchInput = document.getElementById('search-input');
             elements.difficultyFilter = document.getElementById('difficulty-filter');
@@ -1439,7 +1449,6 @@ window.MathJax = {
             elements.noResults = document.getElementById('no-results');
             elements.activeFilters = document.getElementById('active-filters');
             
-            // === MODAL ELEMENTS - ADDITION ===
             elements.examModal = document.getElementById('exam-modal');
             elements.examTitle = document.getElementById('exam-title');
             elements.timerDisplay = document.getElementById('timer-display');
@@ -1470,9 +1479,7 @@ window.MathJax = {
             elements.submitPasswordBtn = document.getElementById('submit-password-btn');
         }
 
-        // Add event listeners - ENHANCED to include modal event listeners
         function addEventListeners() {
-            // Original filter event listeners
             elements.searchInput.addEventListener('input', (e) => {
                 searchTerm = e.target.value;
                 filterExams();
@@ -1488,7 +1495,6 @@ window.MathJax = {
                 filterExams();
             });
 
-            // === MODAL EVENT LISTENERS - ADDITION ===
             elements.jumpBtn.addEventListener('click', jumpToQuestion);
             elements.jumpInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
@@ -1502,7 +1508,6 @@ window.MathJax = {
             elements.closeModalBtn.addEventListener('click', closeModal);
             elements.closeResultsBtn.addEventListener('click', closeModal);
 
-            // Close modal when clicking outside
             elements.examModal.addEventListener('click', (e) => {
                 if (e.target === elements.examModal) {
                     if (confirm('Are you sure you want to close the exam? Your progress will be lost.')) {
@@ -1511,7 +1516,6 @@ window.MathJax = {
                 }
             });
 
-            // Keyboard shortcuts
             document.addEventListener('keydown', (e) => {
                 if (elements.examModal.classList.contains('show') && !isExamSubmitted) {
                     switch(e.key) {
@@ -1531,19 +1535,16 @@ window.MathJax = {
                     }
                 }
             });
-            // Password modal event listeners
             elements.closePasswordModalBtn.addEventListener('click', hidePasswordModal);
             elements.cancelPasswordBtn.addEventListener('click', hidePasswordModal);
             elements.submitPasswordBtn.addEventListener('click', verifyPasswordAndStartExam);
             
-            // Allow submitting password with Enter key
             elements.passwordInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
                     verifyPasswordAndStartExam();
                 }
             });
             
-            // Close password modal when clicking outside
             elements.passwordModal.addEventListener('click', (e) => {
                 if (e.target === elements.passwordModal) {
                     hidePasswordModal();
@@ -1551,7 +1552,6 @@ window.MathJax = {
             });
         }
 
-        // Initialize the app
         document.addEventListener('DOMContentLoaded', () => {
             initializeElements();
             updateStats();
