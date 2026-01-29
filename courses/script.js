@@ -229,7 +229,7 @@ window.showDetails = function(courseId) {
 // =========================================
 
 function renderFilterButtons() {
-    const grades = ['All', 'HSC 26', 'HSC 27', 'Admission 24', 'Admission 25', 'Admission 26'];
+    const grades = ['All', 'HSC-26 Academic', 'HSC-27 Academic', 'HSC-26 Admission', 'HSC-25 Admission', 'HSC-24 Admission'];
     const types = ['All', 'ACS', 'UDVASH', 'Physics Hunters', 'Bondi Pathshala', 'RTDS', 'Battle of Biology', 'Alchemy', 'CPS'];
 
     const createBtn = (text, category) => `
