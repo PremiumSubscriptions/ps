@@ -1,8 +1,24 @@
 [
   {
+    "id": 119,
+    "title": "Test Course",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "ACS",
+    "price": 10,
+    "originalPrice": 100,
+    "duration": "1.5 months",
+    "students": 295,
+    "rating": 3,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260121_154406_532.jpg"
+  },
+  {
     "id": 118,
     "title": "🔥 ACS ENGNEERING 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "ACS",
     "price": 350,
     "originalPrice": 5000,
@@ -14,7 +30,9 @@
   {
     "id": 117,
     "title": "🔥দুরন্ত প্রায়াস 6.0 MEDICAL 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "RTDS",
     "price": 150,
     "originalPrice": 5000,
@@ -26,7 +44,9 @@
   {
     "id": 116,
     "title": "🔥ACS COMPACT GST 2025🔥",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 5000,
@@ -38,7 +58,9 @@
   {
     "id": 115,
     "title": "🔥TARGET DMC 6.0 PRE-MEDICAL +FULL MEDICAL BATCH 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 150,
     "originalPrice": 5000,
@@ -50,7 +72,9 @@
   {
     "id": 114,
     "title": "🔥 PHYSICS HUNTERS গুচ্ছ প্রস্তুতি Zero To 100 Batch 🔥",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Physics Hunters",
     "price": 100,
     "originalPrice": 5000,
@@ -62,7 +86,9 @@
   {
     "id": 113,
     "title": "🔥BP Engneering MATH 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 100,
     "originalPrice": 5000,
@@ -74,7 +100,9 @@
   {
     "id": 112,
     "title": "🔥BP Engneering Chemistry 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 100,
     "originalPrice": 5000,
@@ -86,7 +114,9 @@
   {
     "id": 111,
     "title": "🔥BP PRE-MEDICAL 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 150,
     "originalPrice": 5000,
@@ -98,7 +128,9 @@
   {
     "id": 110,
     "title": "🔥RTDS PRE-MEDICAL 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "RTDS",
     "price": 150,
     "originalPrice": 5000,
@@ -110,7 +142,9 @@
   {
     "id": 109,
     "title": "🔥CPS ENGNEERING PHYSICS 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "CPS",
     "price": 100,
     "originalPrice": 5000,
@@ -122,7 +156,9 @@
   {
     "id": 108,
     "title": "🔥ACS PRE- MEDICAL 2026🔥",
-    "grade": ["Admission 26"],
+    "grade": [
+      "Admission 26"
+    ],
     "courseType": "ACS",
     "price": 150,
     "originalPrice": 5000,
@@ -134,7 +170,9 @@
   {
     "id": 107,
     "title": "HSC 26 FRB FINIAL REVISION BATCH 2026",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "UDVASH",
     "price": 100,
     "originalPrice": 5000,
@@ -146,7 +184,9 @@
   {
     "id": 106,
     "title": "HSC 26 Ashik Vai One Shot ",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Physics Hunters",
     "price": 100,
     "originalPrice": 5999,
@@ -158,7 +198,9 @@
   {
     "id": 105,
     "title": "HSC 26 CPS Physics Compact Revision Batch",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Physics Hunters",
     "price": 100,
     "originalPrice": 5999,
@@ -170,7 +212,9 @@
   {
     "id": 104,
     "title": "Physics Hunters ACS Agri Batch 2025-26",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Physics Hunters",
     "price": 100,
     "originalPrice": 5999,
@@ -182,7 +226,9 @@
   {
     "id": 103,
     "title": "RTDS LAST FIGHT",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "RTDS",
     "price": 100,
     "originalPrice": 5999,
@@ -194,7 +240,9 @@
   {
     "id": 102,
     "title": "BP Powerplay 2026",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 150,
     "originalPrice": 5999,
@@ -206,7 +254,9 @@
   {
     "id": 101,
     "title": "ACS FRB 2026",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 150,
     "originalPrice": 5999,
@@ -218,7 +268,9 @@
   {
     "id": 100,
     "title": "ক্যাম্পাস ৫.০ সম্পূর্ণ - HSC 2024/25",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Physics Hunters",
     "price": 150,
     "originalPrice": 5950,
@@ -230,7 +282,9 @@
   {
     "id": 99,
     "title": "ALPHA 6.1Medical Admission Full Course",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Battle of Biology",
     "price": 150,
     "originalPrice": 5950,
@@ -242,7 +296,9 @@
   {
     "id": 98,
     "title": "দুরন্ত প্রয়াস 5.2 Final Medical Batch 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "RTDS",
     "price": 150,
     "originalPrice": 5950,
@@ -254,7 +310,9 @@
   {
     "id": 97,
     "title": "ACS ENGINEERING + VERSITY BIOLOGY 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -266,7 +324,9 @@
   {
     "id": 96,
     "title": "ACS VERSITY + MEDICAL HIGHER MATH PRIVATE BATCH 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -278,7 +338,9 @@
   {
     "id": 95,
     "title": "ACS VERSITY + MEDICAL CHEMISTRY PRIVATE BATCH 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -290,7 +352,9 @@
   {
     "id": 94,
     "title": "ACS VERSITY PHYSICS 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -302,7 +366,9 @@
   {
     "id": 93,
     "title": "MediTroops - 1st Timer Medical Course (Avengers)",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 150,
     "originalPrice": 5000,
@@ -314,7 +380,9 @@
   {
     "id": 92,
     "title": "Varsity Biology - HSC 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 100,
     "originalPrice": 1000,
@@ -326,7 +394,9 @@
   {
     "id": 91,
     "title": "Engneering Math - HSC 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 100,
     "originalPrice": 2000,
@@ -338,7 +408,9 @@
   {
     "id": 90,
     "title": "Engneering Chemistry - HSC 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 100,
     "originalPrice": 2000,
@@ -350,7 +422,9 @@
   {
     "id": 89,
     "title": "Engneering Physics - HSC 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 100,
     "originalPrice": 2000,
@@ -362,7 +436,9 @@
   {
     "id": 88,
     "title": "BP ENGINEERING & Varsity Biology - HSC 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 250,
     "originalPrice": 6000,
@@ -374,7 +450,9 @@
   {
     "id": 87,
     "title": "Target DU 5.0",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Bondi Pathshala",
     "price": 150,
     "originalPrice": 4250,
@@ -386,7 +464,9 @@
   {
     "id": 86,
     "title": "ACS Medical Admission Private Batch 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 150,
     "originalPrice": 5000,
@@ -398,7 +478,9 @@
   {
     "id": 85,
     "title": "ACS Engineering Admission Private Batch 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 250,
     "originalPrice": 5000,
@@ -410,7 +492,9 @@
   {
     "id": 84,
     "title": "ACS Varsity & GST Special Private Programme 2025",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "ACS",
     "price": 150,
     "originalPrice": 5000,
@@ -422,7 +506,9 @@
   {
     "id": 83,
     "title": "দুরন্ত প্রয়াস 5.0s Restart ( 2nd Timer Medical Batch )",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "RTDS",
     "price": 150,
     "originalPrice": 10000,
@@ -434,7 +520,9 @@
   {
     "id": 82,
     "title": "ALPHA 6 Medical Admission Full Course",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Battle of Biology",
     "price": 150,
     "originalPrice": 6000,
@@ -446,7 +534,9 @@
   {
     "id": 81,
     "title": "প্রত্যাবর্তন ৪.০ সম্পূর্ণ - Admission 2024/25",
-    "grade": ["Admission 25"],
+    "grade": [
+      "Admission 25"
+    ],
     "courseType": "Physics Hunters",
     "price": 150,
     "originalPrice": 3500,
@@ -458,7 +548,9 @@
   {
     "id": 80,
     "title": "HSC 2026 Shoawn Reza 2nd Paper",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Alchemy",
     "price": 100,
     "originalPrice": 1000,
@@ -470,7 +562,9 @@
   {
     "id": 79,
     "title": "HSC 2026 Shoawn Reza 1st Paper",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Alchemy",
     "price": 100,
     "originalPrice": 1000,
@@ -482,7 +576,9 @@
   {
     "id": 78,
     "title": "HSC 2026 BH TROOPS 2ND Paper ",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -494,7 +590,9 @@
   {
     "id": 77,
     "title": "HSC 2026 BH TROOPS 1ST Paper ",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -506,7 +604,9 @@
   {
     "id": 76,
     "title": "HSC 2026 ACS Biology ALL CYCLE",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 300,
     "originalPrice": 5000,
@@ -518,7 +618,9 @@
   {
     "id": 75,
     "title": "ACS HSC 26 Chemistry ALL CYCLE Combo",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 300,
     "originalPrice": 5000,
@@ -530,7 +632,9 @@
   {
     "id": 74,
     "title": "ACS HSC 26 Chemistry (Cycle-5)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -542,7 +646,9 @@
   {
     "id": 73,
     "title": "ACS HSC 26 Chemistry (Cycle-4)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -554,7 +660,9 @@
   {
     "id": 72,
     "title": "ACS HSC 26 Chemistry (Cycle-3)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -566,7 +674,9 @@
   {
     "id": 71,
     "title": "ACS HSC 26 Chemistry (Cycle-2)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -578,7 +688,9 @@
   {
     "id": 70,
     "title": "ACS HSC 26 Chemistry (Cycle-1)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -590,7 +702,9 @@
   {
     "id": 69,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar ALL CYCLE",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 350,
     "originalPrice": 6000,
@@ -602,7 +716,9 @@
   {
     "id": 68,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-6)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -614,7 +730,9 @@
   {
     "id": 67,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-5)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -626,7 +744,9 @@
   {
     "id": 66,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-4)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -638,7 +758,9 @@
   {
     "id": 65,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-3)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -650,7 +772,9 @@
   {
     "id": 64,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-2)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -662,7 +786,9 @@
   {
     "id": 63,
     "title": "ACS Physics HSC 26 By Apurbo Mashrur Apar (Cycle-1)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -674,7 +800,9 @@
   {
     "id": 62,
     "title": "ACS Higher Math 1st & 2nd Paper (HSC 26) ALL CYCLE COMBO",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 350,
     "originalPrice": 6000,
@@ -686,7 +814,9 @@
   {
     "id": 61,
     "title": "ACS Higher Math 2nd Paper (HSC 26) (Cycle-6)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -698,7 +828,9 @@
   {
     "id": 60,
     "title": "ACS Higher Math 2nd Paper (HSC 26) (Cycle-5)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -710,7 +842,9 @@
   {
     "id": 59,
     "title": "ACS Higher Math 2nd Paper (HSC 26) (Cycle-4)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -722,7 +856,9 @@
   {
     "id": 58,
     "title": "ACS Higher Math 1st Paper (HSC 26) (Cycle-3)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -734,7 +870,9 @@
   {
     "id": 57,
     "title": "ACS Higher Math 1st Paper (HSC 26) (Cycle-2)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -746,7 +884,9 @@
   {
     "id": 56,
     "title": "ACS Higher Math 1st Paper (HSC 26) (Cycle-1)",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1000,
@@ -758,7 +898,9 @@
   {
     "id": 55,
     "title": "HSC'26 ( বাংলা ১ম পত্র সম্পূর্ণ)- ACS",
-    "grade": ["HSC 26"],
+    "grade": [
+      "HSC 26"
+    ],
     "courseType": "ACS",
     "price": 0,
     "originalPrice": 1000,
@@ -770,7 +912,9 @@
   {
     "id": 54,
     "title": "BIOLOGY HATERS BIOLOGY ALL Cycle Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 400,
     "originalPrice": 9000,
@@ -782,7 +926,9 @@
   {
     "id": 53,
     "title": "BIOLOGY HATERS BIOLOGY Cycle -6",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -794,7 +940,9 @@
   {
     "id": 52,
     "title": "BIOLOGY HATERS BIOLOGY Cycle -5",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -806,7 +954,9 @@
   {
     "id": 51,
     "title": "BIOLOGY HATERS BIOLOGY Cycle -4",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -818,7 +968,9 @@
   {
     "id": 50,
     "title": "BIOLOGY HATERS BIOLOGY Cycle -3",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -830,7 +982,9 @@
   {
     "id": 49,
     "title": "BIOLOGY HATERS BIOLOGY Cycle -2",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -842,7 +996,9 @@
   {
     "id": 48,
     "title": "BIOLOGY HATERS BIOLOGY Cycle -1",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "Biology Haters",
     "price": 100,
     "originalPrice": 1000,
@@ -854,7 +1010,9 @@
   {
     "id": 47,
     "title": "ACS - College Biology Course by BioMission ALL CYCLE Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 400,
     "originalPrice": 9000,
@@ -866,7 +1024,9 @@
   {
     "id": 46,
     "title": "ACS - College Biology Course by BioMission (Cycle-6)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -878,7 +1038,9 @@
   {
     "id": 45,
     "title": "ACS - College Biology Course by BioMission (Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -890,7 +1052,9 @@
   {
     "id": 44,
     "title": "ACS - College Biology Course by BioMission (Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -902,7 +1066,9 @@
   {
     "id": 43,
     "title": "ACS - College Biology Course by BioMission (Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -914,7 +1080,9 @@
   {
     "id": 42,
     "title": "ACS - College Biology Course by BioMission (Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -926,7 +1094,9 @@
   {
     "id": 41,
     "title": "ACS - College Biology Course by BioMission (Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -938,7 +1108,9 @@
   {
     "id": 40,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers ALL CYCLE Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 400,
     "originalPrice": 9000,
@@ -950,7 +1122,9 @@
   {
     "id": 39,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-6)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -962,7 +1136,9 @@
   {
     "id": 38,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -974,7 +1150,9 @@
   {
     "id": 37,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -986,7 +1164,9 @@
   {
     "id": 36,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -998,7 +1178,9 @@
   {
     "id": 35,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1010,7 +1192,9 @@
   {
     "id": 34,
     "title": "ACS Biology Cycle for HSC 27 by DMC Dreamers(Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1022,7 +1206,9 @@
   {
     "id": 33,
     "title": "ACS ICT BATCH DECODER HSC 27",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1034,7 +1220,9 @@
   {
     "id": 32,
     "title": "ACS HSC 27 Basic to Advance Chemistry by Hemel ALL CYCLE Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 350,
     "originalPrice": 7500,
@@ -1046,7 +1234,9 @@
   {
     "id": 31,
     "title": "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1058,7 +1248,9 @@
   {
     "id": 30,
     "title": "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1070,7 +1262,9 @@
   {
     "id": 29,
     "title": "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1082,7 +1276,9 @@
   {
     "id": 28,
     "title": "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1094,7 +1290,9 @@
   {
     "id": 27,
     "title": "ACS HSC 27 Basic to Advance Chemistry by Hemel (Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1106,7 +1304,9 @@
   {
     "id": 26,
     "title": "HSC-27 ACS Chemistry powered by ChemShifu ALL CYCLE Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 350,
     "originalPrice": 7500,
@@ -1118,7 +1318,9 @@
   {
     "id": 25,
     "title": "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1130,7 +1332,9 @@
   {
     "id": 24,
     "title": "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1142,7 +1346,9 @@
   {
     "id": 23,
     "title": "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1154,7 +1360,9 @@
   {
     "id": 22,
     "title": "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1166,7 +1374,9 @@
   {
     "id": 21,
     "title": "HSC-27 ACS Chemistry powered by ChemShifu (Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1178,7 +1388,9 @@
   {
     "id": 20,
     "title": "ACS HSC 27 Chemistry by Mottasin Pahlovi ALL CYCLE Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 350,
     "originalPrice": 7500,
@@ -1190,7 +1402,9 @@
   {
     "id": 19,
     "title": "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1202,7 +1416,9 @@
   {
     "id": 18,
     "title": "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1214,7 +1430,9 @@
   {
     "id": 17,
     "title": "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1226,7 +1444,9 @@
   {
     "id": 16,
     "title": "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1238,7 +1458,9 @@
   {
     "id": 15,
     "title": "ACS HSC 27 Chemistry by Mottasin Pahlovi (Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1250,7 +1472,9 @@
   {
     "id": 14,
     "title": "ACS HSC 27 Higher Math Academic ALL CYCLE Combo",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 450,
     "originalPrice": 9000,
@@ -1262,7 +1486,9 @@
   {
     "id": 13,
     "title": "ACS HSC 27 Higher Math Academic (Cycle-6)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1274,7 +1500,9 @@
   {
     "id": 12,
     "title": "ACS HSC 27 Higher Math Academic (Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1286,7 +1514,9 @@
   {
     "id": 11,
     "title": "ACS HSC 27 Higher Math Academic (Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1298,7 +1528,9 @@
   {
     "id": 10,
     "title": "ACS HSC 27 Higher Math Academic (Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1310,7 +1542,9 @@
   {
     "id": 9,
     "title": "ACS HSC 27 Higher Math Academic (Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1322,7 +1556,9 @@
   {
     "id": 8,
     "title": "ACS HSC 27 Higher Math Academic (Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1334,7 +1570,9 @@
   {
     "id": 7,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar ALL CYCLE",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 450,
     "originalPrice": 9000,
@@ -1346,7 +1584,9 @@
   {
     "id": 6,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-6)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1358,7 +1598,9 @@
   {
     "id": 5,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-5)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1370,7 +1612,9 @@
   {
     "id": 4,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-4)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1382,7 +1626,9 @@
   {
     "id": 3,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-3)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1394,7 +1640,9 @@
   {
     "id": 2,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-2)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
@@ -1406,7 +1654,9 @@
   {
     "id": 1,
     "title": "ACS Physics HSC 27 By Apurbo Mashrur Apar (Cycle-1)",
-    "grade": ["HSC 27"],
+    "grade": [
+      "HSC 27"
+    ],
     "courseType": "ACS",
     "price": 100,
     "originalPrice": 1500,
