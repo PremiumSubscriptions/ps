@@ -1,5 +1,299 @@
 [
   {
+    "id": 144,
+    "title": "🧮 ACS HM Full Combo",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 450,
+    "originalPrice": 5000,
+    "duration": "3 months",
+    "students": 4250,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmall.jpg"
+  },
+  {
+    "id": 143,
+    "title": "🧮 ACS HM Cycle 1",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 3120,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmc1.jpg"
+  },
+  {
+    "id": 142,
+    "title": "🧮 ACS HM Cycle 2",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2845,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmc2.jpg"
+  },
+  {
+    "id": 141,
+    "title": "🧮 ACS HM Cycle 3",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 1950,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmc3.jpg"
+  },
+  {
+    "id": 140,
+    "title": "🧮 ACS HM Cycle 4",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2400,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmc4.jpg"
+  },
+  {
+    "id": 139,
+    "title": "🧮 ACS HM Cycle 5",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 1670,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmc5.jpg"
+  },
+  {
+    "id": 138,
+    "title": "🧮 ACS HM Cycle 6",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 1340,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28hmc6.jpg"
+  },
+  {
+    "id": 137,
+    "title": "🔭 ACS Physics Cycle 1",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 4100,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyc1.jpg"
+  },
+  {
+    "id": 136,
+    "title": "🔭 ACS Physics Cycle 2",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 3750,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyc2.jpg"
+  },
+  {
+    "id": 135,
+    "title": "🔭 ACS Physics Cycle 3",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2900,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyc3.jpg"
+  },
+  {
+    "id": 134,
+    "title": "🔭 ACS Physics Cycle 4",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2500,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyc4.jpg"
+  },
+  {
+    "id": 133,
+    "title": "🔭 ACS Physics Cycle 5",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2100,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyc5.jpg"
+  },
+  {
+    "id": 132,
+    "title": "🔭 ACS Physics Cycle 6",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 1850,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyc6.jpg"
+  },
+  {
+    "id": 131,
+    "title": "🔭 ACS Physics Full Combo",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 450,
+    "originalPrice": 5000,
+    "duration": "3 months",
+    "students": 4900,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28phyall.jpg"
+  },
+  {
+    "id": 130,
+    "title": "🧪 ACS Aloron Chemistry Cycle 1",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 3800,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemc1.jpg"
+  },
+  {
+    "id": 129,
+    "title": "🧪 ACS Aloron Chemistry Cycle 2",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 3400,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemc2.jpg"
+  },
+  {
+    "id": 128,
+    "title": "🧪 ACS Aloron Chemistry Cycle 3",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 3050,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemc3.jpg"
+  },
+  {
+    "id": 127,
+    "title": "🧪 ACS Aloron Chemistry Cycle 4",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2750,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemc4.jpg"
+  },
+  {
+    "id": 126,
+    "title": "🧪 ACS Aloron Chemistry Cycle 5",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 2200,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemc5.jpg"
+  },
+  {
+    "id": 125,
+    "title": "🧪 ACS Aloron Chemistry Cycle 6",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 100,
+    "originalPrice": 1000,
+    "duration": "3 months",
+    "students": 1800,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemc6.jpg"
+  },
+  {
+    "id": 124,
+    "title": "🧪 ACS Aloron Chemistry Full Combo",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 450,
+    "originalPrice": 5000,
+    "duration": "3 months",
+    "students": 4650,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/acs28aloronchemall.jpg"
+  },
+  {
     "id": 123,
     "title": "দুরন্ত প্রায়াস 6.1s RESTART 2nd Timer 🔥",
     "grade": [
