@@ -1,5 +1,33 @@
 [
   {
+    "id": 146,
+    "title": "ACS EBI HSC Batch 2028",
+    "grade": [
+      "HSC-28 Academic"
+    ],
+    "courseType": "ACS",
+    "price": 150,
+    "originalPrice": 4000,
+    "duration": "2.5 months",
+    "students": 1000,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260729_001808_133.jpg"
+  },
+  {
+    "id": 145,
+    "title": "ACS Varsity & GST 2026",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "ACS",
+    "price": 150,
+    "originalPrice": 4000,
+    "duration": "2.5 months",
+    "students": 1000,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260729_001812_511.jpg"
+  },
+  {
     "id": 144,
     "title": "🧮 ACS HM Full Combo",
     "grade": [
