@@ -1,5 +1,19 @@
 [
   {
+    "id": 147,
+    "title": "🔥Target DU 6.0🔥",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "Bondi Pathshala",
+    "price": 150,
+    "originalPrice": 5000,
+    "duration": "3.0 months",
+    "students": 1200,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260805_232938_052.jpg"
+  },
+  {
     "id": 146,
     "title": "ACS EBI HSC Batch 2028",
     "grade": [
