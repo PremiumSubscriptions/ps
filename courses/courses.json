@@ -1,5 +1,19 @@
 [
   {
+    "id": 148,
+    "title": "🏥Campus 6.0- HSC 2025/26",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "Physics Hunters",
+    "price": 150,
+    "originalPrice": 5000,
+    "duration": "3.0 months",
+    "students": 1100,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260805_232936_422.jpg"
+  },
+  {
     "id": 147,
     "title": "🔥Target DU 6.0🔥",
     "grade": [
