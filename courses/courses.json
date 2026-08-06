@@ -1,5 +1,19 @@
 [
   {
+    "id": 149,
+    "title": "🔥ACS MEDICAL 2026🔥",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "ACS",
+    "price": 150,
+    "originalPrice": 5000,
+    "duration": "2.5 months",
+    "students": 1000,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260806_122117_693.jpg"
+  },
+  {
     "id": 148,
     "title": "🏥Campus 6.0- HSC 2025/26",
     "grade": [
