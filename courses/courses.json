@@ -1,5 +1,19 @@
 [
   {
+    "id": 154,
+    "title": "✅ঢাবি খ + বিভাগ পরিবর্তন ৫.০✅",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "UDVASH",
+    "price": 100,
+    "originalPrice": 5000,
+    "duration": "2.5 months",
+    "students": 700,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260828_150152_946.jpg"
+  },
+  {
     "id": 153,
     "title": "🔥UDVASH ভর্সিটি ক 2026🔥",
     "grade": [
