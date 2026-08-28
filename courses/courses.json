@@ -1,5 +1,19 @@
 [
   {
+    "id": 152,
+    "title": "🔥UDVASH ইন্জিনিয়ারিং 2026🔥",
+    "grade": [
+      "HSC-26 Admission"
+    ],
+    "courseType": "UDVASH",
+    "price": 150,
+    "originalPrice": 5000,
+    "duration": "2.5 months",
+    "students": 700,
+    "rating": 5,
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20260828_150151_622.jpg"
+  },
+  {
     "id": 151,
     "title": "🔥UDVASH ভর্সিটি খ 2026🔥",
     "grade": [
