@@ -5,13 +5,13 @@
     "grade": [
       "HSC-27 Academic"
     ],
-    "courseType": "Bondi Pathshala",
+    "courseType": "Udvash",
     "price": 100,
     "originalPrice": 5000,
     "duration": "2.5 months",
     "students": 1000,
     "rating": 5,
-    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20261009_122626_677.jpg"
+    "image": "https://cdn.jsdelivr.net/gh/PremiumSubscriptions/premium-subscriptions-bot@main/IMG_20261009_122631_150.jpg"
   },
   {
     "id": 157,
